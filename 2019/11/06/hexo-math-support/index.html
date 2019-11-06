@@ -51,14 +51,15 @@
   };
 </script>
 
-  <meta name="description" content="基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。参考：在 Hexo 中渲染 MathJax 数学公式问题原因Hexo 的默认 markdown 渲染引擎为 hexo-renderer-marked, 该引擎会把一些特殊的 markdown 符号换为相应的 html 标签，这样会导致处理数学">
+  <meta name="description" content="基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。参考：在 Hexo 中渲染 MathJax 数学公式">
+<meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 支持数学公式渲染">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;hexo-math-support&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin">
-<meta property="og:description" content="基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。参考：在 Hexo 中渲染 MathJax 数学公式问题原因Hexo 的默认 markdown 渲染引擎为 hexo-renderer-marked, 该引擎会把一些特殊的 markdown 符号换为相应的 html 标签，这样会导致处理数学">
+<meta property="og:description" content="基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。参考：在 Hexo 中渲染 MathJax 数学公式">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T14:40:20.792Z">
+<meta property="og:updated_time" content="2019-11-06T15:19:29.522Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/06/hexo-math-support/">
@@ -209,7 +210,18 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-06 21:54:12 / Modified: 22:40:20" itemprop="dateCreated datePublished" datetime="2019-11-06T21:54:12+08:00">2019-11-06</time>
+              <time title="Created: 2019-11-06 21:54:12 / Modified: 23:19:29" itemprop="dateCreated datePublished" datetime="2019-11-06T21:54:12+08:00">2019-11-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -223,8 +235,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在 Hexo 中渲染 MathJax 数学公式</a></p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>Hexo 的默认 markdown 渲染引擎为 <code>hexo-renderer-marked</code>, 该引擎会把一些特殊的 markdown 符号换为相应的 html 标签，这样会导致处理数学公式时经常将公式中的符号换为 html 标签，最终使得公式无法成功渲染。</p><a id="more"></a>
-
+        <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在 Hexo 中渲染 MathJax 数学公式</a></p>
+<a id="more"></a>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>Hexo 的默认 markdown 渲染引擎为 <code>hexo-renderer-marked</code>, 该引擎会把一些特殊的 markdown 符号换为相应的 html 标签，这样会导致处理数学公式时经常将公式中的符号换为 html 标签，最终使得公式无法成功渲染。</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><strong>更换 Hexo 的 markdown 渲染引擎</strong></p>
 <p>将 Hexo 的 markdown 渲染引擎更换为 <code>hexo-renderer-kramed</code>。<code>hexo-renderer-kramed</code> 引擎是在默认的渲染引擎 <code>hexo-renderer-marked</code> 的基础上修改了一些 bug，两者比较接近，也比较轻量级。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
@@ -249,6 +262,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          </div>
 
         
 
@@ -319,6 +335,14 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
