@@ -52,13 +52,14 @@
 </script>
 
   <meta name="description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的”实分析与复分析”一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好">
+<meta name="keywords" content="Borel Set,Cardinality">
 <meta property="og:type" content="article">
 <meta property="og:title" content="$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;borel-sigma-cardinality&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Homepage">
 <meta property="og:description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的”实分析与复分析”一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T17:18:54.445Z">
+<meta property="og:updated_time" content="2019-11-06T18:22:03.657Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
@@ -215,8 +216,19 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 01:18:54" itemprop="dateModified" datetime="2019-11-07T01:18:54+08:00">2019-11-07</time>
+                <time title="Modified: 2019-11-07 02:22:03" itemprop="dateModified" datetime="2019-11-07T02:22:03+08:00">2019-11-07</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Real-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Real Analysis</span>
+                  </a>
+                </span>
+            </span>
 
           
 
@@ -272,10 +284,18 @@
 <blockquote>
 <p>$\mathcal{F} \subset \sigma(\mathcal{D})$</p>
 </blockquote>
-<p>此时结合结论一可以得到 $\mathcal{F} = \sigma(\mathcal{D})$。而证明结论二，只需证明 $\mathcal{F}$ 为 $\sigma$-代数。</p>
+<p>只需证明 $\mathcal{F}$ 为 $\sigma$-代数。</p>
 <ul>
-<li>任取 $E \in \mathcal{D}$，则 $X = E^c \cup E \cup E \cup \cdots \cup E \cup \cdots$，于是 $X \in \mathcal{F}_1 \subset \mathcal{F}$。</li>
-<li>$\forall E \in \mathcal{F}, \exists x\in \Omega$ 使得 $E \in \mathcal{F}_x$，于是 $E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}$</li>
+<li><p>任取 $E \in \mathcal{D}$，则 $X = E^c \cup E \cup E \cup \cdots \cup E \cup \cdots$，于是</p>
+<script type="math/tex; mode=display">
+X \in \mathcal{F}_1^{\sigma} \subset \mathcal{F}_2 \subset \mathcal{F}</script><p>此时还可以得到 $\empty \in \mathcal{F}_3$，所以 $x\in \Omega, x \geq 3$ 时，有 $\mathcal{F}_x \subset \mathcal{F}_x^{\sigma} \subset \mathcal{F}_{x+1}$。</p>
+</li>
+<li><p>$\forall E \in \mathcal{F}, \exists x\in \Omega$ 使得 $E \in \mathcal{F}_x$，于是</p>
+<script type="math/tex; mode=display">
+E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></li>
+<li><p>设 $\{E_i\}_{i=1}^\infty \subset \mathcal{F}$，则 $\forall i \in \mathbb{Z}_+, \exists x_i \in \Omega$，使得 $E_i \in \mathcal{F}_{x_i}$。由于 $\{ x_i \}_{i=1}^{\infty} \subset \Omega$ 为可数集，$\{x_i\}$ 在 $\Omega$ 中必有上界 $x$ (同样参考 Munkres 的”拓扑学”第 10 节)。这个上界可以选取的足够大，使其至少不小于一个没有紧接前元的元素 (为了使 $\mathcal{F}_1, \mathcal{F}_2 \subset \mathcal{F}_x$)，于是根据第一条的推论，$\forall i \in \mathbb{Z}_+, E_i \in \mathcal{F}_x$。从而</p>
+<script type="math/tex; mode=display">
+\bigcup_{i}{E_i} \in \mathcal{F}_x^{\sigma} \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></li>
 </ul>
 
     </div>
@@ -285,6 +305,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Borel-Set/" rel="tag"># Borel Set</a>
+              <a href="/tags/Cardinality/" rel="tag"># Cardinality</a>
+          </div>
 
         
 
@@ -355,20 +379,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
