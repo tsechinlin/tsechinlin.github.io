@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Homepage">
 <meta property="og:description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的”实分析与复分析”一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T17:10:15.136Z">
+<meta property="og:updated_time" content="2019-11-06T17:18:54.445Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
@@ -215,7 +215,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 01:10:15" itemprop="dateModified" datetime="2019-11-07T01:10:15+08:00">2019-11-07</time>
+                <time title="Modified: 2019-11-07 01:18:54" itemprop="dateModified" datetime="2019-11-07T01:18:54+08:00">2019-11-07</time>
               </span>
 
           
@@ -237,11 +237,11 @@
 \operatorname{Card}\left(\mathcal{B}_k\right) = \mathfrak{c} := \operatorname{Card}(\mathbb{R})</script></blockquote>
 <p>即有限维欧式空间中的 Borel $\sigma$ 代数具有连续统势。$\mathcal{B}_k$ 至少有连续统势是显然的，所以只需证明另一方向。事实上，我们可以证明一个更一般的结论。</p>
 <blockquote>
-<p>假设 $X$ 为一集合，$\mathcal{D}$ 为 $X$ 的某个非空子集族，即 $\mathcal{D} \sub \mathcal{P}(X)$，用 $\sigma(\mathcal{D})$ 表示 $\mathcal{D}$ 生成的 $\sigma$-代数。那么，当 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$ 时，有 $\operatorname{Card}\left(\sigma(\mathcal{D})\right) \leq \mathfrak{c}$。</p>
+<p>假设 $X$ 为一集合，$\mathcal{D}$ 为 $X$ 的某个非空子集族，即 $\mathcal{D} \subset \mathcal{P}(X)$，用 $\sigma(\mathcal{D})$ 表示 $\mathcal{D}$ 生成的 $\sigma$-代数。那么，当 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$ 时，有 $\operatorname{Card}\left(\sigma(\mathcal{D})\right) \leq \mathfrak{c}$。</p>
 </blockquote>
 <p>在有了这个结论之后，再说明 $\mathcal{B}_k$ 可以由有连续统势的子集族生成即可证明原命题。</p>
 <h2 id="结论证明"><a href="#结论证明" class="headerlink" title="结论证明"></a>结论证明</h2><p><strong>构造</strong></p>
-<p>为了完成结论的证明，首先需要引入下述操作符。对任意的子集族 $\mathcal{B} \sub \mathcal{P}(X)$，定义</p>
+<p>为了完成结论的证明，首先需要引入下述操作符。对任意的子集族 $\mathcal{B} \subset \mathcal{P}(X)$，定义</p>
 <script type="math/tex; mode=display">
 \mathcal{B}^c = \left\{ E^c : E \in \mathcal{B} \right\} \\
 \mathcal{B}^{\sigma} = \left\{ \bigcup_{i=1}^{\infty}{E_i} : \ E_i \in \mathcal{B}, i \in \mathbb{Z}_+ \right\}</script><p>另外证明过程中需要借助极小不可数良序集 $\Omega$ (minimal uncountable well-order set，可参考 Munkres 的”拓扑学”第 10 节)。借助 $\Omega$ 以及广义归纳定义原理 (general principle of recursive definition，可参考 Munkres 的”拓扑学”第 1 章附加习题)，定义：</p>
@@ -256,26 +256,26 @@
 </ul>
 <p><strong>结论一</strong></p>
 <blockquote>
-<p>$\mathcal{F} \sub \sigma(\mathcal{D})$</p>
+<p>$\mathcal{F} \subset \sigma(\mathcal{D})$</p>
 </blockquote>
-<p>只需证明：$\forall x \in \Omega$，$\mathcal{F}_x \sub \sigma(\mathcal{D})$。可以使用超限归纳原理 (principle of transfinite induction) 证明。</p>
+<p>只需证明：$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$。可以使用超限归纳原理 (principle of transfinite induction) 证明。</p>
 <ul>
-<li>首先根据 $\mathcal{D} \sub \sigma(\mathcal{D})$，容易证得 $\mathcal{D}^c \sub \sigma(\mathcal{D})$，于是 $\mathcal{F}_1 = \mathcal{D} \cup \mathcal{D}^c \sub \sigma(\mathcal{D})$。</li>
-<li>假设 $x \in \Omega$ 且 $x &gt; 1$，而且 $\forall y &lt; x$，有 $\mathcal{F}_y  \sub \sigma(\mathcal{D})$。<ul>
-<li>如果 $x$ 有紧接前元 $y$，由于 $\mathcal{F}_{y}^{\sigma}$ 中的集合仅由 $\mathcal{F}_{y}$ 中的集合的可数并组成，于是  $\mathcal{F}_y^{\sigma}  \sub \sigma(\mathcal{D})$，从而 $\mathcal{F}_x = \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c \sub \sigma(\mathcal{D})$。</li>
-<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x = \bigcup_{y &lt; x} \mathcal{F}_{y} \sub \sigma(\mathcal{D})$ 显然成立。</li>
+<li>首先根据 $\mathcal{D} \subset \sigma(\mathcal{D})$，容易证得 $\mathcal{D}^c \subset \sigma(\mathcal{D})$，于是 $\mathcal{F}_1 = \mathcal{D} \cup \mathcal{D}^c \subset \sigma(\mathcal{D})$。</li>
+<li>假设 $x \in \Omega$ 且 $x &gt; 1$，而且 $\forall y &lt; x$，有 $\mathcal{F}_y  \subset \sigma(\mathcal{D})$。<ul>
+<li>如果 $x$ 有紧接前元 $y$，由于 $\mathcal{F}_{y}^{\sigma}$ 中的集合仅由 $\mathcal{F}_{y}$ 中的集合的可数并组成，于是  $\mathcal{F}_y^{\sigma}  \subset \sigma(\mathcal{D})$，从而 $\mathcal{F}_x = \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c \subset \sigma(\mathcal{D})$。</li>
+<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x = \bigcup_{y &lt; x} \mathcal{F}_{y} \subset \sigma(\mathcal{D})$ 显然成立。</li>
 </ul>
 </li>
 </ul>
-<p>于是根据超限归纳原理，$\forall x \in \Omega$，$\mathcal{F}_x \sub \sigma(\mathcal{D})$，于是 $\mathcal{F} = \bigcup_{x \in \Omega} \mathcal{F}_{x} \sub \sigma(\mathcal{D})$。</p>
+<p>于是根据超限归纳原理，$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$，于是 $\mathcal{F} = \bigcup_{x \in \Omega} \mathcal{F}_{x} \subset \sigma(\mathcal{D})$。</p>
 <p><strong>结论二</strong></p>
 <blockquote>
-<p>$\mathcal{F} \sub \sigma(\mathcal{D})$</p>
+<p>$\mathcal{F} \subset \sigma(\mathcal{D})$</p>
 </blockquote>
 <p>此时结合结论一可以得到 $\mathcal{F} = \sigma(\mathcal{D})$。而证明结论二，只需证明 $\mathcal{F}$ 为 $\sigma$-代数。</p>
 <ul>
-<li>任取 $E \in \mathcal{D}$，则 $X = E^c \cup E \cup E \cup \cdots \cup E \cup \cdots$，于是 $X \in \mathcal{F}_1 \sub \mathcal{F}$。</li>
-<li>$\forall E \in \mathcal{F}, \exist x\in \Omega$ 使得 $E \in \mathcal{F}_x$，于是 $E^c \in \mathcal{F}_x^c \sub \mathcal{F}_{x+1} \sub \mathcal{F}$</li>
+<li>任取 $E \in \mathcal{D}$，则 $X = E^c \cup E \cup E \cup \cdots \cup E \cup \cdots$，于是 $X \in \mathcal{F}_1 \subset \mathcal{F}$。</li>
+<li>$\forall E \in \mathcal{F}, \exists x\in \Omega$ 使得 $E \in \mathcal{F}_x$，于是 $E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}$</li>
 </ul>
 
     </div>
