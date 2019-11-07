@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Homepage">
 <meta property="og:description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T18:32:18.059Z">
+<meta property="og:updated_time" content="2019-11-07T04:01:03.616Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 02:32:18" itemprop="dateModified" datetime="2019-11-07T02:32:18+08:00">2019-11-07</time>
+                <time title="Modified: 2019-11-07 12:01:03" itemprop="dateModified" datetime="2019-11-07T12:01:03+08:00">2019-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -252,22 +252,20 @@
 <p>假设 $X$ 为一集合，$\mathcal{D}$ 为 $X$ 的某个非空子集族，即 $\mathcal{D} \subset \mathcal{P}(X)$，用 $\sigma(\mathcal{D})$ 表示 $\mathcal{D}$ 生成的 $\sigma$-代数。那么，当 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$ 时，有 $\operatorname{Card}\left(\sigma(\mathcal{D})\right) \leq \mathfrak{c}$。</p>
 </blockquote>
 <p>在有了这个结论之后，再说明 $\mathcal{B}_k$ 可以由有连续统势的子集族生成即可证明原命题。</p>
-<h2 id="结论证明"><a href="#结论证明" class="headerlink" title="结论证明"></a>结论证明</h2><p><strong>构造</strong></p>
-<p>为了完成结论的证明，首先需要引入下述操作符。对任意的子集族 $\mathcal{B} \subset \mathcal{P}(X)$，定义</p>
+<h2 id="结论证明"><a href="#结论证明" class="headerlink" title="结论证明"></a>结论证明</h2><h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>为了完成结论的证明，首先需要引入下述操作符。对任意的子集族 $\mathcal{B} \subset \mathcal{P}(X)$，定义</p>
 <script type="math/tex; mode=display">
-\mathcal{B}^c = \left\{ E^c : E \in \mathcal{B} \right\} \\
-\mathcal{B}^{\sigma} = \left\{ \bigcup_{i=1}^{\infty}{E_i} : \ E_i \in \mathcal{B}, i \in \mathbb{Z}_+ \right\}</script><p>另外证明过程中需要借助极小不可数良序集 $\Omega$ (minimal uncountable well-order set，可参考 Munkres 的拓扑学第 10 节)。借助 $\Omega$ 以及广义归纳定义原理 (general principle of recursive definition，可参考 Munkres 的拓扑学第 1 章附加习题)，定义：</p>
+\mathcal{B}^c := \left\{ E^c : E \in \mathcal{B} \right\} \\
+\mathcal{B}^{\sigma} := \left\{ \bigcup_{i=1}^{\infty}{E_i} : \ E_i \in \mathcal{B}, i \in \mathbb{Z}_+ \right\}</script><p>另外证明过程中需要借助极小不可数良序集 $\Omega$ (minimal uncountable well-order set，可参考 Munkres 的拓扑学第 10 节)。借助 $\Omega$ 以及广义归纳定义原理 (general principle of recursive definition，可参考 Munkres 的拓扑学第 1 章附加习题)，定义：</p>
 <ul>
-<li>$\mathcal{F}_1 = \mathcal{D} \cup \mathcal{D}^c$</li>
+<li>$\mathcal{F}_1 := \mathcal{D} \cup \mathcal{D}^c$</li>
 <li>$\forall x \in \Omega, x &gt; 1,$<ul>
-<li>如果 $x$ 有紧接前元 $y$，$\mathcal{F}_x = \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c$</li>
-<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x = \bigcup_{y &lt; x} \mathcal{F}_{y}$</li>
+<li>如果 $x$ 有紧接前元 $y$，$\mathcal{F}_x := \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c$</li>
+<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x := \bigcup_{y &lt; x} \mathcal{F}_{y}$</li>
 </ul>
 </li>
-<li>最后令 $\mathcal{F} = \bigcup_{x \in \Omega} \mathcal{F}_{x}$</li>
+<li>最后令 $\mathcal{F} := \bigcup_{x \in \Omega} \mathcal{F}_{x}$</li>
 </ul>
-<p><strong>结论一</strong></p>
-<blockquote>
+<h3 id="构造所得的集合与-sigma-域相等"><a href="#构造所得的集合与-sigma-域相等" class="headerlink" title="构造所得的集合与 $\sigma$-域相等"></a>构造所得的集合与 $\sigma$-域相等</h3><blockquote>
 <p>$\mathcal{F} \subset \sigma(\mathcal{D})$</p>
 </blockquote>
 <p>只需证明：$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$。可以使用超限归纳原理 (principle of transfinite induction) 证明。</p>
@@ -280,7 +278,6 @@
 </li>
 </ul>
 <p>于是根据超限归纳原理，$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$，于是 $\mathcal{F} = \bigcup_{x \in \Omega} \mathcal{F}_{x} \subset \sigma(\mathcal{D})$。</p>
-<p><strong>结论二</strong></p>
 <blockquote>
 <p>$\sigma(\mathcal{D}) \subset \mathcal{F}$</p>
 </blockquote>
@@ -297,6 +294,40 @@ E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></
 <script type="math/tex; mode=display">
 \bigcup_{i}{E_i} \in \mathcal{F}_x^{\sigma} \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></li>
 </ul>
+<h3 id="mathcal-F-至多为连续统势"><a href="#mathcal-F-至多为连续统势" class="headerlink" title="$\mathcal{F}$ 至多为连续统势"></a>$\mathcal{F}$ 至多为连续统势</h3><blockquote>
+<p>$\forall x \in \Omega, \operatorname{Card}\left(\mathcal{F}_x\right) \leq \mathfrak{c}$</p>
+</blockquote>
+<p>同样使用超限归纳原理证明。</p>
+<ul>
+<li><p>由于 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$，所以 $\operatorname{Card}\left(\mathcal{D}^c\right)=\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$，从而</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_1\right) = \operatorname{Card}\left(\mathcal{D} \cup \mathcal{D}^c\right) \leq \mathfrak{c}</script></li>
+<li><p>假设 $x &gt; 1, x \in \Omega$，并且 $\forall y &lt; x, \operatorname{Card}\left(\mathcal{F}_y\right) \leq \mathfrak{c},$</p>
+<ul>
+<li><p>若 $x$ 有紧接前元 $z$，由于 $\operatorname{Card}\left(\mathcal{F}_z\right) \leq \mathfrak{c}$，存在满射 $f: \mathbb{R} \rightarrow \mathcal{F}_z$，令 $g:\mathbb{R}^{\infty} \rightarrow \mathcal{F}_z^{\sigma}$，使得</p>
+<script type="math/tex; mode=display">
+g(x_1, x_2, \cdots) = \bigcup_i{f(x_i)}, \quad x_i \in \mathbb{R}, i = 1, 2, \cdots</script><p>于是 $g$ 为满射，故 $\operatorname{Card}\left( \mathcal{F}_z^{\sigma} \right) \leq \operatorname{Card}\left( \mathbb{R}^{\infty} \right) \leq \mathfrak{c}$，从而</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_x\right) = \operatorname{Card}\left(\mathcal{F}_z^{\sigma} \cup (\mathcal{F}_z^{\sigma})^c\right) \leq \mathfrak{c}</script></li>
+<li><p>如果 $x$ 没有紧接前元，由于 $S_x := \{y\in \Omega:y&lt;x\}$ 为可数集，所以</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_x\right) = \operatorname{Card}\left( \bigcup_{y < x} \mathcal{F}_{y} \right) \leq \operatorname{Card}\left(S_x \times \mathbb{R}\right) = \mathfrak{c}</script></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>$\operatorname{Card}\left(\mathcal{F}\right) \leq \mathfrak{c}$ </p>
+</blockquote>
+<p>这个结论的证明需要使用 $\operatorname{Card}\left(\Omega\right) \leq \mathfrak{c}$，事实上，可以很简单地利用广义归纳定义原理定义出一个单射 $f: \Omega \rightarrow \mathbb{R}$。首先在 $\mathbb{R}$ 上定义良序，然后定义：</p>
+<script type="math/tex; mode=display">
+\forall x \in \Omega, f(x) = min\left\{ \mathbb{R} - f(S_x) \right\}, \quad S_x = \{y\in \Omega:y < x \}</script><p>由于 $\forall x \in \Omega$，$S_x$ 可数，所以 $\mathbb{R} - f(S_x)$ 非空，所以 $f$ 是 well-defined 的，并且容易证明其为单射。</p>
+<p>利用上述结论，可以得到：</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}\right) = \operatorname{Card}\left( \bigcup_{x \in \Omega} \mathcal{F}_{x} \right) \leq \operatorname{Card}\left(\Omega \times \mathbb{R}\right) \leq \mathfrak{c}^2 = \mathfrak{c}</script><p>事实上到这里证明就基本完成了：</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\sigma(\mathcal{D})\right) = \operatorname{Card}\left(\mathcal{F}\right) \leq \mathfrak{c}</script><h3 id="mathcal-B-k-可以由至多为连续统势的集族导出"><a href="#mathcal-B-k-可以由至多为连续统势的集族导出" class="headerlink" title="$\mathcal{B}_k$ 可以由至多为连续统势的集族导出"></a>$\mathcal{B}_k$ 可以由至多为连续统势的集族导出</h3><p>令 $\mathcal{D}_k = \left\{ B(x, r) : x \in \mathbb{Q}^k, r \in \mathbb{Q}_+ \right\}$，这是一个可数集，并且对 $\mathbb{R}^k$ 中任意开集 $V$，容易证得：</p>
+<script type="math/tex; mode=display">
+V = \bigcup_{B \in \mathcal{D}_k, B \subset V} B</script><p>上面的并是可数并，所以 $\sigma(\mathcal{D}_k)$ 包含所有的开集，因此容易得到：$\sigma(\mathcal{D}_k) = \mathcal{B}_k$，证毕。</p>
 
     </div>
 
@@ -363,7 +394,7 @@ E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论证明"><span class="nav-number">2.</span> <span class="nav-text">结论证明</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论证明"><span class="nav-number">2.</span> <span class="nav-text">结论证明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造"><span class="nav-number">2.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造所得的集合与-sigma-域相等"><span class="nav-number">2.2.</span> <span class="nav-text">构造所得的集合与 $\sigma$-域相等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-F-至多为连续统势"><span class="nav-number">2.3.</span> <span class="nav-text">$\mathcal{F}$ 至多为连续统势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-B-k-可以由至多为连续统势的集族导出"><span class="nav-number">2.4.</span> <span class="nav-text">$\mathcal{B}_k$ 可以由至多为连续统势的集族导出</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
