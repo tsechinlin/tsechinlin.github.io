@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-08T12:30:59.585Z">
+<meta property="og:updated_time" content="2019-11-08T12:46:48.552Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/08/conic-linear-programming/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-08 20:26:08 / Modified: 20:30:59" itemprop="dateCreated datePublished" datetime="2019-11-08T20:26:08+08:00">2019-11-08</time>
+              <time title="Created: 2019-11-08 20:26:08 / Modified: 20:46:48" itemprop="dateCreated datePublished" datetime="2019-11-08T20:26:08+08:00">2019-11-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,50 +265,50 @@ K^* = \{ \mathbf{y} \in \mathbb{R}^n: \langle \mathbf{x}, \mathbf{y} \rangle \ge
 </ul>
 <h2 id="二次曲线线性规划-Conic-Linear-Programming-CLP"><a href="#二次曲线线性规划-Conic-Linear-Programming-CLP" class="headerlink" title="二次曲线线性规划 Conic Linear Programming (CLP)"></a>二次曲线线性规划 Conic Linear Programming (CLP)</h2><p>假设 $\mathbf{C}, \mathbf{A}_i \in \mathbb{R}^{k \times n}, 1 \leq i \leq m$ 已知，另外 $\mathbf{b} \in \mathbb{R}^m$ 也给定，$K \subset \mathbb{R}^{k \times n}$ 为闭凸锥，称下述以 $\mathbf{X}$ 为自变量的优化问题为<strong>二次曲线线性规划</strong>问题：</p>
 <script type="math/tex; mode=display">
-\begin{alignat}{2}
+\begin{alignat*}{2}
 \min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
 \mbox{s.t.} \quad 
 & \langle \mathbf{A}_i,\mathbf{X} \rangle=b_{i}, i=1,2, \cdots, m, \\
 & \mathbf{X} \in K
-\end{alignat}</script><ul>
+\end{alignat*}</script><ul>
 <li><p>$K = \mathcal{S}^n_+$ 时，CLP 称为<strong>半正定规划</strong> (Semidefinite Programming, SDP)</p>
 </li>
 <li><p>$K = C_p, 1 \leq p &lt; \infty$ 时，CLP 称为 $p$-阶锥规划 ($p$-order cone programming)，</p>
 <p>特别的，当 $p=2$ 时，称为<strong>二阶锥规划</strong> (second-order cone programming, SOCP)</p>
 </li>
 </ul>
-<p>使用线性算子 $\mathcal{A}:\mathbb{R}^{k\times n} \rightarrow \mathbb{R}^m$，满足 $\mathcal{A}X = \left[\langle \mathbf{A}_i,\mathbf{X} \rangle, \cdots, \langle \mathbf{A}_m,\mathbf{X} \rangle \right]^T$，则 CLP 可写成更为紧凑的形式：</p>
+<p>使用线性算子 $\mathcal{A}:\mathbb{R}^{k\times n} \rightarrow \mathbb{R}^m$，使得 $\mathcal{A}X = \left[\langle \mathbf{A}_i,\mathbf{X} \rangle, \cdots, \langle \mathbf{A}_m,\mathbf{X} \rangle \right]^T$，则 CLP 可写成更为紧凑的形式：</p>
 <script type="math/tex; mode=display">
-\begin{alignat}{2}
+\begin{alignat*}{2}
 \min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
 \mbox{s.t.} \quad 
 & \mathcal{A}\mathbf{X} =\mathbf{b} \\
 & \mathbf{X} \in K
-\end{alignat}</script><h3 id="待填坑"><a href="#待填坑" class="headerlink" title="待填坑"></a>待填坑</h3><h2 id="半正定规划-Semidefinite-Programming-SDP"><a href="#半正定规划-Semidefinite-Programming-SDP" class="headerlink" title="半正定规划 Semidefinite Programming (SDP)"></a>半正定规划 Semidefinite Programming (SDP)</h2><p>给定 $n$ 阶对称实矩阵 $\mathbf{C}, \mathbf{A}_i \in \mathbb{R}^{n \times n}, 1 \leq i \leq m$，以及 $\mathbf{b} \in \mathbb{R}^m$，称下述以 $\mathbf{X}$ 为自变量的优化问题为<strong>半正定规划</strong>问题：</p>
+\end{alignat*}</script><h3 id="待填坑"><a href="#待填坑" class="headerlink" title="待填坑"></a>待填坑</h3><h2 id="半正定规划-Semidefinite-Programming-SDP"><a href="#半正定规划-Semidefinite-Programming-SDP" class="headerlink" title="半正定规划 Semidefinite Programming (SDP)"></a>半正定规划 Semidefinite Programming (SDP)</h2><p>给定 $n$ 阶对称实矩阵 $\mathbf{C}, \mathbf{A}_i \in \mathbb{R}^{n \times n}, 1 \leq i \leq m$，以及 $\mathbf{b} \in \mathbb{R}^m$，称下述以 $\mathbf{X}$ 为自变量的优化问题为<strong>半正定规划</strong>问题：</p>
 <script type="math/tex; mode=display">
-\begin{alignat}{2}
+\begin{alignat*}{2}
 \min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
 \mbox{s.t.} \quad 
 & \langle \mathbf{A}_i,\mathbf{X} \rangle=b_{i}, i=1,2, \cdots, m, \\
 & \mathbf{X} \succeq \mathbf{0}
-\end{alignat}</script><p>上述半正定规划的对偶问题为：</p>
+\end{alignat*}</script><p>上述半正定规划的对偶问题为：</p>
 <script type="math/tex; mode=display">
-\begin{alignat}{2}
+\begin{alignat*}{2}
 \max \quad & \langle \mathbf{b},\mathbf{y} \rangle  \\ 
 \mbox{s.t.} \quad 
 & \sum_{i=1}^m y_i\mathbf{A}_i \preceq \mathbf{C}
-\end{alignat}</script><h3 id="弱对偶性"><a href="#弱对偶性" class="headerlink" title="弱对偶性"></a>弱对偶性</h3><blockquote>
+\end{alignat*}</script><h3 id="弱对偶性"><a href="#弱对偶性" class="headerlink" title="弱对偶性"></a>弱对偶性</h3><blockquote>
 <p>对原问题 (Primal) 的任意可行解 $\mathbf{X}$ 以及对偶问题 (Dual) 的可行解 $\mathbf{y}$，下述不等式恒成立：</p>
 <script type="math/tex; mode=display">
 \langle \mathbf{C},\mathbf{X} \rangle \geq \langle \mathbf{b},\mathbf{y} \rangle</script></blockquote>
 <p>即对偶问题的任意目标值提供了原问题最优值的下界。这个结论很容易证明：</p>
 <script type="math/tex; mode=display">
-\begin{align}
+\begin{align*}
 \langle \mathbf{C}, \mathbf{X} \rangle-\langle \mathbf{b}, \mathbf{y} \rangle 
 &=\langle \mathbf{C}, \mathbf{X} \rangle-\sum_{i=1}^{m} y_{i} b_{i} \\ 
 &=\langle \mathbf{C}, \mathbf{X} \rangle-\sum_{i=1}^{m} y_{i}\left\langle \mathbf{A}_i, \mathbf{X}\right\rangle \\
 &=\left\langle \mathbf{C} - \sum_{i=1}^{m} y_{i} \mathbf{A}_{i}, \mathbf{X}\right\rangle \geq 0
-\end{align}</script><p>其中最后一个不等式是由于半正定矩阵的乘积仍为半正定矩阵，其迹非负。</p>
+\end{align*}</script><p>其中最后一个不等式是由于半正定矩阵的乘积仍为半正定矩阵，其迹非负。</p>
 
     </div>
 
