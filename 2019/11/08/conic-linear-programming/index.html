@@ -51,28 +51,32 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。">
+<meta name="keywords" content="Convex,Duality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二次曲线线性规划 Conic Linear Programming (CLP)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;conic-linear-programming&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-08T12:30:59.585Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2019/11/08/conic-linear-programming/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Tsechin Lin's Blogs</title>
+  <title>二次曲线线性规划 Conic Linear Programming (CLP) | Tsechin Lin's Blogs</title>
   
 
 
@@ -178,10 +182,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/conic-linear-programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -195,8 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/08/conic-linear-programming/" class="post-title-link" itemprop="url">二次曲线线性规划 Conic Linear Programming (CLP)</a>
+          二次曲线线性规划 Conic Linear Programming (CLP)
         </h1>
 
         <div class="post-meta">
@@ -232,263 +235,115 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/08/conic-linear-programming/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/linear-conjugate-method/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Tsechin Lin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tsechin Lin's Blogs">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/07/linear-conjugate-method/" class="post-title-link" itemprop="url">线性共轭梯度法</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-11-07 00:01:26 / Modified: 00:05:41" itemprop="dateCreated datePublished" datetime="2019-11-07T00:01:26+08:00">2019-11-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>The conjugate gradient method is an iterative method for solving a minimization problem</p>
+        <p>查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。</p>
+<a id="more"></a>
+<h2 id="欧式空间-mathbb-R-n-中的闭凸锥"><a href="#欧式空间-mathbb-R-n-中的闭凸锥" class="headerlink" title="欧式空间 $\mathbb{R}^n$ 中的闭凸锥"></a>欧式空间 $\mathbb{R}^n$ 中的闭凸锥</h2><p><strong>定义</strong></p>
+<p>称 $K \subset \mathbb{R}^n$ 为闭凸锥 (闭集、凸集、锥)，若</p>
+<ul>
+<li>$\forall \mathbf{x}, \mathbf{y} \in K$ 以及 $ \alpha, \beta \geq0$，有 $\alpha \mathbf{x} + \beta \mathbf{y} \in K$</li>
+<li>$K$ 为闭集</li>
+</ul>
+<p>通常用 $\mathbf{x} \leq_K \mathbf{y}$ 表示 $y - x \in K$。</p>
+<p><strong>常用闭凸锥</strong></p>
+<ul>
+<li><p>$n$-dimensional non-negative orthant</p>
 <script type="math/tex; mode=display">
-\phi(x)=\frac{1}{2} x^{T} A x-b^{T} x,</script><p>where $A$ is an $n \times n$ matrix that is symmetric and positive definite. The gradient of $\phi$ equals the residual of the linear system</p>
+\mathbb{R}_+^n = \{ x \in \mathbb{R}^n : x_i \geq 0, i = 1, \cdots, n \}</script></li>
+<li><p>positive semidefinite matrix cone</p>
 <script type="math/tex; mode=display">
-\nabla \phi(x)=A x-b \stackrel{\mathrm{def}}{=} r(x).</script>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/07/linear-conjugate-method/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+\mathcal{S}^n_+ = \{ \mathbf{X} \in \mathbb{R}^{n \times n} : \mathbf{X} = \mathbf{X}^T, \text{and } \forall \mathbf{v} \in \mathbb{R}^n, \mathbf{v}^T\mathbf{X}\mathbf{v} \geq 0\}</script></li>
+<li><p>the $p$-order cone (where $1 \leq p &lt; \infty$)</p>
+<script type="math/tex; mode=display">
+C_p = \{ (\mathbf{x}, u) \in \mathbb{R}^{n+1}: \|\mathbb{x}\|_p \leq u \}</script></li>
+</ul>
+<p><strong>对偶锥</strong></p>
+<p>对于任意的 $K \subset \mathbb{R}^n$，其对偶锥 (dual cone) 定义为：</p>
+<script type="math/tex; mode=display">
+K^* = \{ \mathbf{y} \in \mathbb{R}^n: \langle \mathbf{x}, \mathbf{y} \rangle \geq 0, \quad \forall \mathbf{x} \in K \}</script><ul>
+<li>$\mathbb{R}_+^n$ 与 $\mathcal{S}^n_+$ 是自对偶的，即对偶锥为本身</li>
+<li>对于 $1 &lt; p &lt; \infty$，$C_p$ 的对偶锥为 $C_q$，其中 $p^{-1} + q^{-1} = 1$</li>
+</ul>
+<h2 id="二次曲线线性规划-Conic-Linear-Programming-CLP"><a href="#二次曲线线性规划-Conic-Linear-Programming-CLP" class="headerlink" title="二次曲线线性规划 Conic Linear Programming (CLP)"></a>二次曲线线性规划 Conic Linear Programming (CLP)</h2><p>假设 $\mathbf{C}, \mathbf{A}_i \in \mathbb{R}^{k \times n}, 1 \leq i \leq m$ 已知，另外 $\mathbf{b} \in \mathbb{R}^m$ 也给定，$K \subset \mathbb{R}^{k \times n}$ 为闭凸锥，称下述以 $\mathbf{X}$ 为自变量的优化问题为<strong>二次曲线线性规划</strong>问题：</p>
+<script type="math/tex; mode=display">
+\begin{alignat}{2}
+\min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
+\mbox{s.t.} \quad 
+& \langle \mathbf{A}_i,\mathbf{X} \rangle=b_{i}, i=1,2, \cdots, m, \\
+& \mathbf{X} \in K
+\end{alignat}</script><ul>
+<li><p>$K = \mathcal{S}^n_+$ 时，CLP 称为<strong>半正定规划</strong> (Semidefinite Programming, SDP)</p>
+</li>
+<li><p>$K = C_p, 1 \leq p &lt; \infty$ 时，CLP 称为 $p$-阶锥规划 ($p$-order cone programming)，</p>
+<p>特别的，当 $p=2$ 时，称为<strong>二阶锥规划</strong> (second-order cone programming, SOCP)</p>
+</li>
+</ul>
+<p>使用线性算子 $\mathcal{A}:\mathbb{R}^{k\times n} \rightarrow \mathbb{R}^m$，满足 $\mathcal{A}X = \left[\langle \mathbf{A}_i,\mathbf{X} \rangle, \cdots, \langle \mathbf{A}_m,\mathbf{X} \rangle \right]^T$，则 CLP 可写成更为紧凑的形式：</p>
+<script type="math/tex; mode=display">
+\begin{alignat}{2}
+\min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
+\mbox{s.t.} \quad 
+& \mathcal{A}\mathbf{X} =\mathbf{b} \\
+& \mathbf{X} \in K
+\end{alignat}</script><h3 id="待填坑"><a href="#待填坑" class="headerlink" title="待填坑"></a>待填坑</h3><h2 id="半正定规划-Semidefinite-Programming-SDP"><a href="#半正定规划-Semidefinite-Programming-SDP" class="headerlink" title="半正定规划 Semidefinite Programming (SDP)"></a>半正定规划 Semidefinite Programming (SDP)</h2><p>给定 $n$ 阶对称实矩阵 $\mathbf{C}, \mathbf{A}_i \in \mathbb{R}^{n \times n}, 1 \leq i \leq m$，以及 $\mathbf{b} \in \mathbb{R}^m$，称下述以 $\mathbf{X}$ 为自变量的优化问题为<strong>半正定规划</strong>问题：</p>
+<script type="math/tex; mode=display">
+\begin{alignat}{2}
+\min \quad & \langle \mathbf{C},\mathbf{X} \rangle  \\ 
+\mbox{s.t.} \quad 
+& \langle \mathbf{A}_i,\mathbf{X} \rangle=b_{i}, i=1,2, \cdots, m, \\
+& \mathbf{X} \succeq \mathbf{0}
+\end{alignat}</script><p>上述半正定规划的对偶问题为：</p>
+<script type="math/tex; mode=display">
+\begin{alignat}{2}
+\max \quad & \langle \mathbf{b},\mathbf{y} \rangle  \\ 
+\mbox{s.t.} \quad 
+& \sum_{i=1}^m y_i\mathbf{A}_i \preceq \mathbf{C}
+\end{alignat}</script><h3 id="弱对偶性"><a href="#弱对偶性" class="headerlink" title="弱对偶性"></a>弱对偶性</h3><blockquote>
+<p>对原问题 (Primal) 的任意可行解 $\mathbf{X}$ 以及对偶问题 (Dual) 的可行解 $\mathbf{y}$，下述不等式恒成立：</p>
+<script type="math/tex; mode=display">
+\langle \mathbf{C},\mathbf{X} \rangle \geq \langle \mathbf{b},\mathbf{y} \rangle</script></blockquote>
+<p>即对偶问题的任意目标值提供了原问题最优值的下界。这个结论很容易证明：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\langle \mathbf{C}, \mathbf{X} \rangle-\langle \mathbf{b}, \mathbf{y} \rangle 
+&=\langle \mathbf{C}, \mathbf{X} \rangle-\sum_{i=1}^{m} y_{i} b_{i} \\ 
+&=\langle \mathbf{C}, \mathbf{X} \rangle-\sum_{i=1}^{m} y_{i}\left\langle \mathbf{A}_i, \mathbf{X}\right\rangle \\
+&=\left\langle \mathbf{C} - \sum_{i=1}^{m} y_{i} \mathbf{A}_{i}, \mathbf{X}\right\rangle \geq 0
+\end{align}</script><p>其中最后一个不等式是由于半正定矩阵的乘积仍为半正定矩阵，其迹非负。</p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/Convex/" rel="tag"># Convex</a>
+              <a href="/tags/Duality/" rel="tag"># Duality</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Tsechin Lin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tsechin Lin's Blogs">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/borel-sigma-cardinality/" class="post-title-link" itemprop="url">$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-06 23:42:19" itemprop="dateCreated datePublished" datetime="2019-11-06T23:42:19+08:00">2019-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-07 12:18:15" itemprop="dateModified" datetime="2019-11-07T12:18:15+08:00">2019-11-07</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Real-Analysis/" itemprop="url" rel="index">
-                    <span itemprop="name">Real Analysis</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。<br>参考：<a href="https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf" target="_blank" rel="noopener">How Many Borel Sets are There?</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/06/borel-sigma-cardinality/#more" rel="contents">
-                Read more &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/07/linear-conjugate-method/" rel="next" title="线性共轭梯度法">
+                  <i class="fa fa-chevron-left"></i> 线性共轭梯度法
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+            <span class="post-nav-divider"></span>
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/hexo-math-support/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Tsechin Lin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tsechin Lin's Blogs">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/06/hexo-math-support/" class="post-title-link" itemprop="url">Hexo 支持数学公式渲染</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-11-06 21:54:12 / Modified: 23:19:29" itemprop="dateCreated datePublished" datetime="2019-11-06T21:54:12+08:00">2019-11-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Web</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在 Hexo 中渲染 MathJax 数学公式</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/06/hexo-math-support/#more" rel="contents">
-                Read more &raquo;
-              </a>
+            <div class="post-nav-prev post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+          </div>
       </footer>
+    
   </article>
   
   
   
 
   </div>
-
-  
-
 
 
           </div>
@@ -517,6 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#欧式空间-mathbb-R-n-中的闭凸锥"><span class="nav-number">1.</span> <span class="nav-text">欧式空间 $\mathbb{R}^n$ 中的闭凸锥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次曲线线性规划-Conic-Linear-Programming-CLP"><span class="nav-number">2.</span> <span class="nav-text">二次曲线线性规划 Conic Linear Programming (CLP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#待填坑"><span class="nav-number">2.1.</span> <span class="nav-text">待填坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半正定规划-Semidefinite-Programming-SDP"><span class="nav-number">3.</span> <span class="nav-text">半正定规划 Semidefinite Programming (SDP)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#弱对偶性"><span class="nav-number">3.1.</span> <span class="nav-text">弱对偶性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
