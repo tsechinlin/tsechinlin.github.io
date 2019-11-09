@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="矩阵秩最小化问题在某些情况下可以通过核范数最小化来解决，参阅文章 Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization [B Recht, M Fazel, PA Parrilo]，此篇介绍文章涉及的一些有关核范数的基本知识，内容主要来自文章的第二部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-09T07:01:46.630Z">
+<meta property="og:updated_time" content="2019-11-09T07:07:38.532Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/09/low-rank-matrix-recovery-preliminary/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-09 12:57:38 / Modified: 15:01:46" itemprop="dateCreated datePublished" datetime="2019-11-09T12:57:38+08:00">2019-11-09</time>
+              <time title="Created: 2019-11-09 12:57:38 / Modified: 15:07:38" itemprop="dateCreated datePublished" datetime="2019-11-09T12:57:38+08:00">2019-11-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,12 +279,12 @@
 <script type="math/tex; mode=display">
 \|Z\| \leq t \quad \Longleftrightarrow \quad t^{2} I_{m}-Z Z^{\prime} \succeq 0 \quad \Longleftrightarrow \quad\left[\begin{array}{cc}{t I_{m}} & {Z} \\ {Z^{\prime}} & {t I_{n}}\end{array}\right] \succeq 0</script><ul>
 <li>第一个等价关系是由于 $\sigma_i(Z)$ 就是 $ZZ’$ 第 $i$ 大的特征值</li>
-<li>第二个等价关系就是  Schur complement 的性质，也可以通过对二次型求梯度，说明其非负性来验证</li>
+<li>第二个等价关系就是  Schur complement 的性质，也可以通过对二次型求梯度，从而说明二次型的非负性来验证</li>
 </ul>
 <p>假设 $X \in \mathbb{R}^{m \times n}$ 的 SVD 分解为 $X = U\Sigma V’$，其中 $U \in \mathbb{R}^{m \times r}, V \in \mathbb{R}^{n \times r}$ 且各自的列向量都是标准正交的，$\Sigma$ 为 $r$ 阶对角矩阵，这里 $r = rank(X)$。</p>
-<p>首先取 $Y = UV’$，于是 $|Y| = 1$ 并且 $\langle X, Y\rangle = \operatorname{Tr}(\Sigma) = \sum_{i=1}^r{\sigma_i(X)} = |X|_{*}$，从而</p>
+<p>首先取 $Y = UV’$，于是 $\left\lVert Y \right\rVert = 1$ 并且 $\langle X, Y\rangle = \operatorname{Tr}(\Sigma) = \sum_{i=1}^r{\sigma_i(X)} = \left\lVert X \right\rVert_{*}$，从而</p>
 <script type="math/tex; mode=display">
-\|X\|_{*} \leq \sup \left\{\langle X, Y\rangle : Y \in \mathbb{R}^{m \times n},\|Y\| \leq 1\right\}</script><p>另一方面，$| \cdot |$ 对偶范数的求解可以看作优化问题：</p>
+\|X\|_{*} \leq \sup \left\{\langle X, Y\rangle : Y \in \mathbb{R}^{m \times n},\|Y\| \leq 1\right\}</script><p>另一方面，$\left\lVert \cdot \right\rVert$ 的对偶范数的求解可以看作优化问题：</p>
 <script type="math/tex; mode=display">
 \begin{alignat*}{2}
 \min \quad & \operatorname{Tr}(X'Y)  \\ 
