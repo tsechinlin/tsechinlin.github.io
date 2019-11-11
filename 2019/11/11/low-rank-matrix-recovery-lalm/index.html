@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="核范数的最小化问题算法，参考 Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization [J Yang, X Yuan] 中的第三部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-10T18:23:12.231Z">
+<meta property="og:updated_time" content="2019-11-11T05:51:08.207Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-11 01:47:30 / Modified: 02:23:12" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
+              <time title="Created: 2019-11-11 01:47:30 / Modified: 13:51:08" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -237,24 +237,25 @@
       
         <p>核范数的最小化问题算法，参考 <u>Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization</u> [J Yang, X Yuan] 中的第三部分。</p>
 <a id="more"></a>
-<h2 id="优化问题"><a href="#优化问题" class="headerlink" title="优化问题"></a>优化问题</h2><script type="math/tex; mode=display">
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><script type="math/tex; mode=display">
 \begin{alignat*}{2}
 \min \quad & \|X\|_*  \\ 
 \mbox{s.t.} \quad 
 & \mathcal{A}X = b
 \end{alignat*}</script><p>其中 $X \in \mathbb{R}^{m \times n}$ 为决策变量，$\mathcal{A}: \mathbb{R}^{m\times n} \rightarrow \mathbb{R}^p$ 为给定线性算子，$b \in \mathbb{R}^p$ 给定。</p>
-<h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>To be complete</p>
-<h2 id="算法迭代"><a href="#算法迭代" class="headerlink" title="算法迭代"></a>算法迭代</h2><ul>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>To be complete</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>给定参数：</p>
+<ul>
 <li>$\beta$：增广 Lagrangian 函数中惩罚项因子</li>
 <li>$\tau$：近端参数 Proximal parameter</li>
-<li>$g^{k}:=\mathcal{A}^{*}\left(\mathcal{A} X^{k}-b^{k}\right)=\mathcal{A}^{*}\left(\mathcal{A} X^{k}-b-\lambda^{k} / \beta\right)$</li>
 </ul>
 <p>迭代步骤为：</p>
 <script type="math/tex; mode=display">
 \begin{aligned} 
 X^{k+1} &= \mathop{\arg\min}\limits_{X} \left[ \|X\|_{*}+\frac{\beta}{2 \tau}\left\|X-\left(X^{k}-\tau g^{k}\right)\right\|_{F}^{2} \right]= \mathcal{D}_{\tau / \beta}\left(X^{k}-\tau g^{k}\right)  \\
-\lambda^{k+1} &=\lambda^{k}+\beta\left(b-\mathcal{A} X^{k+1}\right) \end{aligned}</script><p>在 $X^{k+1}$ 的迭代公式中，左边的式子在收敛性分析中比较重要，右端的式子给出了闭形式解 closed-form solution，从而使计算更加简单。</p>
-<h2 id="收敛性分析"><a href="#收敛性分析" class="headerlink" title="收敛性分析"></a>收敛性分析</h2><p>总体结论就是，当 $\tau$ 取合适的值时，对于任意固定的 $\beta &gt; 0$，以及任意的初值 $X_0 \in \mathbb{R}^{m \times n}$ 以及 $\lambda_0 \in \mathbb{R}^p$，算法迭代得到的序列最终收敛于最优解。</p>
+\lambda^{k+1} &=\lambda^{k}+\beta\left(b-\mathcal{A} X^{k+1}\right) \end{aligned}</script><p>其中 $g^{k}:=\mathcal{A}^{*}\left(\mathcal{A} X^{k}-b^{k}\right)=\mathcal{A}^{*}\left(\mathcal{A} X^{k}-b-\lambda^{k} / \beta\right)$。</p>
+<p>在 $X^{k+1}$ 的迭代公式中，左边的式子在收敛性分析中比较重要，右端的式子给出了闭形式解 closed-form solution，可以通过 SVD 分解来计算。</p>
+<h2 id="Convergence-Analysis"><a href="#Convergence-Analysis" class="headerlink" title="Convergence Analysis"></a>Convergence Analysis</h2><p>总体结论就是，当 $\tau$ 取合适的值时，对于任意固定的 $\beta &gt; 0$，以及任意的初值 $X_0 \in \mathbb{R}^{m \times n}$ 以及 $\lambda_0 \in \mathbb{R}^p$，算法迭代得到的序列最终收敛于最优解。</p>
 <h3 id="最优性条件"><a href="#最优性条件" class="headerlink" title="最优性条件"></a>最优性条件</h3><p>原问题必定有最优解 (<strong>Why?</strong>)，所以根据最优性条件：$\exists X^* \in \mathcal{A}^{-1}(b)$，使得</p>
 <script type="math/tex; mode=display">
 0 \in \partial\left\|X^{*}\right\|_{*} + N_{\mathcal{A}^{-1}(b)}(X^*)</script><p>其中左边表示次梯度，右边是 normal cone。</p>
@@ -282,7 +283,7 @@ N_{\mathcal{A}^{-1}(b)}(X^*)
 </blockquote>
 <h3 id="引理-1"><a href="#引理-1" class="headerlink" title="引理 1"></a>引理 1</h3><p>假设 $X^* \in \mathbb{R}^{m \times n}, \lambda^* \in \mathbb{R}^p$ 满足条件</p>
 <script type="math/tex; mode=display">
-\mathcal{A}^{*} \lambda^{*} \in \partial\left\|X^{*}\right\|_{*}, \quad \mathcal{A}(X) = b</script><p>固定 $\beta &gt; 0, \tau &gt; 0$，对任意给定的初值 $X_0 \in \mathbb{R}^{m \times n}$ 以及 $\lambda_0 \in \mathbb{R}^p$，迭代公式 (LALM)</p>
+\mathcal{A}^{*} \lambda^{*} \in \partial\left\|X^{*}\right\|_{*}, \quad \mathcal{A}X^* = b</script><p>固定 $\beta &gt; 0, \tau &gt; 0$，对任意给定的初值 $X_0 \in \mathbb{R}^{m \times n}$ 以及 $\lambda_0 \in \mathbb{R}^p$，迭代公式 (LALM)</p>
 <script type="math/tex; mode=display">
 \begin{aligned} 
 X^{k+1} &= \mathop{\arg\min}\limits_{X} \left[ \|X\|_{*}+\frac{\beta}{2 \tau}\left\|X-\left(X^{k}-\tau g^{k}\right)\right\|_{F}^{2} \right]= \mathcal{D}_{\tau / \beta}\left(X^{k}-\tau g^{k}\right)  \\
@@ -324,7 +325,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 \langle u, v\rangle_{G}=\frac{\beta}{\tau}\langle X, Y\rangle+\frac{1}{\beta} \lambda^{\top} \zeta</script><p>不难验证这是一个内积 (非负性，定性，齐次性，可加性，交换律)。</p>
 <p>其诱导的范数满足</p>
 <script type="math/tex; mode=display">
-\left\lVert u \right\rVert_G^2 = \langle u, u \rangle_G = \|X\|_F^2+ \|\lambda\|^2</script><p>在定义了这个内积之后，引理 1 的结论可以简写成：</p>
+\left\lVert u \right\rVert_G^2 = \langle u, u \rangle_G = \frac{\beta}{\tau} \|X\|_F^2+ \frac{1}{\beta} \|\lambda\|^2</script><p>在定义了这个内积之后，引理 1 的结论可以简写成：</p>
 <script type="math/tex; mode=display">
 \left\langle u^{k+1}-u^{*}, u^{k}-u^{k+1}\right\rangle_{G} \geq\left(\lambda^{k}-\lambda^{k+1}\right)^{\top} \mathcal{A}\left(X^{k}-X^{k+1}\right)</script><p>其中 $u^k = (X^k, \lambda^k)$。</p>
 <h3 id="引理-2"><a href="#引理-2" class="headerlink" title="引理 2"></a>引理 2</h3><p>沿用引理 1 的记号，并令 $u^k = (X^k, \lambda^k), \ u^{*} = (X^*, \lambda^*)$，在引理 1 的条件下，如果还有</p>
@@ -335,8 +336,8 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 <li>$\left\lVert u^k-u^{k+1} \right\rVert_G \rightarrow 0$</li>
 <li>$\{u_k\}$ 包含于一个紧集中</li>
 </ul>
-<p>第三条实际上是第一条的简单推论：因为 $\left\lVert u^k-u^* \right\rVert_G$ 有界。</p>
 <p><strong>证明</strong>：</p>
+<p>第三条实际上是第一条的简单推论：因为 $\left\lVert u^k-u^* \right\rVert_G$ 有界。</p>
 <p>对引理 1 的结论作适当变形，</p>
 <script type="math/tex; mode=display">
 \begin{split}
@@ -373,6 +374,34 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 <p>到这里就已经证明了 $\left\lVert u^k-u^* \right\rVert_G$ 非增，所以其收敛。于是</p>
 <script type="math/tex; mode=display">
 \left\|u^{k}-u^{*}\right\|_{G}^{2}-\left\|u^{k+1}-u^{*}\right\|_{G}^{2} \rightarrow 0, \quad k \rightarrow \infty</script><p>由于 $\nu &gt;0$，所以 $\left\lVert u^k-u^{k+1} \right\rVert_G^{2} \rightarrow 0$，引理 2 证毕。</p>
+<h3 id="收敛性结论"><a href="#收敛性结论" class="headerlink" title="收敛性结论"></a>收敛性结论</h3><p>对于任意给定 $\beta &gt; 0$, 以及给定的初值 $X_0 \in \mathbb{R}^{m \times n}$ 以及 $\lambda_0 \in \mathbb{R}^p$，当 $0 &lt; \tau &lt; 1/\rho(\mathcal{A}^{*}\mathcal{A})$ 成立时，LALM 迭代公式得到的序列 $\{(X^k, \lambda^k)\}$ 收敛于 $(X^*, \lambda^*)$，其中 $X^*$ 为问题的最优解。</p>
+<p><strong>证明</strong>：</p>
+<p>沿用引理 2 的符号，由于 $\left\lVert u^k-u^{k+1} \right\rVert_G \rightarrow 0$，所以</p>
+<script type="math/tex; mode=display">
+X^k - X^{k+1} \rightarrow 0, \quad \lambda^k - \lambda^{k+1} \rightarrow 0</script><p>因为 $\lambda^k = \lambda^{k-1} + \beta (b - \mathcal{A}X^k)$，所以 $\mathcal{A}X^k \rightarrow b$。</p>
+<p>因为 $\{u_k\}$ 包含于一个紧集中，所以存在其一个收敛子列 $\left\{ u^{k_j} \right\}$ 收敛至 $\hat{u} =\left(\hat{X} ; \hat{\lambda}\right)$，下面证明 $\left(\hat{X} ; \hat{\lambda}\right)$ 满足原优化问题的最优性条件，即</p>
+<script type="math/tex; mode=display">
+\mathcal{A}^{*} \hat{\lambda} \in \partial\left\|\hat{X}\right\|_{*}, \quad \mathcal{A}\hat{X} = b</script><p>由于 $\mathcal{A}X^k \rightarrow b$，所以 $\mathcal{A}X^{k_j} \rightarrow b$，从而 $\mathcal{A}\hat{X} = b$</p>
+<p>然后，在引理 1 的证明中，我们根据 $X_{k+1}$ 迭代公式中的最优性条件得到了</p>
+<script type="math/tex; mode=display">
+\frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k+1} \in \partial\left\|X^{k+1}\right\|_{*}</script><p>将 $\lambda^{k+1} =\lambda^{k}+\beta\left(b-\mathcal{A} X^{k+1}\right)$ 代入可以得到：</p>
+<script type="math/tex; mode=display">
+\frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k}+\beta\mathcal{A}^{*}\left(b-\mathcal{A} X^{k+1}\right) \in \partial\left\|X^{k+1}\right\|_{*}</script><p>由于 $X^{k_j} \rightarrow \hat{X}, X^k - X^{k+1} \rightarrow 0$，所以 $X^{k_j+1} \rightarrow \hat{X}$，于是在上式对 $k_j$ 取极限，可以得到</p>
+<script type="math/tex; mode=display">
+\mathcal{A}^{*} \hat{\lambda} \in \partial \| \hat{X} \|_*</script><blockquote>
+<p>这里论文中是直接取极限，不过右边是一个集合，其极限意义不明，但根据次微分定义将其写开还是可以证明的。对于凸函数 $f: \mathbb{R}^n \rightarrow \bar{\mathbb{R}}$，假设 $x_k \in \operatorname{dom} f$，以及</p>
+<script type="math/tex; mode=display">
+g_k \in \partial f(x_k)</script><p>即 $\forall y \in \mathbb{R}^n$，有</p>
+<script type="math/tex; mode=display">
+f(y) \geq f(x_k) + \langle g_k, y - x_k \rangle</script><p>如果 $k \rightarrow \infty$ 时，$x_k \rightarrow x \in \operatorname{dom} f$，以及 $g_k \rightarrow g$，那么对于任意固定的 $y \in \mathbb{R}^n$ (由于凸函数连续)，</p>
+<script type="math/tex; mode=display">
+f(y) \geq f(x) + \langle g, y - x \rangle</script><p>即 $g \in \partial f(x)$</p>
+</blockquote>
+<p>所以 $\left(\hat{X} ; \hat{\lambda}\right)$ 的确满足原优化问题的最优性条件，注意到引理 2 的第一个结论对于任意一对满足最优性条件的 $(X^*, \lambda^*)$ 成立，所以 $\left\lVert u^k-\hat{u} \right\rVert_G$ 非增，由于</p>
+<script type="math/tex; mode=display">
+\left\lVert u^{k_j}-\hat{u} \right\rVert_G \rightarrow 0, \quad j \rightarrow \infty</script><p>所以</p>
+<script type="math/tex; mode=display">
+\left\lVert u^{k}-\hat{u} \right\rVert_G \rightarrow 0, \quad k \rightarrow \infty</script><p>至此收敛性证毕。</p>
 
     </div>
 
@@ -436,7 +465,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#优化问题"><span class="nav-number">1.</span> <span class="nav-text">优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思路"><span class="nav-number">2.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法迭代"><span class="nav-number">3.</span> <span class="nav-text">算法迭代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛性分析"><span class="nav-number">4.</span> <span class="nav-text">收敛性分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优性条件"><span class="nav-number">4.1.</span> <span class="nav-text">最优性条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">4.2.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入内积"><span class="nav-number">4.3.</span> <span class="nav-text">引入内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-2"><span class="nav-number">4.4.</span> <span class="nav-text">引理 2</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convergence-Analysis"><span class="nav-number">4.</span> <span class="nav-text">Convergence Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最优性条件"><span class="nav-number">4.1.</span> <span class="nav-text">最优性条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">4.2.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入内积"><span class="nav-number">4.3.</span> <span class="nav-text">引入内积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-2"><span class="nav-number">4.4.</span> <span class="nav-text">引理 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收敛性结论"><span class="nav-number">4.5.</span> <span class="nav-text">收敛性结论</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
