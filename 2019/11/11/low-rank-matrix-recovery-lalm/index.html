@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="核范数的最小化问题算法，参考 Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization [J Yang, X Yuan] 中的第三部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T05:51:08.207Z">
+<meta property="og:updated_time" content="2019-11-11T06:03:40.271Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-11 01:47:30 / Modified: 13:51:08" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
+              <time title="Created: 2019-11-11 01:47:30 / Modified: 14:03:40" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -299,7 +299,7 @@ X^{k+1} &= \mathop{\arg\min}\limits_{X} \left[ \|X\|_{*}+\frac{\beta}{2 \tau}\le
 <script type="math/tex; mode=display">
 \begin{split}g^{k} &= \mathcal{A}^{*}\left(\mathcal{A} X^{k}-b^{k}\right) \\ &= \mathcal{A}^{*}\left(\mathcal{A} X^{k}-b-\lambda^{k} / \beta\right) \\&= \mathcal{A}^{*}\left(\mathcal{A} X^{k}-b-\lambda^{k+1} / \beta + b - \mathcal{A} X^{k+1} \right) \\&= -\mathcal{A}^{*}\lambda^{k+1}/\beta - \mathcal{A}^{*} \mathcal{A} (X^{k+1} - X^k)\end{split}</script><p>代入 $X^{k+1}$ 满足的最优性条件：</p>
 <script type="math/tex; mode=display">
-\begin{split}&-\frac{\beta}{\tau}\left[X^{k+1}-\left(X^{k}-\tau g^{k}\right)\right] \\=& \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k+1} \in \partial\left\|X^{k+1}\right\|_{*}\end{split}</script><p>注意到 $\mathcal{A}^{*} \lambda^{*} \in \partial\left|X^{*}\right|_{*}$，可以推出</p>
+\begin{split}&-\frac{\beta}{\tau}\left[X^{k+1}-\left(X^{k}-\tau g^{k}\right)\right] \\=& \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k+1} \in \partial\left\|X^{k+1}\right\|_{*}\end{split}</script><p>注意到 $\mathcal{A}^{*} \lambda^{*} \in \partial \left\lVert X^{*} \right\rVert_{*}$，可以推出</p>
 <script type="math/tex; mode=display">
 \left\langle X^{k+1}-X^{*}, \ \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*}\left(\lambda^{k+1}-\lambda^{*}\right)\right\rangle \geq 0</script><blockquote>
 <p>这是由于对于任意凸函数 $f: \mathbb{R}^n \rightarrow \bar{\mathbb{R}}$，以及 $x, y \in \operatorname{dom} f$，如果</p>
