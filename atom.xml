@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-11T16:54:53.679Z</updated>
+  <updated>2019-11-14T17:03:26.568Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,71 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Optimality Conditions</title>
+    <link href="http://yoursite.com/2019/11/15/optimality-conditions/"/>
+    <id>http://yoursite.com/2019/11/15/optimality-conditions/</id>
+    <published>2019-11-14T16:57:40.000Z</published>
+    <updated>2019-11-14T17:03:26.568Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;$\mathbb{R}^n$ 中常用优化问题最优性条件，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Convex Analysis in $\mathbb{R}^n$ - Subdifferential</title>
+    <link href="http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/"/>
+    <id>http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/</id>
+    <published>2019-11-14T16:56:59.000Z</published>
+    <updated>2019-11-14T17:02:42.704Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
+    
+    
+      <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
+    
+      <category term="Kone" scheme="http://yoursite.com/tags/Kone/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Convex Analysis in $\mathbb{R}^n$ - Convex Sets</title>
+    <link href="http://yoursite.com/2019/11/14/convex-analysis-Rn-convex-sets/"/>
+    <id>http://yoursite.com/2019/11/14/convex-analysis-Rn-convex-sets/</id>
+    <published>2019-11-13T18:30:25.000Z</published>
+    <updated>2019-11-14T16:55:25.148Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
+    
+    
+      <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
+    
+      <category term="Kone" scheme="http://yoursite.com/tags/Kone/"/>
+    
+  </entry>
   
   <entry>
     <title>Time Series Plot</title>
@@ -38,7 +103,7 @@
     <link href="http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/"/>
     <id>http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/</id>
     <published>2019-11-10T17:47:30.000Z</published>
-    <updated>2019-11-11T06:03:40.271Z</updated>
+    <updated>2019-11-14T12:35:43.413Z</updated>
     
     <summary type="html">
     

@@ -51,15 +51,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;categories&#x2F;index.html">
+  <meta name="description" content="$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 Nonlinear Optimization [Andrzej Ruszczynski]。">
+<meta name="keywords" content="Convex,Kone">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convex Analysis in $\mathbb{R}^n$ - Subdifferential">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;convex-analysis-Rn-subdifferntial&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 Nonlinear Optimization [Andrzej Ruszczynski]。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T15:24:43.380Z">
+<meta property="og:updated_time" content="2019-11-14T17:02:42.704Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/categories/">
+<link rel="canonical" href="http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/">
 
 
 <script id="page-configurations">
@@ -67,14 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>categories | Tsechin Lin's Blogs
-  </title>
+  <title>Convex Analysis in $\mathbb{R}^n$ - Subdifferential | Tsechin Lin's Blogs</title>
   
 
 
@@ -175,52 +177,120 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="en">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
-
-<div class="post-meta">
+      
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/">
 
-</div>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
 
-</header>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Convex Analysis in $\mathbb{R}^n$ - Subdifferential
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-15 00:56:59 / Modified: 01:02:42" itemprop="dateCreated datePublished" datetime="2019-11-15T00:56:59+08:00">2019-11-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Optimization/" itemprop="url" rel="index">
+                    <span itemprop="name">Optimization</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              3 categories in total
+        <p>$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 <u>Nonlinear Optimization</u> [Andrzej Ruszczynski]。</p>
+<a id="more"></a>
+<h2 id="Subgradient-amp-Subdifferential"><a href="#Subgradient-amp-Subdifferential" class="headerlink" title="Subgradient &amp; Subdifferential"></a>Subgradient &amp; Subdifferential</h2><p><strong>Definition</strong></p>
+<p>Let $f : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ be a proper convex function and $x \in \operatorname{dom} f$. A vector $g \in \mathbb{R}^n$ is called a <strong>subgradient</strong> of $f$ at $x$ if</p>
+<script type="math/tex; mode=display">
+f(y) \geq f(x) + \langle g, y-x \rangle, \quad \forall y \in \mathbb{R}^n</script><p>The set of all subgradients of $f$ at $x$ is called the <strong>subdifferential</strong> of $f$ at $x$ and is denoted by $\partial f(x)$.</p>
+<p><strong>Geometrical Interpretation</strong></p>
+<p>Let $f : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ be a proper convex function and $x \in \operatorname{dom} f$. If $g \in \partial f(x)$, then $(g, -1)$ is an element of the normal cone $N_{\operatorname{epi} f}(x, f(x))$,</p>
+<script type="math/tex; mode=display">
+\langle g, y-x \rangle + (-1) (v - f(x)) \leq 0, \quad \forall (y, v) \in \operatorname{epi} f</script><p>Conversely, if a vector $(u, \gamma) \in N_{\operatorname{epi} f}(x, f(x))$ and $\gamma &lt; 0$, then $g = −u/\gamma$ is a subgradient of $f$ at $x$.</p>
+<h2 id="Subdifferential-Calculus"><a href="#Subdifferential-Calculus" class="headerlink" title="Subdifferential Calculus"></a>Subdifferential Calculus</h2><p><strong>Scalar Multiplication</strong></p>
+<p>Assume that $f : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ is a convex function, $\alpha &gt; 0$, and $h(x) = \alpha f(x)$. Then $h$ is convex, and </p>
+<script type="math/tex; mode=display">
+\partial h(x) = \alpha \partial f(x), \quad \forall x \in \operatorname{dom} f</script><p><strong>Addition (Moreau–Rockafellar Theorem)</strong></p>
+<p>Assume that $f = f_1 + f_2$, where $f_1 : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ and $f_1 : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ are proper convex functions. If there exists a point $x_0 \in \operatorname{dom} f$ such that $f_1$ is continuous at $x_0$, then</p>
+<script type="math/tex; mode=display">
+\partial f(x) = \partial f_1(x) + \partial f_2(x), \quad \forall x \in \operatorname{dom} f</script><p><strong>Linear Transformation</strong></p>
+<p>Assume that $f : \mathbb{R}^m \rightarrow \overline{\mathbb{R}}$ is a convex function, and $A: \mathbb{R}^{m} \rightarrow \mathbb{R}^n$ is a linear operator. Let $h(x) = f(Ax)$, then </p>
+<script type="math/tex; mode=display">
+\partial h(x) = A^* \partial f(Ax), \quad \forall x \in \operatorname{dom} h</script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Convex/" rel="tag"># Convex</a>
+              <a href="/tags/Kone/" rel="tag"># Kone</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/14/convex-analysis-Rn-convex-sets/" rel="next" title="Convex Analysis in $\mathbb{R}^n$ - Convex Sets">
+                  <i class="fa fa-chevron-left"></i> Convex Analysis in $\mathbb{R}^n$ - Convex Sets
+                </a>
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Optimization/">Optimization</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Real-Analysis/">Real Analysis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">1</span></li></ul>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/15/optimality-conditions/" rel="prev" title="Optimality Conditions">
+                  Optimality Conditions <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
+      </footer>
     
+  </article>
+  
+  
+  
 
-    
-    
-    
   </div>
 
 
@@ -250,6 +320,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subgradient-amp-Subdifferential"><span class="nav-number">1.</span> <span class="nav-text">Subgradient &amp; Subdifferential</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subdifferential-Calculus"><span class="nav-number">2.</span> <span class="nav-text">Subdifferential Calculus</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -379,6 +450,54 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 

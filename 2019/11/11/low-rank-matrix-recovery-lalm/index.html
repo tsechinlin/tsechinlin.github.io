@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="核范数的最小化问题算法，参考 Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization [J Yang, X Yuan] 中的第三部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-11T06:03:40.271Z">
+<meta property="og:updated_time" content="2019-11-14T12:35:43.413Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/">
@@ -208,10 +208,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-11 01:47:30 / Modified: 14:03:40" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
+              <time title="Created: 2019-11-11 01:47:30" itemprop="dateCreated datePublished" datetime="2019-11-11T01:47:30+08:00">2019-11-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-14 20:35:43" itemprop="dateModified" datetime="2019-11-14T20:35:43+08:00">2019-11-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -266,8 +272,7 @@ X^{k+1} &= \mathop{\arg\min}\limits_{X} \left[ \|X\|_{*}+\frac{\beta}{2 \tau}\le
 <script type="math/tex; mode=display">
 \begin{split}
 N_{\mathcal{A}^{-1}(b)}(X^*) 
-&= [\operatorname{cone}(\mathcal{A}^{-1}(b) - X^*)]^{\circ} \\ 
-&= [\operatorname{cone}(\mathcal{A}^{-1}(b))]^{\circ} \\
+&= [\mathcal{A}^{-1}(b) - X^*]^{\circ} \\ 
 &= [\mathcal{A}^{-1}(0)]^{\circ} \\
 &= \left\{ \mathcal{A}^*\lambda: \lambda \in \mathbb{R}^n \right\}
 \end{split}</script><p>其中 $\operatorname{cone}(S)$ 表示由集合 $S$ 生成的锥，$S^\circ$ 表示 $S$ 的 polar cone。</p>
@@ -364,7 +369,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 \geq & \nu\left\|u^{k}-u^{k+1}\right\|_{G}^{2}
 \end{split}</script><p>其中 $\nu := \operatorname{min}(\delta^2, \delta/(1+\delta)) &gt; 0$</p>
 <blockquote>
-<p><strong>第一步</strong>利用 Cauchy-Schwarz 不等式：</p>
+<p><strong>第一步</strong>利用均值不等式：</p>
 <script type="math/tex; mode=display">
 2a^T b = 2(\eta^{1/2}a)^T\left(\frac{b}{\eta^{1/2}}\right) \geq -\eta \|a\|^2-\frac{\|b\|^2}{\eta}</script><p><strong>第二步</strong>利用谱半径性质 $\forall X \in \mathbb{R}^{m \times n}$，有</p>
 <script type="math/tex; mode=display">
@@ -484,7 +489,7 @@ f(y) \geq f(x) + \langle g, y - x \rangle</script><p>即 $g \in \partial f(x)$</
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -497,7 +502,7 @@ f(y) \geq f(x) + \langle g, y - x \rangle</script><p>即 $g \in \partial f(x)$</
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
