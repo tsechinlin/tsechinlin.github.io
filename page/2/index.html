@@ -52,29 +52,27 @@
 </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;index.html">
+<meta property="og:title" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-06T15:24:52.252Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/">
+<link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: false,
+    isHome: true,
     isPost: false,
-    isPage: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>tags | Tsechin Lin's Blogs
-  </title>
+  <title>Tsechin Lin's Blogs</title>
   
 
 
@@ -175,53 +173,178 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="en">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
-
-<div class="post-meta">
-  
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              9 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Borel-Set/" style="font-size: 12px; color: #ccc">Borel Set</a> <a href="/tags/Cardinality/" style="font-size: 12px; color: #ccc">Cardinality</a> <a href="/tags/Convex/" style="font-size: 30px; color: #111">Convex</a> <a href="/tags/Duality/" style="font-size: 12px; color: #ccc">Duality</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/Kone/" style="font-size: 21px; color: #6f6f6f">Kone</a> <a href="/tags/Low-Rank-Matrix-Recovery/" style="font-size: 21px; color: #6f6f6f">Low Rank Matrix Recovery</a> <a href="/tags/Nuclear-Norm/" style="font-size: 21px; color: #6f6f6f">Nuclear Norm</a> <a href="/tags/Smooth-Manifolds/" style="font-size: 21px; color: #6f6f6f">Smooth Manifolds</a>
-            </div>
-          </div>
         
-      </div>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/06/borel-sigma-cardinality/" class="post-title-link" itemprop="url">$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-06 23:42:19" itemprop="dateCreated datePublished" datetime="2019-11-06T23:42:19+08:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 12:18:15" itemprop="dateModified" datetime="2019-11-07T12:18:15+08:00">2019-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Real-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Real Analysis</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-      
+          <p>有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。<br>参考：<a href="https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf" target="_blank" rel="noopener">How Many Borel Sets are There?</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/06/borel-sigma-cardinality/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
-    
 
     
     
     
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/hexo-math-support/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/06/hexo-math-support/" class="post-title-link" itemprop="url">Hexo 支持数学公式渲染</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-06 21:54:12 / Modified: 23:19:29" itemprop="dateCreated datePublished" datetime="2019-11-06T21:54:12+08:00">2019-11-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在 Hexo 中渲染 MathJax 数学公式</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/06/hexo-math-support/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -379,6 +502,54 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 

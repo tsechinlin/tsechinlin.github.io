@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-14T17:03:26.568Z</updated>
+  <updated>2020-01-08T17:10:48.702Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微分流形笔记 - Integral Curves and Flows 积分曲线与流</title>
+    <link href="http://yoursite.com/2020/01/09/sm-integral-curves-and-flows/"/>
+    <id>http://yoursite.com/2020/01/09/sm-integral-curves-and-flows/</id>
+    <published>2020-01-08T17:01:02.000Z</published>
+    <updated>2020-01-08T17:10:48.702Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
+    
+    
+      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微分流形笔记 - Tangent Vectors 切向量</title>
+    <link href="http://yoursite.com/2019/12/28/sm-tangent-vectors/"/>
+    <id>http://yoursite.com/2019/12/28/sm-tangent-vectors/</id>
+    <published>2019-12-27T17:12:04.000Z</published>
+    <updated>2020-01-08T17:10:57.498Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
+    
+    
+      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
+    
+  </entry>
   
   <entry>
     <title>Optimality Conditions</title>
