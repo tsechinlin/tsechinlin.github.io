@@ -51,16 +51,16 @@
   };
 </script>
 
-  <meta name="description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。">
+  <meta name="description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第九章笔记。">
 <meta name="keywords" content="Smooth Manifolds">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微分流形笔记 - Integral Curves and Flows 积分曲线与流">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;sm-integral-curves-and-flows&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。">
+<meta property="og:description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第九章笔记。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;sm-integral-curves-and-flows&#x2F;ch8-lie-derivative.jpg">
-<meta property="og:updated_time" content="2020-01-08T17:10:48.702Z">
+<meta property="og:updated_time" content="2020-01-09T16:50:51.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;sm-integral-curves-and-flows&#x2F;ch8-lie-derivative.jpg">
 
@@ -210,10 +210,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-09 01:01:02 / Modified: 01:10:48" itemprop="dateCreated datePublished" datetime="2020-01-09T01:01:02+08:00">2020-01-09</time>
+              <time title="Created: 2020-01-09 01:01:02" itemprop="dateCreated datePublished" datetime="2020-01-09T01:01:02+08:00">2020-01-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-10 00:50:51" itemprop="dateModified" datetime="2020-01-10T00:50:51+08:00">2020-01-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -237,9 +243,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。</p>
+        <p>[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第九章笔记。</p>
 <a id="more"></a>
-<h2 id="Integral-Curves-积分曲线"><a href="#Integral-Curves-积分曲线" class="headerlink" title="Integral Curves 积分曲线"></a>Integral Curves 积分曲线</h2><p><strong>积分曲线的定义</strong></p>
+<h2 id="积分曲线-Integral-Curves"><a href="#积分曲线-Integral-Curves" class="headerlink" title="积分曲线 Integral Curves"></a>积分曲线 Integral Curves</h2><p><strong>积分曲线的定义</strong></p>
 <p>If $V$ is a vector field on $M$, an <strong>integral curve</strong> of $V$ is a differentiable curve $\gamma:J \rightarrow M$ whose velocity at each point is equal to the value of $V$ at that point.</p>
 <script type="math/tex; mode=display">
 \gamma'(t) = V_{\gamma(t)}</script><p>If $0 \in J$, the point $\gamma(0)$ is called the <strong>starting point</strong> of $\gamma$.</p>
@@ -256,9 +262,9 @@
 <p>Let $V$ be a smooth vector field on a smooth manifold $M$, let $J \subset \mathbb{R}$ be an interval, and let $\gamma: J \rightarrow M$ be an integral curve of $V$. For any $a \in \mathbb{R}$, the curve $\tilde{\gamma}: \tilde{J} \rightarrow M$ defined by $\tilde{\gamma} = \gamma(at)$ is an integral curve of the vector field $aV$, where $\tilde{J} = \{t: at \in J\}$.</p>
 <p><strong>Translation Lemma</strong></p>
 <p>Let $V$ be a smooth vector field on a smooth manifold $M$, let $J \subset \mathbb{R}$ be an interval, and let $\gamma: J \rightarrow M$ be an integral curve of $V$. For any $b \in \mathbb{R}$, the curve $\tilde{\gamma}: \tilde{J} \rightarrow M$ defined by $\tilde{\gamma} = \gamma(t + b)$ is an integral curve of the vector field $V$, where $\tilde{J} = \{t: t+b \in J\}$.</p>
-<p><strong>Naturality of Integral Curves 向量场的$F$相关与积分曲线</strong></p>
+<p><strong>向量场的 $F$-相关与积分曲线 Naturality of Integral Curves</strong></p>
 <p>Suppose $M$ and $N$ are smooth manifolds and $F: M \rightarrow N$ is a smooth map. Then $X \in \mathfrak{X}(M)$ and $Y \in \mathfrak{X}(M)$ are $F$-related if and only if $F$ takes integral curves of $X$ to integral curves of $Y$, meaning that for each integral curve $\gamma$ of $X$, $F \circ \gamma$ is an integral curve of $Y$.</p>
-<h2 id="Flows-流"><a href="#Flows-流" class="headerlink" title="Flows 流"></a>Flows 流</h2><h3 id="Global-Flows-全局流，单参数变换群"><a href="#Global-Flows-全局流，单参数变换群" class="headerlink" title="Global Flows 全局流，单参数变换群"></a>Global Flows 全局流，单参数变换群</h3><p><strong>全局流的定义</strong></p>
+<h2 id="流-Flows"><a href="#流-Flows" class="headerlink" title="流 Flows"></a>流 Flows</h2><h3 id="全局流，单参数变换群-Global-Flows"><a href="#全局流，单参数变换群-Global-Flows" class="headerlink" title="全局流，单参数变换群 Global Flows"></a>全局流，单参数变换群 Global Flows</h3><p><strong>全局流的定义</strong></p>
 <p>A <strong>global flow</strong> on $M$ (also called a <strong>one-parameter group action</strong>) to be a continuous map $\theta: \mathbb{R} \times M \rightarrow M$ satisfying the following properties for all $s, t \in \mathbb{R}$ and $p \in M$:</p>
 <script type="math/tex; mode=display">
 \theta(t, \theta(s, p))=\theta(t+s, p), \quad \theta(0, p)=p</script><ul>
@@ -278,7 +284,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 <li>The infinitesimal generator $V$ of $\theta$ is a smooth vector field on $M$.</li>
 <li>Each curve $\theta(p)$ is an integral curve of $V$.</li>
 </ul>
-<h3 id="Local-Flows-局部流，局部单参数变换群"><a href="#Local-Flows-局部流，局部单参数变换群" class="headerlink" title="Local Flows 局部流，局部单参数变换群"></a>Local Flows 局部流，局部单参数变换群</h3><p><strong>局部流的定义</strong></p>
+<h3 id="局部流，局部单参数变换群-Local-Flows"><a href="#局部流，局部单参数变换群-Local-Flows" class="headerlink" title="局部流，局部单参数变换群 Local Flows"></a>局部流，局部单参数变换群 Local Flows</h3><p><strong>局部流的定义</strong></p>
 <p>If $M$ is a manifold, a <strong>flow domain</strong> for $M$ is an open subset $\mathfrak{D} \subset \mathbb{R} \times M$ with the property that for each $p \in M$, the set $\mathfrak{D}^{(p)} = \{t \in \mathbb{R}: (t,p) \in \mathfrak{D} \}$ is an open interval containing $0$.</p>
 <p>A <strong>flow (local flow, local one-parameter group action)</strong> on $M$ is a continuous map $\theta: \mathfrak{D} \rightarrow M$, where $\mathfrak{D} \subset \mathbb{R} \times M$ is a flow domain, that satisfies the following group laws:</p>
 <ul>
@@ -298,7 +304,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 <li>The infinitesimal generator $V$ of $\theta$ is a smooth vector field.</li>
 <li>Each curve $\theta(p)$ is an integral curve of $V$.</li>
 </ul>
-<h3 id="Fundamental-Theorem-on-Flows-极大局部流的存在唯一性定理"><a href="#Fundamental-Theorem-on-Flows-极大局部流的存在唯一性定理" class="headerlink" title="Fundamental Theorem on Flows 极大局部流的存在唯一性定理"></a>Fundamental Theorem on Flows 极大局部流的存在唯一性定理</h3><p><strong>积分曲线，流的极大性</strong></p>
+<h3 id="极大局部流的存在唯一性定理-Fundamental-Theorem-on-Flows"><a href="#极大局部流的存在唯一性定理-Fundamental-Theorem-on-Flows" class="headerlink" title="极大局部流的存在唯一性定理 Fundamental Theorem on Flows"></a>极大局部流的存在唯一性定理 Fundamental Theorem on Flows</h3><p><strong>积分曲线，流的极大性</strong></p>
 <p>A <strong>maximal integral curve</strong> is one that cannot be extended to an integral curve on any larger open interval.</p>
 <p>A <strong>maximal flow</strong> is a flow that admits no extension to a flow on a larger flow domain.</p>
 <p><strong>局部流基本定理：向量场生成的极大局部流</strong></p>
@@ -309,11 +315,11 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 <li>For each $t \in R$, the set $M_t$ is open in $M$, and $\theta_t: M_t \rightarrow M_{-t}$ is a diffeomorphism with inverse $\theta_{-t}$.</li>
 </ul>
 <p>This flow $\theta$ is called <strong>the flow generated by</strong> $V$, or just <strong>the flow of</strong> $V$.</p>
-<p><strong>向量场的$F$相关与局部流</strong></p>
+<p><strong>向量场的 $F$-相关与局部流</strong></p>
 <p>Suppose $M$ and $N$ are smooth manifolds, $F: M \rightarrow N$ is a smooth map, $X \in \mathfrak{X}(M)$ and $Y \in \mathfrak{X}(M)$. Let $\theta$ be the flow of $X$ and $\eta$ the flow of $Y$. If $X$ and $Y$ are $F$-related, then for each $t \in \mathbb{R}$, $F(M_t) \subset N_t$ and $\eta_t \circ F = F \circ \theta_t$ on $M_t$.</p>
 <p><strong>微分同胚与局部流</strong></p>
 <p>Let $F: M \rightarrow N$ be a diffeomorphism. If $X \in \mathfrak{X}(M)$ and $\theta$ is the flow of $X$, then the flow of $F_{*}X$ is $\eta_t =F \circ \theta_t \circ F^{-1}$, with domain $N_t = F(M_t)$ for each $t \in \mathbb{R}$.</p>
-<h2 id="Lie-Derivatives-李导数"><a href="#Lie-Derivatives-李导数" class="headerlink" title="Lie Derivatives 李导数"></a>Lie Derivatives 李导数</h2><p><strong>Lie导数的定义：0 时刻向量场的变动率</strong></p>
+<h2 id="李导数-Lie-Derivatives"><a href="#李导数-Lie-Derivatives" class="headerlink" title="李导数 Lie Derivatives"></a>李导数 Lie Derivatives</h2><p><strong>Lie导数的定义：0 时刻向量场的变动率</strong></p>
 <p>Suppose $M$ is a smooth manifold, $V$ is a smooth vector field on $M$, and $\theta$ is the flow of $V$. For any smooth vector field $W$ on $M$, define a rough vector field on $M$, denoted by $\mathscr{L}_VW$ and called the Lie derivative of $W$ with respect to $V$, by</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -340,7 +346,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 <p><strong>向量场在更一般的时刻的变动率</strong></p>
 <p>Suppose $M$ is a smooth manifold and $V, W \in \mathfrak{X}(M)$. Let $\theta$ be the flow of $V$. For any $(t_0, p)$ in the domain of $\theta$,</p>
 <script type="math/tex; mode=display">
-\left.\frac{d}{d t}\right|_{t=t_{0}} d\left(\theta_{-t}\right)_{\theta_{t}(p)}\left(W_{\theta_{t}(p)}\right)=d\left(\theta_{-t_{0}}\right)\left(\left(\mathscr{L}_{V} W\right)_{\theta_{t_{0}}(p)}\right)</script><h2 id="Applications-of-Flows-and-Lie-Derivatives-流与李导数的应用"><a href="#Applications-of-Flows-and-Lie-Derivatives-流与李导数的应用" class="headerlink" title="Applications of Flows and Lie Derivatives 流与李导数的应用"></a>Applications of Flows and Lie Derivatives 流与李导数的应用</h2><h3 id="Complete-Vector-Fields-完备向量场"><a href="#Complete-Vector-Fields-完备向量场" class="headerlink" title="Complete Vector Fields 完备向量场"></a>Complete Vector Fields 完备向量场</h3><p><strong>完备向量场的定义：生成全局流</strong></p>
+\left.\frac{d}{d t}\right|_{t=t_{0}} d\left(\theta_{-t}\right)_{\theta_{t}(p)}\left(W_{\theta_{t}(p)}\right)=d\left(\theta_{-t_{0}}\right)\left(\left(\mathscr{L}_{V} W\right)_{\theta_{t_{0}}(p)}\right)</script><h2 id="流与李导数的应用-Applications-of-Flows-and-Lie-Derivatives"><a href="#流与李导数的应用-Applications-of-Flows-and-Lie-Derivatives" class="headerlink" title="流与李导数的应用 Applications of Flows and Lie Derivatives"></a>流与李导数的应用 Applications of Flows and Lie Derivatives</h2><h3 id="完备向量场-Complete-Vector-Fields"><a href="#完备向量场-Complete-Vector-Fields" class="headerlink" title="完备向量场 Complete Vector Fields"></a>完备向量场 Complete Vector Fields</h3><p><strong>完备向量场的定义：生成全局流</strong></p>
 <p>A smooth vector field is <strong>complete</strong> if it generates a global flow, or equivalently if each of its maximal integral curves is defined for all $t \in \mathbb{R}$.</p>
 <p><strong>完备向量场的充分条件</strong></p>
 <ul>
@@ -352,7 +358,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 <li><p>On a compact smooth manifold, every smooth vector field is complete.</p>
 </li>
 </ul>
-<h3 id="Regular-Points-and-Singular-Points-正则点与奇异点"><a href="#Regular-Points-and-Singular-Points-正则点与奇异点" class="headerlink" title="Regular Points and Singular Points 正则点与奇异点"></a>Regular Points and Singular Points 正则点与奇异点</h3><p><strong>定义</strong></p>
+<h3 id="正则点与奇异点-Regular-Points-and-Singular-Points"><a href="#正则点与奇异点-Regular-Points-and-Singular-Points" class="headerlink" title="正则点与奇异点 Regular Points and Singular Points"></a>正则点与奇异点 Regular Points and Singular Points</h3><p><strong>定义</strong></p>
 <p>If $V$ is a vector field on $M$, a point $p \in M$ is said to be a <strong>singular point</strong> of $V$ if $V_p = 0$, and a <strong>regular point</strong> otherwise.</p>
 <p><strong>积分曲线的性质</strong></p>
 <p>Let $V$ be a smooth vector field on a smooth manifold $M$, and let $\theta: \mathfrak{D} \rightarrow M$ be its flow. </p>
@@ -362,7 +368,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 </ul>
 <p><strong>Canonical Form Near a Regular Point 正则点附近向量场的规范形式</strong></p>
 <p>Let $V$ be a smooth vector field on a smooth manifold $M$, and let $p \in M$ be a regular point of $V$. Then there exist smooth coordinates $(s^i)$ on some neighborhood of $p$ in which $V$ has the coordinate representation $\partial/\partial s^1$.</p>
-<h3 id="Commuting-Vector-Fields-可交换向量场"><a href="#Commuting-Vector-Fields-可交换向量场" class="headerlink" title="Commuting Vector Fields 可交换向量场"></a>Commuting Vector Fields 可交换向量场</h3><p><strong>定义</strong></p>
+<h3 id="可交换向量场-Commuting-Vector-Fields"><a href="#可交换向量场-Commuting-Vector-Fields" class="headerlink" title="可交换向量场 Commuting Vector Fields"></a>可交换向量场 Commuting Vector Fields</h3><p><strong>定义</strong></p>
 <p><strong>向量场可交换</strong> Suppose $M$ is a smooth manifold, and $V, W \in \mathfrak{X}(M)$, $V$ and $W$ commute if $VWf = WVf$ for every smooth function $f$, or equivalently if $[V, W] \equiv 0$.</p>
 <p><strong>向量场在某个流的作用下不变</strong> If $\theta$ is a smooth flow, a vector field $W$ is said to be invariant under $\theta$ if $W|_{M_t}$ is $\theta_t$ -related to $W|_{M_{-t}}$ for each $t$ , or equivalently that $d\left(\theta_{t}\right)_{p}\left(W_{p}\right)=W_{\theta_{t}(p)}$ for all $(t, p)$ in the domain of $\theta$.</p>
 <p><strong>局部流可交换</strong> If $\theta$ and $\psi$ are flows on $M$, we say that $\theta$ and $\psi$ commute if the following condition holds for every $p \in M$: whenever $J$ and $K$ are open intervals containing $0$ such that one of the expressions $\theta_t \circ \psi_s (p)$ or  $\psi_s \circ \theta_t (p)$ is defined for all $(s,t) \in J\times K$, both are defined and they are equal.</p>
@@ -438,7 +444,7 @@ V_p = {\theta^{(p)}}'(0)</script><p>The assignment $p \mapsto V_p$ is a rough ve
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integral-Curves-积分曲线"><span class="nav-number">1.</span> <span class="nav-text">Integral Curves 积分曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flows-流"><span class="nav-number">2.</span> <span class="nav-text">Flows 流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Flows-全局流，单参数变换群"><span class="nav-number">2.1.</span> <span class="nav-text">Global Flows 全局流，单参数变换群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-Flows-局部流，局部单参数变换群"><span class="nav-number">2.2.</span> <span class="nav-text">Local Flows 局部流，局部单参数变换群</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fundamental-Theorem-on-Flows-极大局部流的存在唯一性定理"><span class="nav-number">2.3.</span> <span class="nav-text">Fundamental Theorem on Flows 极大局部流的存在唯一性定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lie-Derivatives-李导数"><span class="nav-number">3.</span> <span class="nav-text">Lie Derivatives 李导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications-of-Flows-and-Lie-Derivatives-流与李导数的应用"><span class="nav-number">4.</span> <span class="nav-text">Applications of Flows and Lie Derivatives 流与李导数的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Complete-Vector-Fields-完备向量场"><span class="nav-number">4.1.</span> <span class="nav-text">Complete Vector Fields 完备向量场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-Points-and-Singular-Points-正则点与奇异点"><span class="nav-number">4.2.</span> <span class="nav-text">Regular Points and Singular Points 正则点与奇异点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Commuting-Vector-Fields-可交换向量场"><span class="nav-number">4.3.</span> <span class="nav-text">Commuting Vector Fields 可交换向量场</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#积分曲线-Integral-Curves"><span class="nav-number">1.</span> <span class="nav-text">积分曲线 Integral Curves</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流-Flows"><span class="nav-number">2.</span> <span class="nav-text">流 Flows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局流，单参数变换群-Global-Flows"><span class="nav-number">2.1.</span> <span class="nav-text">全局流，单参数变换群 Global Flows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部流，局部单参数变换群-Local-Flows"><span class="nav-number">2.2.</span> <span class="nav-text">局部流，局部单参数变换群 Local Flows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极大局部流的存在唯一性定理-Fundamental-Theorem-on-Flows"><span class="nav-number">2.3.</span> <span class="nav-text">极大局部流的存在唯一性定理 Fundamental Theorem on Flows</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#李导数-Lie-Derivatives"><span class="nav-number">3.</span> <span class="nav-text">李导数 Lie Derivatives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流与李导数的应用-Applications-of-Flows-and-Lie-Derivatives"><span class="nav-number">4.</span> <span class="nav-text">流与李导数的应用 Applications of Flows and Lie Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完备向量场-Complete-Vector-Fields"><span class="nav-number">4.1.</span> <span class="nav-text">完备向量场 Complete Vector Fields</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则点与奇异点-Regular-Points-and-Singular-Points"><span class="nav-number">4.2.</span> <span class="nav-text">正则点与奇异点 Regular Points and Singular Points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可交换向量场-Commuting-Vector-Fields"><span class="nav-number">4.3.</span> <span class="nav-text">可交换向量场 Commuting Vector Fields</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

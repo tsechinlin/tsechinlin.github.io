@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="核范数的最小化问题算法，参考 Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization [J Yang, X Yuan] 中的第三部分。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-14T12:35:43.413Z">
+<meta property="og:updated_time" content="2020-01-09T16:49:11.100Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/11/low-rank-matrix-recovery-lalm/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-14 20:35:43" itemprop="dateModified" datetime="2019-11-14T20:35:43+08:00">2019-11-14</time>
+                <time title="Modified: 2020-01-10 00:49:11" itemprop="dateModified" datetime="2020-01-10T00:49:11+08:00">2020-01-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +280,7 @@ N_{\mathcal{A}^{-1}(b)}(X^*)
 <script type="math/tex; mode=display">
 \mathcal{A}^{*} \lambda^{*} \in \partial\left\|X^{*}\right\|_{*}</script><p>并且这个条件是充分的，也就是说，如果存在 $X^{*} \in \mathbb{R}^{m \times n}, \lambda^* \in \mathbb{R}^p$ 使得</p>
 <script type="math/tex; mode=display">
-\mathcal{A}^{*} \lambda^{*} \in \partial\left\|X^{*}\right\|_{*}, \quad \mathcal{A}(X) = b</script><p>那么 $X^*$ 为该问题的解。</p>
+\mathcal{A}^{*} \lambda^{*} \in \partial\left\|X^{*}\right\|_{*}, \quad \mathcal{A}X = b</script><p>那么 $X^*$ 为该问题的解。</p>
 <blockquote>
 <p>核范数的次梯度为 (后面的证明中基本不会用到)</p>
 <script type="math/tex; mode=display">
@@ -307,7 +307,7 @@ X^{k+1} &= \mathop{\arg\min}\limits_{X} \left[ \|X\|_{*}+\frac{\beta}{2 \tau}\le
 \begin{split}&-\frac{\beta}{\tau}\left[X^{k+1}-\left(X^{k}-\tau g^{k}\right)\right] \\=& \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k+1} \in \partial\left\|X^{k+1}\right\|_{*}\end{split}</script><p>注意到 $\mathcal{A}^{*} \lambda^{*} \in \partial \left\lVert X^{*} \right\rVert_{*}$，可以推出</p>
 <script type="math/tex; mode=display">
 \left\langle X^{k+1}-X^{*}, \ \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*}\left(\lambda^{k+1}-\lambda^{*}\right)\right\rangle \geq 0</script><blockquote>
-<p>这是由于对于任意凸函数 $f: \mathbb{R}^n \rightarrow \bar{\mathbb{R}}$，以及 $x, y \in \operatorname{dom} f$，如果</p>
+<p>这是由于对于任意凸函数 $f: \mathbb{R}^n \rightarrow {\mathbb{R}}$，以及 $x, y \in \operatorname{dom} f$，如果</p>
 <script type="math/tex; mode=display">
 g_x \in \partial f(x), \quad g_y \in \partial f(y)</script><p>那么根据次梯度的定义</p>
 <script type="math/tex; mode=display">
@@ -348,7 +348,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 \begin{split}
 \left(\lambda^{k}-\lambda^{k+1}\right)^{\top} \mathcal{A}\left(X^{k}-X^{k+1}\right) &\leq \left\langle u^{k+1}-u^{*}, u^{k}-u^{k+1}\right\rangle_{G} \\
 & = \left\langle u^{k}-u^{*} + u^{k+1}-u^{k}, u^{k}-u^{k+1}\right\rangle_{G} \\
-& = \left\langle u^{k}-u^{*}, u^{k}-u^{k+1}\right\rangle_{G} - \left\lVert u^k-u^{k+1} \right\rVert_G
+& = \left\langle u^{k}-u^{*}, u^{k}-u^{k+1}\right\rangle_{G} - \left\lVert u^k-u^{k+1} \right\rVert_G^2
 \end{split}</script><p>于是</p>
 <script type="math/tex; mode=display">
 \begin{split} 
@@ -356,7 +356,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 =& \left\langle u^{k} + u^{k+1} -2u^{*}, u^{k}-u^{k+1}\right\rangle_{G} \\
 =& 2\left\langle u^{k}-u^{*}, u^{k}-u^{k+1}\right\rangle_{G}-\left\|u^{k}-u^{k+1}\right\|_{G}^{2} \\ 
 \geq & 2\left\|u^{k}-u^{k+1}\right\|_{G}^{2}+2\left(\lambda^{k}-\lambda^{k+1}\right)^{\top} \mathcal{A}\left(X^{k}-X^{k+1}\right)-\left\|u^{k}-u^{k+1}\right\|_{G}^{2} \\
-=& \frac{\beta}{\tau}\left\|X^{k}-X^{k+1}\right\|_{F}^{2}+\frac{1}{\beta}\left\|\lambda^{k}-\lambda^{k+1}\right\|^{2}+2\left(\lambda^{k}-\lambda^{k+1}\right)^{*} \mathcal{A}\left(X^{k}-X^{k+1}\right) 
+=& \frac{\beta}{\tau}\left\|X^{k}-X^{k+1}\right\|_{F}^{2}+\frac{1}{\beta}\left\|\lambda^{k}-\lambda^{k+1}\right\|^{2}+2\left(\lambda^{k}-\lambda^{k+1}\right)^{T} \mathcal{A}\left(X^{k}-X^{k+1}\right) 
 \end{split}</script><p>定义 $\delta := 1 - \tau \rho(\mathcal{A}^{*}\mathcal{A}) &gt; 0$，以及</p>
 <script type="math/tex; mode=display">
 \eta := \frac{1}{\beta(1 + \delta)} > 0</script><p>那么</p>
@@ -369,7 +369,7 @@ f(y) \geq f(x) + \langle g_x, y-x \rangle, \quad f(x) \geq f(y) + \langle g_y, x
 \geq & \nu\left\|u^{k}-u^{k+1}\right\|_{G}^{2}
 \end{split}</script><p>其中 $\nu := \operatorname{min}(\delta^2, \delta/(1+\delta)) &gt; 0$</p>
 <blockquote>
-<p><strong>第一步</strong>利用均值不等式：</p>
+<p><strong>第一步</strong>利用不等式：</p>
 <script type="math/tex; mode=display">
 2a^T b = 2(\eta^{1/2}a)^T\left(\frac{b}{\eta^{1/2}}\right) \geq -\eta \|a\|^2-\frac{\|b\|^2}{\eta}</script><p><strong>第二步</strong>利用谱半径性质 $\forall X \in \mathbb{R}^{m \times n}$，有</p>
 <script type="math/tex; mode=display">
@@ -394,7 +394,7 @@ X^k - X^{k+1} \rightarrow 0, \quad \lambda^k - \lambda^{k+1} \rightarrow 0</scri
 \frac{\beta}{\tau}\left(I-\tau \mathcal{A}^{*} \mathcal{A}\right)\left(X^{k}-X^{k+1}\right)+\mathcal{A}^{*} \lambda^{k}+\beta\mathcal{A}^{*}\left(b-\mathcal{A} X^{k+1}\right) \in \partial\left\|X^{k+1}\right\|_{*}</script><p>由于 $X^{k_j} \rightarrow \hat{X}, X^k - X^{k+1} \rightarrow 0$，所以 $X^{k_j+1} \rightarrow \hat{X}$，于是在上式对 $k_j$ 取极限，可以得到</p>
 <script type="math/tex; mode=display">
 \mathcal{A}^{*} \hat{\lambda} \in \partial \| \hat{X} \|_*</script><blockquote>
-<p>这里论文中是直接取极限，不过右边是一个集合，其极限意义不明，但根据次微分定义将其写开还是可以证明的。对于凸函数 $f: \mathbb{R}^n \rightarrow \bar{\mathbb{R}}$，假设 $x_k \in \operatorname{dom} f$，以及</p>
+<p>这里论文中是直接取极限，不过右边是一个集合，其极限意义不明，但根据次微分定义将其写开还是可以证明的。对于凸函数 $f: \mathbb{R}^n \rightarrow {\mathbb{R}}$，假设 $x_k \in \operatorname{dom} f$，以及</p>
 <script type="math/tex; mode=display">
 g_k \in \partial f(x_k)</script><p>即 $\forall y \in \mathbb{R}^n$，有</p>
 <script type="math/tex; mode=display">
