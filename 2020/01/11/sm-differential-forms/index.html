@@ -51,15 +51,15 @@
   };
 </script>
 
-  <meta name="description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。  外代数 The Algebra of Alternating Tensors反称张量的定义与基本性质 Covariant Tensors反称张量的定义 Assume $V$ is a finite-dimensional real vector space. A co">
+  <meta name="description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。 外代数 The Algebra of Alternating Tensors反称张量的定义与基本性质 Covariant Tensors反称张量的定义 Assume $V$ is a finite-dimensional real vector space. A cov">
 <meta name="keywords" content="Smooth Manifolds">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微分流形笔记 - 微分形式 Differential Forms">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;11&#x2F;sm-differential-forms&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。  外代数 The Algebra of Alternating Tensors反称张量的定义与基本性质 Covariant Tensors反称张量的定义 Assume $V$ is a finite-dimensional real vector space. A co">
+<meta property="og:description" content="[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。 外代数 The Algebra of Alternating Tensors反称张量的定义与基本性质 Covariant Tensors反称张量的定义 Assume $V$ is a finite-dimensional real vector space. A cov">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-01-10T16:32:46.488Z">
+<meta property="og:updated_time" content="2020-01-10T16:39:56.497Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/01/11/sm-differential-forms/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-01-11 00:31:18 / Modified: 00:32:46" itemprop="dateCreated datePublished" datetime="2020-01-11T00:31:18+08:00">2020-01-11</time>
+              <time title="Created: 2020-01-11 00:31:18 / Modified: 00:39:56" itemprop="dateCreated datePublished" datetime="2020-01-11T00:31:18+08:00">2020-01-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -236,7 +236,7 @@
 
       
         <p>[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。</p>
-<h1 id=""><a href="#" class="headerlink" title=" "></a> </h1><h2 id="外代数-The-Algebra-of-Alternating-Tensors"><a href="#外代数-The-Algebra-of-Alternating-Tensors" class="headerlink" title="外代数 The Algebra of Alternating Tensors"></a>外代数 The Algebra of Alternating Tensors</h2><h3 id="反称张量的定义与基本性质-Covariant-Tensors"><a href="#反称张量的定义与基本性质-Covariant-Tensors" class="headerlink" title="反称张量的定义与基本性质 Covariant Tensors"></a>反称张量的定义与基本性质 Covariant Tensors</h3><p><strong>反称张量的定义</strong></p>
+<h2 id="外代数-The-Algebra-of-Alternating-Tensors"><a href="#外代数-The-Algebra-of-Alternating-Tensors" class="headerlink" title="外代数 The Algebra of Alternating Tensors"></a>外代数 The Algebra of Alternating Tensors</h2><h3 id="反称张量的定义与基本性质-Covariant-Tensors"><a href="#反称张量的定义与基本性质-Covariant-Tensors" class="headerlink" title="反称张量的定义与基本性质 Covariant Tensors"></a>反称张量的定义与基本性质 Covariant Tensors</h3><p><strong>反称张量的定义</strong></p>
 <p>Assume $V$ is a finite-dimensional real vector space. A covariant $k$-tensor $\alpha$ on $V$ is said to be <strong>alternating (or antisymmetric or skew-symmetric)</strong> if it changes sign whenever two of its arguments are interchanged:</p>
 <p>For all vectors $v_1, \cdots, v_k \in V$ and every pair of distinct indices $1 \leq i &lt; j \leq k$ it satisfies</p>
 <script type="math/tex; mode=display">
@@ -244,7 +244,7 @@
 <p><strong>$0$ 阶张量，$1$ 阶张量为反称张量</strong></p>
 <p>Every $0$-tensor (which is just a real number), $1$-tensor (covector) is alternating.</p>
 <p><strong>$k$ 阶反称张量全体构成子空间</strong></p>
-<p>The subspace of all alternating covariant $k$-tensors on $V$ is denoted by $\Lambda^k(V^<em>) \subset T^k(V^</em>)$.</p>
+<p>The subspace of all alternating covariant $k$-tensors on $V$ is denoted by $\Lambda^k(V^*) \subset T^k(V^*)$.</p>
 <p><strong>反称张量与指标变换</strong></p>
 <p>The following are equivalent for a covariant $k$-tensor $\alpha$ on a finite-dimensional vector space $V$:</p>
 <ul>
@@ -268,7 +268,7 @@
 \alpha\left(v_{1}, \ldots, w, \ldots, w, \ldots, v_{k}\right)=0</script></li>
 </ul>
 <h3 id="反称化算子-Alternation"><a href="#反称化算子-Alternation" class="headerlink" title="反称化算子 Alternation"></a>反称化算子 Alternation</h3><p><strong>反称化算子的定义</strong></p>
-<p>Assume $V$ is a finite-dimensional real vector space, define a projection $\operatorname { Alt } :T^{k}\left(V^{<em>}\right) \rightarrow \Lambda^{k}\left(V^{</em>}\right)$, called <strong>alternation</strong>, as follows:</p>
+<p>Assume $V$ is a finite-dimensional real vector space, define a projection $\operatorname { Alt } :T^{k}\left(V^{*}\right) \rightarrow \Lambda^{k}\left(V^{*}\right)$, called <strong>alternation</strong>, as follows:</p>
 <script type="math/tex; mode=display">
 \operatorname { Alt } \alpha=\frac{1}{k !} \sum_{\sigma \in S_{k}}(\operatorname{sgn} \sigma)\left(^{\sigma} \alpha\right)</script><p>This means for any vectors $v_1, \cdots, v_k \in V$,</p>
 <script type="math/tex; mode=display">
@@ -283,12 +283,12 @@
 <p>If $I$ is a multi-index of length $k$ and $\sigma \in S_k$, define</p>
 <script type="math/tex; mode=display">
 I_\sigma = (i_{\sigma(1)}, \cdots, i_{\sigma(k)})</script><p>Note that $I_{\sigma \tau}=\left(I_{\sigma}\right)_{\tau}$ for $\sigma, \tau \in S_{k}$.</p>
-<p>A multi-index $I = (i_1, \cdots, i_k)$ is said to be <strong>increasing</strong> if $i_1 &lt; \cdots &lt;i_k$. It is useful to use a primed summation sign to denote a sum over only increasing multi-indices,</p>
+<p>A multi-index $I = (i_1, \cdots, i_k)$ is said to be <strong>increasing</strong> if $i_1 &lt; \cdots &lt; i_k$. It is useful to use a primed summation sign to denote a sum over only increasing multi-indices,</p>
 <script type="math/tex; mode=display">
-\begin{equation}\sum_{I}' \alpha_{I} \varepsilon^{I}=\sum_{\left\{I: i_{1}<\cdots<i_{k}\right\}} \alpha_{I} \varepsilon^{I}\end{equation}</script><p><strong>多重指标与 $\delta$ 行列式</strong></p>
+\sum_{I}' \alpha_{I} \varepsilon^{I}=\sum_{\left\{I: i_{1}<\cdots<i_{k}\right\}} \alpha_{I} \varepsilon^{I}</script><p><strong>多重指标与 $\delta$ 行列式</strong></p>
 <p>If $I$ and $J$ are multi-indices of length $k$, define</p>
 <script type="math/tex; mode=display">
-\begin{equation}\delta_{J}^{I}=\operatorname{det}\left(\begin{array}{ccc}{\delta_{j_{1}}^{i_{1}}} & {\cdots} & {\delta_{j_{k}}^{i_{1}}} \\{\vdots} & {\ddots} & {\vdots} \\{\delta_{j_{1}}^{i_{k}}} & {\cdots} & {\delta_{j_{k}}^{i_{k}}}\end{array}\right)\end{equation}</script><p>Notice that</p>
+\begin{equation*}\delta_{J}^{I}=\operatorname{det}\left(\begin{array}{ccc}{\delta_{j_{1}}^{i_{1}}} & {\cdots} & {\delta_{j_{k}}^{i_{1}}} \\{\vdots} & {\ddots} & {\vdots} \\{\delta_{j_{1}}^{i_{k}}} & {\cdots} & {\delta_{j_{k}}^{i_{k}}}\end{array}\right)\end{equation*}</script><p>Notice that</p>
 <script type="math/tex; mode=display">
 \begin{equation}\delta_{J}^{I}=\left\{\begin{array}{ll}{\operatorname{sgn} \sigma} & {\text { if neither } I \text { nor } J \text { has a repeated index and } J=I_{\sigma} \text { for some } \sigma \in S_{k}} \\{0} & {\text { if } I \text { or } J \text { has a repeated index or } J \text { is not a permutation of } I}\end{array}\right.\end{equation}</script><p><strong>基本反称张量的定义</strong></p>
 <p>Let $V$ be an $n$-dimensional vector space, and suppose $\left(\varepsilon^1, \cdots, \varepsilon^n \right)$ is any basis for $V^*$. For each multi-index $I = (i_1, \cdots, i_k)$ such that $1 \leq i_1, \cdots, i_k \leq n$, define a covariant $k$-tensor $\varepsilon^I = \varepsilon^{i_1 \cdots i_k}$ by </p>
@@ -303,7 +303,7 @@ I_\sigma = (i_{\sigma(1)}, \cdots, i_{\sigma(k)})</script><p>Note that $I_{\sigm
 </li>
 <li><p>The result of evaluating $\varepsilon^I$ on a sequence of basis vectors is</p>
 <script type="math/tex; mode=display">
-\begin{equation}\varepsilon^{I}\left(E_{j_{1}}, \ldots, E_{j_{k}}\right)=\delta_{J}^{I}\end{equation}</script></li>
+\varepsilon^{I}\left(E_{j_{1}}, \ldots, E_{j_{k}}\right)=\delta_{J}^{I}</script></li>
 </ul>
 <p><strong>非零的 $k$ 阶基本反称张量构成 $k$ 阶反称张量全体的一组基</strong></p>
 <p>Let $V$ be an $n$-dimensional vector space. If $(\varepsilon^i)$ is any basis for $V^*$, then for each positive integer $k \leq n$, the collection of $k$-covectors</p>
@@ -316,7 +316,7 @@ I_\sigma = (i_{\sigma(1)}, \cdots, i_{\sigma(k)})</script><p>Note that $I_{\sigm
 <p>Suppose $V$ is an $n$-dimensional vector space and $\omega \in \Lambda^{n}\left(V^{*}\right)$. If $T: V \rightarrow V$ is any linear map and $v_1, \cdots, v_n$ are arbitrary vectors in $V$, then</p>
 <script type="math/tex; mode=display">
 \omega\left(T v_{1}, \ldots, T v_{n}\right)=(\operatorname{det} T) \omega\left(v_{1}, \ldots, v_{n}\right)</script><h3 id="外积运算-The-Wedge-Product"><a href="#外积运算-The-Wedge-Product" class="headerlink" title="外积运算 The Wedge Product"></a>外积运算 The Wedge Product</h3><p><strong>外积运算的定义</strong></p>
-<p>Assume $V$ is a finite-dimensional real vector space. Given $\omega \in \Lambda^{k}\left(V^{<em>}\right) $and $\eta \in \Lambda^{l}\left(V^{</em>}\right)$, define their <strong>wedge product</strong> or exterior product to be the following $(k + l)$-covector:</p>
+<p>Assume $V$ is a finite-dimensional real vector space. Given $\omega \in \Lambda^{k}\left(V^{*}\right) $and $\eta \in \Lambda^{l}\left(V^{*}\right)$, define their <strong>wedge product</strong> or exterior product to be the following $(k + l)$-covector:</p>
 <script type="math/tex; mode=display">
 \omega \wedge \eta=\frac{(k+l) !}{k ! l !} \operatorname{Alt}(\omega \otimes \eta)</script><p><strong>基本反称张量的外积</strong></p>
 <p>Let $V$ be an $n$-dimensional vector space and let$\left(\varepsilon^1, \cdots, \varepsilon^n \right)$ be a basis for $V^*$. For any multi-indices $I = (i_1, \cdots, i_k)$ and $J = (j_1, \cdots, j_l)$,</p>
@@ -334,7 +334,7 @@ I_\sigma = (i_{\sigma(1)}, \cdots, i_{\sigma(k)})</script><p>Note that $I_{\sigm
 <li><p><strong>结合律 Associativity</strong>:</p>
 <script type="math/tex; mode=display">
 \omega \wedge (\eta \wedge \xi) = (\omega \wedge \eta) \wedge \xi</script></li>
-<li><p><strong>反交换律 Anti-commutativity</strong>: For $\omega \in \Lambda^{k}\left(V^{<em>}\right) $and $\eta \in \Lambda^{l}\left(V^{</em>}\right)$,</p>
+<li><p><strong>反交换律 Anti-commutativity</strong>: For $\omega \in \Lambda^{k}\left(V^{*}\right) $and $\eta \in \Lambda^{l}\left(V^{*}\right)$,</p>
 <script type="math/tex; mode=display">
 \omega \wedge \eta = (-1)^{kl} \ \eta \wedge \omega</script></li>
 <li><p>Suppose $\left(\varepsilon^1, \cdots, \varepsilon^n \right)$ is any basis for $V^*$, and $I = (i_1, \cdots, i_k)$ is any multi-index, then</p>
@@ -345,7 +345,7 @@ I_\sigma = (i_{\sigma(1)}, \cdots, i_{\sigma(k)})</script><p>Note that $I_{\sigm
 \omega^{1} \wedge \cdots \wedge \omega^{k}\left(v_{1}, \ldots, v_{k}\right)=\operatorname{det}\left(\omega^{j}\left(v_{i}\right)\right)</script></li>
 </ul>
 <h3 id="内乘运算-Interior-Multiplication"><a href="#内乘运算-Interior-Multiplication" class="headerlink" title="内乘运算 Interior Multiplication"></a>内乘运算 Interior Multiplication</h3><p><strong>内乘运算的定义</strong></p>
-<p>Let $V$ be a finite-dimensional vector space. For each $v \in V$ and positive integer $k$, define a linear map $i_v: \Lambda^{k}\left(V^{<em>}\right) \rightarrow \Lambda^{k-1}\left(V^{</em>}\right)$, called <strong>interior multiplication</strong> by $v$, as follows:</p>
+<p>Let $V$ be a finite-dimensional vector space. For each $v \in V$ and positive integer $k$, define a linear map $i_v: \Lambda^{k}\left(V^{*}\right) \rightarrow \Lambda^{k-1}\left(V^{*}\right)$, called <strong>interior multiplication</strong> by $v$, as follows:</p>
 <script type="math/tex; mode=display">
 i_{v} \omega\left(w_{1}, \ldots, w_{k-1}\right)=\omega\left(v, w_{1}, \ldots, w_{k-1}\right)</script><p>By convention, $i_v\omega$ is interpreted to be zero when $\omega$ is a $0$-covector.</p>
 <p><strong>内乘运算的性质</strong></p>
@@ -353,14 +353,14 @@ i_{v} \omega\left(w_{1}, \ldots, w_{k-1}\right)=\omega\left(v, w_{1}, \ldots, w_
 <ul>
 <li><p>$i_v \circ i_v = 0$.</p>
 </li>
-<li><p>For $\omega \in \Lambda^{k}\left(V^{<em>}\right) $and $\eta \in \Lambda^{l}\left(V^{</em>}\right)$,</p>
+<li><p>For $\omega \in \Lambda^{k}\left(V^{*}\right) $and $\eta \in \Lambda^{l}\left(V^{*}\right)$,</p>
 <script type="math/tex; mode=display">
 i_{v}(\omega \wedge \eta)=\left(i_{v} \omega\right) \wedge \eta+(-1)^{k} \omega \wedge\left(i_{v} \eta\right)</script></li>
 </ul>
 <h2 id="流形上的微分形式-Differential-Forms-on-Manifolds"><a href="#流形上的微分形式-Differential-Forms-on-Manifolds" class="headerlink" title="流形上的微分形式 Differential Forms on Manifolds"></a>流形上的微分形式 Differential Forms on Manifolds</h2><h3 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h3><p><strong>微分形式的定义</strong></p>
 <p>The subset of $T^k T^<em> M$ consisting of alternating tensors is denoted by $\Lambda^k T^</em> M$:</p>
 <script type="math/tex; mode=display">
-\Lambda^{k} T^{*} M=\coprod_{p \in M} \Lambda^{k}\left(T_{p}^{*} M\right)</script><p>A section of $\Lambda^k T^<em> M$ is called a <strong>differential $k$-form</strong>, or just a <em>*$k$-form</em></em>, which means a continuous tensor field whose value at each point is an alternating tensor.</p>
+\Lambda^{k} T^{\*} M=\coprod_{p \in M} \Lambda^{k}\left(T_{p}^{\*} M\right)</script><p>A section of $\Lambda^k T^<em> M$ is called a <strong>differential $k$-form</strong>, or just a <em>*$k$-form</em></em>, which means a continuous tensor field whose value at each point is an alternating tensor.</p>
 <p>The integer $k$ is called the <strong>degree</strong> of the form.</p>
 <p>A $0$-form is just a continuous real-valued function, and a $1$-form is a covector field.</p>
 <p><strong>光滑微分形式</strong></p>
@@ -512,7 +512,7 @@ F^*(d \omega) = d(F^* \omega), \quad \forall \omega \in \Omega^k(N)</script><h3 
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"> </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#外代数-The-Algebra-of-Alternating-Tensors"><span class="nav-number">1.1.</span> <span class="nav-text">外代数 The Algebra of Alternating Tensors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反称张量的定义与基本性质-Covariant-Tensors"><span class="nav-number">1.1.1.</span> <span class="nav-text">反称张量的定义与基本性质 Covariant Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反称化算子-Alternation"><span class="nav-number">1.1.2.</span> <span class="nav-text">反称化算子 Alternation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本反称张量-Elementary-Alternating-Tensors"><span class="nav-number">1.1.3.</span> <span class="nav-text">基本反称张量 Elementary Alternating Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外积运算-The-Wedge-Product"><span class="nav-number">1.1.4.</span> <span class="nav-text">外积运算 The Wedge Product</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内乘运算-Interior-Multiplication"><span class="nav-number">1.1.5.</span> <span class="nav-text">内乘运算 Interior Multiplication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形上的微分形式-Differential-Forms-on-Manifolds"><span class="nav-number">1.2.</span> <span class="nav-text">流形上的微分形式 Differential Forms on Manifolds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微分形式"><span class="nav-number">1.2.1.</span> <span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微分形式的拉回映射"><span class="nav-number">1.2.2.</span> <span class="nav-text">微分形式的拉回映射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外微分-Exterior-Derivatives"><span class="nav-number">1.3.</span> <span class="nav-text">外微分 Exterior Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#欧式空间中的外微分算子-The-Exterior-Derivative-on-mathbb-R-n"><span class="nav-number">1.3.1.</span> <span class="nav-text">欧式空间中的外微分算子 The Exterior Derivative on $\mathbb{R}^n$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般流形上的外微分算子-Exterior-Differentiation-on-Smooth-Manifolds"><span class="nav-number">1.3.2.</span> <span class="nav-text">一般流形上的外微分算子 Exterior Differentiation on Smooth Manifolds</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exterior-Derivatives-and-Vector-Calculus-in-mathbb-R-3"><span class="nav-number">1.3.3.</span> <span class="nav-text">Exterior Derivatives and Vector Calculus in $\mathbb{R}^3$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#An-Invariant-Formula-for-the-Exterior-Derivative"><span class="nav-number">1.3.4.</span> <span class="nav-text">An Invariant Formula for the Exterior Derivative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lie-Derivatives-ofDifferential-Forms"><span class="nav-number">1.3.5.</span> <span class="nav-text">Lie Derivatives ofDifferential Forms</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#外代数-The-Algebra-of-Alternating-Tensors"><span class="nav-number">1.</span> <span class="nav-text">外代数 The Algebra of Alternating Tensors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反称张量的定义与基本性质-Covariant-Tensors"><span class="nav-number">1.1.</span> <span class="nav-text">反称张量的定义与基本性质 Covariant Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反称化算子-Alternation"><span class="nav-number">1.2.</span> <span class="nav-text">反称化算子 Alternation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本反称张量-Elementary-Alternating-Tensors"><span class="nav-number">1.3.</span> <span class="nav-text">基本反称张量 Elementary Alternating Tensors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外积运算-The-Wedge-Product"><span class="nav-number">1.4.</span> <span class="nav-text">外积运算 The Wedge Product</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内乘运算-Interior-Multiplication"><span class="nav-number">1.5.</span> <span class="nav-text">内乘运算 Interior Multiplication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流形上的微分形式-Differential-Forms-on-Manifolds"><span class="nav-number">2.</span> <span class="nav-text">流形上的微分形式 Differential Forms on Manifolds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微分形式"><span class="nav-number">2.1.</span> <span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微分形式的拉回映射"><span class="nav-number">2.2.</span> <span class="nav-text">微分形式的拉回映射</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外微分-Exterior-Derivatives"><span class="nav-number">3.</span> <span class="nav-text">外微分 Exterior Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#欧式空间中的外微分算子-The-Exterior-Derivative-on-mathbb-R-n"><span class="nav-number">3.1.</span> <span class="nav-text">欧式空间中的外微分算子 The Exterior Derivative on $\mathbb{R}^n$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般流形上的外微分算子-Exterior-Differentiation-on-Smooth-Manifolds"><span class="nav-number">3.2.</span> <span class="nav-text">一般流形上的外微分算子 Exterior Differentiation on Smooth Manifolds</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exterior-Derivatives-and-Vector-Calculus-in-mathbb-R-3"><span class="nav-number">3.3.</span> <span class="nav-text">Exterior Derivatives and Vector Calculus in $\mathbb{R}^3$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#An-Invariant-Formula-for-the-Exterior-Derivative"><span class="nav-number">3.4.</span> <span class="nav-text">An Invariant Formula for the Exterior Derivative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lie-Derivatives-ofDifferential-Forms"><span class="nav-number">3.5.</span> <span class="nav-text">Lie Derivatives ofDifferential Forms</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
