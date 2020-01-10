@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-09T16:50:51.468Z</updated>
+  <updated>2020-01-10T16:32:46.488Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微分流形笔记 - 微分形式 Differential Forms</title>
+    <link href="http://yoursite.com/2020/01/11/sm-differential-forms/"/>
+    <id>http://yoursite.com/2020/01/11/sm-differential-forms/</id>
+    <published>2020-01-10T16:31:18.000Z</published>
+    <updated>2020-01-10T16:32:46.488Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。&lt;/p&gt;
+&lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
+    
+    
+      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
+    
+  </entry>
   
   <entry>
     <title>微分流形笔记 - Integral Curves and Flows 积分曲线与流</title>
