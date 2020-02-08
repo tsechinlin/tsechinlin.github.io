@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="[参考文献] Foucart, Simon. “Dictionary-sparse recovery via thresholding-based algorithms.” Journal of Fourier Analysis and Applications 22, no. 1 (2016): 6-19.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-07T17:48:24.464Z">
+<meta property="og:updated_time" content="2020-02-08T14:36:58.700Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/02/07/compressed-sensing-thresholding-based-algorithms/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-08 01:48:24" itemprop="dateModified" datetime="2020-02-08T01:48:24+08:00">2020-02-08</time>
+                <time title="Modified: 2020-02-08 22:36:58" itemprop="dateModified" datetime="2020-02-08T22:36:58+08:00">2020-02-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -420,31 +420,31 @@ w_k := \rho \left\| \hat{f} - f^{k} \right\|_2/2 + \mu \sqrt{1 + \delta_{6s}^D} 
 & = \rho \left\| \hat{f} - f^{k} \right\|_2 + 2 \left[1 + \mu \left({1 + \delta_{6s}^D} \right) \right] \Sigma + 2 \mu \sqrt{1 + \delta_{6s}^D}\| \varepsilon \|_2 
 \end{split}</script><p>定义常数</p>
 <script type="math/tex; mode=display">
-c_1 = 2 \left[1 + \mu \left({1 + \delta_{6s}^D} \right) \right] , \quad 
-d_1 = 2 \mu \sqrt{1 + \delta_{6s}^D},</script><p>于是 $\forall k \geq 0$，有</p>
+c_1 := 2 \left[1 + \mu \left({1 + \delta_{6s}^D} \right) \right] , \quad 
+d_1 := 2 \mu \sqrt{1 + \delta_{6s}^D},</script><p>于是 $\forall k \geq 0$，有</p>
 <script type="math/tex; mode=display">
 \begin{split}
 \left\| D^*\hat{f} - x^{k+1} \right\|_2 
-& \leq \rho \left\| \hat{f} - f^{k} \right\|_2 + c^\prime \Sigma + d^\prime \| \varepsilon \|_2 \\
-& \leq \rho \left\| D^*\hat{f} - x^{k} \right\|_2 + c^\prime \Sigma + d^\prime \| \varepsilon \|_2.
+& \leq \rho \left\| \hat{f} - f^{k} \right\|_2 + c_1 \Sigma + d_1 \| \varepsilon \|_2 \\
+& \leq \rho \left\| D^*\hat{f} - x^{k} \right\|_2 + c_1 \Sigma + d_1 \| \varepsilon \|_2.
 \end{split}</script><p>由定理条件，$\rho &lt; 1$，对上式迭代即可得到</p>
 <script type="math/tex; mode=display">
 \begin{split}
 \left\| D^*\hat{f} - x^{k} \right\|_2 & \leq \rho^{k} \left\| D^*\hat{f} - x^{0} \right\|_2 + \frac{1 - \rho^k}{1 - \rho} \left( c_1 \Sigma + d_1 \| \varepsilon \|_2 \right) \\
 & \leq \rho^{k} \left\| D^*\hat{f} \right\|_2 + \frac{c_1}{1 - \rho}\Sigma + \frac{d_1}{1 - \rho} \| \varepsilon \|_2, \quad (\forall k \geq 0).
-\end{split}</script><p>最后令 $c_2 = 1 +c_1 / (1-\rho)$ 以及 $d_2 = d_1 / (1-\rho)$，并注意到</p>
+\end{split}</script><p>最后令 $c_2: = 1 +c_1 / (1-\rho)$ 以及 $d_2 := d_1 / (1-\rho)$，并注意到</p>
 <script type="math/tex; mode=display">
 \left\| D^*\hat{f} \right\|_2 = \left\| \hat{f} \right\|_2 = \left\| f-\bar{f} \right\|_2 \leq \left\| {f} \right\|_2 + \left\| \bar{f} \right\|_2 \leq \left\| {f} \right\|_2 + \Sigma,</script><p>因此，</p>
 <script type="math/tex; mode=display">
 \begin{split}\left\| f^k - \hat{f} \right\|_2 & = \left\| D(D^*\hat{f} - x^{k}) \right\|_2 \leq \left\| D^*\hat{f} - x^{k} \right\|_2 \\& \leq \rho^{k} \left\| D^*\hat{f} \right\|_2 + \frac{c_1}{1 - \rho}\Sigma + \frac{d_1}{1 - \rho} \| \varepsilon \|_2 \\& \leq \rho^{k} \left\| {f} \right\|_2 + \left(\rho^k + \frac{c_1}{1 - \rho} \right)\Sigma + \frac{d_1}{1 - \rho} \| \varepsilon \|_2 \\& \leq \rho^{k} \left\| {f} \right\|_2 + c_2 \Sigma + d_2 \| \varepsilon \|_2, \quad (\forall k \geq 0).\end{split}</script><p>证毕。</p>
 </blockquote>
-<h3 id="定理-5"><a href="#定理-5" class="headerlink" title="定理 5"></a>定理 5</h3><p>Given a tight frame $D \in \mathbb{C}^{n \times N}$ and $\mu \in (1/2, 3/2)$, suppose that the measurement matrix $A \in \mathbb{C}^{m \times n}$ has a restricted isometry constant adapted to $D$ of order $6s$ satisfying</p>
+<h3 id="推论-5"><a href="#推论-5" class="headerlink" title="推论 5"></a>推论 5</h3><p>Given a tight frame $D \in \mathbb{C}^{n \times N}$ and $\mu \in (1/2, 3/2)$, suppose that the measurement matrix $A \in \mathbb{C}^{m \times n}$ has a restricted isometry constant adapted to $D$ of order $6s$ satisfying</p>
 <script type="math/tex; mode=display">
 \delta_{6s}^D < \frac{1/2 - |1 - \mu | }{\mu}.</script><p>For any $f \in \mathbb{C}^n$ and $\varepsilon \in \mathbb{C}^m$, let $\{f^k\}_{k=1}^\infty$ be the sequence produced by $D\text{-IHT}^\mu_{2s}$ with $y = Af + \varepsilon$.</p>
 <ul>
-<li><p>If $f^#$ is a cluster point of $\{f^k\}_{k=1}^\infty$, then</p>
+<li><p>If $f^\sharp$ is a cluster point of $\{f^k\}_{k=1}^\infty$, then</p>
 <script type="math/tex; mode=display">
-\| f - f^\# \|_2 \leq c \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d \| \varepsilon \|_2.</script></li>
+\| f - f^\sharp \|_2 \leq c \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d \| \varepsilon \|_2.</script></li>
 <li><p>If a measurement error bound $\lVert \varepsilon \rVert \leq \eta$ is available, then</p>
 <script type="math/tex; mode=display">
 \| f - f^k \|_2 \leq c \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d \eta, \quad \forall k \geq  \frac{\operatorname{ln}(\|y\|_2 / \eta)}{\operatorname{ln}(1 / \rho)}.</script></li>
@@ -460,11 +460,11 @@ d_1 = 2 \mu \sqrt{1 + \delta_{6s}^D},</script><p>于是 $\forall k \geq 0$，有
 & \leq \rho^{k} \left\| \hat{f} \right\|_2 + c_2 \Sigma + d_2 \| \varepsilon \|_2 + (1 + \rho^k) \left\| \bar{f} \right\|_2 \\
 & \leq \rho^{k} \left\| \hat{f} \right\|_2 + (1 + \rho^k + c_2) \Sigma + d_2 \| \varepsilon \|_2
 \end{split}</script><p>其中最后一步使用了引理 3 的结论。下面对定理中的两个结论分别讨论。</p>
-<p><strong>(1)</strong> 对于第一个结论，假设子列 $\{f^{k_j}\}_{j=1}^\infty$ 收敛于 $f^#$，将上式 $k$ 换为 $k_j$ 并令 $j \to \infty$，得到</p>
+<p><strong>(1)</strong> 对于第一个结论，假设子列 $\{f^{k_j}\}_{j=1}^\infty$ 收敛于 $f^\sharp$，将上式 $k$ 换为 $k_j$ 并令 $j \to \infty$，得到</p>
 <script type="math/tex; mode=display">
-\left\| f - f^\# \right\|_2 \leq (1 +  c_2) \Sigma + d_2 \| \varepsilon \|_2.</script><p>再次利用引理 3，得到</p>
+\left\| f - f^\sharp \right\|_2 \leq (1 +  c_2) \Sigma + d_2 \| \varepsilon \|_2.</script><p>再次利用引理 3，得到</p>
 <script type="math/tex; mode=display">
-\left\| f - f^\# \right\|_2 \leq (1 +  c_2) \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d_2 \| \varepsilon \|_2.</script><p>证毕。</p>
+\left\| f - f^\sharp \right\|_2 \leq (1 +  c_2) \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d_2 \| \varepsilon \|_2.</script><p>证毕。</p>
 <p><strong>(2)</strong> 对于第二个结论，当 $k \geq  {\operatorname{ln}(|y|_2 / \eta)}/{\operatorname{ln}(1 / \rho)}$ 时，有</p>
 <script type="math/tex; mode=display">
 \rho^k \leq \eta / \| y \|_2.</script><p>另外，由于 $\hat{f}$ 是 $2s$-synthesis-sparse 的，根据假设有 (显然 $\delta_{2s}^D$ 存在且不大于 $\delta_{6s}^D$)</p>
@@ -477,7 +477,7 @@ d_1 = 2 \mu \sqrt{1 + \delta_{6s}^D},</script><p>于是 $\forall k \geq 0$，有
 & \leq \frac{\sqrt{1 + \delta_{s}^D} \Sigma + 2 \eta }{\sqrt{1 - \delta_{2s}^D}}.
 \end{split}</script><p>综上，令</p>
 <script type="math/tex; mode=display">
-c_3 = \sqrt{\frac{1 + \delta_{s}^D}{1 - \delta_{2s}^D}} + 2 +c_2, \quad d_3 = \frac{2}{\sqrt{1 - \delta_{2s}^D}} + d_2,</script><p>则</p>
+c_3 := \sqrt{\frac{1 + \delta_{s}^D}{1 - \delta_{2s}^D}} + 2 +c_2, \quad d_3: = \frac{2}{\sqrt{1 - \delta_{2s}^D}} + d_2,</script><p>则</p>
 <script type="math/tex; mode=display">
 \begin{split}
 \left\| f - f^k \right\|_2 
@@ -505,7 +505,7 @@ T_{k + p} = T_{k}, \quad \forall k \geq K,</script><p>其中 $p \in \mathbb{Z}_+
 <script type="math/tex; mode=display">
 \delta_{6 s}<\frac{\sqrt{1-\delta_{6 s}^{D}} /(2 \sqrt{1+\delta_{6 s}^{D}})-|1-\mu|}{\mu}.</script><p>Then, for all $f \in \mathbb{C}^n$ and $\varepsilon \in \mathbb{C}^m$, the sequence $\{f^k\}_{k=1}^\infty$ produced by $D\text{-HTP}^\mu_{2s}$ with $y = Af + \varepsilon$ satisfies,</p>
 <script type="math/tex; mode=display">
-\left\| f^k - \hat{f} \right\|_2 \leq \varrho^k \| f \|_2 + c\Sigma + d \| \varepsilon \|_2, \quad \forall k \geq 0,</script><p>where $\varrho:=2\left(|1-\mu|+\mu \delta_{6 s}^{D}\right) \sqrt{1+\delta_{6 s}^{D}} / \sqrt{1-\delta_{6 s}^{D}}&lt;1$. The constant $c$ and $d$ also depend only on $\mu$ and $\delta_{6s}^D$.</p>
+\left\| f^k - \hat{f} \right\|_2 \leq \varrho^k \| f \|_2 + c\Sigma + d \| \varepsilon \|_2, \quad \forall k \geq 1,</script><p>where $\varrho:=2\left(|1-\mu|+\mu \delta_{6 s}^{D}\right) \sqrt{1+\delta_{6 s}^{D}} / \sqrt{1-\delta_{6 s}^{D}}&lt;1$. The constant $c$ and $d$ also depend only on $\mu$ and $\delta_{6s}^D$.</p>
 <blockquote>
 <p><strong>证明</strong>：</p>
 <p>对同样的初值和参数，假设 $D\text{-IHP}^\mu_{2s}$ 算法的序列为 $\{\check{f}^k\}_{k=1}^\infty$，即</p>
@@ -514,7 +514,49 @@ T_{k + p} = T_{k}, \quad \forall k \geq K,</script><p>其中 $p \in \mathbb{Z}_+
 <script type="math/tex; mode=display">
 \left\|{y}-{A} {f}^{k+1}\right\|_{2} \leq\left\|{y}-{A} \check{f}^{k+1}\right\|_{2},</script><p>即</p>
 <script type="math/tex; mode=display">
-\left\|{A} \left(\hat{f} - {f}^{k+1} \right) + \bar{\varepsilon} \right\|_{2} \leq\left\|{A} \left(\hat{f} - \check{f}^{k+1} \right) + \bar{\varepsilon}\right\|_{2}.</script></blockquote>
+\left\|{A} \left(\hat{f} - {f}^{k+1} \right) + \bar{\varepsilon} \right\|_{2} \leq\left\|{A} \left(\hat{f} - \check{f}^{k+1} \right) + \bar{\varepsilon}\right\|_{2}.</script><p>由于 $\hat{f}, f^{k+1}, \check{f}^{k+1}$ 都是 $2s$-synthesis-sparse 的，根据 $A$ 的 $D$-RIP 条件，有</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\left\|{A} \left(\hat{f} - {f}^{k+1} \right) + \bar{\varepsilon} \right\|_{2} & \geq \left\|{A} \left(\hat{f} - {f}^{k+1} \right) \right\|_{2} - \left\| \bar{\varepsilon} \right\|_{2} \geq \sqrt{1 - \delta_{6s}^D} \left\| \hat{f} - {f}^{k+1} \right\|_{2} - \left\| \bar{\varepsilon} \right\|_{2}, \\
+\left\|{A} \left(\hat{f} - \check{f}^{k+1} \right) + \bar{\varepsilon} \right\|_{2} & \leq \left\|{A} \left(\hat{f} - \check{f}^{k+1} \right) \right\|_{2} + \left\| \bar{\varepsilon} \right\|_{2} \leq \sqrt{1 + \delta_{6s}^D} \left\| \hat{f} - \check{f}^{k+1} \right\|_{2} + \left\| \bar{\varepsilon} \right\|_{2}.
+\end{split}</script><p>因此可推出 $\forall k \geq 0$，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\left\| \hat{f} - {f}^{k+1} \right\|_{2} \leq \sqrt{\frac{1 + \delta_{6s}^D}{1 - \delta_{6s}^D}} \left\| \hat{f} - \check{f}^{k+1} \right\|_{2} + \frac{2}{\sqrt{1 - \delta_{6s}^D}} \left\| \bar{\varepsilon} \right\|_{2}.
+\end{split}</script><p>令 $\rho := 2(|1-\mu| + \mu \delta_{6s}^D)$，由于 $\varrho = \rho \sqrt{1+\delta_{6 s}^{D}} / \sqrt{1-\delta_{6 s}^{D}}&lt;1$，于是 $\rho \leq \varrho &lt; 1$。根据定理 4，</p>
+<script type="math/tex; mode=display">
+\left\| \hat{f} - \check{f}^k \right\|_2 \leq \rho^{k} \left\| {f} \right\|_2 + c_2 \Sigma + d_2 \| \varepsilon \|_2, \quad (\forall k \geq 0).</script><p>结合上述两条式子以及引理 3，有 $\forall k \geq 1$，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\left\| \hat{f} - {f}^{k} \right\|_{2} &\leq \sqrt{\frac{1 + \delta_{6s}^D}{1 - \delta_{6s}^D}} \cdot (\rho^{k} \left\| {f} \right\|_2 + c_2 \Sigma + d_2 \| \varepsilon \|_2) + \frac{2}{\sqrt{1 - \delta_{6s}^D}} \left\| \bar{\varepsilon} \right\|_{2} \\
+& \leq \varrho \cdot \rho^{k-1} \| f \|_2 + \sqrt{\frac{1 + \delta_{6s}^D}{1 - \delta_{6s}^D}} \cdot (c_2 \Sigma + d_2 \| \varepsilon \|_2) + \frac{2}{\sqrt{1 - \delta_{6s}^D}}\left( \sqrt{1 + \delta_{6s}^D} \Sigma + \| \varepsilon \|_2 \right) \\
+& = \varrho \cdot \rho^{k-1} \| f \|_2 + c_4 \Sigma + d_4 \| \varepsilon \|_2,
+\end{split}</script><p>其中</p>
+<script type="math/tex; mode=display">
+c_4 := \sqrt{\frac{1 + \delta_{6s}^D}{1 - \delta_{6s}^D}} \cdot (c_2 + 2), \quad d_4 := \frac{2 + d_2}{\sqrt{1 - \delta_{6s}^D}}.</script><p>证毕。</p>
+</blockquote>
+<h3 id="推论-7"><a href="#推论-7" class="headerlink" title="推论 7"></a>推论 7</h3><p>Given a tight frame $D \in \mathbb{C}^{n \times N}$ and $\mu \in (1/2, 3/2)$, suppose that the measurement matrix $A \in \mathbb{C}^{m \times n}$ has a restricted isometry constant adapted to $D$ of order $6s$ small enough to ensure that</p>
+<script type="math/tex; mode=display">
+\delta_{6 s}<\frac{\sqrt{1-\delta_{6 s}^{D}} /(2 \sqrt{1+\delta_{6 s}^{D}})-|1-\mu|}{\mu}.</script><p>For any $f \in \mathbb{C}^n$ and $\varepsilon \in \mathbb{C}^m$, let $\{f^k\}_{k=1}^\infty$ be the sequence produced by $D\text{-HTP}^\mu_{2s}$ with $y = Af + \varepsilon$, then the following bound is valid for any element $f^\sharp$ of the eventual cycle of the sequence $\{f^k\}_{k=1}^\infty$,</p>
+<script type="math/tex; mode=display">
+\| f - f^\sharp \|_2 \leq c \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d \| \varepsilon \|_2.</script><p>Again, The constant $c$ and $d$ also depend only on $\mu$ and $\delta_{6s}^D$.</p>
+<blockquote>
+<p><strong>证明</strong>：</p>
+<p>这个证明与推论 5 的第一部分几乎一致，沿用定理 6 的符号，$\forall k \geq 1$，</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\left\| f - f^k \right\|_2 & \leq \left\| \hat{f} - f^k \right\|_2 + \left\| \bar{f} \right\|_2 \\
+& \leq \varrho \cdot \rho^{k-1} \left\| {f} \right\|_2 + c_4 \Sigma + d_4 \| \varepsilon \|_2 + \left\| \bar{f} \right\|_2 \\
+& \leq \varrho \cdot\rho^{k-1} \left\| \hat{f} \right\|_2 + c_4 \Sigma + d_4 \| \varepsilon \|_2 + (1 + \varrho \cdot\rho^{ k - 1}) \left\| \bar{f} \right\|_2 \\
+& \leq \varrho \cdot\rho^{k-1} \left\| \hat{f} \right\|_2 + (1 + \varrho \cdot\rho^{k-1} +c_4) \Sigma + d_4 \| \varepsilon \|_2.
+\end{split}</script><p>假设子列 $\{f^{j+p}\}_{j=K}^\infty$ 为常值列，值为 $f^\sharp$，周期为 $p$。将上式 $k$ 换为 $k_j$ 并令 $j \to \infty$，得到</p>
+<script type="math/tex; mode=display">
+\begin{split}
+\left\| f - f^\sharp \right\|_2 & \leq (1 +  c_4) \Sigma + d_4 \| \varepsilon \|_2 \\
+& \leq (1 +  c_4) \frac{\sigma_s(D^*f)_1}{\sqrt{s}} + d_4 \| \varepsilon \|_2.
+\end{split}</script><p>证毕。</p>
+</blockquote>
+<h2 id="Loose-frame-dictionaries"><a href="#Loose-frame-dictionaries" class="headerlink" title="Loose frame dictionaries"></a>Loose frame dictionaries</h2><p>to be complete.</p>
 
     </div>
 
@@ -577,7 +619,7 @@ T_{k + p} = T_{k}, \quad \forall k \geq K,</script><p>其中 $p \in \mathbb{Z}_+
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Settings"><span class="nav-number">1.1.</span> <span class="nav-text">Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem"><span class="nav-number">1.2.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.3.</span> <span class="nav-text">Definitions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-text-IHT"><span class="nav-number">2.</span> <span class="nav-text">算法 $\text{IHT}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-hard-thresholding-algorithm"><span class="nav-number">2.1.</span> <span class="nav-text">Iterative hard thresholding algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">2.2.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-2"><span class="nav-number">2.3.</span> <span class="nav-text">定理 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-D-text-IHT-mu-2s"><span class="nav-number">3.</span> <span class="nav-text">算法 $D\text{-IHT}^\mu_{2s}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-hard-thresholding-algorithm-of-order-2s-with-parameter-mu-adapted-to-D"><span class="nav-number">3.1.</span> <span class="nav-text">Iterative hard thresholding algorithm of order $2s$ with parameter $\mu$ adapted to $D$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions-1"><span class="nav-number">3.2.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-3"><span class="nav-number">3.3.</span> <span class="nav-text">引理 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-4"><span class="nav-number">3.4.</span> <span class="nav-text">定理 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-5"><span class="nav-number">3.5.</span> <span class="nav-text">定理 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-D-text-HTP-mu-2s"><span class="nav-number">4.</span> <span class="nav-text">算法 $D\text{-HTP}^\mu_{2s}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hard-thresholding-pursuit-algorithm-of-order-2s-with-parameter-mu-adapted-to-D"><span class="nav-number">4.1.</span> <span class="nav-text">Hard thresholding pursuit  algorithm of order $2s$ with parameter $\mu$ adapted to $D$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stopping-criterion"><span class="nav-number">4.2.</span> <span class="nav-text">Stopping criterion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-6"><span class="nav-number">4.3.</span> <span class="nav-text">定理 6</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Settings"><span class="nav-number">1.1.</span> <span class="nav-text">Settings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem"><span class="nav-number">1.2.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.3.</span> <span class="nav-text">Definitions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-text-IHT"><span class="nav-number">2.</span> <span class="nav-text">算法 $\text{IHT}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-hard-thresholding-algorithm"><span class="nav-number">2.1.</span> <span class="nav-text">Iterative hard thresholding algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">2.2.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-2"><span class="nav-number">2.3.</span> <span class="nav-text">定理 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-D-text-IHT-mu-2s"><span class="nav-number">3.</span> <span class="nav-text">算法 $D\text{-IHT}^\mu_{2s}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterative-hard-thresholding-algorithm-of-order-2s-with-parameter-mu-adapted-to-D"><span class="nav-number">3.1.</span> <span class="nav-text">Iterative hard thresholding algorithm of order $2s$ with parameter $\mu$ adapted to $D$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions-1"><span class="nav-number">3.2.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-3"><span class="nav-number">3.3.</span> <span class="nav-text">引理 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-4"><span class="nav-number">3.4.</span> <span class="nav-text">定理 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推论-5"><span class="nav-number">3.5.</span> <span class="nav-text">推论 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法-D-text-HTP-mu-2s"><span class="nav-number">4.</span> <span class="nav-text">算法 $D\text{-HTP}^\mu_{2s}$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hard-thresholding-pursuit-algorithm-of-order-2s-with-parameter-mu-adapted-to-D"><span class="nav-number">4.1.</span> <span class="nav-text">Hard thresholding pursuit  algorithm of order $2s$ with parameter $\mu$ adapted to $D$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stopping-criterion"><span class="nav-number">4.2.</span> <span class="nav-text">Stopping criterion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-6"><span class="nav-number">4.3.</span> <span class="nav-text">定理 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推论-7"><span class="nav-number">4.4.</span> <span class="nav-text">推论 7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loose-frame-dictionaries"><span class="nav-number">5.</span> <span class="nav-text">Loose frame dictionaries</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
