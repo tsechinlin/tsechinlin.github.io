@@ -51,15 +51,15 @@
   };
 </script>
 
-  <meta name="description" content="[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (20">
+  <meta name="description" content="[参考文献] Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.">
 <meta name="keywords" content="Compressed Sensing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Compressed Sensing with Redundant Dictionaries - CoSaMP Algorithm">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;24&#x2F;compressed-sensing-dictionary-CoSaMP&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:description" content="[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (20">
+<meta property="og:description" content="[参考文献] Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-24T08:56:31.327Z">
+<meta property="og:updated_time" content="2020-03-24T09:42:14.518Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/">
@@ -210,7 +210,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-24 16:10:44 / Modified: 16:56:31" itemprop="dateCreated datePublished" datetime="2020-03-24T16:10:44+08:00">2020-03-24</time>
+              <time title="Created: 2020-03-24 16:10:44 / Modified: 17:42:14" itemprop="dateCreated datePublished" datetime="2020-03-24T16:10:44+08:00">2020-03-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,32 +235,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (2011): 59-73.</p>
+        <p>[参考文献] Davenport, M. A., Needell, D., &amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.</p>
 <a id="more"></a>
 <h2 id="投影算子与最佳指标集"><a href="#投影算子与最佳指标集" class="headerlink" title="投影算子与最佳指标集"></a>投影算子与最佳指标集</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
-<li><p><strong>正交投影算子</strong> (the orthogonal projection operator)</p>
-<p>对指标集 $S \subset [N]$，用 $\mathcal{R}(\mathbf{D}_S)$ 表示 $\mathbf{D}_S$ 的值域，也就是</p>
+<li><p><strong>正交投影算子</strong> (the orthogonal projection operator)：对指标集 $S \subset [N]$，用 $\mathcal{R}(\mathbf{D}_S)$ 表示 $\mathbf{D}_S$ 的值域，也就是</p>
 <script type="math/tex; mode=display">
 \mathcal{R}(\mathbf{D}_S) = \operatorname{span} \left \{ \mathbf{d}_j: j \in S \right\},</script><p>令 $\mathcal{P}_S: \mathbb{C}^n \to \mathbb{C}^n$ 表示到 $\mathcal{R}(\mathbf{D}_S)$ 的投影算子，具体来说，</p>
 <script type="math/tex; mode=display">
 \mathcal{P}_{S} \mathbf{g} = \underset{\mathbf{h} \in \mathbb{C}^n}{\arg \min} \ { \| \mathbf{g} - \mathbf{h} \|_2} \quad \text{ s.t. } \quad \mathbf{g} \in \mathcal{R}(\mathbf{D}_S),</script><p>等价地，</p>
 <script type="math/tex; mode=display">
 \mathcal{P}_{S} \mathbf{g} = \mathbf{D} \cdot \underset{\operatorname{supp(\mathbf{z})}  \subset S}{\arg \min} \ {\| \mathbf{g} - \mathbf{D} \mathbf{z} \|_2}.</script></li>
-<li><p><strong>最佳投影指标集</strong> (optimal index set for orthogonal projection)</p>
-<p>对正整数 $s \in [N]$ 以及 $\mathbf{g} \in \mathbb{C}^n$，令 $\mathcal{O}_s(\mathbf{g})$ 表示大小为 $s$ 的投影效果最好的指标集，</p>
+<li><p><strong>最佳投影指标集</strong> (optimal index set for orthogonal projection)：对正整数 $s \in [N]$ 以及 $\mathbf{g} \in \mathbb{C}^n$，令 $\mathcal{O}_s(\mathbf{g})$ 表示大小为 $s$ 的投影效果最好的指标集，</p>
 <script type="math/tex; mode=display">
 \mathcal{O}_{s}(\mathbf{g}) = \underset{S \subset [N]}{\arg \min} \ { \| \mathbf{g} - \mathcal{P}_S \mathbf{g} \|_2} \quad \text{ s.t. } \quad \operatorname{card}(S) = s.</script></li>
-<li><p><strong>近似最佳投影指标集</strong> (near-optimal index set for orthogonal projection)</p>
-<p>一般来说，$\mathcal{O}_{k}(\mathbf{g})$ 计算难度较大，实际计算中可能使用对其的近似 $\mathcal{N}_s(\mathbf{g})$。此近似指标集满足 $\forall \mathbf{g} \in \mathbb{C}^n$，有</p>
-<p>$\operatorname{card}(\mathcal{N}_s(\mathbf{g})) = s$ 以及</p>
+<li><p><strong>近似最佳投影指标集</strong> (near-optimal index set for orthogonal projection)一般来说，$\mathcal{O}_{k}(\mathbf{g})$ 计算难度较大，实际计算中可能使用对其的近似 $\mathcal{N}_s(\mathbf{g})$。此近似指标集满足 $\forall \mathbf{g} \in \mathbb{C}^n$，有 $\operatorname{card}(\mathcal{N}_s(\mathbf{g})) = s$ 以及</p>
 <script type="math/tex; mode=display">
 \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g})} \mathbf{g} - 
-\mathcal{P}_{\mathcal{N}_s(\mathbf{g})} \mathbf{g} \right\|_{2} \leq \min \left(\epsilon_{1} \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g})} \mathbf{g} \right\|_{2}, \ \epsilon_{2}\left\| \mathbf{g} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g})} \mathbf{g}  \right\|_{2}\right),</script><p>其中 $\epsilon_1, \epsilon_2 \geq 0$ 是固定常数。</p>
+\mathcal{P}_{\mathcal{N}_s(\mathbf{g})} \mathbf{g} \right\|_{2} \leq \min \left(\epsilon_{1} \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g})} \mathbf{g} \right\|_{2}, \ \epsilon_{2}\left\| \mathbf{g} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g})} \mathbf{g}  \right\|_{2}\right),</script><p>其中 $\epsilon_1, \epsilon_2 \geq 0$ 是固定参数。</p>
 </li>
 </ul>
 <h3 id="引理-1"><a href="#引理-1" class="headerlink" title="引理 1"></a>引理 1</h3><p>对任意大小不超过 $s$ 的指标集 $S \subset [N]$，有</p>
 <script type="math/tex; mode=display">
-\left\| \mathcal{P}_S (\mathbf{A}^* \mathbf{A} - \mathbf{Id}) \mathcal{P}_S \right\|_{2 \to 2} \leq \delta_{s}^{\mathbf{D}}</script><blockquote>
+\left\| \mathcal{P}_S (\mathbf{A}^* \mathbf{A} - \mathbf{Id}) \mathcal{P}_S \right\|_{2 \to 2} \leq \delta_{s}^{\mathbf{D}}.</script><blockquote>
 <p><strong>证明：</strong></p>
 <p>对任意 $\mathbf{g} \in \mathbb{C}^n$，由于 $\mathcal{P}_S(\mathbf{g})$ 是 $s$-synthesis sparse 的，因此</p>
 <script type="math/tex; mode=display">
@@ -274,9 +270,9 @@
 </ul>
 <h3 id="引理-3"><a href="#引理-3" class="headerlink" title="引理 3"></a>引理 3</h3><p>对任意 $\mathbf{g}, \mathbf{h} \in \mathbb{C}^n$ 以及 $S \subset [N]$，有</p>
 <script type="math/tex; mode=display">
-\left \| \mathbf{g} - \mathcal{P}_{S} \mathbf{g} \right \|_2 \leq \left \| \mathbf{g} - \mathcal{P}_{S} \mathbf{h} \right \|_2</script><h3 id="引理-4"><a href="#引理-4" class="headerlink" title="引理 4"></a>引理 4</h3><p>对任意 $\mathbf{g} \in \mathbb{C}^n$，以及正整数 $s \in [N]$，如果令 $\Omega = \mathcal{O}_{s}(\mathbf{g})$，那么对任意大小为 $s$ 的指标集 $\Pi \subset [N]$，有</p>
+\left \| \mathbf{g} - \mathcal{P}_{S} \mathbf{g} \right \|_2 \leq \left \| \mathbf{g} - \mathcal{P}_{S} \mathbf{h} \right \|_2.</script><h3 id="引理-4"><a href="#引理-4" class="headerlink" title="引理 4"></a>引理 4</h3><p>对任意 $\mathbf{g} \in \mathbb{C}^n$，以及正整数 $s \in [N]$，如果令 $\Omega = \mathcal{O}_{s}(\mathbf{g})$，那么对任意大小为 $s$ 的指标集 $\Pi \subset [N]$，有</p>
 <script type="math/tex; mode=display">
-\left \| \mathcal{P}_{\Omega \cup \Pi} \mathbf{g} - \mathcal{P}_{\Omega} \mathbf{g} \right \|_2 \leq \left \| \mathcal{P}_{\Omega \cup \Pi} \mathbf{g} - \mathcal{P}_{\Pi} \mathbf{g} \right \|_2</script><blockquote>
+\left \| \mathcal{P}_{\Omega \cup \Pi} \mathbf{g} - \mathcal{P}_{\Omega} \mathbf{g} \right \|_2 \leq \left \| \mathcal{P}_{\Omega \cup \Pi} \mathbf{g} - \mathcal{P}_{\Pi} \mathbf{g} \right \|_2.</script><blockquote>
 <p><strong>证明</strong>：</p>
 <p>对任意指标集 $\Gamma \subset \Omega \cup \Pi$，由于</p>
 <script type="math/tex; mode=display">
@@ -294,37 +290,39 @@
 </li>
 <li><p><strong>迭代</strong>：</p>
 <script type="math/tex; mode=display">
-T^{k+1} = S^{k} \cup \mathcal{N}_{2s}\left( \mathbf{A}^* (\mathbf{y} - \mathbf{A} \mathbf{f}^{k}) \right) \\
-\mathbf{g}^{k+1} = \mathbf{D} \cdot \underset{\operatorname{supp(\mathbf{z})}  \subset T^{k+1}}{\arg \min} \ {\| \mathbf{y} - \mathbf{A} \mathbf{D} \mathbf{z} \|_2} \\
-S^{k+1} = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right) \\
-\mathbf{f}^{k+1} = \mathcal{P}_{S^{k+1}} \mathbf{g}^{k+1}</script></li>
+\begin{align*}
+T^{k+1} & = S^{k} \cup \mathcal{N}_{2s}\left( \mathbf{A}^* (\mathbf{y} - \mathbf{A} \mathbf{f}^{k}) \right), \\
+\mathbf{g}^{k+1} & = \mathbf{D} \cdot \underset{\operatorname{supp(\mathbf{z})}  \subset T^{k+1}}{\arg \min} \ {\| \mathbf{y} - \mathbf{A} \mathbf{D} \mathbf{z} \|_2}, \\
+S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
+\mathbf{f}^{k+1} &= \mathcal{P}_{S^{k+1}} \mathbf{g}^{k+1}.
+\end{align*}</script></li>
 </ul>
 <h3 id="命题-1：重建误差的迭代不等式"><a href="#命题-1：重建误差的迭代不等式" class="headerlink" title="命题 1：重建误差的迭代不等式"></a>命题 1：重建误差的迭代不等式</h3><p>对固定的字典 $\mathbf{D} \in \mathbb{C}^{n \times N}$，假设测量矩阵 $\mathbf{A} \in \mathbb{C}^{m \times n}$ 以常数 $\delta_{4s}^{\mathbf{D}}$ 满足 $\mathbf{D}$-RIP 条件，那么对任意的 $s$-synthesis sparse 待回复信号 $\mathbf{f} \in \mathbb{C}^n$ 以及观测误差 $\mathbf{e} \in \mathbb{C}^n$，将观测结果 $\mathbf{y} = \mathbf{A} \mathbf{f} + \mathbf{e}$ 作为输入运行 ($\mathbf{D}$-CoSaMP) 算法时，有如下关于重建误差的迭代不等式：$\forall k \geq 0$，</p>
 <script type="math/tex; mode=display">
-\left\| \mathbf{f} - {\mathbf{f}}^{k + 1} \right\|_2 \leq c_1 \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_2 + d_1 \left\| \mathbf{e} \right\|_2</script><p>其中 $c_1, d_1 &gt; 0$ 是仅依赖于 $\mathbf{D}$-RIP 常数 $\delta_{4s}^{\mathbf{D}}$ 以及近似参数 $\epsilon_1, \epsilon_2$ 的常数，</p>
+\left\| \mathbf{f} - {\mathbf{f}}^{k + 1} \right\|_2 \leq c_1 \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_2 + d_1 \left\| \mathbf{e} \right\|_2,</script><p>其中 $c_1, d_1 &gt; 0$ 是仅依赖于 $\mathbf{D}$-RIP 常数 $\delta_{4s}^{\mathbf{D}}$ 以及近似参数 $\epsilon_1, \epsilon_2$ 的常数，</p>
 <script type="math/tex; mode=display">
 \begin{align*}
-c_1 & = \left(\left(2+\epsilon_{1}\right) \delta_{4 s}^{\mathbf{D}}+\epsilon_{1}\right)(2 + \epsilon_2) \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}} \\
-d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D}}} \right)}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} (2 + \epsilon_2)
+c_1 & = \left(\left(2+\epsilon_{1}\right) \delta_{4 s}^{\mathbf{D}}+\epsilon_{1}\right)(2 + \epsilon_2) \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}}, \\
+d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D}}} \right)}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} (2 + \epsilon_2).
 \end{align*}</script><blockquote>
 <p><strong>证明：</strong></p>
 <p>以下分四部分证明上述误差迭代不等式。</p>
 </blockquote>
 <p><strong>Part 1</strong>：记第 $k$ 次迭代的信号重建误差为 $\hat{\mathbf{f}}^k = {\mathbf{f}} - {\mathbf{f}}^k$，那么</p>
 <script type="math/tex; mode=display">
-\| \hat{\mathbf{f}}^{k + 1} \|_2 \leq (2 + \epsilon_2) \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2</script><blockquote>
+\| \hat{\mathbf{f}}^{k + 1} \|_2 \leq (2 + \epsilon_2) \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2.</script><blockquote>
 <p>根据三角不等式，</p>
 <script type="math/tex; mode=display">
-\| \hat{\mathbf{f}}^{k + 1} \|_2 = \left\| \mathbf{f} - \mathbf{f}^{k + 1} \right\|_2 \leq \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathbf{g}^{k+1} - \mathbf{f}^{k + 1} \right\|_2</script><p>对于上式右端中的第二项，注意到 $\mathbf{f}^{k + 1} = \mathcal{P}_{\mathcal{N}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1}$，因此根据近似最佳投影指标集的性质，有</p>
+\| \hat{\mathbf{f}}^{k + 1} \|_2 = \left\| \mathbf{f} - \mathbf{f}^{k + 1} \right\|_2 \leq \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathbf{g}^{k+1} - \mathbf{f}^{k + 1} \right\|_2.</script><p>对于上式右端中的第二项，注意到 $\mathbf{f}^{k + 1} = \mathcal{P}_{\mathcal{N}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1}$，因此根据近似最佳投影指标集的性质，有</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \mathbf{g}^{k+1} - \mathbf{f}^{k + 1} \right\|_2 
 & \leq \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} - \mathbf{f}^{k+1}\right\|_2 \\
 & = \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} - \mathcal{P}_{\mathcal{N}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 \\
-& \leq (1 + \epsilon_2) \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2
+& \leq (1 + \epsilon_2) \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2.
 \end{align*}</script><p>由于存在 $\mathbf{x} \in \mathbb{C}^N$ 使得 $\mathbf{f} = \mathbf{D}\mathbf{x}$ 以及 $\lVert \mathbf{x} \rVert_0 \leq s$，因此根据 $\mathcal{O}_s(\mathbf{g}^{k+1})$ 以及投影算子的定义，</p>
 <script type="math/tex; mode=display">
-\left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\operatorname{supp}(\mathbf{x})} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathbf{f} \right\|_2</script><p>综合上述式子，可以得到</p>
+\left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\operatorname{supp}(\mathbf{x})} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathbf{f} \right\|_2.</script><p>综合前面式子，可以得到</p>
 <script type="math/tex; mode=display">
 \| \hat{\mathbf{f}}^{k + 1} \|_2 \leq (2 + \epsilon_2) \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2,</script><p>所需不等式成立。</p>
 </blockquote>
@@ -336,23 +334,23 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D
 <script type="math/tex; mode=display">
 \left\| \mathbf{f} - \mathbf{g}^{k+1} \right\|_2 
 \leq \frac{\left\| \mathbf{A} \mathbf{f} - \mathbf{A} \mathbf{g}^{k+1} \right\|_2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}}
-\leq \frac{\left\| \mathbf{y} - \mathbf{A} \mathbf{g}^{k+1} \right\|_2 + \| \mathbf{e} \|_2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}}</script><p>注意到 $\mathbf{g}^{k+1}$ 的迭代公式也可以写成</p>
+\leq \frac{\left\| \mathbf{y} - \mathbf{A} \mathbf{g}^{k+1} \right\|_2 + \| \mathbf{e} \|_2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}}.</script><p>注意到 $\mathbf{g}^{k+1}$ 的迭代公式也可以写成</p>
 <script type="math/tex; mode=display">
-\mathbf{g}^{k+1} = \underset{\mathbf{g} \in \mathbb{C}^n}{\arg \min} \ {\| \mathbf{y} - \mathbf{A} \mathbf{g} \|_2} \quad \text{ s.t. } \quad \mathbf{g} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)</script><p>特别地，对于 $\mathcal{P}_{T^{k+1}} \mathbf{f} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，可以得到</p>
+\mathbf{g}^{k+1} = \underset{\mathbf{g} \in \mathbb{C}^n}{\arg \min} \ {\| \mathbf{y} - \mathbf{A} \mathbf{g} \|_2} \quad \text{ s.t. } \quad \mathbf{g} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right),</script><p>特别地，对于 $\mathcal{P}_{T^{k+1}} \mathbf{f} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，可以得到</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \mathbf{y} - \mathbf{A} \mathbf{g}^{k+1} \right\|_2 
 & \leq \left\| \mathbf{y} - \mathbf{A} \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 \\
 & = \left\| \mathbf{A} \mathbf{f} - \mathbf{A} \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \| \mathbf{e} \|_2 \\
-& \leq \sqrt{1 + \delta_{4s}^{\mathbf{D}}} \left\| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \| \mathbf{e} \|_2
+& \leq \sqrt{1 + \delta_{4s}^{\mathbf{D}}} \left\| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \| \mathbf{e} \|_2.
 \end{align*}</script><p>其中最后一步利用了 $\operatorname{card}(T^{k+1}) \leq 3s$ 以及 $\mathbf{A}$ 的 $\mathbf{D}$-RIP 性质。综合上述式子，有</p>
 <script type="math/tex; mode=display">
 \left\| \mathbf{f} - \mathbf{g}^{k+1} \right\|_2 
 \leq \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}} \left\| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \frac{2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} \| \mathbf{e} \|_2,</script><p>所需不等式成立。</p>
 </blockquote>
-<p><strong>Part 3</strong>：记第 $k$ 次迭代的残差为 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$，另外记 $\mathbf{A}^<em> \mathbf{r}^k$ 的近似最佳投影指标集为 $\Lambda^k = \mathcal{N}_{2s}(\mathbf{A}^</em>\mathbf{r}^{k})$，那么</p>
+<p><strong>Part 3</strong>：记第 $k$ 次迭代的残差为 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$，另外记 $\mathbf{A}^* \mathbf{r}^k$ 的近似最佳投影指标集为 $\Lambda^k = \mathcal{N}_{2s}(\mathbf{A}^*\mathbf{r}^{k})$，那么</p>
 <script type="math/tex; mode=display">
-\left \| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right \|_2^2 \leq \left\| \hat{\mathbf{f}}^k - \mathcal{P}_{\Lambda^k} \hat{\mathbf{f}}^k \right\|_{2}</script><blockquote>
+\left \| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right \|_2^2 \leq \left\| \hat{\mathbf{f}}^k - \mathcal{P}_{\Lambda^k} \hat{\mathbf{f}}^k \right\|_{2}.</script><blockquote>
 <p><strong>证明：</strong></p>
 <p>根据定义，$T^{k+1} = S^k \cup \Lambda^k$。由于 ${\mathbf{f}}^k \in \mathcal{R}\left( \mathbf{D}_{S^k} \right) \subset \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，因此</p>
 <script type="math/tex; mode=display">
@@ -366,7 +364,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D
 <p><strong>Part 4</strong>：</p>
 <script type="math/tex; mode=display">
 \left\| \hat{\mathbf{f}}^k - \mathcal{P}_{\Lambda^k} \hat{\mathbf{f}}^k \right\|_{2} \leq\left(\left(2+\epsilon_{1}\right) \delta_{4 k}^{\mathbf{D}}+\epsilon_{1}\right)\| \hat{\mathbf{f}}^k \|_{2}+\left(2+\epsilon_{1}\right) \sqrt{1+\delta_{4 s}^{\mathbf{D}}} \| \mathbf{e} \|_2</script><blockquote>
-<p>记 $\mathbf{A}^<em>\mathbf{r}^{k}$ 的最佳投影指标集为 $\Omega^k = \mathcal{O}_{2s}(\mathbf{A}^</em>\mathbf{r}^{k})$，并记 $\hat{\mathbf{f}}^k$ 的最佳投影指标集为 $\Pi^k = \mathcal{O}_{2s}(\hat{\mathbf{f}}^k)$。根据引理 3 以及三角不等式，可以得到</p>
+<p>记 $\mathbf{A}^*\mathbf{r}^{k}$ 的最佳投影指标集为 $\Omega^k = \mathcal{O}_{2s}(\mathbf{A}^*\mathbf{r}^{k})$，并记 $\hat{\mathbf{f}}^k$ 的最佳投影指标集为 $\Pi^k = \mathcal{O}_{2s}(\hat{\mathbf{f}}^k)$。根据引理 3 以及三角不等式，可以得到</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \hat{\mathbf{f}}^k - \mathcal{P}_{\Lambda^k} \hat{\mathbf{f}}^k \right\|_{2}
@@ -427,7 +425,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D
 \leq & \ (2 + \epsilon_2) \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}} \left\| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \frac{4 + 2\epsilon_2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} \| \mathbf{e} \|_2 \\
 \leq & \ (2 + \epsilon_2) \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}} \left\| \hat{\mathbf{f}}^k - \mathcal{P}_{\Lambda^k} \hat{\mathbf{f}}^k \right\|_{2} + \frac{4 + 2\epsilon_2}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} \| \mathbf{e} \|_2 \\
 \leq & \ \left(\left(2+\epsilon_{1}\right) \delta_{4 s}^{\mathbf{D}}+\epsilon_{1}\right)(2 + \epsilon_2) \sqrt{\frac{1 + \delta_{4s}^{\mathbf{D}}}{1 - \delta_{4s}^{\mathbf{D}}}} \| \hat{\mathbf{f}}^k \|_{2} \\
-& + \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D}}} \right)}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} (2 + \epsilon_2) \| \mathbf{e} \|_2
+& + \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}^{\mathbf{D}}} \right)}{\sqrt{1 - \delta_{4s}^{\mathbf{D}}}} (2 + \epsilon_2) \| \mathbf{e} \|_2.
 \end{align*}</script><p>综上所述，命题 1 证毕。</p>
 </blockquote>
 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T08:56:31.327Z</updated>
+  <updated>2020-03-24T09:42:14.518Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/"/>
     <id>http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/</id>
     <published>2020-03-24T08:10:44.000Z</published>
-    <updated>2020-03-24T08:56:31.327Z</updated>
+    <updated>2020-03-24T09:42:14.518Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (2011): 59-73.&lt;/p&gt;
+      &lt;p&gt;[参考文献] Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.&lt;/p&gt;
     
     </summary>
     
@@ -42,11 +42,11 @@
     <link href="http://yoursite.com/2020/01/28/compressed-sensing-with-redundant-dictionaries/"/>
     <id>http://yoursite.com/2020/01/28/compressed-sensing-with-redundant-dictionaries/</id>
     <published>2020-01-28T15:30:16.000Z</published>
-    <updated>2020-03-24T08:56:13.745Z</updated>
+    <updated>2020-03-24T09:42:51.991Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (2011): 59-73.&lt;/p&gt;
+      &lt;p&gt;[参考文献] Candes, E. J., Eldar, Y. C., Needell, D., &amp;amp; Randall, P. (2011). Compressed sensing with coherent and redundant dictionaries. Applied and Computational Harmonic Analysis, 31(1), 59-73.&lt;/p&gt;
     
     </summary>
     
