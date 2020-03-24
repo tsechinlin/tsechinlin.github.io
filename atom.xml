@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T08:10:44.872Z</updated>
+  <updated>2020-03-24T08:56:31.327Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,26 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>compressed-sensing-dictionary-CoSaMP</title>
+    <title>Compressed Sensing with Redundant Dictionaries - CoSaMP Algorithm</title>
     <link href="http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/"/>
     <id>http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/</id>
     <published>2020-03-24T08:10:44.000Z</published>
-    <updated>2020-03-24T08:10:44.872Z</updated>
+    <updated>2020-03-24T08:56:31.327Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;[参考文献] Candes, Emmanuel J., Yonina C. Eldar, Deanna Needell, and Paige Randall. “Compressed sensing with coherent and redundant dictionaries.” Applied and Computational Harmonic Analysis 31, no. 1 (2011): 59-73.&lt;/p&gt;
     
     </summary>
     
     
+      <category term="Computational Mathematics" scheme="http://yoursite.com/categories/Computational-Mathematics/"/>
+    
+    
+      <category term="Compressed Sensing" scheme="http://yoursite.com/tags/Compressed-Sensing/"/>
     
   </entry>
   
   <entry>
-    <title>论文笔记 Compressed Sensing with Coherent and Redundant Dictionaries</title>
+    <title>Compressed Sensing with Redundant Dictionaries - L1 Algorithm</title>
     <link href="http://yoursite.com/2020/01/28/compressed-sensing-with-redundant-dictionaries/"/>
     <id>http://yoursite.com/2020/01/28/compressed-sensing-with-redundant-dictionaries/</id>
     <published>2020-01-28T15:30:16.000Z</published>
-    <updated>2020-02-09T12:52:56.780Z</updated>
+    <updated>2020-03-24T08:56:13.745Z</updated>
     
     <summary type="html">
     
