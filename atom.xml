@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-24T09:42:14.518Z</updated>
+  <updated>2020-04-11T04:56:29.936Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Compressed Sensing with Redundant Dictionaries - CoSaMP Algorithm</title>
+    <title>Compressed Sensing with Redundant Dictionaries - CoSaMP</title>
     <link href="http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/"/>
     <id>http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/</id>
     <published>2020-03-24T08:10:44.000Z</published>
-    <updated>2020-03-24T09:42:14.518Z</updated>
+    <updated>2020-04-11T04:56:29.936Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;[参考文献] Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.&lt;/p&gt;
+      &lt;p&gt;参考文献&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[DNW13]&lt;/strong&gt; Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[GN15]&lt;/strong&gt; Giryes, R., &amp;amp; Needell, D. (2015). Greedy signal space methods for incoherence and beyond. &lt;em&gt;Applied and Computational Harmonic Analysis&lt;/em&gt;, &lt;em&gt;39&lt;/em&gt;(1), 1-20.&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
