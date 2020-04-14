@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="参考文献  [DNW13] Davenport, M. A., Needell, D., &amp;amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-11T04:56:29.936Z">
+<meta property="og:updated_time" content="2020-04-14T01:57:17.633Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/03/24/compressed-sensing-dictionary-CoSaMP/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-11 12:56:29" itemprop="dateModified" datetime="2020-04-11T12:56:29+08:00">2020-04-11</time>
+                <time title="Modified: 2020-04-14 09:57:17" itemprop="dateModified" datetime="2020-04-14T09:57:17+08:00">2020-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,7 +244,7 @@
         <p>参考文献</p>
 <ul>
 <li><strong>[DNW13]</strong> Davenport, M. A., Needell, D., &amp; Wakin, M. B. (2013). Signal space CoSaMP for sparse recovery with redundant dictionaries. IEEE Transactions on Information Theory, 59(10), 6820-6829.</li>
-<li><strong>[GN15]</strong> Giryes, R., &amp; Needell, D. (2015). Greedy signal space methods for incoherence and beyond. <em>Applied and Computational Harmonic Analysis</em>, <em>39</em>(1), 1-20.</li>
+<li><strong>[GN15]</strong> Giryes, R., &amp; Needell, D. (2015). Greedy signal space methods for incoherence and beyond. Applied and Computational Harmonic Analysis, 39(1), 1-20.</li>
 </ul>
 <a id="more"></a>
 <h2 id="投影算子与最优指标集"><a href="#投影算子与最优指标集" class="headerlink" title="投影算子与最优指标集"></a>投影算子与最优指标集</h2><ul>
@@ -343,8 +343,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 <p><strong>证明：</strong></p>
 <p>以下分四部分证明上述误差迭代不等式。</p>
 </blockquote>
-<p><strong>Part 1</strong>：</p>
-<script type="math/tex; mode=display">
+<h3 id="Part-1"><a href="#Part-1" class="headerlink" title="Part 1"></a>Part 1</h3><script type="math/tex; mode=display">
 \left\| {\mathbf{f}} - {\mathbf{f}}^{k+1} \right\|_2 \leq (2 + \epsilon_2) \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2.</script><blockquote>
 <p>根据三角不等式，</p>
 <script type="math/tex; mode=display">
@@ -355,14 +354,13 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 & \leq \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} - \mathbf{f}^{k+1}\right\|_2 \\
 & = \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 + \left\| \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} - \mathcal{P}_{\mathcal{N}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 \\
 & \leq (1 + \epsilon_2) \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2.
-\end{align*}</script><p>因为 $\mathbf{f}$ 为 $s$-synthesis sparse信号，因此存在大小为 $s$ 的指标集 $S \subset [N]$ 使得 $\mathbf{f} \in \mathbf{D}_S$。根据 $\mathcal{O}_s(\mathbf{g}^{k+1})$ 以及投影算子的定义，</p>
+\end{align*}</script><p>因为 $\mathbf{f}$ 为 $s$-synthesis sparse信号，因此存在大小为 $s$ 的指标集 $S \subset [N]$ 使得 $\mathbf{f} \in \mathcal{R}(\mathbf{D}_S)$。根据 $\mathcal{O}_s(\mathbf{g}^{k+1})$ 以及投影算子的定义，</p>
 <script type="math/tex; mode=display">
 \left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathcal{P}_{S} \mathbf{g}^{k + 1} \right\|_2 \leq \left\| \mathbf{g}^{k+1} - \mathbf{f} \right\|_2.</script><p>综上所述，可以得到</p>
 <script type="math/tex; mode=display">
 \left\| {\mathbf{f}} - {\mathbf{f}}^{k+1} \right\|_2 \leq (2 + \epsilon_2) \left\| \mathbf{f} - \mathbf{g}^{k + 1} \right\|_2,</script><p>所需不等式成立。</p>
 </blockquote>
-<p><strong>Part 2</strong>：</p>
-<script type="math/tex; mode=display">
+<h3 id="Part-2"><a href="#Part-2" class="headerlink" title="Part 2"></a>Part 2</h3><script type="math/tex; mode=display">
 \left\| \mathbf{f} - \mathbf{g}^{k+1} \right\|_2 
 \leq \sqrt{\frac{1 + \delta_{4s}}{1 - \delta_{4s}}} \left\| \mathcal{Q}_{T^{k+1}} \mathbf{f} \right\|_2 + \frac{2}{\sqrt{1 - \delta_{4s}}} \| \mathbf{e} \|_2.</script><blockquote>
 <p>首先，由于 $\mathbf{g}^{k+1}$ 是 $3s$-synthesis sparse 的，并且 $\mathbf{f}$ 是 $s$-synthesis sparse 的，因此根据 $\mathbf{A}$ 的 $\mathbf{D}$-RIP 性质以及三角不等式，有</p>
@@ -383,7 +381,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 \left\| \mathbf{f} - \mathbf{g}^{k+1} \right\|_2 
 \leq \sqrt{\frac{1 + \delta_{4s}}{1 - \delta_{4s}}} \left\| \mathbf{f} - \mathcal{P}_{T^{k+1}} \mathbf{f} \right\|_2 + \frac{2}{\sqrt{1 - \delta_{4s}}} \| \mathbf{e} \|_2,</script><p>所需不等式成立。</p>
 </blockquote>
-<p><strong>Part 3</strong>：记第 $k$ 次迭代的残差为 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$，另外记 $\mathbf{A}^* \mathbf{r}^k$ 的近似最优投影指标集为 $\Lambda^k = \mathcal{N}_{2s}(\mathbf{A}^*\mathbf{r}^{k})$，那么</p>
+<h3 id="Part-3"><a href="#Part-3" class="headerlink" title="Part 3"></a>Part 3</h3><p>记第 $k$ 次迭代的残差为 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$，另外记 $\mathbf{A}^* \mathbf{r}^k$ 的近似最优投影指标集为 $\Lambda^k = \mathcal{N}_{2s}(\mathbf{A}^*\mathbf{r}^{k})$，那么</p>
 <script type="math/tex; mode=display">
 \left \| \mathcal{Q}_{T^{k+1}} \mathbf{f} \right \|_2 \leq \left\| \mathcal{Q}_{\Lambda^k} \left( \mathbf{f} - \mathbf{f}^k \right ) \right\|_{2}.</script><blockquote>
 <p><strong>证明：</strong></p>
@@ -400,8 +398,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 <script type="math/tex; mode=display">
 \left\| \mathcal{Q}_{T^{k+1}} \mathbf{f} \right\|_2^2 = \left \| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right \|_2^2 \leq \left \| \mathcal{Q}_{\Lambda^{k}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right \|_2^2,</script><p>开方即得所需结论。</p>
 </blockquote>
-<p><strong>Part 4</strong>：</p>
-<script type="math/tex; mode=display">
+<h3 id="Part-4"><a href="#Part-4" class="headerlink" title="Part 4"></a>Part 4</h3><script type="math/tex; mode=display">
 \left \| \mathcal{Q}_{\Lambda^{k}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right \|_2 \leq\left(\left(2+\epsilon_{1}\right) \delta_{4 s}+\epsilon_{1}\right)\| {\mathbf{f}} - {\mathbf{f}}^k \|_{2}+\left(2+\epsilon_{1}\right) \sqrt{1+\delta_{4 s}} \| \mathbf{e} \|_2.</script><blockquote>
 <p>记 $\mathbf{A}^*\mathbf{r}^{k}$ 的最优投影指标集为 $\Omega^k = \mathcal{O}_{2s}(\mathbf{A}^*\mathbf{r}^{k})$，并记 ${\mathbf{f}} - {\mathbf{f}}^k$ 的最优投影指标集为 $\Pi^k = \mathcal{O}_{2s}({\mathbf{f}} - {\mathbf{f}}^k)$。根据引理 2 以及三角不等式，可以得到</p>
 <script type="math/tex; mode=display">
@@ -419,7 +416,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 \end{align*}</script><p>其中最后一个不等号利用了 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k} = \mathbf{A} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) + \mathbf{e}$。上述不等式右端有四项，这里先将第三项以及第四项处理成前面两项的形式。</p>
 <p><strong>(1)</strong> 对于第三项，首先利用引理 3 可以得到下面的第一个不等式，第二步的等式则是利用引理 1，接下来的第三步则是再次利用了引理 2。在第四步中，只需注意到 $\mathbf{f} - \mathbf{f}^k$ 是 $2s$-synthesis sparse 的，因此有</p>
 <script type="math/tex; mode=display">
-\mathcal{P}_{\Pi^k} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) = \mathbf{f} - \mathbf{f}^k.</script><p>第五步利用了三角不等式以及引理 1，最后一步则是由于 $\left\lVert \mathcal{Q}_{\Pi^k} \right\rVert_{2 \to 2} \leq 1$。</p>
+\mathcal{P}_{\Pi^k} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) = \mathbf{f} - \mathbf{f}^k.</script><p>第五步利用了三角不等式以及引理 1，最后一步则是由于 $\left\lVert \mathcal{Q}_{\Pi^k} \right\rVert_{2 \to 2} \leq 1$，</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \mathcal{P}_{\Pi^k \cup \Omega^k} \mathbf{A}^* {\mathbf{r}}^k - \mathcal{P}_{\Omega^k} \mathbf{A}^* {\mathbf{r}}^k \right \|_{2} 
@@ -462,8 +459,7 @@ d_1 & = \frac{2 + \left(2+\epsilon_{1}\right) \left({1 + \delta_{4 s}} \right)}{
 <script type="math/tex; mode=display">
 \left\| \mathcal{Q}_{\Lambda^{k}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2} \leq\left(\left(2+\epsilon_{1}\right) \delta_{4 s}+\epsilon_{1}\right)\| {\mathbf{f}} - {\mathbf{f}}^k \|_{2}+\left(2+\epsilon_{1}\right) \sqrt{1+\delta_{4 s}} \| \mathbf{e} \|_2</script><p>成立。</p>
 </blockquote>
-<p><strong>Conclusion</strong>：</p>
-<blockquote>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><blockquote>
 <p>为了得到原命题中的结论，将上述四个不等式依次代入即可：</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -482,16 +478,14 @@ T^{k+1} & = S^{k} \cup \widehat{\mathcal{N}_{2s}}\left( \mathbf{A}^* (\mathbf{y}
 \mathbf{g}^{k+1} & = \mathbf{D} \cdot \underset{\operatorname{supp(\mathbf{z})}  \subset T^{k+1}}{\arg \min} \ {\| \mathbf{y} - \mathbf{A} \mathbf{D} \mathbf{z} \|_2}, \\
 S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 \mathbf{f}^{k+1} &= \mathcal{P}_{S^{k+1}} \mathbf{g}^{k+1}.
-\end{align*}</script><p><strong>Part 1</strong></p>
-<script type="math/tex; mode=display">
+\end{align*}</script><h3 id="Part-1-1"><a href="#Part-1-1" class="headerlink" title="Part 1"></a>Part 1</h3><script type="math/tex; mode=display">
 \left\| \mathbf{f} - {\mathbf{f}}^{k+1} \right\|_{2} \leq \left( 1 + {\tau_1} \right) \left \| \mathbf{f} - \mathbf{g}^{k+1} \right \|_2.</script><blockquote>
 <p>首先注意到 $\mathbf{f}^{k + 1} = \mathcal{P}_{\mathcal{N}_{s}(\mathbf{g}^{k+1})} \mathbf{g}^{k + 1}$，因此根据 $\mathcal{N}_{s}$ 的性质，有</p>
 <script type="math/tex; mode=display">
 \left \| \mathbf{g}^{k+1} - \mathbf{f}^{k+1} \right \|_2 \leq \tau_{1}\left\| \mathbf{g}^{k+1} - \mathcal{P}_{\mathcal{O}_s(\mathbf{g}^{k+1})} \mathbf{g}^{k+1} \right\|_{2} \leq \tau_{1}\left\| \mathbf{g}^{k+1} - \mathcal{P}_{S} \mathbf{g}^{k+1} \right\|_{2} \leq \tau_{1}\left\| \mathbf{g}^{k+1} - \mathbf{f}\right\|_{2}.</script><p>从而有</p>
 <script type="math/tex; mode=display">
 \left\| \mathbf{f} - {\mathbf{f}}^{k+1} \right\|_{2} \leq \left \| \mathbf{f} - \mathbf{g}^{k+1} \right \|_2 + \left \| \mathbf{g}^{k+1} - \mathbf{f}^{k+1} \right \|_2 \leq \left( 1 + {\tau_1} \right) \left \| \mathbf{f} - \mathbf{g}^{k+1} \right \|_2.</script></blockquote>
-<p><strong>Part 2</strong></p>
-<script type="math/tex; mode=display">
+<h3 id="Part-2-1"><a href="#Part-2-1" class="headerlink" title="Part 2"></a>Part 2</h3><script type="math/tex; mode=display">
 \left \| \mathbf{f} - \mathbf{g}^{k+1} \right \|_2 \leq \frac{1}{\sqrt{ 1- \delta_{4 s}^2 }} \left\| \mathcal{Q}_{T^{k+1}} \left(\mathbf{f} - \mathbf{g}^{k+1}\right)\right\|_{2}+ \frac{\sqrt{1+\delta_{4 s}}}{1-\delta_{4 s}} \|\mathbf{e}\|_{2}.</script><blockquote>
 <p>根据 $\mathbf{g}^{k+1}$ 的定义，$\forall \mathbf{h} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，有</p>
 <script type="math/tex; mode=display">
@@ -504,7 +498,7 @@ S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 & = \left \langle \mathbf{f} - \mathbf{g}^{k+1}, \mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle \\
 & = \left \langle \mathbf{f} - \mathbf{g}^{k+1}, (\mathbf{Id} - \mathbf{A}^* \mathbf{A})\mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle + \left \langle \mathbf{f} - \mathbf{g}^{k+1}, \mathbf{A}^* \mathbf{A} \mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle \\
 & = \left \langle \mathbf{f} - \mathbf{g}^{k+1}, (\mathbf{Id} - \mathbf{A}^* \mathbf{A})\mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle + \left \langle \mathbf{e}, \mathbf{A} \mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle.
-\end{align*}</script><p><strong>(1)</strong> 先处理这里出现的第一项，由于 $\mathbf{f} \in \mathcal{R}(D_{S})$ 以及 $\mathbf{g} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，</p>
+\end{align*}</script><p><strong>(1)</strong> 先处理这里出现的第一项。因为 $\mathbf{f}$ 为 $s$-synthesis sparse信号，因此存在大小为 $s$ 的指标集 $S \subset [N]$ 使得 $\mathbf{f} \in \mathcal{R}(\mathbf{D}_S)$。另外注意到 $\mathbf{g} \in \mathcal{R}\left( \mathbf{D}_{T^{k+1}} \right)$，因此有</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 & \ \left \langle \mathbf{f} - \mathbf{g}^{k+1}, (\mathbf{Id} - \mathbf{A}^* \mathbf{A})\mathcal{P}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \rangle \\
@@ -536,16 +530,26 @@ S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 & = \frac{1}{\sqrt{ 1- \delta_{4 s}^2 }} \left\| \mathcal{Q}_{T^{k+1}} \left(\mathbf{f} - \mathbf{g}^{k+1}\right)\right\|_{2} +\frac{\sqrt{1+\delta_{4 s}}}{1-\delta_{4 s}} \|\mathbf{e}\|_{2}
 \end{align*}</script><p>其中第二个不等号利用了 $\forall a, b \geq 0$，有 $\sqrt{a^2 + b^2} \leq a + b$ 成立。</p>
 </blockquote>
-<p><strong>Part 3</strong></p>
+<h3 id="Part-3-1"><a href="#Part-3-1" class="headerlink" title="Part 3"></a>Part 3</h3><script type="math/tex; mode=display">
+\left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \|_2 \leq \left\| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{f}^{k} \right) \right\|_{2}.</script><blockquote>
+<p>根据三角不等式，</p>
 <script type="math/tex; mode=display">
-\left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \|_2 \leq \rho_2 \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_{2} + \eta_2 \left\| \mathbf{e} \right\|_{2}</script><blockquote>
+\left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \|_2 \leq \left\| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{f}^{k} \right) \right\|_{2} 
++ \left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f}^{k} - \mathbf{g}^{k+1} \right) \right \|_2.</script><p>由于 $\mathbf{g}^{k+1} \in \mathcal{R}(\mathbf{D}_{T^{k+1}})$ 以及 $\mathbf{f}^{k} \in \mathcal{R}(\mathbf{D}_{S^{k}}) \subset \mathcal{R}(\mathbf{D}_{T^{k+1}})$，因此</p>
+<script type="math/tex; mode=display">
+\mathcal{Q}_{T^{k+1}} \left( \mathbf{f}^{k} - \mathbf{g}^{k+1} \right) = \mathbf{0},</script><p>进而有</p>
+<script type="math/tex; mode=display">
+\left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \|_2 \leq \left\| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{f}^{k} \right) \right\|_{2}.</script></blockquote>
+<h3 id="Part-4-1"><a href="#Part-4-1" class="headerlink" title="Part 4"></a>Part 4</h3><p>存在仅依赖于 $\mathbf{D}$-RIP 常数 $\delta_{4s}$ 以及近似参数 $\tau_2$ 的常数 $\rho_1, \kappa_1 &gt; 0$ 使得</p>
+<script type="math/tex; mode=display">
+\left\| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{f}^{k} \right) \right\|_{2} \leq \rho_1 \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_{2} + \kappa_1 \left\| \mathbf{e} \right\|_{2}.</script><blockquote>
 <p>根据 $\widehat{\mathcal{N}_{2s}}$ 的性质，对任意 $\mathbf{h} \in \mathbb{C}^n$ 以及大小不超过 $2s$ 的指标集 $\Pi \subset [N]$，有</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \mathcal{P}_{\widehat{\mathcal{N}_{2 s}}(\mathbf{h})} \mathbf{h} \right\|_{2}^2 & \geq \tau_{2}^2\left\| \mathcal{P}_{\mathcal{O}_{2s}(\mathbf{h})} \mathbf{h} \right\|_{2}^2
 = \tau_{2}^2 \left( \left\| \mathbf{h} \right\|_{2}^2 - \left\| \mathbf{h} - \mathcal{P}_{\mathcal{O}_{2s}(\mathbf{h})} \mathbf{h} \right\|_{2}^2 \right) \\
 & \geq \tau_{2}^2 \left( \left\| \mathbf{h} \right\|_{2}^2 - \left\| \mathbf{h} - \mathcal{P}_{\Pi} \mathbf{h} \right\|_{2}^2 \right) = \tau_{2}^2\left\| \mathcal{P}_{\Pi} \mathbf{h} \right\|_{2}^2.
-\end{align*}</script><p>特别地，可以令 $\mathbf{h} = \mathbf{A}^<em> \mathbf{r}^k$ 以及 $\Pi = S \cup S^k$，其中 $\mathbf{r}^k$ 为第 $k$ 次迭代的残差，即 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$。另外注意到 $T^{k+1} = S^k \cup \widehat{\mathcal{N}_{2 s}}(\mathbf{A}^</em> \mathbf{r}^k)$，因此</p>
+\end{align*}</script><p>特别地，可以令 $\mathbf{h} = \mathbf{A}^* \mathbf{r}^k$ 以及 $\Pi = S \cup S^k$，其中 $\mathbf{r}^k$ 为第 $k$ 次迭代的残差，即 $\mathbf{r}^k = \mathbf{y} - \mathbf{A} \mathbf{f}^{k}$。另外注意到 $T^{k+1} = S^k \cup \widehat{\mathcal{N}_{2 s}}(\mathbf{A}^* \mathbf{r}^k)$，因此</p>
 <script type="math/tex; mode=display">
 \left\| \mathcal{P}_{T^{k+1}} \mathbf{A}^* \mathbf{r}^k \right\|_{2}^2 
 \geq \left\| \mathcal{P}_{\widehat{\mathcal{N}_{2 s}}(\mathbf{A}^* \mathbf{r}^k)} \mathbf{A}^* \mathbf{r}^k \right\|_{2}^2 \geq \tau_2^2 \left\| \mathcal{P}_{S \cup S^k} \mathbf{A}^* \mathbf{r}^k \right\|_{2}^2.</script><p>接下来分别给出上式左端的上限、右端的下限，推导过程中需要利用到一个结论是：对任意 $\mathbf{h}_1, \mathbf{h}_2 \in \mathbb{C}^n$ 以及 $\alpha &gt; 0$，根据 Cauchy–Schwarz 不等式以及基本不等式，可以推出</p>
@@ -567,12 +571,12 @@ S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 & \ + (1 + \gamma) \left( 1 + \frac{1}{\xi_1} \right) \left\| \mathcal{P}_{T^{k+1}} (\mathbf{A}^* \mathbf{A} - \mathbf{Id}) \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \\
 = & \ \left( 1 + \frac{1}{\gamma} \right) \left\| \mathcal{P}_{T^{k+1}} \mathbf{A}^* \mathbf{e} \right\|_{2}^2 
 + (1 + \gamma)(1 + \xi_1) \left[ \left \| {\mathbf{f}} - {\mathbf{f}}^k \right \| -  \left\| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \right] \\    
-& \ + (1 + \gamma) \left( 1 + \frac{1}{\xi_1} \right) \left\| \mathcal{P}_{T^{k+1}} (\mathbf{A}^* \mathbf{A} - \mathbf{Id}) \mathcal{P}_{S \cup S^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \\
+& \ + (1 + \gamma) \left( 1 + \frac{1}{\xi_1} \right) \left\| \mathcal{P}_{T^{k+1}} (\mathbf{A}^* \mathbf{A} - \mathbf{Id}) \mathcal{P}_{S \cup S^{k}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \\
 \leq & \ \left( 1 + \frac{1}{\gamma} \right) (1 + \delta_{4 s}) \left\| \mathbf{e} \right\|_{2}^2 
 - (1 + \gamma)(1 + \xi_1) \left\| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \\    
 & \ + (1 + \gamma) \left[ 1 + \xi_1 + \left( 1 + \frac{1}{\xi_1} \right) \delta_{4s}^2 \right] \left\| {\mathbf{f}} - {\mathbf{f}}^k \right \|_{2}^2.
-\end{align*}</script><p>最后一步利用了引理 4 与引理 5。</p>
-<p><strong>(2)</strong> 对于右端，同样利用引理 4 与引理 5，可以得到</p>
+\end{align*}</script><p>其中第三步利用了 ${\mathbf{f}} - {\mathbf{f}}^k \in \mathcal{R}(\mathbf{D}_{S \cup S^k} )$，最后一步则是利用引理 4 与引理 5。</p>
+<p><strong>(2)</strong> 对于右端，再次利用引理 4 与引理 5，可以得到</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 \left\| \mathcal{P}_{S \cup S^k} \mathbf{A}^* \mathbf{r}^k \right\|_{2}^2
@@ -585,35 +589,47 @@ S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 - \frac{1 + \delta_{4s}}{\gamma} \left\| \mathbf{e} \right\|_{2}^2.
 \end{align*}</script><p>将上述上限、下限代回原式并进行整理，可以推出</p>
 <script type="math/tex; mode=display">
-\left\| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \leq \rho_2^2 \left\| {\mathbf{f}} - {\mathbf{f}}^k \right\|_{2}^2 + \eta_2^2 \left\| \mathbf{e} \right\|_{2}^2</script><p>其中</p>
+\left\| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2}^2 \leq \rho_1^2 \left\| {\mathbf{f}} - {\mathbf{f}}^k \right\|_{2}^2 + \kappa_1^2 \left\| \mathbf{e} \right\|_{2}^2,</script><p>其中</p>
 <script type="math/tex; mode=display">
 \begin{align*}
-\rho_2^2 & = 1 + \frac{1}{\xi_1} \delta_{4s}^2 - \frac{\tau_2^2}{(1 + \gamma)^2(1 + \xi_1)} \left( \frac{1}{1 + \xi_2} - \frac{1}{\xi_2} \delta_{4s}^2 \right), \\
-\eta_2^2 & = \frac{1 + \delta_{4s}}{\gamma(1 + \xi_1)} + \frac{\tau_2^2(1 + \delta_{4s})}{\gamma(1 + \gamma)(1 + \xi_1)}
-\end{align*}</script><p>对 $\rho_2$ 关于 $\xi_2$ 求最小值，得 $\xi_2 = \delta_{4s} / (1-\delta_{4s})$ 时，有</p>
+\rho_1^2 & = 1 + \frac{1}{\xi_1} \delta_{4s}^2 - \frac{\tau_2^2}{(1 + \gamma)^2(1 + \xi_1)} \left( \frac{1}{1 + \xi_2} - \frac{1}{\xi_2} \delta_{4s}^2 \right), \\
+\kappa_1^2 & = \frac{1 + \delta_{4s}}{\gamma(1 + \xi_1)} + \frac{\tau_2^2(1 + \delta_{4s})}{\gamma(1 + \gamma)(1 + \xi_1)}.
+\end{align*}</script><p>要得到所要求的结论，只需注意到</p>
 <script type="math/tex; mode=display">
-\rho_2^2 = 1 + \frac{1}{\xi_1} \delta_{4s}^2 - \frac{\tau_2 \left(1 - \delta_{4 s}\right)^2 }{(1 + \gamma)^2(1 + \xi_1)}</script><p>对 $\rho_2$ 关于 $\xi_2$ 求最小值，得</p>
+\left\| \mathcal{Q}_{T^{k+1}} \left( {\mathbf{f}} - {\mathbf{f}}^k \right) \right\|_{2} \leq \left[ \rho_1^2 \left\| {\mathbf{f}} - {\mathbf{f}}^k \right\|_{2}^2 + \kappa_1^2 \left\| \mathbf{e} \right\|_{2}^2 \right]^{\frac{1}{2}} \leq \rho_1 \left\| {\mathbf{f}} - {\mathbf{f}}^k \right\|_{2} + \kappa_1 \left\| \mathbf{e} \right\|_{2}</script><p>即可。接下来确定待定常数 $\xi_1$ 与 $\xi_2$ 的值。先对 $\rho_1$ 关于 $\xi_2$ 求最小值，得 $\xi_2 = \delta_{4s} / (1-\delta_{4s})$ 时，有</p>
 <script type="math/tex; mode=display">
-\xi_1 = \delta_{4s} \left[ \frac{\tau_2 (1 - \delta_{4s})}{1 + \gamma} - \delta_{4s} \right]^{-1}</script><p>时，有</p>
+\rho_1^2 = 1 + \frac{1}{\xi_1} \delta_{4s}^2 - \frac{\tau_2^2 \left(1 - \delta_{4 s}\right)^2 }{(1 + \gamma)^2(1 + \xi_1)}.</script><p>接下来对 $\rho_1$ 关于 $\xi_2$ 求最小值，得</p>
 <script type="math/tex; mode=display">
-\rho_2^2 = 1 - \left[ \delta_{4s} -  \frac{\tau_2 (1 - \delta_{4s})}{1 + \gamma} \right]^2 = 1 - \left[ \left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} -  \frac{\tau_2}{1 + \gamma} \right]^2</script><p>最后再利用</p>
+\xi_1 =  \left[ \frac{\tau_2 (1 - \delta_{4s})}{ \left( 1 + \gamma \right) \delta_{4s}} - 1 \right]^{-1}</script><p>时，有</p>
 <script type="math/tex; mode=display">
-\left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{g}^{k+1} \right) \right \|_2 \leq \left\| \mathcal{Q}_{T^{k+1}} \hat{\mathbf{f}}^k \right\|_{2} 
-+ \left \| \mathcal{Q}_{T^{k+1}} \left( \mathbf{g}^{k+1} - \mathbf{f}^{k} \right) \right \|_2 = \left\| \mathcal{Q}_{T^{k+1}} \hat{\mathbf{f}}^k \right\|_{2}</script></blockquote>
-<p>Conclusion</p>
-<blockquote>
+\rho_1^2 = 1 - \left[ \delta_{4s} -  \frac{\tau_2 (1 - \delta_{4s})}{1 + \gamma} \right]^2 = 1 - \left[ \left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} -  \frac{\tau_2}{1 + \gamma} \right]^2.</script></blockquote>
+<h3 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h3><blockquote>
+<p>综合上述结论，可以得到</p>
 <script type="math/tex; mode=display">
 \begin{align*}
-\| \hat{\mathbf{f}}^{k+1} \|_2
-& \leq \rho_1 \left\| \mathcal{Q}_{T^{k+1}} \left(\mathbf{f} - \mathbf{g}^{k+1}\right)\right\|_{2}+ \eta_1 \|\mathbf{e}\|_{2} \\
-& \leq \rho_1 \rho_2 \| \hat{\mathbf{f}}^k \|_{2} + (\eta_1 + \rho_1\eta_2) \left\| \mathbf{e} \right\|_{2}
-\end{align*}</script><p>如果令 $\rho = \rho_1 \rho_2$</p>
+\left\| \mathbf{f} - {\mathbf{f}}^{k + 1} \right\|_2
+\leq & \ \left( 1 + {\tau_1} \right) \left \| \mathbf{f} - \mathbf{g}^{k+1} \right \|_2 \\
+\leq & \ \frac{1 + {\tau_1}}{\sqrt{ 1- \delta_{4 s}^2 }} \left\| \mathcal{Q}_{T^{k+1}} \left(\mathbf{f} - \mathbf{g}^{k+1}\right)\right\|_{2}
++ \frac{\left( 1 + {\tau_1} \right)\sqrt{1+\delta_{4 s}}}{1-\delta_{4 s}} \|\mathbf{e}\|_{2} \\
+\leq & \ \frac{1 + {\tau_1}}{\sqrt{ 1- \delta_{4 s}^2 }}  \left\| \mathcal{Q}_{T^{k+1}} \left( \mathbf{f} - \mathbf{f}^{k} \right) \right\|_{2}
++ \frac{\left( 1 + {\tau_1} \right)\sqrt{1+\delta_{4 s}}}{1-\delta_{4 s}} \|\mathbf{e}\|_{2} \\
+\leq & \ \frac{ \rho_1\left( 1 + {\tau_1} \right)}{\sqrt{ 1- \delta_{4 s}^2 }}  \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_{2} 
++ \left( 1 + {\tau_1} \right) \left( \frac{ \rho_1}{\sqrt{ 1- \delta_{4 s}^2 }} + \frac{\sqrt{1+\delta_{4 s}}}{1-\delta_{4 s}} \right) \|\mathbf{e}\|_{2} \\
+\triangleq & \ \rho_2 \left\| \mathbf{f} - {\mathbf{f}}^{k} \right\|_{2} + \kappa_2 \|\mathbf{e}\|_{2}.
+\end{align*}</script><p>注意到</p>
 <script type="math/tex; mode=display">
-\rho^2 = \frac{(1 + {\tau_1})^2}{ 1- \delta_{4 s}^2 } \left \{ 1 - \left[ \left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} -  \frac{\tau_2}{1 + \gamma} \right]^2 \right \}</script><p>欲使 $\rho^2 &lt; 1$，整理之后得，</p>
+\rho_2^2 = \frac{\rho_1^2(1 + {\tau_1})^2}{ 1- \delta_{4 s}^2 } = \frac{(1 + {\tau_1})^2}{ 1- \delta_{4 s}^2 } \left \{ 1 - \left[ \left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} -  \frac{\tau_2}{1 + \gamma} \right]^2 \right \},</script><p>将上式代入不等式 $\rho_2^2 &lt; 1$ 并进行整理，可以得到</p>
 <script type="math/tex; mode=display">
-\left[ \frac{1}{(1 + \tau_1)^2} - \left( 1 + \frac{\tau_2}{1 + \gamma} \right)^2 \right] \delta_{4s}^2 + \frac{2\tau_2}{1 + \gamma}\left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} + \left[ 1 - \frac{1}{(1 + \tau_1)^2} - \frac{\tau_2^2}{(1 + \gamma)^2} \right] < 0</script><p>显然上述方程中二次项系数小于零，而一次项系数大于零，因此方程有正根当且仅当常数项小于零，即</p>
+\left[ \frac{1}{(1 + \tau_1)^2} - \left( 1 + \frac{\tau_2}{1 + \gamma} \right)^2 \right] \delta_{4s}^2 + \frac{2\tau_2}{1 + \gamma}\left( 1 + \frac{\tau_2}{1 + \gamma} \right) \delta_{4s} + \left[ 1 - \frac{1}{(1 + \tau_1)^2} - \frac{\tau_2^2}{(1 + \gamma)^2} \right] < 0.</script><p>上述方程的二次项系数小于 0，一次项系数大于 0。另外，如果记 $u = 1/ \left( 1 +\tau_1 \right)$ 以及 $v = \tau_2 / (1 + \gamma)$，那么方程的判别式大于 0：</p>
 <script type="math/tex; mode=display">
-(1 + \tau_1)^2 \left[ 1 - \frac{\tau_2^2}{(1 + \gamma)^2} \right] < 1</script></blockquote>
+\begin{align*}
+\Delta 
+& = 4 v^2 (1 + u)^2 - 4 (1 - u^2 - v^2) \left[ u^2 - ( 1 + v )^2 \right] \\
+& = \left( 1 - u^2 \right) u^2 \left[ \frac{v^2}{1 - u^2} + \frac{(1 + v)^2}{u^2} - 1\right] > 0,
+\end{align*}</script><p>这是由于从 $1 + v &gt; 1$ 以及 $u &lt; 1$ 可以推出 ${(1 + v)^2}/{u^2} &gt; 1$。因此，当且仅当常数项小于 0 时，上述不等式方程的解区间包含 0 的某个邻域。综上，如果上述二次多项式的常数项小于 0 也就是</p>
+<script type="math/tex; mode=display">
+(1 + \tau_1)^2 \left[1  - \frac{\tau_2^2}{(1 + \gamma)^2}\right] < 1,</script><p>记 $\delta^*$ 为方程较小的零点，那么当 $\mathbf{A}$ 的 $\mathbf{D}$-RIP 常数满足 $\delta_{4s} &lt; \delta^*$ 时，常数 $\rho_2$ 满足 $\rho_2 &lt; 1$。命题 证毕。</p>
+</blockquote>
 
     </div>
 
@@ -676,7 +692,7 @@ S^{k+1} & = \mathcal{N}_{s}\left( \mathbf{g}^{k + 1} \right), \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#投影算子与最优指标集"><span class="nav-number">1.</span> <span class="nav-text">投影算子与最优指标集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">1.1.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-2"><span class="nav-number">1.2.</span> <span class="nav-text">引理 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-3"><span class="nav-number">1.3.</span> <span class="nav-text">引理 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-4"><span class="nav-number">1.4.</span> <span class="nav-text">引理 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-5"><span class="nav-number">1.5.</span> <span class="nav-text">引理 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-D-CoSaMP-算法与近似最优指标集"><span class="nav-number">2.</span> <span class="nav-text">$\mathbf{D}$-CoSaMP 算法与近似最优指标集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbf-D-CoSaMP-算法"><span class="nav-number">2.1.</span> <span class="nav-text">$\mathbf{D}$-CoSaMP 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近似最优投影指标集"><span class="nav-number">2.2.</span> <span class="nav-text">近似最优投影指标集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNW13-收敛性分析"><span class="nav-number">3.</span> <span class="nav-text">[DNW13] 收敛性分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命题-1：重建误差的迭代不等式"><span class="nav-number">3.1.</span> <span class="nav-text">命题 1：重建误差的迭代不等式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GN15-收敛性分析"><span class="nav-number">4.</span> <span class="nav-text">[GN15] 收敛性分析</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#投影算子与最优指标集"><span class="nav-number">1.</span> <span class="nav-text">投影算子与最优指标集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-1"><span class="nav-number">1.1.</span> <span class="nav-text">引理 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-2"><span class="nav-number">1.2.</span> <span class="nav-text">引理 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-3"><span class="nav-number">1.3.</span> <span class="nav-text">引理 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-4"><span class="nav-number">1.4.</span> <span class="nav-text">引理 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理-5"><span class="nav-number">1.5.</span> <span class="nav-text">引理 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-D-CoSaMP-算法与近似最优指标集"><span class="nav-number">2.</span> <span class="nav-text">$\mathbf{D}$-CoSaMP 算法与近似最优指标集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbf-D-CoSaMP-算法"><span class="nav-number">2.1.</span> <span class="nav-text">$\mathbf{D}$-CoSaMP 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#近似最优投影指标集"><span class="nav-number">2.2.</span> <span class="nav-text">近似最优投影指标集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNW13-收敛性分析"><span class="nav-number">3.</span> <span class="nav-text">[DNW13] 收敛性分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命题-1：重建误差的迭代不等式"><span class="nav-number">3.1.</span> <span class="nav-text">命题 1：重建误差的迭代不等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-1"><span class="nav-number">3.2.</span> <span class="nav-text">Part 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-2"><span class="nav-number">3.3.</span> <span class="nav-text">Part 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-3"><span class="nav-number">3.4.</span> <span class="nav-text">Part 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-4"><span class="nav-number">3.5.</span> <span class="nav-text">Part 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion"><span class="nav-number">3.6.</span> <span class="nav-text">Conclusion</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GN15-收敛性分析"><span class="nav-number">4.</span> <span class="nav-text">[GN15] 收敛性分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-1-1"><span class="nav-number">4.1.</span> <span class="nav-text">Part 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-2-1"><span class="nav-number">4.2.</span> <span class="nav-text">Part 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-3-1"><span class="nav-number">4.3.</span> <span class="nav-text">Part 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-4-1"><span class="nav-number">4.4.</span> <span class="nav-text">Part 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conclusion-1"><span class="nav-number">4.5.</span> <span class="nav-text">Conclusion</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
