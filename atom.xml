@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-14T01:57:17.633Z</updated>
+  <updated>2020-05-25T15:03:14.521Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随机变量的收敛性</title>
+    <link href="http://yoursite.com/2020/05/25/prob-thm-converge/"/>
+    <id>http://yoursite.com/2020/05/25/prob-thm-converge/</id>
+    <published>2020-05-25T14:58:32.000Z</published>
+    <updated>2020-05-25T15:03:14.521Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随机变量收敛性有关定理及其证明。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Probability" scheme="http://yoursite.com/categories/Probability/"/>
+    
+    
+      <category term="Random Variables" scheme="http://yoursite.com/tags/Random-Variables/"/>
+    
+      <category term="Convergence" scheme="http://yoursite.com/tags/Convergence/"/>
+    
+  </entry>
   
   <entry>
     <title>Compressed Sensing with Redundant Dictionaries - CoSaMP</title>
