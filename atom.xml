@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-25T15:03:14.521Z</updated>
+  <updated>2020-06-16T16:29:59.127Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>概率与测度 -1- 测度空间</title>
+    <link href="http://yoursite.com/2020/06/16/prob-measure-1/"/>
+    <id>http://yoursite.com/2020/06/16/prob-measure-1/</id>
+    <published>2020-06-16T14:04:24.000Z</published>
+    <updated>2020-06-16T16:29:59.127Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Durrett 概率论，Billingsley 概率与测度笔记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Probability and Measure" scheme="http://yoursite.com/categories/Probability-and-Measure/"/>
+    
+    
+      <category term="measure" scheme="http://yoursite.com/tags/measure/"/>
+    
+  </entry>
   
   <entry>
     <title>随机变量的收敛性</title>
