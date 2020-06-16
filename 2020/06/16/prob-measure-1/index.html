@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="Durrett 概率论，Billingsley 概率与测度笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-16T16:29:59.127Z">
+<meta property="og:updated_time" content="2020-06-16T16:38:19.987Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/16/prob-measure-1/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-17 00:29:59" itemprop="dateModified" datetime="2020-06-17T00:29:59+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-17 00:38:19" itemprop="dateModified" datetime="2020-06-17T00:38:19+08:00">2020-06-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,10 +269,8 @@
 \sigma(\mathcal{A}) := \bigcap \left \{ \mathcal{F} \ | \ \mathcal{A} \subset \mathcal{F} \text{ and } \mathcal{F} \text{ is a } \sigma \text{-algebra on } \Omega \right \},</script><p>称为由 $\mathcal{A}$ <strong>生成的 $\sigma$-代数</strong>。</p>
 <h2 id="测度"><a href="#测度" class="headerlink" title="测度"></a>测度</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>给定集合 $\Omega$ 以及 $\Omega$ 上的一个代数 $\mathcal{A}$ (或 $\sigma$-代数)，称非负集函数 $\mu: \mathcal{A} \to [0, \infty]$ 为 $\mathcal{A}$ 上的一个<strong>测度</strong>，如果：</p>
 <ul>
-<li><p>$\mu(\varnothing) = 0$；</p>
-</li>
-<li><p><strong>可数可加性</strong>：对任意不交的可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，如果 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$，则有</p>
-<script type="math/tex; mode=display">
+<li>$\mu(\varnothing) = 0$；</li>
+<li><strong>可数可加性</strong>：对任意不交的可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，如果 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$，则有<script type="math/tex; mode=display">
 \mu \left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i).</script></li>
 </ul>
 <p>特别地，如果 $\mu(\Omega) = 1$，称 $\mu$ 为<strong>概率测度</strong>。</p>
@@ -290,22 +288,16 @@
 </ul>
 <h3 id="sigma-有限测度"><a href="#sigma-有限测度" class="headerlink" title="$\sigma$-有限测度"></a>$\sigma$-有限测度</h3><p>称在代数 $\mathcal{A}$ (或 $\sigma$-代数) 上的测度 $\mu$ 为 <strong>$\sigma$-有限 ($\sigma$-finite)</strong> 的，如果存在 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，使得 $\mu(A_i) &lt; \infty$ 以及 $\bigcup_{i=1}^{\infty} A_i = \Omega$ 成立。</p>
 <ul>
-<li><p>由于可以令</p>
-<script type="math/tex; mode=display">
-A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \in \mathcal{A},</script><p>因此不失一般性，可以假设 $A_i \uparrow \Omega$ 或者 $\{A_i\}$ 不交。</p>
-</li>
-<li><p>如果 $\mu$ 是 $\sigma$-代数 $\mathcal{F}$ 上的 $\sigma$-有限测度，那么在 $\mathcal{F}$ 中不存在不交的不可数正测度集合列，即如果 $\{A_\alpha \} \subset \mathcal{F}$ 两两不交，并且对任意 $\alpha$ 有 $\mu(A_\alpha) &gt; 0$，那么 $\{A_\alpha \}$ 至多可数。</p>
-</li>
+<li>由于可以令<script type="math/tex; mode=display">
+A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \in \mathcal{A},</script>因此不失一般性，可以假设 $A_i \uparrow \Omega$ 或者 $\{A_i\}$ 不交。</li>
+<li>如果 $\mu$ 是 $\sigma$-代数 $\mathcal{F}$ 上的 $\sigma$-有限测度，那么在 $\mathcal{F}$ 中不存在不交的不可数正测度集合列，即如果 $\{A_\alpha \} \subset \mathcal{F}$ 两两不交，并且对任意 $\alpha$ 有 $\mu(A_\alpha) &gt; 0$，那么 $\{A_\alpha \}$ 至多可数。</li>
 </ul>
 <h2 id="测度扩张与实空间上的测度"><a href="#测度扩张与实空间上的测度" class="headerlink" title="测度扩张与实空间上的测度"></a>测度扩张与实空间上的测度</h2><h3 id="半代数-Rightarrow-代数"><a href="#半代数-Rightarrow-代数" class="headerlink" title="半代数 $\Rightarrow$ 代数"></a>半代数 $\Rightarrow$ 代数</h3><p>假设 $\mathcal{S}$ 为集合 $\Omega$ 上的一个半代数，并且 $\mu: \mathcal{S} \to [0, \infty]$ 为定义在 $\mathcal{S}$ 上的集函数，如果：</p>
 <ul>
-<li><p>$\mu(\varnothing) = 0$，</p>
-</li>
-<li><p>对任意不交的有限集合列 $\{S_i\}_{i=1}^{n} \subset \mathcal{S}$，当 $\bigcup_{i=1}^{n} S_i \in \mathcal{S}$ 时，有</p>
-<script type="math/tex; mode=display">
+<li>$\mu(\varnothing) = 0$，</li>
+<li>对任意不交的有限集合列 $\{S_i\}_{i=1}^{n} \subset \mathcal{S}$，当 $\bigcup_{i=1}^{n} S_i \in \mathcal{S}$ 时，有<script type="math/tex; mode=display">
 \mu \left( \bigcup_{i=1}^{n} S_i \right) = \sum_{i=1}^{n} \mu(S_i),</script></li>
-<li><p>对任意不交的可数集合列 $\{S_i\}_{i=1}^{\infty} \subset \mathcal{S}$，当 $\bigcup_{i=1}^{\infty} S_i \in \mathcal{S}$ 时，有</p>
-<script type="math/tex; mode=display">
+<li>对任意不交的可数集合列 $\{S_i\}_{i=1}^{\infty} \subset \mathcal{S}$，当 $\bigcup_{i=1}^{\infty} S_i \in \mathcal{S}$ 时，有<script type="math/tex; mode=display">
 \mu \left( \bigcup_{i=1}^{\infty} S_i \right) \leq \sum_{i=1}^{\infty} \mu(S_i).</script></li>
 </ul>
 <p>那么，在由 $\mathcal{S}$ 生成的代数 $\bar{\mathcal{S}}$ 上，存在唯一的测度 $\bar{\mu}$，使其为 $\mu$ 的扩张。</p>
@@ -329,18 +321,12 @@ A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \
 \mu((a, b]) = F(b) - F(a).</script><p>特别地，当 $F(x) = x$ 时，对应的测度为 <strong>Lebesgue 测度 (Lebesgue measure)</strong>。</p>
 <h3 id="mathbb-R-d-上的测度"><a href="#mathbb-R-d-上的测度" class="headerlink" title="$\mathbb{R}^d$ 上的测度"></a>$\mathbb{R}^d$ 上的测度</h3><p>假设 $F: \mathbb{R}^d \to \mathbb{R}$ 满足</p>
 <ul>
-<li><p>$F$ 按坐标非减，即如果对所有 $i$ 都有 $x_i &lt; y_i$，那么 $F(\boldsymbol{x}) \leq F(\boldsymbol{y})$；</p>
-</li>
-<li><p>$F$ 为右连续函数，即 $\lim_{\boldsymbol{y} \downarrow \boldsymbol{x}} F(\boldsymbol{y}) = F(\boldsymbol{x})$；</p>
-</li>
-<li><p>对任意有限长方体 (即 $-\infty &lt; a_i &lt; b_i &lt; \infty$)</p>
-<script type="math/tex; mode=display">
-A = (a_1, b_1] \times \cdots \times (a_d, b_d],</script><p>有</p>
-<script type="math/tex; mode=display">
-\Delta_A F := \sum_{\boldsymbol{v} \in V} \operatorname{sgn}(\boldsymbol{v}) F(\boldsymbol{v}) \geq 0,</script><p>其中 $V$ 表示长方体的顶点集：</p>
-<script type="math/tex; mode=display">
-V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script><p>而</p>
-<script type="math/tex; mode=display">
+<li>$F$ 按坐标非减，即如果对所有 $i$ 都有 $x_i &lt; y_i$，那么 $F(\boldsymbol{x}) \leq F(\boldsymbol{y})$；</li>
+<li>$F$ 为右连续函数，即 $\lim_{\boldsymbol{y} \downarrow \boldsymbol{x}} F(\boldsymbol{y}) = F(\boldsymbol{x})$；</li>
+<li>对任意有限长方体 (即 $-\infty &lt; a_i &lt; b_i &lt; \infty$)<script type="math/tex; mode=display">
+A = (a_1, b_1] \times \cdots \times (a_d, b_d],</script>有<script type="math/tex; mode=display">
+\Delta_A F := \sum_{\boldsymbol{v} \in V} \operatorname{sgn}(\boldsymbol{v}) F(\boldsymbol{v}) \geq 0,</script>其中 $V$ 表示长方体的顶点集：<script type="math/tex; mode=display">
+V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type="math/tex; mode=display">
 \operatorname{sgn}(\boldsymbol{v}) = (-1)^{\sharp \text{ of } a \text{'s in } \boldsymbol{v}}.</script></li>
 </ul>
 <p>那么，在 $(\mathbb{R}^d, \mathcal{R}^d)$ 上存在唯一测度 $\mu$，使得对任意的有限长方体 $A$，有</p>
