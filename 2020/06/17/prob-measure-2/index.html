@@ -51,17 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="$\mathbb{R}^n$ 中常用优化问题最优性条件，内容来自 Nonlinear Optimization [Andrzej Ruszczynski]。">
+  <meta name="description" content="Durrett 概率论，Billingsley 概率与测度笔记。">
+<meta name="keywords" content="measure">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Optimality Conditions">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;optimality-conditions&#x2F;index.html">
+<meta property="og:title" content="概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;17&#x2F;prob-measure-2&#x2F;index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:description" content="$\mathbb{R}^n$ 中常用优化问题最优性条件，内容来自 Nonlinear Optimization [Andrzej Ruszczynski]。">
+<meta property="og:description" content="Durrett 概率论，Billingsley 概率与测度笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-14T17:03:26.568Z">
+<meta property="og:updated_time" content="2020-06-18T17:34:19.323Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/15/optimality-conditions/">
+<link rel="canonical" href="http://yoursite.com/2020/06/17/prob-measure-2/">
 
 
 <script id="page-configurations">
@@ -75,7 +76,7 @@
   };
 </script>
 
-  <title>Optimality Conditions | Tsechin Lin's Blogs</title>
+  <title>概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性 | Tsechin Lin's Blogs</title>
   
 
 
@@ -185,7 +186,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/15/optimality-conditions/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/prob-measure-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -198,7 +199,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Optimality Conditions
+          概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性
         </h1>
 
         <div class="post-meta">
@@ -207,18 +208,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-15 00:57:40 / Modified: 01:03:26" itemprop="dateCreated datePublished" datetime="2019-11-15T00:57:40+08:00">2019-11-15</time>
+              <time title="Created: 2020-06-17 23:17:13" itemprop="dateCreated datePublished" datetime="2020-06-17T23:17:13+08:00">2020-06-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-19 01:34:19" itemprop="dateModified" datetime="2020-06-19T01:34:19+08:00">2020-06-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Optimization/" itemprop="url" rel="index">
-                    <span itemprop="name">Optimization</span>
+                  <a href="/categories/Probability-and-Measure/" itemprop="url" rel="index">
+                    <span itemprop="name">Probability and Measure</span>
                   </a>
                 </span>
             </span>
@@ -234,40 +241,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>$\mathbb{R}^n$ 中常用优化问题最优性条件，内容来自 <u>Nonlinear Optimization</u> [Andrzej Ruszczynski]。</p>
+        <p>Durrett 概率论，Billingsley 概率与测度笔记。</p>
 <a id="more"></a>
-<h2 id="Unconstrained-Minimum-of-Differentiable-Functions"><a href="#Unconstrained-Minimum-of-Differentiable-Functions" class="headerlink" title="Unconstrained Minimum of Differentiable Functions"></a>Unconstrained Minimum of Differentiable Functions</h2><p>Assume that $f : \mathbb{R}^n \rightarrow {\mathbb{R}}$ is differentiable at a point $\hat{x}$.</p>
+<h2 id="pi-lambda-系统"><a href="#pi-lambda-系统" class="headerlink" title="$\pi$-$\lambda$ 系统"></a>$\pi$-$\lambda$ 系统</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>$\pi$-系 ($\pi$-system)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{P} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个 <strong>$\pi$-系</strong>，如果：</p>
 <ul>
-<li><p>If $f(·)$ attains its unconstrained local minimum at $\hat{x}$, then</p>
+<li>对任意 $A, B \in \mathcal{P}$，有 $A \cap B \in \mathcal{P}$。</li>
+</ul>
+<p><strong>$\lambda$-系 ($\lambda$-system)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{L} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个 <strong>$\lambda$-系</strong>，如果：</p>
+<ul>
+<li>$\Omega \in \mathcal{L}$；</li>
+<li>对任意的 $A,B \in \mathcal{L}$，当 $A \subset B$ 时有 $B\backslash A \in \mathcal{L}$；</li>
+<li>对任意不交的可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{L}$，有 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{L}$。</li>
+</ul>
+<p>在 $\lambda$-系的定义中，由于条件一和三的存在，条件二可以被等价替换为：</p>
+<ul>
+<li>对任意的 $A \in \mathcal{L}$，有 $A^c \in \mathcal{L}$。</li>
+</ul>
+<h3 id="pi-lambda-定理"><a href="#pi-lambda-定理" class="headerlink" title="$\pi$-$\lambda$ 定理"></a>$\pi$-$\lambda$ 定理</h3><ul>
+<li><p>一个子集族如果同时是 $\pi$-系和 $\lambda$-系，那么其也是 $\sigma$-代数。</p>
+</li>
+<li><p>如果 $\mathcal{P}$ 是 $\Omega$ 上的一个 $\pi$-系，那么</p>
 <script type="math/tex; mode=display">
-\nabla f(\hat{x})=0</script></li>
-<li><p>If $f(·)$ is convex and $\nabla f(\hat{x})=0$, then $\hat{x}$ is an unconstrained global minimum of $f(·)$.</p>
+\lambda(\mathcal{P}) = \sigma(\mathcal{P}),</script><p>这里 $\lambda(\mathcal{P})$ 表示包含 $\mathcal{P}$ 的最小 $\lambda$-系。</p>
 </li>
 </ul>
-<h2 id="Unconstrained-Minimum-of-Convex-Functions"><a href="#Unconstrained-Minimum-of-Convex-Functions" class="headerlink" title="Unconstrained Minimum of Convex Functions"></a>Unconstrained Minimum of Convex Functions</h2><p>Let $f : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ be a proper convex function. A point $\hat{x}$ is a global minimum of $f(·)$ if and only if</p>
+<blockquote>
+<p><strong>证明</strong>：</p>
+<p>$\lambda(\mathcal{P}) \subset \sigma(\mathcal{P})$ 显然，现证 $\sigma(\mathcal{P}) \subset \lambda(\mathcal{P})$。令 $\mathcal{L} = \lambda(\mathcal{P})$，这里只需证明 $\mathcal{L}$ 同时也为 $\pi$-系：因为此时 $\mathcal{L}$ 为 $\sigma$-代数并且包含 $\mathcal{P}$，所需结论成立。首先，对任意 $A \subset \Omega$，令</p>
 <script type="math/tex; mode=display">
-0 \in \partial f(\hat{x})</script><p><strong>Tangent</strong></p>
-<p>A direction $d$ is called <strong>tangent</strong> to the set $X \subset \mathbb{R}^n$ at the point $x \in X$ if there exist sequences of points $x_k \in X$ and scalars $\tau_k &gt; 0$, $k = 1, 2, \cdots$, such that $\tau_k \downarrow 0$ and</p>
+\mathcal{L}_A = \left \{ B \subset \Omega \ | \ A \cap B \in \mathcal{L} \right \},</script><p>不难验证当 $A \in \mathcal{L}$ 时，$\mathcal{L}_A$ 为 $\lambda$-系。</p>
+<p>对任意 $A, B \in \mathcal{P}$，由于 $\mathcal{P}$ 为 $\pi$-系，因此有 $A \cap B \in \mathcal{P} \subset \mathcal{L}$ 以及 $B \in \mathcal{L}_A$ 成立，进而 $\mathcal{P} \subset \mathcal{L}_A$。由 $\mathcal{L}$ 的极小性，知 $\mathcal{L} \subset \mathcal{L}_A$。</p>
+<p>因此，对任意的 $A \in \mathcal{P}$ 以及 $B \in \mathcal{L}$，有 $B \in \mathcal{L}_A$ 即 $A \cap B \in \mathcal{L}$ 成立。换言之，$A \in \mathcal{L}_B$。这表明 $\mathcal{P} \subset \mathcal{L}_B$，再次由 $\mathcal{L}$ 的极小性，得 $\mathcal{L} \subset \mathcal{L}_B$。</p>
+<p>最后，对任意的 $A, B \in \mathcal{L}$，有 $A \in \mathcal{L}_B$ 即 $A \cap B \in \mathcal{L}$ 成立，从而 $\mathcal{L}$ 为 $\pi$-系，证毕。</p>
+</blockquote>
+<ul>
+<li><strong>(Dynkin’s $\pi$-$\lambda$ theorem)</strong> 假设 $\mathcal{P}$ 是 $\Omega$ 上的一个 $\pi$-系，$\mathcal{L}$ 是 $\Omega$ 上的一个 $\lambda$-系，那么当 $\mathcal{P} \subset \mathcal{L}$ 时，有 $\sigma(\mathcal{P}) \subset \mathcal{L}$。</li>
+</ul>
+<h3 id="测度的唯一性"><a href="#测度的唯一性" class="headerlink" title="测度的唯一性"></a>测度的唯一性</h3><p>假设 $\mu_1$ 和 $\mu_2$ 是定义在 $\sigma(\mathcal{P})$ 上的测度，这里 $\mathcal{P}$ 是 $\Omega$ 上的一个 $\pi$-系，此外，假设 $\mu_1$ 和 $\mu_2$ 都在 $\mathcal{P}$ 上 $\sigma$-有限。那么，当  $\mu_1$ 和 $\mu_2$ 在 $\mathcal{P}$ 上相等时，他们在 $\sigma(\mathcal{P})$ 上也相等。</p>
+<h2 id="单调类"><a href="#单调类" class="headerlink" title="单调类"></a>单调类</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p><strong>单调类 (monotone class)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{M} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个<strong>单调类</strong>，如果：</p>
+<ul>
+<li>对任意 $A_1, A_2, \ldots \in \mathcal{M}$，当 $A_i \uparrow A$ 时，有 $A \in \mathcal{M}$；</li>
+<li>对任意 $A_1, A_2, \ldots \in \mathcal{M}$，当 $A_i \downarrow A$ 时，有 $A \in \mathcal{M}$。</li>
+</ul>
+<h3 id="单调类定理"><a href="#单调类定理" class="headerlink" title="单调类定理"></a>单调类定理</h3><ul>
+<li><p>一个子集族如果同时是单调类和代数，那么其也是 $\sigma$-代数。</p>
+</li>
+<li><p>如果 $\mathcal{A}$ 是 $\Omega$ 上的一个代数，那么</p>
 <script type="math/tex; mode=display">
-d=\lim _{k \rightarrow \infty} \frac{x^{k}-x}{\tau_{k}}</script><p>Let $X \subset \mathbb{R}^n$ and let $x \in X$. The set $T_X(x)$ of all tangent directions for $X$ at $x$ is a closed cone.</p>
-<p>Let $X \subset \mathbb{R}^n$ be a convex set and let $x \in X$. Then</p>
+m(\mathcal{A}) = \sigma(\mathcal{A}),</script><p>这里 $m(\mathcal{A})$ 表示包含 $\mathcal{A}$ 的单调类。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>证明</strong>：</p>
+<p>$m(\mathcal{A}) \subset \sigma(\mathcal{A})$ 显然，现证 $\sigma(\mathcal{A}) \subset m(\mathcal{A})$。令 $\mathcal{M} = m(\mathcal{A})$，这里只需证明 $\mathcal{M}$ 同时也为代数：因为此时 $\mathcal{M}$ 为 $\sigma$-代数并且包含 $\mathcal{A}$，所需结论成立。首先，对任意 $A \in \mathcal{M}$，令</p>
 <script type="math/tex; mode=display">
-T_X(x) = \overline{K_X(x)}</script><h2 id="Optimal-Conditions-for-Smooth-Problems"><a href="#Optimal-Conditions-for-Smooth-Problems" class="headerlink" title="Optimal Conditions for Smooth Problems"></a>Optimal Conditions for Smooth Problems</h2><p>Consider the constrained optimization problem</p>
-<script type="math/tex; mode=display">
-\begin{alignat*}{2}
-\min \quad & f(x)  \\ 
-\mbox{s.t.} \quad 
-& x \in X
-\end{alignat*}</script><p>with a differentiable function $f : \mathbb{R}^n \rightarrow \mathbb{R}$ and a set $X \subset \mathbb{R}^n$.</p>
-<p>Assume that $\hat{x}$ is a local minimum of the problem and that $f(·)$ is differentiable at $\hat{x}$. Let $T_X(\hat{x})$ be the tangent cone to the set $X$ at $\hat{x}$. Then</p>
-<script type="math/tex; mode=display">
--\nabla f(\hat{x}) \in \left[T_X(\hat{x}) \right]^\circ</script><p>Conversely, if the function $f(·)$ is convex, the set $X$ is convex, and a point $\hat{x} \in X$ satisfies relation $-\nabla f(\hat{x}) \in \left[T_X(\hat{x}) \right]^\circ$, then $\hat{x}$ is a global minimum of problem.</p>
-<h2 id="Optimal-Conditions-for-Convex-Problems"><a href="#Optimal-Conditions-for-Convex-Problems" class="headerlink" title="Optimal Conditions for Convex Problems"></a>Optimal Conditions for Convex Problems</h2><p>Consider the constrained optimization problem</p>
-<script type="math/tex; mode=display">
-\begin{alignat*}{2}\min \quad & f(x)  \\ \mbox{s.t.} \quad & x \in X\end{alignat*}</script><p>with a convex function $f : \mathbb{R}^n \rightarrow \overline{\mathbb{R}}$ and a convex set $X \subset \mathbb{R}^n$.</p>
-<p>Assume that $\hat{x}$ is a local minimum of the problem and that there exists a point $x_0 \in X$ such that $f$ is continuous at $x_0$. Then there exists $s \in \partial f(\hat{x})$ such that</p>
-<script type="math/tex; mode=display">
--s \in N_X(\hat{x})</script><p>Conversely, if a point $\hat{x} \in X$ satisfies the relation $-s \in N_X(\hat{x})$ for some $s \in \partial f(\hat{x})$, then $\hat{x}$ is a global minimum of problem.</p>
+\mathcal{M}_A = \left \{ B \subset \Omega \ | \ A \cap B \in \mathcal{M} \text{ and } B^c \in \mathcal{M} \right \},</script><p>不难验证当 $A \in \mathcal{M}$ 时，$\mathcal{M}_A$ 为单调类。</p>
+<p>对任意 $A, B \in \mathcal{A}$，由于 $\mathcal{A}$ 为代数，因此有 $A \cap B \in \mathcal{A} \subset \mathcal{M}$ 以及 $B^c \in \mathcal{A} \subset \mathcal{M}$ 成立，于是乎 $B \in \mathcal{M}_A$，进而 $\mathcal{A} \subset \mathcal{M}_A$。由 $\mathcal{M}$ 的极小性，知 $\mathcal{M} \subset \mathcal{M}_A$。</p>
+<p>因此，对任意的 $A \in \mathcal{A}$ 以及 $B \in \mathcal{M}$，有 $B \in \mathcal{M}_A$ 即 $A \cap B \in \mathcal{M}$ 成立。此外，由于 $\mathcal{A}$ 为代数，$A^c \in \mathcal{A} \subset \mathcal{M}$。因此，$A \in \mathcal{M}_B$。这表明 $\mathcal{A} \subset \mathcal{M}_B$，再次由 $\mathcal{M}$ 的极小性，得 $\mathcal{M} \subset \mathcal{M}_B$。</p>
+<p>最后，对任意的 $A, B \in \mathcal{M}$，有 $A \in \mathcal{M}_B$ 即 $A \cap B \in \mathcal{L}$ 以及 $A^c \in \mathcal{M}$ 成立，此外显然有 $\Omega \in \mathcal{A} \subset \mathcal{M}$，因此 $\mathcal{M}$ 为代数，证毕。</p>
+</blockquote>
+<ul>
+<li><strong>(Halmos’s monotone class theorem)</strong> 假设 $\mathcal{A}$ 是 $\Omega$ 上的一个代数，$\mathcal{M}$ 是 $\Omega$ 上的一个单调类，那么当 $\mathcal{A} \subset \mathcal{M}$ 时，有 $\sigma(\mathcal{A}) \subset \mathcal{M}$。</li>
+</ul>
+<h3 id="测度的唯一性-1"><a href="#测度的唯一性-1" class="headerlink" title="测度的唯一性"></a>测度的唯一性</h3><p>假设 $\mu_1$ 和 $\mu_2$ 是定义在 $\sigma(\mathcal{A})$ 上的测度，这里 $\mathcal{A}$ 是 $\Omega$ 上的一个代数，此外，假设 $\mu_1$ 和 $\mu_2$ 都在 $\mathcal{A}$ 上 $\sigma$-有限。那么，当  $\mu_1$ 和 $\mu_2$ 在 $\mathcal{A}$ 上相等时，他们在 $\sigma(\mathcal{A})$ 上也相等。</p>
 
     </div>
 
@@ -276,22 +312,22 @@ T_X(x) = \overline{K_X(x)}</script><h2 id="Optimal-Conditions-for-Smooth-Problem
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/measure/" rel="tag"># measure</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/15/convex-analysis-Rn-subdifferntial/" rel="next" title="Convex Analysis in $\mathbb{R}^n$ - Subdifferential">
-                  <i class="fa fa-chevron-left"></i> Convex Analysis in $\mathbb{R}^n$ - Subdifferential
+                <a href="/2020/06/16/prob-measure-1/" rel="next" title="概率与测度 -1- 测度空间">
+                  <i class="fa fa-chevron-left"></i> 概率与测度 -1- 测度空间
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/12/28/sm-tangent-vectors/" rel="prev" title="微分流形笔记 - Tangent Vectors 切向量">
-                  微分流形笔记 - Tangent Vectors 切向量 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -330,7 +366,7 @@ T_X(x) = \overline{K_X(x)}</script><h2 id="Optimal-Conditions-for-Smooth-Problem
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unconstrained-Minimum-of-Differentiable-Functions"><span class="nav-number">1.</span> <span class="nav-text">Unconstrained Minimum of Differentiable Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unconstrained-Minimum-of-Convex-Functions"><span class="nav-number">2.</span> <span class="nav-text">Unconstrained Minimum of Convex Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimal-Conditions-for-Smooth-Problems"><span class="nav-number">3.</span> <span class="nav-text">Optimal Conditions for Smooth Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimal-Conditions-for-Convex-Problems"><span class="nav-number">4.</span> <span class="nav-text">Optimal Conditions for Convex Problems</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pi-lambda-系统"><span class="nav-number">1.</span> <span class="nav-text">$\pi$-$\lambda$ 系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pi-lambda-定理"><span class="nav-number">1.2.</span> <span class="nav-text">$\pi$-$\lambda$ 定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测度的唯一性"><span class="nav-number">1.3.</span> <span class="nav-text">测度的唯一性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调类"><span class="nav-number">2.</span> <span class="nav-text">单调类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单调类定理"><span class="nav-number">2.2.</span> <span class="nav-text">单调类定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测度的唯一性-1"><span class="nav-number">2.3.</span> <span class="nav-text">测度的唯一性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

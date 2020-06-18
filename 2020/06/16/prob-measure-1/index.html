@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="Durrett 概率论，Billingsley 概率与测度笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-16T16:41:03.171Z">
+<meta property="og:updated_time" content="2020-06-17T15:42:08.374Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/16/prob-measure-1/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-17 00:41:03" itemprop="dateModified" datetime="2020-06-17T00:41:03+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-17 23:42:08" itemprop="dateModified" datetime="2020-06-17T23:42:08+08:00">2020-06-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,34 +243,51 @@
       
         <p>Durrett 概率论，Billingsley 概率与测度笔记。</p>
 <a id="more"></a>
-<h2 id="半代数、代数、-sigma-代数"><a href="#半代数、代数、-sigma-代数" class="headerlink" title="半代数、代数、$\sigma$-代数"></a>半代数、代数、$\sigma$-代数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>半代数 (semialgebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{S} \subset \mathcal{P}(\Omega)$ 称为 $\Omega$ 上的一个<strong>半代数</strong>，如果：</p>
+<h2 id="半代数、代数、-sigma-代数"><a href="#半代数、代数、-sigma-代数" class="headerlink" title="半代数、代数、$\sigma$-代数"></a>半代数、代数、$\sigma$-代数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>半代数 (semialgebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{S} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个<strong>半代数</strong>，如果：</p>
 <ul>
 <li>$\varnothing, \Omega \in \mathcal{S}$；</li>
 <li>对任意 $S, T \in \mathcal{S}$，有 $S \cap T \in \mathcal{S}$；</li>
 <li>对任意 $S \in \mathcal{S}$，存在不交的有限集合列 $\{T_i\}_{i=1}^{n} \subset \mathcal{S}$，使得 $S^c = \bigcup_{i=1}^n T_i$。</li>
 </ul>
-<p><strong>代数 (algebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{A} \subset \mathcal{P}(\Omega)$ 称为 $\Omega$ 上的一个<strong>代数</strong>，如果：</p>
+<p><strong>代数 (algebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{A} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个<strong>代数</strong>，如果：</p>
 <ul>
 <li>$\Omega \in \mathcal{A}$；</li>
 <li>对任意 $A \in \mathcal{A}$，有 $A^c \in \mathcal{A}$；</li>
 <li>对任意 $A, B \in \mathcal{A}$，有 $A \cup B \in \mathcal{A}$。</li>
 </ul>
-<p><strong>$\sigma$-代数 ($\sigma$-algebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{F} \subset \mathcal{P}(\Omega)$ 称为 $\Omega$ 上的一个 <strong>$\sigma$-代数</strong>，如果：</p>
+<p><strong>$\sigma$-代数 ($\sigma$-algebra)</strong>：集合 $\Omega$ 的一个子集族 $\mathcal{F} \subset 2^{\Omega}$ 称为 $\Omega$ 上的一个 <strong>$\sigma$-代数</strong>，如果：</p>
 <ul>
 <li>$\Omega \in \mathcal{F}$；</li>
 <li>对任意 $A \in \mathcal{A}$，有 $A^c \in \mathcal{F}$；</li>
 <li>对任意可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{F}$，有 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{F}$。</li>
 </ul>
-<h3 id="半代数生成的代数"><a href="#半代数生成的代数" class="headerlink" title="半代数生成的代数"></a>半代数生成的代数</h3><p>假设 $\mathcal{S}$ 为半代数，那么</p>
+<p><strong>性质</strong></p>
+<ul>
+<li><p>假设 $\{\mathcal{A}_i\}_{i \in I}$ 为同一个集合 $\Omega$ 上的一族代数 (或 $\sigma$-代数)，那么 $\bigcap_{i \in I} \mathcal{A}_i$ 也为代数 (或 $\sigma$-代数)。</p>
+</li>
+<li><p>如果 $\mathcal{F}$ 是集合 $\Omega$ 上的 $\sigma$-代数，那么对任意 $\Omega_0 \subset \Omega$，集族</p>
 <script type="math/tex; mode=display">
-\bar{\mathcal{S}} := \left \{ \left. \bigcup_{i=1}^n S_i \right | n \in \mathbb{Z}_+, S_i \in \mathcal{S} \text{ are disjoint} \right \}</script><p>为包含 $\mathcal{S}$ 的最小代数，称为由 $\mathcal{S}$ <strong>生成的代数</strong>。</p>
-<h3 id="子集族生成的-sigma-代数"><a href="#子集族生成的-sigma-代数" class="headerlink" title="子集族生成的 $\sigma$-代数"></a>子集族生成的 $\sigma$-代数</h3><p>假设 $\{\mathcal{F}_i\}_{i \in I}$ 为同一个集合 $\Omega$ 上的一族 $\sigma$-代数，那么 $\bigcap_{i \in I} \mathcal{F}_i$ 也为 $\sigma$-代数。于是对任意 $\Omega$ 上的子集族 $\mathcal{A}$，存在包含 $\mathcal{A}$ 的最小 $\sigma$-代数</p>
+\mathcal{F} \cap \Omega_0 = \left \{ A \cap \Omega_0 \ | \ A \in \mathcal{F} \right \}</script><p>是 $\Omega_0$ 上的 $\sigma$-代数。</p>
+</li>
+</ul>
+<h3 id="半代数生成的代数"><a href="#半代数生成的代数" class="headerlink" title="半代数生成的代数"></a>半代数生成的代数</h3><p>对任意 $\Omega$ 上的子集族 $\mathcal{S}$，存在包含 $\mathcal{S}$ 的最小代数：</p>
+<script type="math/tex; mode=display">
+\bigcap \left \{ \mathcal{A} \ | \ \mathcal{S} \subset \mathcal{A} \text{ and } \mathcal{A} \text{ is an algebra on } \Omega \right \}.</script><p>特别地，当 $\mathcal{S}$ 为半代数时，</p>
+<script type="math/tex; mode=display">
+\bar{\mathcal{S}} := \left \{ \left. \bigcup_{i=1}^n S_i \ \right | \ n \in \mathbb{Z}_+, S_i \in \mathcal{S} \text{ are disjoint} \right \}</script><p>为包含 $\mathcal{S}$ 的最小代数，称为由 $\mathcal{S}$ <strong>生成的代数</strong>。</p>
+<h3 id="子集族生成的-sigma-代数"><a href="#子集族生成的-sigma-代数" class="headerlink" title="子集族生成的 $\sigma$-代数"></a>子集族生成的 $\sigma$-代数</h3><p>对任意 $\Omega$ 上的子集族 $\mathcal{A}$，存在包含 $\mathcal{A}$ 的最小 $\sigma$-代数</p>
 <script type="math/tex; mode=display">
 \sigma(\mathcal{A}) := \bigcap \left \{ \mathcal{F} \ | \ \mathcal{A} \subset \mathcal{F} \text{ and } \mathcal{F} \text{ is a } \sigma \text{-algebra on } \Omega \right \},</script><p>称为由 $\mathcal{A}$ <strong>生成的 $\sigma$-代数</strong>。</p>
-<h2 id="测度"><a href="#测度" class="headerlink" title="测度"></a>测度</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>给定集合 $\Omega$ 以及 $\Omega$ 上的一个代数 $\mathcal{A}$ (或 $\sigma$-代数)，称非负集函数 $\mu: \mathcal{A} \to [0, \infty]$ 为 $\mathcal{A}$ 上的一个<strong>测度</strong>，如果：</p>
 <ul>
-<li>$\mu(\varnothing) = 0$；</li>
-<li><strong>可数可加性</strong>：对任意不交的可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，如果 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}$，则有<script type="math/tex; mode=display">
+<li>如果 $\sigma(\mathcal{A}) = \mathcal{F}$，那么对任意 $\Omega_0 \subset \Omega$，集族 $\mathcal{A} \cap \Omega_0$ 生成了 $\sigma$-代数 $\mathcal{F} \cap \Omega_0$，即<script type="math/tex; mode=display">
+\sigma(\mathcal{A} \cap \Omega_0) = \mathcal{F} \cap \Omega_0.</script></li>
+</ul>
+<h2 id="测度"><a href="#测度" class="headerlink" title="测度"></a>测度</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>给定集合 $\Omega$ 以及 $\Omega$ 上的一个代数 $\mathcal{F}$ (或 $\sigma$-代数)，称非负集函数 $\mu: \mathcal{F} \to [0, \infty]$ 为 $\mathcal{A}$ 上的一个<strong>测度</strong>，如果：</p>
+<ul>
+<li><p>$\mu(\varnothing) = 0$；</p>
+</li>
+<li><p><strong>可数可加性</strong>：对任意不交的可数集合列 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{F}$，如果 $\bigcup_{i=1}^{\infty} A_i \in \mathcal{F}$，则有</p>
+<script type="math/tex; mode=display">
 \mu \left( \bigcup_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i).</script></li>
 </ul>
 <p>特别地，如果 $\mu(\Omega) = 1$，称 $\mu$ 为<strong>概率测度</strong>。</p>
@@ -286,7 +303,7 @@
 <li>如果 $\mu$ 为 $\mathcal{F}$ 上的测度，称三元组 $(\Omega, \mathcal{F}, \mu)$ 为<strong>测度空间 (measure space)</strong>，</li>
 <li>特别地，如果 $\mu$ 为概率测度，称三元组 $(\Omega, \mathcal{F}, \mu)$ 为<strong>概率空间 (probability space)</strong>。</li>
 </ul>
-<h3 id="sigma-有限测度"><a href="#sigma-有限测度" class="headerlink" title="$\sigma$-有限测度"></a>$\sigma$-有限测度</h3><p>称在代数 $\mathcal{A}$ (或 $\sigma$-代数) 上的测度 $\mu$ 为 <strong>$\sigma$-有限 ($\sigma$-finite)</strong> 的，如果存在 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，使得 $\mu(A_i) &lt; \infty$ 以及 $\bigcup_{i=1}^{\infty} A_i = \Omega$ 成立。</p>
+<h3 id="测度的-sigma-有限性"><a href="#测度的-sigma-有限性" class="headerlink" title="测度的 $\sigma$-有限性"></a>测度的 $\sigma$-有限性</h3><p>假设测度 $\mu$ 定义在代数 $\mathcal{F}$ (或 $\sigma$-代数) 上，称其在子族 $\mathcal{A} \subset \mathcal{F}$ 上为 <strong>$\sigma$-有限 ($\sigma$-finite)</strong> 的，如果存在 $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$，使得 $\mu(A_i) &lt; \infty$ 以及 $\bigcup_{i=1}^{\infty} A_i = \Omega$ 成立。</p>
 <ul>
 <li>由于可以令<script type="math/tex; mode=display">
 A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \left( \bigcap_{i=1}^{n-1} A_i^c \right) \in \mathcal{A},</script>因此不失一般性，可以假设 $A_i \uparrow \Omega$ 或者 $\{A_i\}$ 不交。</li>
@@ -309,7 +326,7 @@ A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \
 <blockquote>
 <p><strong>构造</strong>：对任意 $A \subset \Omega$，定义<strong>外测度</strong></p>
 <script type="math/tex; mode=display">
-\mu^{*}(A)=\inf \left\{ \left. \sum_{n=1}^{\infty} \mu\left(A_{i}\right) \right| A_{i} \in \mathcal{A} \text{ and } A \subset \bigcup_{i=1}^{\infty} A_{i}\right\},</script><p>将 $\mu^*$ 限制到 $\sigma({\mathcal{A}})$ 上即为所需扩张。</p>
+\mu^{*}(A)=\inf \left\{ \left. \sum_{n=1}^{\infty} \mu\left(A_{i}\right) \ \right| \ A_{i} \in \mathcal{A} \text{ and } A \subset \bigcup_{i=1}^{\infty} A_{i}\right\},</script><p>将 $\mu^*$ 限制到 $\sigma({\mathcal{A}})$ 上即为所需扩张。</p>
 </blockquote>
 <h3 id="mathbb-R-上的测度"><a href="#mathbb-R-上的测度" class="headerlink" title="$\mathbb{R}$ 上的测度"></a>$\mathbb{R}$ 上的测度</h3><p>假设 $F: \mathbb{R} \to \mathbb{R}$ 是实直线上的 <strong>Stieltjes 测度函数 (Stieltjes measure function)</strong>，即 $F$ 满足</p>
 <ul>
@@ -356,6 +373,9 @@ V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type=
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/06/17/prob-measure-2/" rel="prev" title="概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性">
+                  概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -394,7 +414,7 @@ V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type=
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#半代数、代数、-sigma-代数"><span class="nav-number">1.</span> <span class="nav-text">半代数、代数、$\sigma$-代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数生成的代数"><span class="nav-number">1.2.</span> <span class="nav-text">半代数生成的代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集族生成的-sigma-代数"><span class="nav-number">1.3.</span> <span class="nav-text">子集族生成的 $\sigma$-代数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度"><span class="nav-number">2.</span> <span class="nav-text">测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质"><span class="nav-number">2.2.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测空间、测度空间、概率空间"><span class="nav-number">2.3.</span> <span class="nav-text">可测空间、测度空间、概率空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sigma-有限测度"><span class="nav-number">2.4.</span> <span class="nav-text">$\sigma$-有限测度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度扩张与实空间上的测度"><span class="nav-number">3.</span> <span class="nav-text">测度扩张与实空间上的测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数-Rightarrow-代数"><span class="nav-number">3.1.</span> <span class="nav-text">半代数 $\Rightarrow$ 代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><span class="nav-number">3.2.</span> <span class="nav-text">代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-上的测度"><span class="nav-number">3.3.</span> <span class="nav-text">$\mathbb{R}$ 上的测度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-d-上的测度"><span class="nav-number">3.4.</span> <span class="nav-text">$\mathbb{R}^d$ 上的测度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#半代数、代数、-sigma-代数"><span class="nav-number">1.</span> <span class="nav-text">半代数、代数、$\sigma$-代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数生成的代数"><span class="nav-number">1.2.</span> <span class="nav-text">半代数生成的代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集族生成的-sigma-代数"><span class="nav-number">1.3.</span> <span class="nav-text">子集族生成的 $\sigma$-代数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度"><span class="nav-number">2.</span> <span class="nav-text">测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质"><span class="nav-number">2.2.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测空间、测度空间、概率空间"><span class="nav-number">2.3.</span> <span class="nav-text">可测空间、测度空间、概率空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测度的-sigma-有限性"><span class="nav-number">2.4.</span> <span class="nav-text">测度的 $\sigma$-有限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度扩张与实空间上的测度"><span class="nav-number">3.</span> <span class="nav-text">测度扩张与实空间上的测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数-Rightarrow-代数"><span class="nav-number">3.1.</span> <span class="nav-text">半代数 $\Rightarrow$ 代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><span class="nav-number">3.2.</span> <span class="nav-text">代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-上的测度"><span class="nav-number">3.3.</span> <span class="nav-text">$\mathbb{R}$ 上的测度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-d-上的测度"><span class="nav-number">3.4.</span> <span class="nav-text">$\mathbb{R}^d$ 上的测度</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,7 +430,7 @@ V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type=
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
