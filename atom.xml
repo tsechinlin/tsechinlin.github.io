@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-18T17:34:19.323Z</updated>
+  <updated>2020-06-19T12:57:59.710Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>prob-measure-4</title>
+    <link href="http://yoursite.com/2020/06/19/prob-measure-4/"/>
+    <id>http://yoursite.com/2020/06/19/prob-measure-4/</id>
+    <published>2020-06-19T12:57:59.000Z</published>
+    <updated>2020-06-19T12:57:59.710Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>测度扩张</title>
+    <link href="http://yoursite.com/2020/06/19/prob-measure-3/"/>
+    <id>http://yoursite.com/2020/06/19/prob-measure-3/</id>
+    <published>2020-06-19T12:57:46.000Z</published>
+    <updated>2020-06-22T17:02:57.195Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Durrett 概率论，Billingsley 概率与测度笔记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Probability and Measure" scheme="http://yoursite.com/categories/Probability-and-Measure/"/>
+    
+    
+      <category term="measure" scheme="http://yoursite.com/tags/measure/"/>
+    
+  </entry>
+  
+  <entry>
     <title>概率与测度 -2- $\pi$-$\lambda$ 系统，单调类与测度的唯一性</title>
     <link href="http://yoursite.com/2020/06/17/prob-measure-2/"/>
     <id>http://yoursite.com/2020/06/17/prob-measure-2/</id>
     <published>2020-06-17T15:17:13.000Z</published>
-    <updated>2020-06-18T17:34:19.323Z</updated>
+    <updated>2020-06-18T17:53:23.214Z</updated>
     
     <summary type="html">
     
@@ -42,7 +78,7 @@
     <link href="http://yoursite.com/2020/06/16/prob-measure-1/"/>
     <id>http://yoursite.com/2020/06/16/prob-measure-1/</id>
     <published>2020-06-16T14:04:24.000Z</published>
-    <updated>2020-06-17T15:42:08.374Z</updated>
+    <updated>2020-06-22T16:58:45.938Z</updated>
     
     <summary type="html">
     

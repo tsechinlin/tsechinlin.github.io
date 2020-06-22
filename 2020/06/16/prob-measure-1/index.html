@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="Durrett 概率论，Billingsley 概率与测度笔记。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-17T15:42:08.374Z">
+<meta property="og:updated_time" content="2020-06-22T16:58:45.938Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/16/prob-measure-1/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-17 23:42:08" itemprop="dateModified" datetime="2020-06-17T23:42:08+08:00">2020-06-17</time>
+                <time title="Modified: 2020-06-23 00:58:45" itemprop="dateModified" datetime="2020-06-23T00:58:45+08:00">2020-06-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -322,33 +322,11 @@ A_n^\prime = \bigcup_{i=1}^{n} A_i \quad \text{or} \quad A_n^\prime = A_n \cap \
 <p><strong>构造</strong>：如果 $A \in \bar{\mathcal{S}}$ 可以被表示为 $A = \bigcup_{i=1}^n S_i$，其中 $S_i \in \mathcal{S}$，令</p>
 <script type="math/tex; mode=display">
 \bar{\mu} (A) = \sum_{i=1}^n \mu(S_i).</script></blockquote>
-<h3 id="代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><a href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem" class="headerlink" title="代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)"></a>代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</h3><p>假设 $\mathcal{A}$ 为集合 $\Omega$ 上的一个代数，而 $\mu$ 为 $\mathcal{S}$ 上的 $\sigma$-有限测度，那么在 $\sigma({\mathcal{A}})$ 上，存在唯一的测度 $\nu$，使其为 $\mu$ 的扩张。</p>
-<blockquote>
+<h3 id="代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><a href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem" class="headerlink" title="代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)"></a>代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</h3><blockquote>
 <p><strong>构造</strong>：对任意 $A \subset \Omega$，定义<strong>外测度</strong></p>
 <script type="math/tex; mode=display">
 \mu^{*}(A)=\inf \left\{ \left. \sum_{n=1}^{\infty} \mu\left(A_{i}\right) \ \right| \ A_{i} \in \mathcal{A} \text{ and } A \subset \bigcup_{i=1}^{\infty} A_{i}\right\},</script><p>将 $\mu^*$ 限制到 $\sigma({\mathcal{A}})$ 上即为所需扩张。</p>
 </blockquote>
-<h3 id="mathbb-R-上的测度"><a href="#mathbb-R-上的测度" class="headerlink" title="$\mathbb{R}$ 上的测度"></a>$\mathbb{R}$ 上的测度</h3><p>假设 $F: \mathbb{R} \to \mathbb{R}$ 是实直线上的 <strong>Stieltjes 测度函数 (Stieltjes measure function)</strong>，即 $F$ 满足</p>
-<ul>
-<li>$F$ 非减；</li>
-<li>$F$ 为右连续函数，即 $\lim_{y \downarrow x} F(y) = F(x)$，</li>
-</ul>
-<p>那么，在 $(\mathbb{R}, \mathcal{R})$ 上存在唯一测度 $\mu$，使得对任意 $-\infty &lt; a &lt; b &lt; \infty$，有</p>
-<script type="math/tex; mode=display">
-\mu((a, b]) = F(b) - F(a).</script><p>特别地，当 $F(x) = x$ 时，对应的测度为 <strong>Lebesgue 测度 (Lebesgue measure)</strong>。</p>
-<h3 id="mathbb-R-d-上的测度"><a href="#mathbb-R-d-上的测度" class="headerlink" title="$\mathbb{R}^d$ 上的测度"></a>$\mathbb{R}^d$ 上的测度</h3><p>假设 $F: \mathbb{R}^d \to \mathbb{R}$ 满足</p>
-<ul>
-<li>$F$ 按坐标非减，即如果对所有 $i$ 都有 $x_i &lt; y_i$，那么 $F(\boldsymbol{x}) \leq F(\boldsymbol{y})$；</li>
-<li>$F$ 为右连续函数，即 $\lim_{\boldsymbol{y} \downarrow \boldsymbol{x}} F(\boldsymbol{y}) = F(\boldsymbol{x})$；</li>
-<li>对任意有限长方体 (即 $-\infty &lt; a_i &lt; b_i &lt; \infty$)<script type="math/tex; mode=display">
-A = (a_1, b_1] \times \cdots \times (a_d, b_d],</script>有<script type="math/tex; mode=display">
-\Delta_A F := \sum_{\boldsymbol{v} \in V} \operatorname{sgn}(\boldsymbol{v}) F(\boldsymbol{v}) \geq 0,</script>其中 $V$ 表示长方体的顶点集：<script type="math/tex; mode=display">
-V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type="math/tex; mode=display">
-\operatorname{sgn}(\boldsymbol{v}) = (-1)^{\sharp \text{ of } a \text{'s in } \boldsymbol{v}}.</script></li>
-</ul>
-<p>那么，在 $(\mathbb{R}^d, \mathcal{R}^d)$ 上存在唯一测度 $\mu$，使得对任意的有限长方体 $A$，有</p>
-<script type="math/tex; mode=display">
-\mu(A) = \Delta_A F.</script><p>特别地，当 $F(\boldsymbol{x}) = \prod_{i=1}^d x_i$ 时，对应的测度为 $\mathbb{R}^d$ 上的 <strong>Lebesgue 测度 (Lebesgue measure on $\mathbb{R}^d$)</strong>。</p>
 
     </div>
 
@@ -414,7 +392,7 @@ V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type=
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#半代数、代数、-sigma-代数"><span class="nav-number">1.</span> <span class="nav-text">半代数、代数、$\sigma$-代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数生成的代数"><span class="nav-number">1.2.</span> <span class="nav-text">半代数生成的代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集族生成的-sigma-代数"><span class="nav-number">1.3.</span> <span class="nav-text">子集族生成的 $\sigma$-代数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度"><span class="nav-number">2.</span> <span class="nav-text">测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质"><span class="nav-number">2.2.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测空间、测度空间、概率空间"><span class="nav-number">2.3.</span> <span class="nav-text">可测空间、测度空间、概率空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测度的-sigma-有限性"><span class="nav-number">2.4.</span> <span class="nav-text">测度的 $\sigma$-有限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度扩张与实空间上的测度"><span class="nav-number">3.</span> <span class="nav-text">测度扩张与实空间上的测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数-Rightarrow-代数"><span class="nav-number">3.1.</span> <span class="nav-text">半代数 $\Rightarrow$ 代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><span class="nav-number">3.2.</span> <span class="nav-text">代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-上的测度"><span class="nav-number">3.3.</span> <span class="nav-text">$\mathbb{R}$ 上的测度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathbb-R-d-上的测度"><span class="nav-number">3.4.</span> <span class="nav-text">$\mathbb{R}^d$ 上的测度</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#半代数、代数、-sigma-代数"><span class="nav-number">1.</span> <span class="nav-text">半代数、代数、$\sigma$-代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数生成的代数"><span class="nav-number">1.2.</span> <span class="nav-text">半代数生成的代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集族生成的-sigma-代数"><span class="nav-number">1.3.</span> <span class="nav-text">子集族生成的 $\sigma$-代数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度"><span class="nav-number">2.</span> <span class="nav-text">测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质"><span class="nav-number">2.2.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可测空间、测度空间、概率空间"><span class="nav-number">2.3.</span> <span class="nav-text">可测空间、测度空间、概率空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测度的-sigma-有限性"><span class="nav-number">2.4.</span> <span class="nav-text">测度的 $\sigma$-有限性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测度扩张与实空间上的测度"><span class="nav-number">3.</span> <span class="nav-text">测度扩张与实空间上的测度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#半代数-Rightarrow-代数"><span class="nav-number">3.1.</span> <span class="nav-text">半代数 $\Rightarrow$ 代数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代数-Rightarrow-sigma-代数-Caratheodory’s-Extension-Theorem"><span class="nav-number">3.2.</span> <span class="nav-text">代数 $\Rightarrow \sigma$-代数 (Caratheodory’s Extension Theorem)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -430,7 +408,7 @@ V = \{ a_1, b_1 \} \times \cdots \times \{ a_d, b_d \},</script>而<script type=
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
