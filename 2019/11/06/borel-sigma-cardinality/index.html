@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tsechin Lin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。">
+<meta name="keywords" content="Borel Set,Cardinality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;borel-sigma-cardinality&#x2F;index.html">
+<meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-07T04:18:16.000Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数 | Tsechin Lin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tsechin Lin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">You Never Walk Alone</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          $\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-06 23:42:19" itemprop="dateCreated datePublished" datetime="2019-11-06T23:42:19+08:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-07 12:18:16" itemprop="dateModified" datetime="2019-11-07T12:18:16+08:00">2019-11-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Real-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Real Analysis</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。<br>参考：<a href="https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf" target="_blank" rel="noopener">How Many Borel Sets are There?</a></p>
+<a id="more"></a>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><blockquote>
+<p>赋 $\mathbb{R}^k$ 以标准拓扑，其中 $k \in \mathbb{Z}_+$。假设 $\mathcal{B}_k$ 表示该空间中的 Borel $\sigma$-代数。求证：</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{B}_k\right) = \mathfrak{c} := \operatorname{Card}(\mathbb{R})</script></blockquote>
+<p>即有限维欧式空间中的 Borel $\sigma$ 代数具有连续统势。$\mathcal{B}_k$ 至少有连续统势是显然的，所以只需证明另一方向。事实上，我们可以证明一个更一般的结论。</p>
+<blockquote>
+<p>假设 $X$ 为一集合，$\mathcal{D}$ 为 $X$ 的某个非空子集族，即 $\mathcal{D} \subset \mathcal{P}(X)$，用 $\sigma(\mathcal{D})$ 表示 $\mathcal{D}$ 生成的 $\sigma$-代数。那么，当 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$ 时，有 $\operatorname{Card}\left(\sigma(\mathcal{D})\right) \leq \mathfrak{c}$。</p>
+</blockquote>
+<p>在有了这个结论之后，再说明 $\mathcal{B}_k$ 可以由有连续统势的子集族生成即可证明原命题。</p>
+<h2 id="结论证明"><a href="#结论证明" class="headerlink" title="结论证明"></a>结论证明</h2><h3 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h3><p>为了完成结论的证明，首先需要引入下述操作符。对任意的子集族 $\mathcal{B} \subset \mathcal{P}(X)$，定义</p>
+<script type="math/tex; mode=display">
+\mathcal{B}^c := \left\{ E^c : E \in \mathcal{B} \right\} \\
+\mathcal{B}^{\sigma} := \left\{ \bigcup_{i=1}^{\infty}{E_i} : \ E_i \in \mathcal{B}, i \in \mathbb{Z}_+ \right\}</script><p>另外证明过程中需要借助极小不可数良序集 $\Omega$ (minimal uncountable well-order set，可参考 Munkres 的拓扑学第 10 节)。借助 $\Omega$ 以及广义归纳定义原理 (general principle of recursive definition，可参考 Munkres 的拓扑学第 1 章附加习题)，定义：</p>
+<ul>
+<li>$\mathcal{F}_1 := \mathcal{D} \cup \mathcal{D}^c$</li>
+<li>$\forall x \in \Omega, x &gt; 1,$<ul>
+<li>如果 $x$ 有紧接前元 $y$，$\mathcal{F}_x := \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c$</li>
+<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x := \bigcup_{y &lt; x} \mathcal{F}_{y}$</li>
+</ul>
+</li>
+<li>最后令 $\mathcal{F} := \bigcup_{x \in \Omega} \mathcal{F}_{x}$</li>
+</ul>
+<h3 id="构造所得的集合与-sigma-域相等"><a href="#构造所得的集合与-sigma-域相等" class="headerlink" title="构造所得的集合与 $\sigma$-域相等"></a>构造所得的集合与 $\sigma$-域相等</h3><blockquote>
+<p>$\mathcal{F} \subset \sigma(\mathcal{D})$</p>
+</blockquote>
+<p>只需证明：$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$。可以使用超限归纳原理 (principle of transfinite induction) 证明。</p>
+<ul>
+<li>首先根据 $\mathcal{D} \subset \sigma(\mathcal{D})$，容易证得 $\mathcal{D}^c \subset \sigma(\mathcal{D})$，于是 $\mathcal{F}_1 = \mathcal{D} \cup \mathcal{D}^c \subset \sigma(\mathcal{D})$。</li>
+<li>假设 $x \in \Omega$ 且 $x &gt; 1$，而且 $\forall y &lt; x$，有 $\mathcal{F}_y  \subset \sigma(\mathcal{D})$。<ul>
+<li>如果 $x$ 有紧接前元 $y$，由于 $\mathcal{F}_{y}^{\sigma}$ 中的集合仅由 $\mathcal{F}_{y}$ 中的集合的可数并组成，于是  $\mathcal{F}_y^{\sigma}  \subset \sigma(\mathcal{D})$，从而 $\mathcal{F}_x = \mathcal{F}_{y}^{\sigma} \cup (\mathcal{F}_{y}^{\sigma})^c \subset \sigma(\mathcal{D})$。</li>
+<li>如果 $x$ 没有紧接前元，$\mathcal{F}_x = \bigcup_{y &lt; x} \mathcal{F}_{y} \subset \sigma(\mathcal{D})$ 显然成立。</li>
+</ul>
+</li>
+</ul>
+<p>于是根据超限归纳原理，$\forall x \in \Omega$，$\mathcal{F}_x \subset \sigma(\mathcal{D})$，于是 $\mathcal{F} = \bigcup_{x \in \Omega} \mathcal{F}_{x} \subset \sigma(\mathcal{D})$。</p>
+<blockquote>
+<p>$\sigma(\mathcal{D}) \subset \mathcal{F}$</p>
+</blockquote>
+<p>只需证明 $\mathcal{F}$ 为 $\sigma$-代数。</p>
+<ul>
+<li><p>任取 $E \in \mathcal{D}$，则 $X = E^c \cup E \cup E \cup \cdots \cup E \cup \cdots$，于是</p>
+<script type="math/tex; mode=display">
+X \in \mathcal{F}_1^{\sigma} \subset \mathcal{F}_2 \subset \mathcal{F}</script><p>此时还可以得到 $\varnothing  \in \mathcal{F}_3$，所以 $x\in \Omega, x \geq 3$ 时，有 $\mathcal{F}_x \subset \mathcal{F}_x^{\sigma} \subset \mathcal{F}_{x+1}$。</p>
+</li>
+<li><p>$\forall E \in \mathcal{F}, \exists x\in \Omega$ 使得 $E \in \mathcal{F}_x$，于是</p>
+<script type="math/tex; mode=display">
+E^c \in \mathcal{F}_x^c \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></li>
+<li><p>设 $\{E_i\}_{i=1}^\infty \subset \mathcal{F}$，则 $\forall i \in \mathbb{Z}_+, \exists x_i \in \Omega$，使得 $E_i \in \mathcal{F}_{x_i}$。由于 $\{ x_i \}_{i=1}^{\infty} \subset \Omega$ 为可数集，$\{x_i\}$ 在 $\Omega$ 中必有上界 $x$ (同样参考 Munkres 的拓扑学第 10 节)。这个上界可以选取的足够大，使其至少不小于一个没有紧接前元的元素 (为了使 $\mathcal{F}_1, \mathcal{F}_2 \subset \mathcal{F}_x$)，于是根据第一条的推论，$\forall i \in \mathbb{Z}_+, E_i \in \mathcal{F}_x$。从而</p>
+<script type="math/tex; mode=display">
+\bigcup_{i}{E_i} \in \mathcal{F}_x^{\sigma} \subset \mathcal{F}_{x+1} \subset \mathcal{F}</script></li>
+</ul>
+<h3 id="mathcal-F-至多为连续统势"><a href="#mathcal-F-至多为连续统势" class="headerlink" title="$\mathcal{F}$ 至多为连续统势"></a>$\mathcal{F}$ 至多为连续统势</h3><blockquote>
+<p>$\forall x \in \Omega, \operatorname{Card}\left(\mathcal{F}_x\right) \leq \mathfrak{c}$</p>
+</blockquote>
+<p>同样使用超限归纳原理证明。</p>
+<ul>
+<li><p>由于 $\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$，所以 $\operatorname{Card}\left(\mathcal{D}^c\right)=\operatorname{Card}\left(\mathcal{D}\right) \leq \mathfrak{c}$，从而</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_1\right) = \operatorname{Card}\left(\mathcal{D} \cup \mathcal{D}^c\right) \leq \mathfrak{c}</script></li>
+<li><p>假设 $x &gt; 1, x \in \Omega$，并且 $\forall y &lt; x, \operatorname{Card}\left(\mathcal{F}_y\right) \leq \mathfrak{c},$</p>
+<ul>
+<li><p>若 $x$ 有紧接前元 $z$，由于 $\operatorname{Card}\left(\mathcal{F}_z\right) \leq \mathfrak{c}$，存在满射 $f: \mathbb{R} \rightarrow \mathcal{F}_z$，令 $g:\mathbb{R}^{\infty} \rightarrow \mathcal{F}_z^{\sigma}$，使得</p>
+<script type="math/tex; mode=display">
+g(x_1, x_2, \cdots) = \bigcup_i{f(x_i)}, \quad x_i \in \mathbb{R}, i = 1, 2, \cdots</script><p>于是 $g$ 为满射，故 $\operatorname{Card}\left( \mathcal{F}_z^{\sigma} \right) \leq \operatorname{Card}\left( \mathbb{R}^{\infty} \right) \leq \mathfrak{c}$，从而</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_x\right) = \operatorname{Card}\left(\mathcal{F}_z^{\sigma} \cup (\mathcal{F}_z^{\sigma})^c\right) \leq \mathfrak{c}</script></li>
+<li><p>如果 $x$ 没有紧接前元，由于 $S_x := \{y\in \Omega:y&lt;x\}$ 为可数集，所以</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}_x\right) = \operatorname{Card}\left( \bigcup_{y < x} \mathcal{F}_{y} \right) \leq \operatorname{Card}\left(S_x \times \mathbb{R}\right) = \mathfrak{c}</script></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>$\operatorname{Card}\left(\mathcal{F}\right) \leq \mathfrak{c}$ </p>
+</blockquote>
+<p>这个结论的证明需要使用 $\operatorname{Card}\left(\Omega\right) \leq \mathfrak{c}$，事实上，可以很简单地利用广义归纳定义原理定义出一个单射 $f: \Omega \rightarrow \mathbb{R}$。首先在 $\mathbb{R}$ 上定义良序，然后定义：</p>
+<script type="math/tex; mode=display">
+\forall x \in \Omega, f(x) = min\left\{ \mathbb{R} - f(S_x) \right\}, \quad S_x = \{y\in \Omega:y < x \}</script><p>由于 $\forall x \in \Omega$，$S_x$ 可数，所以 $\mathbb{R} - f(S_x)$ 非空，所以 $f$ 是 well-defined 的，并且容易证明其为单射。</p>
+<p>利用上述结论，可以得到：</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\mathcal{F}\right) = \operatorname{Card}\left( \bigcup_{x \in \Omega} \mathcal{F}_{x} \right) \leq \operatorname{Card}\left(\Omega \times \mathbb{R}\right) \leq \mathfrak{c}^2 = \mathfrak{c}</script><p>事实上到这里证明就基本完成了：</p>
+<script type="math/tex; mode=display">
+\operatorname{Card}\left(\sigma(\mathcal{D})\right) = \operatorname{Card}\left(\mathcal{F}\right) \leq \mathfrak{c}</script><h3 id="mathcal-B-k-可以由至多为连续统势的集族导出"><a href="#mathcal-B-k-可以由至多为连续统势的集族导出" class="headerlink" title="$\mathcal{B}_k$ 可以由至多为连续统势的集族导出"></a>$\mathcal{B}_k$ 可以由至多为连续统势的集族导出</h3><p>令 $\mathcal{D}_k = \left\{ B(x, r) : x \in \mathbb{Q}^k, r \in \mathbb{Q}_+ \right\}$，这是一个可数集，并且对 $\mathbb{R}^k$ 中任意开集 $V$，容易证得：</p>
+<script type="math/tex; mode=display">
+V = \bigcup_{B \in \mathcal{D}_k, B \subset V} B</script><p>上面的并是可数并，所以 $\sigma(\mathcal{D}_k)$ 包含所有的开集，因此容易得到：$\sigma(\mathcal{D}_k) = \mathcal{B}_k$，证毕。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Borel-Set/" rel="tag"># Borel Set</a>
+              <a href="/tags/Cardinality/" rel="tag"># Cardinality</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/06/hexo-math-support/" rel="next" title="Hexo 支持数学公式渲染">
+                  <i class="fa fa-chevron-left"></i> Hexo 支持数学公式渲染
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/07/linear-conjugate-method/" rel="prev" title="线性共轭梯度法">
+                  线性共轭梯度法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论证明"><span class="nav-number">2.</span> <span class="nav-text">结论证明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造"><span class="nav-number">2.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造所得的集合与-sigma-域相等"><span class="nav-number">2.2.</span> <span class="nav-text">构造所得的集合与 $\sigma$-域相等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-F-至多为连续统势"><span class="nav-number">2.3.</span> <span class="nav-text">$\mathcal{F}$ 至多为连续统势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathcal-B-k-可以由至多为连续统势的集族导出"><span class="nav-number">2.4.</span> <span class="nav-text">$\mathcal{B}_k$ 可以由至多为连续统势的集族导出</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Tsechin Lin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tsechin Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsechin Lin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>
