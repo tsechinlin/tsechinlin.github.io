@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-21T15:40:34.673Z</updated>
+  <updated>2020-07-29T03:08:56.055Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,32 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2020/07/21/test/"/>
-    <id>http://yoursite.com/2020/07/21/test/</id>
-    <published>2020-07-21T15:40:34.000Z</published>
-    <updated>2020-07-21T15:40:34.673Z</updated>
+    <title>矩阵分析 - Hermite 矩阵特征值不等式</title>
+    <link href="http://yoursite.com/2020/07/28/mtx-aly-4-3-weyl/"/>
+    <id>http://yoursite.com/2020/07/28/mtx-aly-4-3-weyl/</id>
+    <published>2020-07-28T10:23:43.000Z</published>
+    <updated>2020-07-29T03:08:56.055Z</updated>
     
     <summary type="html">
+    
+      &lt;p&gt;阅读笔记：&lt;u&gt;Matrix analysis&lt;/u&gt; [Horn, Roger A., and Charles R. Johnson].&lt;/p&gt;
     
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>prob-measure-4</title>
-    <link href="http://yoursite.com/2020/06/19/prob-measure-4/"/>
-    <id>http://yoursite.com/2020/06/19/prob-measure-4/</id>
-    <published>2020-06-19T12:57:59.000Z</published>
-    <updated>2020-06-19T12:58:00.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
+      <category term="Matrix Analysis" scheme="http://yoursite.com/categories/Matrix-Analysis/"/>
     
     
+      <category term="Eigenvalue" scheme="http://yoursite.com/tags/Eigenvalue/"/>
+    
+      <category term="Hermitian Matrix" scheme="http://yoursite.com/tags/Hermitian-Matrix/"/>
     
   </entry>
   
@@ -433,6 +426,27 @@
       <category term="Borel Set" scheme="http://yoursite.com/tags/Borel-Set/"/>
     
       <category term="Cardinality" scheme="http://yoursite.com/tags/Cardinality/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 支持数学公式渲染</title>
+    <link href="http://yoursite.com/2019/11/06/hexo-math-support/"/>
+    <id>http://yoursite.com/2019/11/06/hexo-math-support/</id>
+    <published>2019-11-06T13:54:12.000Z</published>
+    <updated>2019-11-06T15:19:30.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。&lt;br&gt;参考：&lt;a href=&quot;https://www.jianshu.com/p/7ab21c7f0674&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;在 Hexo 中渲染 MathJax 数学公式&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Web" scheme="http://yoursite.com/categories/Web/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
