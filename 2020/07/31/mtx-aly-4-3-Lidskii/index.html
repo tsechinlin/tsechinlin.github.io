@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tsechin Lin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="阅读笔记：Matrix analysis [Horn, Roger A., and Charles R. Johnson].">
+<meta name="keywords" content="Eigenvalue,Hermitian Matrix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵分析 - Hermite 矩阵中的优化关系">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;31&#x2F;mtx-aly-4-3-Lidskii&#x2F;index.html">
+<meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="阅读笔记：Matrix analysis [Horn, Roger A., and Charles R. Johnson].">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-07-31T09:20:03.374Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/31/mtx-aly-4-3-Lidskii/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>矩阵分析 - Hermite 矩阵中的优化关系 | Tsechin Lin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tsechin Lin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">You Never Walk Alone</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/mtx-aly-4-3-Lidskii/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          矩阵分析 - Hermite 矩阵中的优化关系
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-31 11:30:02 / Modified: 17:20:03" itemprop="dateCreated datePublished" datetime="2020-07-31T11:30:02+08:00">2020-07-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Matrix-Analysis/" itemprop="url" rel="index">
+                    <span itemprop="name">Matrix Analysis</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>阅读笔记：<u>Matrix analysis</u> [Horn, Roger A., and Charles R. Johnson].</p>
+<a id="more"></a>
+<p>本篇约定对所有出现的 Hermite 矩阵 $A = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$，其特征值组成的向量记为 $\lambda(A) = [\lambda_i(A)]_{i=1}^n \in \mathbb{R}^n$，主对角线元素组成的向量则记为 $d(A) = [a_{ii}]_{i=1}^n \in \mathbb{R}^n$。</p>
+<h2 id="向量的优化关系"><a href="#向量的优化关系" class="headerlink" title="向量的优化关系"></a>向量的优化关系</h2><h3 id="单调重排"><a href="#单调重排" class="headerlink" title="单调重排"></a>单调重排</h3><p>给定 $z = [z_i]_{i=1}^n \in \mathbb{R}^n$，</p>
+<ul>
+<li>存在 $\{ 1, \cdots, n \}$ 上的一个置换 $\sigma$，使得<script type="math/tex; mode=display">
+z_{\sigma(1)} \geq z_{\sigma(2)} \geq \cdots \geq z_{\sigma(n-1)} \geq z_{\sigma(n)}.</script>记 $z_i^{\downarrow} = z_{\sigma(i)}$，称向量 $z^{\downarrow} = [z_i^{\downarrow}]_{i=1}^n \in \mathbb{R}^n$ 为 $z$ 的<strong>非增重排 (nonincreasing rearrangement)</strong>。</li>
+<li>存在 $\{ 1, \cdots, n \}$ 上的一个置换 $\tau$，使得<script type="math/tex; mode=display">
+z_{\tau(1)} \leq z_{\tau(2)} \leq \cdots \leq z_{\tau(n-1)} \leq z_{\tau(n)}.</script>记 $z_i^{\uparrow} = z_{\tau(i)}$，称向量 $z^{\uparrow} = [z_i^{\uparrow}]_{i=1}^n \in \mathbb{R}^n$ 为 $z$ 的<strong>非减重排 (nondecreasing rearrangement)</strong>。</li>
+</ul>
+<p><strong>性质</strong></p>
+<ul>
+<li>设 $x, y \in \mathbb{R}^n$，那么 $(x^\downarrow + y^\downarrow)^\downarrow = x^\downarrow + y^\downarrow$ 与 $(x^\uparrow + y^\uparrow)^\uparrow = x^\uparrow + y^\uparrow$ 都成立。</li>
+<li>设 $x \in \mathbb{R}^n$，那么 $(-x)^\downarrow = - (x^\uparrow)$。</li>
+</ul>
+<h3 id="双随机矩阵"><a href="#双随机矩阵" class="headerlink" title="双随机矩阵"></a>双随机矩阵</h3><p>矩阵 $S = [s_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{R})$ 为<strong>双随机的 (doubly stochastic)</strong>，如果</p>
+<ul>
+<li>$S$ 为非负矩阵，即对所有的 $i,j \in \{ 1, \cdots, n \}$，有 $s_{ij} \geq 0$，</li>
+<li>$S$ 的每一行、每一列的和都为 $1$，即 $S 1_n = 1_n$ 以及 $1_n^\top S = 1_n^\top$，这里 $1_n$ 表示长度为 $n$，每一项都为 $1$ 的向量。</li>
+</ul>
+<p><strong>性质</strong></p>
+<ul>
+<li>$\mathcal{M}_n(\mathbb{R})$ 中所有的双随机矩阵构成一个闭凸集。</li>
+<li>假设 $S, P_1, P_2 \in \mathcal{M}_n(\mathbb{R})$，如果 $S$ 为双随机的，$P_1, P_2$ 为置换矩阵，那么 $P_1 S P_2$ 也是双随机的。</li>
+<li><strong>(Birkhoff–von Neumann theorem)</strong> 矩阵 $S =  \in \mathcal{M}_n(\mathbb{R})$ 是双随机的，当且仅当存在置换矩阵 $P_1, \cdots, P_N \in \mathcal{M}_n(\mathbb{R})$ 以及正实数 $t_1, \cdots, t_N \in \mathbb{R}_+$，使得<script type="math/tex; mode=display">
+\sum_{i=1}^N t_i = 1 \quad \text{ and } \quad S = \sum_{i=1}^N t_i P_i.</script>此外，这里可以使置换矩阵的数量满足 $N \leq n^2 - n +1$。 </li>
+</ul>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>给定向量 $x, y \in \mathbb{R}^n$，称 $x$ <strong>优化 (majorizes)</strong> $y$，如果对所有的 $k = 1, \cdots, n$，都有</p>
+<script type="math/tex; mode=display">
+\max _{1 \leq i_{1}<\cdots<i_{k} \leq n} \sum_{j=1}^{k} x_{i_{j}} \geq \max _{1 \leq i_{1} < \cdots < i_{k} \leq n} \sum_{j=1}^{k} y_{i_{j}}</script><p>并且在 $k = n$ 时等号成立。</p>
+<p><strong>单调重排与优化</strong></p>
+<p>给定向量 $x, y \in \mathbb{R}^n$，下列命题等价：</p>
+<ul>
+<li>$x$ 优化 $y$。</li>
+<li>对所有的 $k = 1, \cdots, n$，都有 $\sum_{i=1}^k x_i^{\downarrow} \geq \sum_{i=1}^k y_i^{\downarrow}$，并且在 $k = n$ 时等号成立。</li>
+<li>对所有的 $k = 1, \cdots, n$，都有 $\sum_{i=1}^k x_i^{\uparrow} \leq \sum_{i=1}^k y_i^{\uparrow}$，并且在 $k = n$ 时等号成立。</li>
+</ul>
+<p><strong>双随机矩阵与优化</strong></p>
+<p>给定向量 $x, y \in \mathbb{R}^n$，下列命题等价：</p>
+<ul>
+<li>$x$ 优化 $y$。</li>
+<li>存在双随机矩阵 $S \in \mathcal{M}_n(\mathbb{R})$ 使得 $y = Sx$。</li>
+<li>存在若干个置换矩阵 $P_1, \cdots, P_N$ 以及正实数 $t_1, \cdots, t_N \in \mathbb{R}_+$，使得<script type="math/tex; mode=display">
+\sum_{i=1}^N t_i = 1 \quad \text{ and } \quad y = \sum_{i=1}^N t_i P_i x.</script></li>
+</ul>
+<p><strong>性质</strong></p>
+<ul>
+<li>给定向量 $x, y \in \mathbb{R}^n$，设 $P, Q \in \mathcal{M}_n(\mathbb{C})$ 为置换矩阵，那么 $x$ 优化 $y$ 当且仅当 $Px$ 优化 $Qy$。</li>
+<li>给定向量 $x, y, w \in \mathbb{R}^n$，假设 $x$ 优化 $y$，那么<script type="math/tex; mode=display">
+\sum_{i=1}^{n} w_i^{\downarrow} x_{i}^{\uparrow} \leq \sum_{i=1}^{n} w_i^{\downarrow} y_{i} \leq \sum_{i=1}^{n} w_i^{\downarrow} x_{i}^{\downarrow}</script>对 $k = 1, \cdots, n$，令 $\hat{X}_k = \sum_{i=1}^{k} x_{i}^{\downarrow}$，$\check{X}_k = \sum_{i=1}^{k} x_{i}^{\uparrow}$ 以及 $Y_k = \sum_{i=1}^{k} y_{i}$。那么，<ul>
+<li>上式中右端的等号成立当且仅当对所有的 $k = 1, \cdots, n - 1$，有<script type="math/tex; mode=display">
+(w_k^{\downarrow} - w_{k + 1}^{\downarrow}) (\hat{X}_k - Y_k) = 0.</script></li>
+<li>上式中左端的等号成立当且仅当对所有的 $k = 1, \cdots, n - 1$，有<script type="math/tex; mode=display">
+(w_k^{\downarrow} - w_{k + 1}^{\downarrow}) (\check{X}_k - Y_k) = 0.</script></li>
+</ul>
+</li>
+</ul>
+<h2 id="Hermite-矩阵中的优化关系"><a href="#Hermite-矩阵中的优化关系" class="headerlink" title="Hermite 矩阵中的优化关系"></a>Hermite 矩阵中的优化关系</h2><h3 id="Schur–Horn-定理：Hermite-矩阵的特征值优化其主对角线"><a href="#Schur–Horn-定理：Hermite-矩阵的特征值优化其主对角线" class="headerlink" title="Schur–Horn 定理：Hermite 矩阵的特征值优化其主对角线"></a>Schur–Horn 定理：Hermite 矩阵的特征值优化其主对角线</h3><p><strong>(Schur–Horn theorem)</strong> 假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么其特征值组成的向量 $\lambda(A)$ 优化其主对角线元素组成的向量 $d(A)$，即对所有的 $k = 1, \cdots, n$，都有</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n \lambda_i(A)^{\downarrow} \geq \sum_{i=1}^n d_i(A)^{\downarrow},</script><p>其中当 $k = n$ 时等号成立。如果对某个 $k \in \{ 1, \cdots, n-1 \}$，上述不等式成为等式，那么 $A$ 置换相似于 $B \oplus D$，其中 $B \in \mathcal{M}_k(\mathbb{C})$ 而 $D \in \mathcal{M}_{n-k}(\mathbb{C})$。</p>
+<h3 id="Schur–Horn-逆定理"><a href="#Schur–Horn-逆定理" class="headerlink" title="Schur–Horn 逆定理"></a>Schur–Horn 逆定理</h3><p>给定向量 $x, y \in \mathbb{R}^n$，并假设 $x$ 优化 $y$。令 $\lambda = \operatorname{diag}(x) \in \mathcal{M}_n(\mathbb{R})$，那么存在实正交矩阵 $Q \in \mathcal{M}_n(\mathbb{R})$ 使得 $d (Q^\top \Lambda Q) = y$。也就是说，存在是对称矩阵 $A = Q^\top \Lambda Q$，使得 $\lambda(A) = x$ 以及 $d(A) = y$。</p>
+<h3 id="Schur–Horn-定理的推广：矩阵-Hermite-部分的特征值优化其特征值的-Hermite-部分"><a href="#Schur–Horn-定理的推广：矩阵-Hermite-部分的特征值优化其特征值的-Hermite-部分" class="headerlink" title="Schur–Horn 定理的推广：矩阵 Hermite 部分的特征值优化其特征值的  Hermite 部分"></a>Schur–Horn 定理的推广：矩阵 Hermite 部分的特征值优化其特征值的  Hermite 部分</h3><p>假设 $A \in \mathcal{M}_n(\mathbb{C})$，那么其 Hermite 部分 $H(A) = (A + A^*) / 2$ 的特征值 $\lambda(H(A))$ 使 $\operatorname{Re} \lambda(A)$ 优化。</p>
+<h3 id="Schur–Horn-逆定理的推广"><a href="#Schur–Horn-逆定理的推广" class="headerlink" title="Schur–Horn 逆定理的推广"></a>Schur–Horn 逆定理的推广</h3><p>给定 $x \in \mathbb{R}^n$ 以及 $z \in \mathbb{C}^n$，如果 $x$ 优化 $\operatorname{Re}z$，那么存在 $A \in \mathcal{M}_n(\mathbb{C})$ 使得 $z_1, \cdots, z_n$ 为 $A$ 的特征值，而 $x_1, \cdots, x_n$ 为 $H(A) = (A + A^*) / 2$ 的特征值。</p>
+<h3 id="Fan-不等式与-Lidskii-不等式：Hermite-矩阵和中的优化关系"><a href="#Fan-不等式与-Lidskii-不等式：Hermite-矩阵和中的优化关系" class="headerlink" title="Fan 不等式与 Lidskii 不等式：Hermite 矩阵和中的优化关系"></a>Fan 不等式与 Lidskii 不等式：Hermite 矩阵和中的优化关系</h3><p>假设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么</p>
+<ul>
+<li><strong>(Fan)</strong> $\lambda(A)^\downarrow + \lambda(B)^\downarrow$ 优化 $\lambda(A + B)$。</li>
+<li><strong>(Lidskii)</strong> <ul>
+<li>$\lambda(A + B)$ 优化 $\lambda(A)^\downarrow + \lambda(B)^\uparrow$。</li>
+<li>$\lambda(B)$ 优化 $\lambda(A + B)^\downarrow - \lambda(A)^\downarrow$。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hermite-矩阵内积上下界"><a href="#Hermite-矩阵内积上下界" class="headerlink" title="Hermite 矩阵内积上下界"></a>Hermite 矩阵内积上下界</h3><p>假设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{n} \lambda_{i}(A)^{\downarrow} \lambda_{i}(B)^{\uparrow} \leq \operatorname{tr} (A B) \leq \sum_{i=1}^{n} \lambda_{i}(A)^{\downarrow} \lambda_{i}(B)^{\downarrow}</script><p>如果上式中任意一个不等式成为等式，那么 $A$ 与 $B$ 交换。</p>
+<ul>
+<li>如果右边的不等式成为等式，那么存在酉矩阵 $U \in \mathcal{M}_n(\mathbb{C})$ 使得<script type="math/tex; mode=display">
+A = U \operatorname{diag}(\lambda(A)^\downarrow)U^∗, \quad B = U \operatorname{diag}(\lambda(B)^\downarrow)U^∗.</script></li>
+<li>如果左边的不等式成为等式，那么存在酉矩阵 $U \in \mathcal{M}_n(\mathbb{C})$ 使得<script type="math/tex; mode=display">
+A = U \operatorname{diag}(\lambda(A)^\downarrow)U^∗, \quad B = U \operatorname{diag}(\lambda(B)^\uparrow)U^∗.</script></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Eigenvalue/" rel="tag"># Eigenvalue</a>
+              <a href="/tags/Hermitian-Matrix/" rel="tag"># Hermitian Matrix</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/07/28/mtx-aly-4-3-weyl/" rel="next" title="矩阵分析 - Hermite 矩阵特征值不等式">
+                  <i class="fa fa-chevron-left"></i> 矩阵分析 - Hermite 矩阵特征值不等式
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量的优化关系"><span class="nav-number">1.</span> <span class="nav-text">向量的优化关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单调重排"><span class="nav-number">1.1.</span> <span class="nav-text">单调重排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双随机矩阵"><span class="nav-number">1.2.</span> <span class="nav-text">双随机矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">1.3.</span> <span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hermite-矩阵中的优化关系"><span class="nav-number">2.</span> <span class="nav-text">Hermite 矩阵中的优化关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Schur–Horn-定理：Hermite-矩阵的特征值优化其主对角线"><span class="nav-number">2.1.</span> <span class="nav-text">Schur–Horn 定理：Hermite 矩阵的特征值优化其主对角线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schur–Horn-逆定理"><span class="nav-number">2.2.</span> <span class="nav-text">Schur–Horn 逆定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schur–Horn-定理的推广：矩阵-Hermite-部分的特征值优化其特征值的-Hermite-部分"><span class="nav-number">2.3.</span> <span class="nav-text">Schur–Horn 定理的推广：矩阵 Hermite 部分的特征值优化其特征值的  Hermite 部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Schur–Horn-逆定理的推广"><span class="nav-number">2.4.</span> <span class="nav-text">Schur–Horn 逆定理的推广</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fan-不等式与-Lidskii-不等式：Hermite-矩阵和中的优化关系"><span class="nav-number">2.5.</span> <span class="nav-text">Fan 不等式与 Lidskii 不等式：Hermite 矩阵和中的优化关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hermite-矩阵内积上下界"><span class="nav-number">2.6.</span> <span class="nav-text">Hermite 矩阵内积上下界</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Tsechin Lin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tsechin Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsechin Lin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

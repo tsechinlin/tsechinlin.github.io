@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="阅读笔记：Matrix analysis [Horn, Roger A., and Charles R. Johnson].">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-07-29T03:08:56.055Z">
+<meta property="og:updated_time" content="2020-07-31T09:20:30.671Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/28/mtx-aly-4-3-weyl/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-29 11:08:56" itemprop="dateModified" datetime="2020-07-29T11:08:56+08:00">2020-07-29</time>
+                <time title="Modified: 2020-07-31 17:20:30" itemprop="dateModified" datetime="2020-07-31T17:20:30+08:00">2020-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,8 +243,8 @@
       
         <p>阅读笔记：<u>Matrix analysis</u> [Horn, Roger A., and Charles R. Johnson].</p>
 <a id="more"></a>
-<p>本文约定，对所有出现的 Hermite 矩阵 $A \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为 $\left \{ \lambda_i(A) \right \}_{i=1}^n$。</p>
-<h2 id="加性摄动"><a href="#加性摄动" class="headerlink" title="加性摄动"></a>加性摄动</h2><h3 id="Weyl-不等式"><a href="#Weyl-不等式" class="headerlink" title="Weyl 不等式"></a>Weyl 不等式</h3><p><strong>(Weyl’s inequality)</strong> 设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，</p>
+<p>本文约定对所有出现的 Hermite 矩阵 $A \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为 $\left \{ \lambda_i(A) \right \}_{i=1}^n$。</p>
+<h2 id="加性摄动"><a href="#加性摄动" class="headerlink" title="加性摄动"></a>加性摄动</h2><h3 id="Weyl-不等式"><a href="#Weyl-不等式" class="headerlink" title="Weyl 不等式"></a>Weyl 不等式</h3><p><strong>(Weyl inequality)</strong> 设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，</p>
 <ul>
 <li>对任意 $i = 1, \cdots, n$ 以及 $j = 0, \cdots, n-i$，有<script type="math/tex; mode=display">
 \lambda_i(A + B) \leq \lambda_{i + j}(A) + \lambda_{n-j} (B).</script>其中等式成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
@@ -296,7 +296,7 @@ Ax = \lambda_{i - 1}(A) x, \quad z^* x =  0 \quad \text{ and } \quad (A - zz^{*}
 <script type="math/tex; mode=display">
 \lambda_i(A + B) \geq \lambda_{i}(A).</script><p>其中等式成立当且仅当 $B$ 是奇异的以及存在非零向量 $x \in \mathbb{C}^n$，使得</p>
 <script type="math/tex; mode=display">
-Ax = \lambda_{i}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script><h2 id="加边摄动"><a href="#加边摄动" class="headerlink" title="加边摄动"></a>加边摄动</h2><h3 id="Cauchy-交错定理"><a href="#Cauchy-交错定理" class="headerlink" title="Cauchy 交错定理"></a>Cauchy 交错定理</h3><p><strong>(Cauchy’s interlacing theorem)</strong> 假定 $B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令</p>
+Ax = \lambda_{i}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script><h2 id="加边摄动"><a href="#加边摄动" class="headerlink" title="加边摄动"></a>加边摄动</h2><h3 id="Cauchy-交错定理"><a href="#Cauchy-交错定理" class="headerlink" title="Cauchy 交错定理"></a>Cauchy 交错定理</h3><p><strong>(Cauchy interlacing theorem)</strong> 假定 $B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令</p>
 <script type="math/tex; mode=display">
 A=\left[\begin{array}{ll}
 B & y \\
@@ -309,7 +309,7 @@ Bz = \lambda_{i}(B) z, \quad y^*z =  0 \quad \text{ and } \quad B z = \lambda_i(
 <li>对某个 $i = 1, \cdots, n$，等式 $\lambda_{i+1}(A) = \lambda_{i}(B)$ 成立当且仅当存在非零向量 $z \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
 Bz = \lambda_{i}(B) z, \quad y^*z =  0 \quad \text{ and } \quad B z = \lambda_{i+1}(A) z.</script></li>
 </ul>
-<h3 id="包容原理"><a href="#包容原理" class="headerlink" title="包容原理"></a>包容原理</h3><p><strong>(Inclusion principle)</strong> 假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成</p>
+<h3 id="包容原理"><a href="#包容原理" class="headerlink" title="包容原理"></a>包容原理</h3><p><strong>(Inclusion principle)</strong> 假设 $A = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成</p>
 <script type="math/tex; mode=display">
 A=\left[\begin{array}{ll}
 B & C \\
@@ -363,6 +363,9 @@ B_m = \left [u^*_i A u_j \right]_{i,j=1}^m \in \mathcal{M}_m(\mathbb{C}),</scrip
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/07/31/mtx-aly-4-3-Lidskii/" rel="prev" title="矩阵分析 - Hermite 矩阵中的优化关系">
+                  矩阵分析 - Hermite 矩阵中的优化关系 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -417,7 +420,7 @@ B_m = \left [u^*_i A u_j \right]_{i,j=1}^m \in \mathcal{M}_m(\mathbb{C}),</scrip
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
