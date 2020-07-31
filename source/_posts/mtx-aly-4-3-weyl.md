@@ -12,14 +12,13 @@ mathjax: true
 
 <!--more-->
 
-本文约定，对所有出现的 Hermite 矩阵 $A \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为 $\left \{ \lambda_i(A) \right \}_{i=1}^n$。
+本文约定对所有出现的 Hermite 矩阵 $A \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为 $\left \{ \lambda_i(A) \right \}_{i=1}^n$。
 
 ## 加性摄动
 
 ### Weyl 不等式
 
-**(Weyl's inequality)** 设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，
-
+**(Weyl inequality)** 设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，
 + 对任意 $i = 1, \cdots, n$ 以及 $j = 0, \cdots, n-i$，有
   $$
   \lambda_i(A + B) \leq \lambda_{i + j}(A) + \lambda_{n-j} (B).
@@ -42,7 +41,6 @@ mathjax: true
 ###  推论 1：考虑矩阵特征值符号
 
 如果 $B$ 恰好有 $\pi$ 个正的特征值以及 $\nu$ 个负的特征值，那么
-
 + 对任意 $i = 1, \cdots, n - \pi$，有
   $$
   \lambda_i(A + B) \leq \lambda_{i + \pi}(A).
@@ -63,7 +61,6 @@ mathjax: true
 ### 推论 2：考虑矩阵秩
 
 如果 $B$ 是奇异的且 $\operatorname{rank} (B) = r$，那么
-
 + 对任意 $i = 1, \cdots, n - r$，有
   $$
   \lambda_i(A + B) \leq \lambda_{i + r}(A).
@@ -84,7 +81,6 @@ mathjax: true
 ### 推论 3：关于 Hermite 矩阵的 $1$ 阶秩 Hermite 扰动的交错定理
 
 **(Interlacing theorem for a rank-one Hermitian perturbation of a Hermitian matrix)** 假定 $n \geq 2$，设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$z \in \mathbb{C}^n$ 为非零向量。那么，
-
 + 有交错不等式
   $$
   \lambda_1(A) \leq \lambda_1(A + zz^{*}) \leq \lambda_2(A) \leq \cdots \leq \lambda_{n-1}(A + zz^{*}) \leq \lambda_n(A) \leq \lambda_n(A + zz^{*}).
@@ -125,7 +121,7 @@ $$
 
 ### Cauchy 交错定理
 
-**(Cauchy's interlacing theorem)** 假定 $B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令
+**(Cauchy interlacing theorem)** 假定 $B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令
 $$
 A=\left[\begin{array}{ll}
 B & y \\
@@ -136,7 +132,6 @@ $$
 $$
 \lambda_1(A) \leq \lambda_1(B) \leq \lambda_2(A) \leq \cdots \leq \lambda_n(A) \leq \lambda_n(B) \leq \lambda_{n + 1}(A).
 $$
-
 + 对某个 $i = 1, \cdots, n$，等式 $\lambda_i(A) = \lambda_i(B)$ 成立当且仅当存在非零向量 $z \in \mathbb{C}^n$，使得
   $$
   Bz = \lambda_{i}(B) z, \quad y^*z =  0 \quad \text{ and } \quad B z = \lambda_i(A) z.
@@ -148,7 +143,7 @@ $$
 
 ### 包容原理
 
-**(Inclusion principle)** 假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成
+**(Inclusion principle)** 假设 $A = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成
 $$
 A=\left[\begin{array}{ll}
 B & C \\
