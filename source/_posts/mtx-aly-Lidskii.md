@@ -12,11 +12,9 @@ mathjax: true
 
 <!--more-->
 
-本篇约定对所有出现的 Hermite 矩阵 $A = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$，其特征值组成的向量记为 $\lambda(A) = [\lambda_i(A)]_{i=1}^n \in \mathbb{R}^n$，主对角线元素组成的向量则记为 $d(A) = [a_{ii}]_{i=1}^n \in \mathbb{R}^n$。
+对 Hermite 矩阵 $H \in \mathcal{M}_n(\mathbb{C})$，记其特征值组成的向量为 $\lambda(H) = [\lambda_i(H)]_{i=1}^n \in \mathbb{R}^n$，主对角线元素组成的向量则记为 $d(H) = [h_{ii}]_{i=1}^n \in \mathbb{R}^n$。
 
-## 向量的优化关系
-
-### 单调重排
+## 非增重排与非减重排
 
 给定 $z = [z_i]_{i=1}^n \in \mathbb{R}^n$，
 + 存在 $\{ 1, \cdots, n \}$ 上的一个置换 $\sigma$，使得
@@ -30,28 +28,31 @@ mathjax: true
   $$
   记 $z_i^{\uparrow} = z_{\tau(i)}$，称向量 $z^{\uparrow} = [z_i^{\uparrow}]_{i=1}^n \in \mathbb{R}^n$ 为 $z$ 的**非减重排 (nondecreasing rearrangement)**。
 
-**性质**
+### 性质
 
 + 设 $x, y \in \mathbb{R}^n$，那么 $(x^\downarrow + y^\downarrow)^\downarrow = x^\downarrow + y^\downarrow$ 与 $(x^\uparrow + y^\uparrow)^\uparrow = x^\uparrow + y^\uparrow$ 都成立。
 + 设 $x \in \mathbb{R}^n$，那么 $(-x)^\downarrow = - (x^\uparrow)$。
 
-### 双随机矩阵
+## 双随机矩阵
 
 矩阵 $S = [s_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{R})$ 为**双随机的 (doubly stochastic)**，如果
 + $S$ 为非负矩阵，即对所有的 $i,j \in \{ 1, \cdots, n \}$，有 $s_{ij} \geq 0$，
 + $S$ 的每一行、每一列的和都为 $1$，即 $S 1_n = 1_n$ 以及 $1_n^\top S = 1_n^\top$，这里 $1_n$ 表示长度为 $n$，每一项都为 $1$ 的向量。
 
-**性质**
+### 性质
 
 + $\mathcal{M}_n(\mathbb{R})$ 中所有的双随机矩阵构成一个闭凸集。
 + 假设 $S, P_1, P_2 \in \mathcal{M}_n(\mathbb{R})$，如果 $S$ 为双随机的，$P_1, P_2$ 为置换矩阵，那么 $P_1 S P_2$ 也是双随机的。
-+ **(Birkhoff–von Neumann theorem)** 矩阵 $S =  \in \mathcal{M}_n(\mathbb{R})$ 是双随机的，当且仅当存在置换矩阵 $P_1, \cdots, P_N \in \mathcal{M}_n(\mathbb{R})$ 以及正实数 $t_1, \cdots, t_N \in \mathbb{R}_+$，使得
-  $$
-  \sum_{i=1}^N t_i = 1 \quad \text{ and } \quad S = \sum_{i=1}^N t_i P_i.
-  $$
-  此外，这里可以使置换矩阵的数量满足 $N \leq n^2 - n +1$。 
 
-### 优化
+### Birkhoff–von Neumann 定理：置换矩阵凸包
+
+矩阵 $S =  \in \mathcal{M}_n(\mathbb{R})$ 是双随机的，当且仅当存在置换矩阵 $P_1, \cdots, P_N \in \mathcal{M}_n(\mathbb{R})$ 以及正实数 $t_1, \cdots, t_N \in \mathbb{R}_+$，使得
+$$
+\sum_{i=1}^N t_i = 1 \quad \text{ and } \quad S = \sum_{i=1}^N t_i P_i.
+$$
+此外，这里可以使置换矩阵的数量满足 $N \leq n^2 - n +1$。 
+
+## 向量的优化关系
 
 给定向量 $x, y \in \mathbb{R}^n$，称 $x$ **优化 (majorizes)** $y$，如果对所有的 $k = 1, \cdots, n$，都有
 $$
@@ -59,14 +60,14 @@ $$
 $$
 并且在 $k = n$ 时等号成立。
 
-**单调重排与优化**
+### 单调重排与优化
 
 给定向量 $x, y \in \mathbb{R}^n$，下列命题等价：
 + $x$ 优化 $y$。
 + 对所有的 $k = 1, \cdots, n$，都有 $\sum_{i=1}^k x_i^{\downarrow} \geq \sum_{i=1}^k y_i^{\downarrow}$，并且在 $k = n$ 时等号成立。
 + 对所有的 $k = 1, \cdots, n$，都有 $\sum_{i=1}^k x_i^{\uparrow} \leq \sum_{i=1}^k y_i^{\uparrow}$，并且在 $k = n$ 时等号成立。
 
-**双随机矩阵与优化**
+### 双随机矩阵与优化
 
 给定向量 $x, y \in \mathbb{R}^n$，下列命题等价：
 + $x$ 优化 $y$。
@@ -76,7 +77,7 @@ $$
   \sum_{i=1}^N t_i = 1 \quad \text{ and } \quad y = \sum_{i=1}^N t_i P_i x.
   $$
 
-**性质**
+### 性质
 
 + 给定向量 $x, y \in \mathbb{R}^n$，设 $P, Q \in \mathcal{M}_n(\mathbb{C})$ 为置换矩阵，那么 $x$ 优化 $y$ 当且仅当 $Px$ 优化 $Qy$。
 + 给定向量 $x, y, w \in \mathbb{R}^n$，假设 $x$ 优化 $y$，那么
@@ -97,11 +98,13 @@ $$
 
 ### Schur–Horn 定理：Hermite 矩阵的特征值优化其主对角线
 
-**(Schur–Horn theorem)** 假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么其特征值组成的向量 $\lambda(A)$ 优化其主对角线元素组成的向量 $d(A)$，即对所有的 $k = 1, \cdots, n$，都有
+假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么其特征值组成的向量 $\lambda(A)$ 优化其主对角线元素组成的向量 $d(A)$，即对所有的 $k = 1, \cdots, n$，都有
 $$
 \sum_{i=1}^n \lambda_i(A)^{\downarrow} \geq \sum_{i=1}^n d_i(A)^{\downarrow},
 $$
-其中当 $k = n$ 时等号成立。如果对某个 $k \in \{ 1, \cdots, n-1 \}$，上述不等式成为等式，那么 $A$ 置换相似于 $B \oplus D$，其中 $B \in \mathcal{M}_k(\mathbb{C})$ 而 $D \in \mathcal{M}_{n-k}(\mathbb{C})$。
+其中当 $k = n$ 时等号成立。
+
+如果对某个 $k \in \{ 1, \cdots, n-1 \}$，上述不等式成为等式，那么 $A$ 置换相似于 $B \oplus D$，其中 $B \in \mathcal{M}_k(\mathbb{C})$ 而 $D \in \mathcal{M}_{n-k}(\mathbb{C})$。
 
 ### Schur–Horn 逆定理
 
