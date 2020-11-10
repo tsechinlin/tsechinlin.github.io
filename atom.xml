@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-31T09:20:03.374Z</updated>
+  <updated>2020-11-10T08:21:18.877Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>bai-chap2-semicircular-law-non-iid-matrix-simplification</title>
+    <link href="http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/"/>
+    <id>http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/</id>
+    <published>2020-11-10T08:01:56.000Z</published>
+    <updated>2020-11-10T08:21:18.877Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Reading Notes&lt;/strong&gt;: Bai, Zhidong, and Jack W. Silverstein. &lt;strong&gt;Spectral analysis of large dimensional random matrices&lt;/strong&gt;. Vol. 20. New York: Springer, 2010.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
+    
+      <category term="Eigenvalue" scheme="http://yoursite.com/tags/Eigenvalue/"/>
+    
+      <category term="Wigner Matrix" scheme="http://yoursite.com/tags/Wigner-Matrix/"/>
+    
+      <category term="Semicircle Law" scheme="http://yoursite.com/tags/Semicircle-Law/"/>
+    
+  </entry>
+  
+  <entry>
     <title>矩阵分析 - Hermite 矩阵中的优化关系</title>
-    <link href="http://yoursite.com/2020/07/31/mtx-aly-4-3-Lidskii/"/>
-    <id>http://yoursite.com/2020/07/31/mtx-aly-4-3-Lidskii/</id>
+    <link href="http://yoursite.com/2020/07/31/mtx-aly-Lidskii/"/>
+    <id>http://yoursite.com/2020/07/31/mtx-aly-Lidskii/</id>
     <published>2020-07-31T03:30:02.000Z</published>
-    <updated>2020-07-31T09:20:03.374Z</updated>
+    <updated>2020-09-28T12:32:23.104Z</updated>
     
     <summary type="html">
     
@@ -41,10 +66,10 @@
   
   <entry>
     <title>矩阵分析 - Hermite 矩阵特征值不等式</title>
-    <link href="http://yoursite.com/2020/07/28/mtx-aly-4-3-weyl/"/>
-    <id>http://yoursite.com/2020/07/28/mtx-aly-4-3-weyl/</id>
+    <link href="http://yoursite.com/2020/07/28/mtx-aly-weyl/"/>
+    <id>http://yoursite.com/2020/07/28/mtx-aly-weyl/</id>
     <published>2020-07-28T10:23:43.000Z</published>
-    <updated>2020-07-31T09:20:30.671Z</updated>
+    <updated>2020-09-28T09:09:13.907Z</updated>
     
     <summary type="html">
     
@@ -426,29 +451,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>$\mathbb{R}^k$ 中 Borel $\sigma$-代数的基数</title>
-    <link href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/"/>
-    <id>http://yoursite.com/2019/11/06/borel-sigma-cardinality/</id>
-    <published>2019-11-06T15:42:19.000Z</published>
-    <updated>2019-11-07T04:18:16.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。&lt;br&gt;参考：&lt;a href=&quot;https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;How Many Borel Sets are There?&lt;/a&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Real Analysis" scheme="http://yoursite.com/categories/Real-Analysis/"/>
-    
-    
-      <category term="Borel Set" scheme="http://yoursite.com/tags/Borel-Set/"/>
-    
-      <category term="Cardinality" scheme="http://yoursite.com/tags/Cardinality/"/>
     
   </entry>
   
