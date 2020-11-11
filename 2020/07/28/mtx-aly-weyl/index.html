@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="阅读笔记：Matrix analysis [Horn, Roger A., and Charles R. Johnson].">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-09-28T09:09:13.907Z">
+<meta property="og:updated_time" content="2020-11-11T06:03:24.215Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/28/mtx-aly-weyl/">
@@ -216,7 +216,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-28 17:09:13" itemprop="dateModified" datetime="2020-09-28T17:09:13+08:00">2020-09-28</time>
+                <time title="Modified: 2020-11-11 14:03:24" itemprop="dateModified" datetime="2020-11-11T14:03:24+08:00">2020-11-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,102 +243,103 @@
       
         <p>阅读笔记：<u>Matrix analysis</u> [Horn, Roger A., and Charles R. Johnson].</p>
 <a id="more"></a>
-<p>本文约定对所有出现的 Hermite 矩阵 $A \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为 $\left \{ \lambda_i(A) \right \}_{i=1}^n$。</p>
-<h2 id="加性摄动"><a href="#加性摄动" class="headerlink" title="加性摄动"></a>加性摄动</h2><h3 id="Weyl-不等式"><a href="#Weyl-不等式" class="headerlink" title="Weyl 不等式"></a>Weyl 不等式</h3><p><strong>(Weyl inequality)</strong> 设 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，</p>
+<p>以下约定，对所有出现的 Hermite 矩阵 $\mathbf{A} \in \mathcal{M}_n(\mathbb{C})$，其特征值按照非减顺序排列为</p>
+<script type="math/tex; mode=display">
+\lambda_{1}(\mathbf{A}) \leq \lambda_{2}(\mathbf{A}) \leq \cdots \leq \lambda_{n-1}(\mathbf{A}) \leq \lambda_{n}(\mathbf{A}).</script><h2 id="加性摄动"><a href="#加性摄动" class="headerlink" title="加性摄动"></a>加性摄动</h2><h3 id="Weyl-不等式"><a href="#Weyl-不等式" class="headerlink" title="Weyl 不等式"></a>Weyl 不等式</h3><p><strong>(Weyl inequality)</strong> 设 $\mathbf{A}, \mathbf{B} \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，那么，</p>
 <ul>
 <li>对任意 $i = 1, \cdots, n$ 以及 $j = 0, \cdots, n-i$，有<script type="math/tex; mode=display">
-\lambda_i(A + B) \leq \lambda_{i + j}(A) + \lambda_{n-j} (B).</script>其中等式成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i + j}(A) x, \quad Bx =  \lambda_{n-j} (B) x \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \leq \lambda_{i + j}(\mathbf{A}) + \lambda_{n-j} (\mathbf{B}).</script>其中等式成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i + j}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  \lambda_{n-j} (\mathbf{B}) \mathbf{x} \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 <li>对任意 $i = 1, \cdots, n$ 以及 $j = 1, \cdots, i$，有<script type="math/tex; mode=display">
 \begin{equation}
-\lambda_i(A + B) \geq \lambda_{i - j + 1}(A) + \lambda_{j} (B).
-\end{equation}</script>其中等式成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i - j + 1}(A) x, \quad Bx =  \lambda_{j} (B) x \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \geq \lambda_{i - j + 1}(\mathbf{A}) + \lambda_{j} (\mathbf{B}).
+\end{equation}</script>其中等式成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i - j + 1}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  \lambda_{j} (\mathbf{B}) \mathbf{x} \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 </ul>
-<h3 id="推论-1：考虑矩阵特征值符号"><a href="#推论-1：考虑矩阵特征值符号" class="headerlink" title="推论 1：考虑矩阵特征值符号"></a>推论 1：考虑矩阵特征值符号</h3><p>如果 $B$ 恰好有 $\pi$ 个正的特征值以及 $\nu$ 个负的特征值，那么</p>
+<h3 id="推论-1：考虑矩阵特征值符号"><a href="#推论-1：考虑矩阵特征值符号" class="headerlink" title="推论 1：考虑矩阵特征值符号"></a>推论 1：考虑矩阵特征值符号</h3><p>如果 $\mathbf{B}$ 恰好有 $\pi$ 个正的特征值以及 $\nu$ 个负的特征值，那么</p>
 <ul>
 <li>对任意 $i = 1, \cdots, n - \pi$，有<script type="math/tex; mode=display">
-\lambda_i(A + B) \leq \lambda_{i + \pi}(A).</script>其中等式成立当且仅当 $B$ 是奇异的以及存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i + \pi}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \leq \lambda_{i + \pi}(\mathbf{A}).</script>其中等式成立当且仅当 $\mathbf{B}$ 是奇异的以及存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i + \pi}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 <li>对任意 $i = \nu + 1,  \cdots, n$，有<script type="math/tex; mode=display">
-\lambda_i(A + B) \geq \lambda_{i - \nu}(A).</script>其中等式成立当且仅当 $B$ 是奇异的以及存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i - \nu}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \geq \lambda_{i - \nu}(\mathbf{A}).</script>其中等式成立当且仅当 $\mathbf{B}$ 是奇异的以及存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i - \nu}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 </ul>
-<h3 id="推论-2：考虑矩阵秩"><a href="#推论-2：考虑矩阵秩" class="headerlink" title="推论 2：考虑矩阵秩"></a>推论 2：考虑矩阵秩</h3><p>如果 $B$ 是奇异的且 $\operatorname{rank} (B) = r$，那么</p>
+<h3 id="推论-2：考虑矩阵秩"><a href="#推论-2：考虑矩阵秩" class="headerlink" title="推论 2：考虑矩阵秩"></a>推论 2：考虑矩阵秩</h3><p>如果 $\mathbf{B}$ 是奇异的且 $\operatorname{rank} (\mathbf{B}) = r$，那么</p>
 <ul>
 <li>对任意 $i = 1, \cdots, n - r$，有<script type="math/tex; mode=display">
-\lambda_i(A + B) \leq \lambda_{i + r}(A).</script>其中等式成立当且仅当 $\lambda_{n-r}(B) = 0$ 以及存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i + r}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \leq \lambda_{i + r}(\mathbf{A}).</script>其中等式成立当且仅当 $\lambda_{n-r}(\mathbf{B}) = 0$ 以及存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i + r}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 <li>对任意 $i = \nu + 1,  \cdots, n$，有<script type="math/tex; mode=display">
-\lambda_i(A + B) \geq \lambda_{i - \nu}(A).</script>其中等式成立当且仅当 $B$ 是奇异的以及存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i - \nu}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script></li>
+\lambda_i(\mathbf{A} + \mathbf{B}) \geq \lambda_{i - \nu}(\mathbf{A}).</script>其中等式成立当且仅当 $\mathbf{B}$ 是奇异的以及存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i - \nu}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script></li>
 </ul>
-<h3 id="推论-3：关于-Hermite-矩阵的-1-阶秩-Hermite-扰动的交错定理"><a href="#推论-3：关于-Hermite-矩阵的-1-阶秩-Hermite-扰动的交错定理" class="headerlink" title="推论 3：关于 Hermite 矩阵的 $1$ 阶秩 Hermite 扰动的交错定理"></a>推论 3：关于 Hermite 矩阵的 $1$ 阶秩 Hermite 扰动的交错定理</h3><p><strong>(Interlacing theorem for a rank-one Hermitian perturbation of a Hermitian matrix)</strong> 假定 $n \geq 2$，设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$z \in \mathbb{C}^n$ 为非零向量。那么，</p>
+<h3 id="推论-3：关于-Hermite-矩阵的-1-阶秩-Hermite-扰动的交错定理"><a href="#推论-3：关于-Hermite-矩阵的-1-阶秩-Hermite-扰动的交错定理" class="headerlink" title="推论 3：关于 Hermite 矩阵的 $1$ 阶秩 Hermite 扰动的交错定理"></a>推论 3：关于 Hermite 矩阵的 $1$ 阶秩 Hermite 扰动的交错定理</h3><p><strong>(Interlacing theorem for a rank-one Hermitian perturbation of a Hermitian matrix)</strong> 假定 $n \geq 2$，设 $\mathbf{A} \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$\mathbf{z} \in \mathbb{C}^n$ 为非零向量。那么，</p>
 <ul>
 <li>有交错不等式<script type="math/tex; mode=display">
-\lambda_1(A) \leq \lambda_1(A + zz^{*}) \leq \lambda_2(A) \leq \cdots \leq \lambda_{n-1}(A + zz^{*}) \leq \lambda_n(A) \leq \lambda_n(A + zz^{*}).</script><ul>
-<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(A + zz^{*}) = \lambda_i(A)$ 成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i}(A) x, \quad z^* x =  0 \quad \text{ and } \quad (A + zz^{*}) x = \lambda_i(A + zz^{*}) x.</script></li>
-<li>对某个 $i = 1, \cdots, n-1$，等式 $\lambda_i(A + zz^{*}) = \lambda_{i + 1}(A)$ 成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i + 1}(A) x, \quad z^* x =  0 \quad \text{ and } \quad (A + zz^{*}) x = \lambda_i(A + zz^{*}) x.</script></li>
+\lambda_1(\mathbf{A}) \leq \lambda_1(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \leq \lambda_2(\mathbf{A}) \leq \cdots \leq \lambda_{n-1}(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \leq \lambda_n(\mathbf{A}) \leq \lambda_n(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}).</script><ul>
+<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) = \lambda_i(\mathbf{A})$ 成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i}(\mathbf{A}) \mathbf{x}, \quad \mathbf{z}^* \mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \mathbf{x}.</script></li>
+<li>对某个 $i = 1, \cdots, n-1$，等式 $\lambda_i(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) = \lambda_{i + 1}(\mathbf{A})$ 成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i + 1}(\mathbf{A}) \mathbf{x}, \quad \mathbf{z}^* \mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{z}\mathbf{z}^{*}) \mathbf{x}.</script></li>
 </ul>
 </li>
 <li>有交错不等式<script type="math/tex; mode=display">
-\lambda_1(A - zz^{*}) \leq \lambda_1(A) \leq \lambda_2(A - z z^*) \leq \cdots \leq \lambda_{n-1}(A) \leq \lambda_n(A - zz^{*}) \leq \lambda_n(A).</script><ul>
-<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(A - zz^{*}) = \lambda_i(A)$ 成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i}(A) x, \quad z^* x =  0 \quad \text{ and } \quad (A - zz^{*}) x = \lambda_i(A - zz^{*}) x.</script></li>
-<li>对某个 $i = 2, \cdots, n$，等式 $\lambda_i(A - zz^{*}) = \lambda_{i - 1}(A)$ 成立当且仅当存在非零向量 $x \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Ax = \lambda_{i - 1}(A) x, \quad z^* x =  0 \quad \text{ and } \quad (A - zz^{*}) x = \lambda_i(A - zz^{*}) x.</script></li>
+\lambda_1(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \leq \lambda_1(\mathbf{A}) \leq \lambda_2(\mathbf{A} - \mathbf{z} \mathbf{z}^*) \leq \cdots \leq \lambda_{n-1}(\mathbf{A}) \leq \lambda_n(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \leq \lambda_n(\mathbf{A}).</script><ul>
+<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) = \lambda_i(\mathbf{A})$ 成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i}(\mathbf{A}) \mathbf{x}, \quad \mathbf{z}^* \mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \mathbf{x} = \lambda_i(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \mathbf{x}.</script></li>
+<li>对某个 $i = 2, \cdots, n$，等式 $\lambda_i(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) = \lambda_{i - 1}(\mathbf{A})$ 成立当且仅当存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{A}\mathbf{x} = \lambda_{i - 1}(\mathbf{A}) \mathbf{x}, \quad \mathbf{z}^* \mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \mathbf{x} = \lambda_i(\mathbf{A} - \mathbf{z}\mathbf{z}^{*}) \mathbf{x}.</script></li>
 </ul>
 </li>
 </ul>
-<h3 id="推论-4：单调定理"><a href="#推论-4：单调定理" class="headerlink" title="推论 4：单调定理"></a>推论 4：单调定理</h3><p><strong>(Monotonicity theorem)</strong> 假定 $A, B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵并且 $B$ 半正定，那么对任意 $i = 1, \cdots, n$，有</p>
+<h3 id="推论-4：单调定理"><a href="#推论-4：单调定理" class="headerlink" title="推论 4：单调定理"></a>推论 4：单调定理</h3><p><strong>(Monotonicity theorem)</strong> 假定 $\mathbf{A}, \mathbf{B} \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵并且 $\mathbf{B}$ 半正定，那么对任意 $i = 1, \cdots, n$，有</p>
 <script type="math/tex; mode=display">
-\lambda_i(A + B) \geq \lambda_{i}(A).</script><p>其中等式成立当且仅当 $B$ 是奇异的以及存在非零向量 $x \in \mathbb{C}^n$，使得</p>
+\lambda_i(\mathbf{A} + \mathbf{B}) \geq \lambda_{i}(\mathbf{A}).</script><p>其中等式成立当且仅当 $\mathbf{B}$ 是奇异的以及存在非零向量 $\mathbf{x} \in \mathbb{C}^n$，使得</p>
 <script type="math/tex; mode=display">
-Ax = \lambda_{i}(A) x, \quad Bx =  0 \quad \text{ and } \quad (A + B) x = \lambda_i(A + B) x.</script><h2 id="加边摄动"><a href="#加边摄动" class="headerlink" title="加边摄动"></a>加边摄动</h2><h3 id="Cauchy-交错定理"><a href="#Cauchy-交错定理" class="headerlink" title="Cauchy 交错定理"></a>Cauchy 交错定理</h3><p><strong>(Cauchy interlacing theorem)</strong> 假定 $B \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令</p>
+\mathbf{A}\mathbf{x} = \lambda_{i}(\mathbf{A}) \mathbf{x}, \quad \mathbf{B}\mathbf{x} =  0 \quad \text{ and } \quad (\mathbf{A} + \mathbf{B}) \mathbf{x} = \lambda_i(\mathbf{A} + \mathbf{B}) \mathbf{x}.</script><h2 id="加边摄动"><a href="#加边摄动" class="headerlink" title="加边摄动"></a>加边摄动</h2><h3 id="Cauchy-交错定理"><a href="#Cauchy-交错定理" class="headerlink" title="Cauchy 交错定理"></a>Cauchy 交错定理</h3><p><strong>(Cauchy interlacing theorem)</strong> 假定 $\mathbf{B} \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$y \in \mathbb{C}^n$ 以及 $a \in \mathbb{R}$。如果令</p>
 <script type="math/tex; mode=display">
-A=\left[\begin{array}{ll}
-B & y \\
-y^{T} & a
+\mathbf{A}=\left[\begin{array}{ll}
+\mathbf{B} & \mathbf{y} \\
+\mathbf{y}^{T} & a
 \end{array}\right] \in \mathcal{M}_{n+1}(\mathbb{C}),</script><p>那么有交错不等式</p>
 <script type="math/tex; mode=display">
-\lambda_1(A) \leq \lambda_1(B) \leq \lambda_2(A) \leq \cdots \leq \lambda_n(A) \leq \lambda_n(B) \leq \lambda_{n + 1}(A).</script><ul>
-<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(A) = \lambda_i(B)$ 成立当且仅当存在非零向量 $z \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Bz = \lambda_{i}(B) z, \quad y^*z =  0 \quad \text{ and } \quad B z = \lambda_i(A) z.</script></li>
-<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_{i+1}(A) = \lambda_{i}(B)$ 成立当且仅当存在非零向量 $z \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
-Bz = \lambda_{i}(B) z, \quad y^*z =  0 \quad \text{ and } \quad B z = \lambda_{i+1}(A) z.</script></li>
+\lambda_1(\mathbf{A}) \leq \lambda_1(\mathbf{B}) \leq \lambda_2(\mathbf{A}) \leq \cdots \leq \lambda_n(\mathbf{A}) \leq \lambda_n(\mathbf{B}) \leq \lambda_{n + 1}(\mathbf{A}).</script><ul>
+<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_i(\mathbf{A}) = \lambda_i(\mathbf{B})$ 成立当且仅当存在非零向量 $\mathbf{z} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{B}\mathbf{z} = \lambda_{i}(\mathbf{B}) \mathbf{z}, \quad \mathbf{y}^*\mathbf{z} =  0 \quad \text{ and } \quad \mathbf{B} \mathbf{z} = \lambda_i(\mathbf{A}) \mathbf{z}.</script></li>
+<li>对某个 $i = 1, \cdots, n$，等式 $\lambda_{i+1}(\mathbf{A}) = \lambda_{i}(\mathbf{B})$ 成立当且仅当存在非零向量 $\mathbf{z} \in \mathbb{C}^n$，使得<script type="math/tex; mode=display">
+\mathbf{B}\mathbf{z} = \lambda_{i}(\mathbf{B}) \mathbf{z}, \quad \mathbf{y}^*\mathbf{z} =  0 \quad \text{ and } \quad \mathbf{B} \mathbf{z} = \lambda_{i+1}(\mathbf{A}) \mathbf{z}.</script></li>
 </ul>
-<h3 id="包容原理"><a href="#包容原理" class="headerlink" title="包容原理"></a>包容原理</h3><p><strong>(Inclusion principle)</strong> 假设 $A = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成</p>
+<h3 id="包容原理"><a href="#包容原理" class="headerlink" title="包容原理"></a>包容原理</h3><p><strong>(Inclusion principle)</strong> 假设 $\mathbf{A} = [a_{ij}]_{i,j=1}^n \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，分划成</p>
 <script type="math/tex; mode=display">
-A=\left[\begin{array}{ll}
-B & C \\
-C^{*} & D
-\end{array}\right], \quad \text{ where } B \in \mathcal{M}_m(\mathbb{C}), \ D \in \mathcal{M}_{n - m}(\mathbb{C}), \ C \in \mathcal{M}_{m, n - m}(\mathbb{C}).</script><p><strong>结论 1：</strong>对任意 $i = 1, \cdots, m$，有</p>
+\mathbf{A}=\left[\begin{array}{ll}
+\mathbf{B} & \mathbf{C} \\
+\mathbf{C}^{*} & \mathbf{D}
+\end{array}\right], \quad \text{ where } \mathbf{B} \in \mathcal{M}_m(\mathbb{C}), \ \mathbf{C} \in \mathcal{M}_{m, n - m}(\mathbb{C}), \ \mathbf{D} \in \mathcal{M}_{n - m}(\mathbb{C}).</script><p><strong>结论 1：</strong>对任意 $i = 1, \cdots, m$，有</p>
 <script type="math/tex; mode=display">
-\lambda_i(A) \leq \lambda_i(B) \leq \lambda_{i + n - m}(A).</script><ul>
-<li>其中下界中的不等式成立当且仅当存在非零向量 $\xi \in \mathbb{C}^m$，使得<script type="math/tex; mode=display">
-B \xi = \lambda_{i}(B) \xi, \quad C^*\xi =  0 \quad \text{ and } \quad B \xi = \lambda_i(A) \xi.</script></li>
-<li>上界中的不等式成立当且仅当存在非零向量 $\xi \in \mathbb{C}^m$，使得<script type="math/tex; mode=display">
-B\xi = \lambda_{i}(B) \xi, \quad C^*\xi =  0 \quad \text{ and } \quad B \xi = \lambda_{i+n-m}(A) \xi.</script></li>
+\lambda_i(\mathbf{A}) \leq \lambda_i(\mathbf{B}) \leq \lambda_{i + n - m}(\mathbf{A}).</script><ul>
+<li>其中下界中的不等式成立当且仅当存在非零向量 $\boldsymbol{\xi} \in \mathbb{C}^m$，使得<script type="math/tex; mode=display">
+\mathbf{B} \boldsymbol{\xi} = \lambda_{i}(\mathbf{B}) \boldsymbol{\xi}, \quad \mathbf{C}^*\boldsymbol{\xi} =  0 \quad \text{ and } \quad \mathbf{B} \boldsymbol{\xi} = \lambda_i(\mathbf{A}) \boldsymbol{\xi}.</script></li>
+<li>上界中的不等式成立当且仅当存在非零向量 $\boldsymbol{\xi} \in \mathbb{C}^m$，使得<script type="math/tex; mode=display">
+\mathbf{B}\boldsymbol{\xi} = \lambda_{i}(\mathbf{B}) \boldsymbol{\xi}, \quad \mathbf{C}^*\boldsymbol{\xi} =  0 \quad \text{ and } \quad \mathbf{B} \boldsymbol{\xi} = \lambda_{i+n-m}(\mathbf{A}) \boldsymbol{\xi}.</script></li>
 </ul>
 <p><strong>结论 2：</strong></p>
 <ul>
 <li>假设对某组 $i = 1, \cdots, m$ 以及 $r = 1, \cdots, i$，有<script type="math/tex; mode=display">
-\lambda_{i-r+1}(A) = \cdots =  \lambda_i(A) = \lambda_i(B),</script>那么 $\lambda_{i-r+1}(B) = \cdots = \lambda_i(B)$，并且存在标准正交向量 $\xi_1, \cdots, \xi_r \in \mathbb{C}^m$ 使得对所有的 $k = 1, \cdots, r$，有<script type="math/tex; mode=display">
-B\xi_k = \lambda_{i}(B) \xi_k \quad \text{ and } \quad C^*\xi_k = 0.</script></li>
+\lambda_{i-r+1}(\mathbf{A}) = \cdots =  \lambda_i(\mathbf{A}) = \lambda_i(\mathbf{B}),</script>那么 $\lambda_{i-r+1}(\mathbf{B}) = \cdots = \lambda_i(\mathbf{B})$，并且存在标准正交向量 $\boldsymbol{\xi}_1, \cdots, \boldsymbol{\xi}_r \in \mathbb{C}^m$ 使得对所有的 $k = 1, \cdots, r$，有<script type="math/tex; mode=display">
+\mathbf{B}\boldsymbol{\xi}_k = \lambda_{i}(\mathbf{B}) \boldsymbol{\xi}_k \quad \text{ and } \quad \mathbf{C}^*\boldsymbol{\xi}_k = 0.</script></li>
 <li>假设对某组 $i = 1, \cdots, m$ 以及 $r = 1, \cdots, m - i + 1$，有<script type="math/tex; mode=display">
-\lambda_{i+ n - m}(A) = \cdots =  \lambda_{i + n - m + r - 1}(A) = \lambda_i(B),</script>那么 $\lambda_{i}(B) = \cdots = \lambda_{i + r - 1}(B)$，并且存在标准正交向量 $\xi_1, \cdots, \xi_r \in \mathbb{C}^m$ 使得对所有的 $k = 1, \cdots, r$，有<script type="math/tex; mode=display">
-B\xi_k = \lambda_{i}(B) \xi_k \quad \text{ and } \quad C^*\xi_k = 0.</script></li>
+\lambda_{i+ n - m}(\mathbf{A}) = \cdots =  \lambda_{i + n - m + r - 1}(\mathbf{A}) = \lambda_i(\mathbf{B}),</script>那么 $\lambda_{i}(\mathbf{B}) = \cdots = \lambda_{i + r - 1}(\mathbf{B})$，并且存在标准正交向量 $\boldsymbol{\xi}_1, \cdots, \boldsymbol{\xi}_r \in \mathbb{C}^m$ 使得对所有的 $k = 1, \cdots, r$，有<script type="math/tex; mode=display">
+\mathbf{B}\boldsymbol{\xi}_k = \lambda_{i}(\mathbf{B}) \boldsymbol{\xi}_k \quad \text{ and } \quad \mathbf{C}^*\boldsymbol{\xi}_k = 0.</script></li>
 </ul>
 <p><strong>结论 3：</strong>有下列不等式成立：</p>
 <script type="math/tex; mode=display">
-\sum_{i=1}^m \lambda_{i}(A) \leq \sum_{i=1}^m a_{ii} \leq \sum_{i=1}^m \lambda_{n - m + i}(A)</script><p>如果上述不等式中有一个不等号成为等号，那么就有 $C = 0$，从而 $A = B \oplus D$。</p>
-<h3 id="Poincare-分离定理"><a href="#Poincare-分离定理" class="headerlink" title="Poincaré 分离定理"></a>Poincaré 分离定理</h3><p><strong>(Poincaré separation theorem)</strong> 假设 $A \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$u_1, \cdots, u_m \in \mathbb{C}^n$ 标准正交。令</p>
+\sum_{i=1}^m \lambda_{i}(\mathbf{A}) \leq \sum_{i=1}^m a_{ii} \leq \sum_{i=1}^m \lambda_{n - m + i}(\mathbf{A})</script><p>如果上述不等式中有一个不等号成为等号，那么就有 $\mathbf{C} = 0$，从而 $\mathbf{A} = \mathbf{B} \oplus \mathbf{D}$。</p>
+<h3 id="Poincare-分离定理"><a href="#Poincare-分离定理" class="headerlink" title="Poincaré 分离定理"></a>Poincaré 分离定理</h3><p><strong>(Poincaré separation theorem)</strong> 假设 $\mathbf{A} \in \mathcal{M}_n(\mathbb{C})$ 为 Hermite 矩阵，$\mathbf{u}_1, \cdots, \mathbf{u}_m \in \mathbb{C}^n$ 标准正交。令</p>
 <script type="math/tex; mode=display">
-B_m = \left [u^*_i A u_j \right]_{i,j=1}^m \in \mathcal{M}_m(\mathbb{C}),</script><p>那么对任意 $i = 1, \cdots, m$，有</p>
+\mathbf{B}_m = \left [\mathbf{u}^*_i \mathbf{A} \mathbf{u}_j \right]_{i,j=1}^m \in \mathcal{M}_m(\mathbb{C}),</script><p>那么对任意 $i = 1, \cdots, m$，有</p>
 <script type="math/tex; mode=display">
-\lambda_i(A) \leq \lambda_i(B) \leq \lambda_{i + n - m}(A).</script>
+\lambda_i(\mathbf{A}) \leq \lambda_i(\mathbf{B}) \leq \lambda_{i + n - m}(\mathbf{A}).</script>
     </div>
 
     
