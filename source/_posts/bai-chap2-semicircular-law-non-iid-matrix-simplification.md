@@ -13,17 +13,19 @@ mathjax: true
 
 <!--more-->
 
-> 
+![](semicircle-law.svg)<!-- -->
 
-$\mathbf{W}_n = \mathbf{X}_n / \sqrt{n}$
+## Step 0 - Truncation
+
+$\mathbf{W}_n = \mathbf{X}_n / \sqrt{n}$.
 
 根据条件，对任意 $\eta > 0$, 有
 $$
-\lim _{n \rightarrow \infty} \frac{1}{\eta^{2} n^{2}} \sum_{j, k = 1}^n \mathbb{E} \left [ \left|x_{j k}^{(n)}\right|^{2} \cdot \mathbb{I}\left(\left|x_{j k}^{(n)}\right| \geq \eta \sqrt{n}\right) \right ]=0.
+\lim_{n \rightarrow \infty} \frac{1}{\eta^{2} n^{2}} \sum_{j, k = 1}^n \mathbb{E} \left [ \left|x_{j k}^{(n)}\right|^{2} \cdot \mathbb{I}\left(\left|x_{j k}^{(n)}\right| \geq \eta \sqrt{n}\right) \right ]=0.
 $$
 因此存在非增序列 $\{ \eta_n: n \geq 1 \}$ 使得
 $$
-\lim _{n \rightarrow \infty} \frac{1}{\eta_n^{2} n^{2}} \sum_{j, k = 1}^n \mathbb{E} \left [ \left|x_{j k}^{(n)}\right|^{2} \cdot \mathbb{I}\left(\left|x_{j k}^{(n)}\right| \geq \eta_n \sqrt{n}\right) \right ]=0.
+\lim_{n \rightarrow \infty} \frac{1}{\eta_n^{2} n^{2}} \sum_{j, k = 1}^n \mathbb{E} \left [ \left|x_{j k}^{(n)}\right|^{2} \cdot \mathbb{I}\left(\left|x_{j k}^{(n)}\right| \geq \eta_n \sqrt{n}\right) \right ]=0.
 $$
 
 ## Step 1 - Truncation
@@ -361,3 +363,4 @@ S_n \to 0
 \quad \Rightarrow \quad
 L \left ( F^{\mathbf{W}^{\sharp}_n}, F^{\overline{\mathbf{W}}_n} \right ) \to 0.
 $$
+
