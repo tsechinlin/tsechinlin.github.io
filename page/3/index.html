@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.0.0">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -53,9 +53,10 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;3&#x2F;index.html">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Tsechin Lin">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/page/3/">
@@ -182,6 +183,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/07/linear-conjugate-method/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/07/linear-conjugate-method/" class="post-title-link" itemprop="url">线性共轭梯度法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-07 00:01:26 / Modified: 00:05:42" itemprop="dateCreated datePublished" datetime="2019-11-07T00:01:26+08:00">2019-11-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>The conjugate gradient method is an iterative method for solving a minimization problem</p>
+<script type="math/tex; mode=display">
+\phi(x)=\frac{1}{2} x^{T} A x-b^{T} x,</script><p>where $A$ is an $n \times n$ matrix that is symmetric and positive definite. The gradient of $\phi$ equals the residual of the linear system</p>
+<script type="math/tex; mode=display">
+\nabla \phi(x)=A x-b \stackrel{\mathrm{def}}{=} r(x).</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/07/linear-conjugate-method/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/borel-sigma-cardinality/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -238,7 +309,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。<br>参考：<a href="https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf" target="_blank" rel="noopener">How Many Borel Sets are There?</a></p>
+          <p>有限维欧式空间 $\mathbb{R}^k$ 中有多少 Borel 集？第一次碰到这个问题是在 Rudin 的实分析与复分析一书中。该书在第二章中讨论 $\mathbb{R}^k$ 中 Lebesgue 可测集与 Borel 集关系时，提到 $\mathbb{R}^k$ 中的 Borel $\sigma$-代数具有连续统势。书上并没有给出这个结论的证明，只是一笔带过，事实上这个结论并不是特别好证。找了一些相关的证明，发现有一种思路比较巧妙，也比较容易接受，所以在这里记录下来。<br>参考：<a target="_blank" rel="noopener" href="https://math.dartmouth.edu/archive/m103f08/public_html/borel-sets-soln.pdf">How Many Borel Sets are There?</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/11/06/borel-sigma-cardinality/#more" rel="contents">
@@ -315,7 +386,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在 Hexo 中渲染 MathJax 数学公式</a></p>
+          <p>基于 Hexo 搭建的个人博客，在默认情况下渲染数学公式无法达到预期的效果，可以通过更换 Hexo 的 markdown 渲染引擎以及修改相应配置来解决问题。<br>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/7ab21c7f0674">在 Hexo 中渲染 MathJax 数学公式</a></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/11/06/hexo-math-support/#more" rel="contents">
@@ -388,7 +459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -401,7 +472,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -448,7 +519,7 @@
     Total Visitors: <span id="busuanzi_value_site_uv"></span>
 </span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
   </div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
@@ -476,9 +547,17 @@
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
 <script src="/js/schemes/pisces.js"></script>
+
+
 <script src="/js/next-boot.js"></script>
+
 
 
 

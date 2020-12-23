@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-10T08:21:18.877Z</updated>
+  <updated>2020-12-01T13:14:25.807Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Conditional Expectation</title>
+    <link href="http://yoursite.com/2020/11/30/prob-conditional-expectation/"/>
+    <id>http://yoursite.com/2020/11/30/prob-conditional-expectation/</id>
+    <published>2020-11-30T13:15:27.000Z</published>
+    <updated>2020-12-01T13:14:25.807Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] &lt;u&gt;Probability: Theory and Examples&lt;/u&gt; by Rick Durrett.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Probability and Measure" scheme="http://yoursite.com/categories/Probability-and-Measure/"/>
+    
+    
+      <category term="Conditional Expectation" scheme="http://yoursite.com/tags/Conditional-Expectation/"/>
+    
+  </entry>
+  
+  <entry>
     <title>bai-chap2-semicircular-law-non-iid-matrix-simplification</title>
     <link href="http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/"/>
     <id>http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/</id>
     <published>2020-11-10T08:01:56.000Z</published>
-    <updated>2020-11-10T08:21:18.877Z</updated>
+    <updated>2020-12-01T13:22:17.596Z</updated>
     
     <summary type="html">
     
@@ -430,27 +451,6 @@
       <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
     
       <category term="Duality" scheme="http://yoursite.com/tags/Duality/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性共轭梯度法</title>
-    <link href="http://yoursite.com/2019/11/07/linear-conjugate-method/"/>
-    <id>http://yoursite.com/2019/11/07/linear-conjugate-method/</id>
-    <published>2019-11-06T16:01:26.000Z</published>
-    <updated>2019-11-06T16:05:42.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;The conjugate gradient method is an iterative method for solving a minimization problem&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\phi(x)=\frac{1}{2} x^{T} A x-b^{T} x,&lt;/script&gt;&lt;p&gt;where $A$ is an $n \times n$ matrix that is symmetric and positive definite. The gradient of $\phi$ equals the residual of the linear system&lt;/p&gt;
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\nabla \phi(x)=A x-b \stackrel{\mathrm{def}}{=} r(x).&lt;/script&gt;
-    
-    </summary>
-    
-    
     
   </entry>
   
