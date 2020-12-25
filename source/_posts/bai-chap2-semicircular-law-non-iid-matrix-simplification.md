@@ -1,5 +1,5 @@
 ---
-title: bai-chap2-semicircular-law-non-iid-matrix-simplification
+title: Semicircular Law for Non-iid Wigner Matrices - Matrix Simplification
 date: 2020-11-10 16:01:56
 tags: 
   - Eigenvalue
@@ -9,7 +9,7 @@ categories: Random Matrix
 mathjax: true
 ---
 
-**Reading Notes**: Bai, Zhidong, and Jack W. Silverstein. **Spectral analysis of large dimensional random matrices**. Vol. 20. New York: Springer, 2010.
+[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai & Jack W. Silverstein.
 
 <!--more-->
 
