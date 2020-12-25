@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tsechin Lin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stieltjes Transform">
+<meta property="og:url" content="http://yoursite.com/2020/12/26/bai-stieltjes-transform/index.html">
+<meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-25T16:14:22.000Z">
+<meta property="article:modified_time" content="2020-12-25T16:23:09.217Z">
+<meta property="article:author" content="Tsechin Lin">
+<meta property="article:tag" content="Semicircle Law">
+<meta property="article:tag" content="M-P Law">
+<meta property="article:tag" content="Stieltjes Transform">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Stieltjes Transform | Tsechin Lin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tsechin Lin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">You Never Walk Alone</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Stieltjes Transform
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-26 00:14:22 / Modified: 00:23:09" itemprop="dateCreated datePublished" datetime="2020-12-26T00:14:22+08:00">2020-12-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Random-Matrix/" itemprop="url" rel="index">
+                    <span itemprop="name">Random Matrix</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai &amp; Jack W. Silverstein.</p>
+<a id="more"></a>
+<p>以下约定出现的复数平方根均取复部为正的分支，即</p>
+<script type="math/tex; mode=display">
+\sqrt{z}=\operatorname{sgn}(\Im z) \frac{|z|+z}{\sqrt{2(|z|+\Re z)}}</script><p>此时有</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\Re\sqrt{z} & = \frac{1}{\sqrt{2}} \operatorname{sgn}(\Im z) \sqrt{|z|+\Re z}=\frac{\Im z}{\sqrt{2(|z|-\Re z)}}, \\
+\Im\sqrt{z} & = \frac{1}{\sqrt{2}} \sqrt{|z|-\Re z}=\frac{|\Im z|}{\sqrt{2(|z|+\Re z)}}.
+\end{align*}</script><h2 id="Semicircular-Law"><a href="#Semicircular-Law" class="headerlink" title="Semicircular Law"></a>Semicircular Law</h2><p><strong>Semicircular Law</strong> with scale parameter $\sigma &gt; 0$:</p>
+<script type="math/tex; mode=display">
+\mu( \mathrm{d} x ) := \frac{1}{2\pi \sigma^2} \sqrt{4 \sigma^2 - x^2} \cdot \mathbb{I}_{[-2\sigma, 2\sigma]}(x) \mathrm{d} x.</script><p>The Stieltjes transform for the semicircular law is given by</p>
+<script type="math/tex; mode=display">
+s(z)
+= - \frac{z - \sqrt{z^2 - 4 \sigma^2}}{2 \sigma^2}.</script><h3 id="Stieltjes-Transform-of-the-Semicircular-Law"><a href="#Stieltjes-Transform-of-the-Semicircular-Law" class="headerlink" title="Stieltjes Transform of the Semicircular Law"></a>Stieltjes Transform of the Semicircular Law</h3><blockquote>
+<p>对任意固定的 $z = u+\mathrm{i} v \in \mathbb{C}_+$，利用变换 $x = \sigma^2 \left( 1 + y + 2 \sqrt{y} \cos w \right )$ 以及 $\zeta = \mathrm{e}^{\mathrm{i} w}$，可以推出</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+s(z) 
+& = \int_{\mathbb{R}} \frac{1}{x-z} \mu(\mathrm{d} x)
+= \frac{1}{2\pi \sigma^2} \int_{-2 \sigma}^{2 \sigma} \frac{1}{x-z} \sqrt{ 4\sigma^2- x^2} \mathrm{d} x \\
+& = \frac{2}{\pi} \int_{0}^{\pi} \frac{\sin^2 w}{2\sigma \cos w -z} \mathrm{d} w
+= \frac{1}{\pi} \int_{0}^{2\pi} \frac{\left [\left ( \mathrm{e}^{ \mathrm{i} w} - \mathrm{e}^{- \mathrm{i} w} \right ) / 2 \mathrm{i} \right ]^2}{ \sigma \left ( \mathrm{e}^{ \mathrm{i} w} + \mathrm{e}^{- \mathrm{i} w} \right ) -z} \mathrm{d} w \\
+& = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} \frac{\left ( \zeta^2 - 1 \right )^2}{\zeta^2 \left [ \sigma \left ( \zeta^2 + 1 \right ) - z \zeta \right ]} \mathrm{d} \zeta
+\triangleq - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta.
+\end{align*}</script><p>考察 $f$ 的 $3$ 个极点：</p>
+<ul>
+<li>$\zeta_0 = 0$，阶数为 $2$。计算可得 $f$ 在 $\zeta_0$ 处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_0} f 
+  & = \lim_{\zeta \to \zeta_0} \frac{\mathrm{d}}{\mathrm{d} \zeta} \left [ (\zeta - \zeta_0)^2 f(\zeta) \right ] \\
+  & = \lim_{\zeta \to \zeta_0} \frac{\left ( \zeta^2 - 1 \right ) \left ( 2 \sigma \zeta^3 - 3z \zeta^2 + 2 \sigma \zeta -z \right )}{\left [ \sigma \left ( \zeta^2 + 1 \right ) - z \zeta \right ]^2}
+  = \frac{z}{\sigma^2} .
+  \end{align*}</script></li>
+<li>求解方程<script type="math/tex; mode=display">
+  \sigma \left ( \zeta^2 + 1 \right ) - z \zeta = 0</script>  得到 $f$ 的另外两个阶数均为 $1$ 的极点<script type="math/tex; mode=display">
+  \zeta_1 = \frac{z + \sqrt{z^2 - 4 \sigma^2}}{2 \sigma}
+  \quad \text{ and } \quad
+  \zeta_2 = \frac{z - \sqrt{z^2 - 4 \sigma^2}}{2 \sigma}.</script>  注意到 $\zeta_1 \zeta_2 = 1$，可计算出 $f$ 在这两个极点处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_1} f 
+  & = \lim_{\zeta \to \zeta_1} (\zeta - \zeta_1) f(\zeta) 
+  = \frac{\left ( \zeta_1^2 - 1 \right )^2}{\zeta_1^2 \cdot \sigma \left (\zeta_1 - \zeta_2 \right)} 
+  = \frac{\sqrt{z^2 - 4 \sigma^2}}{\sigma^2}, \\
+  \operatorname{Res}_{\zeta_2} f 
+  & = \lim_{\zeta \to \zeta_2} (\zeta - \zeta_2) f(\zeta) 
+  = \frac{\left ( \zeta_2^2 - 1 \right )^2}{\zeta_2^2 \cdot \sigma \left (\zeta_2 - \zeta_1 \right)} 
+  = - \frac{\sqrt{z^2 - 4 \sigma^2}}{\sigma^2}.
+  \end{align*}</script></li>
+</ul>
+<p>考察判定式 $\Delta = z^2 - 4 \sigma^2$。首先 $\Im \sqrt{\Delta}$ 与 $\Im z = v$ 都是非负的，另一方面，</p>
+<script type="math/tex; mode=display">
+\Re \sqrt{\Delta} = \frac{\Im \Delta}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}} 
+= \frac{2uv}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}} 
+= \frac{2v \cdot \Re z}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}},</script><p>因此 $\Re \sqrt{\Delta}$ 也与 $\Re z$ 符号一致。由于 $|\zeta_1| \cdot |\zeta_2| = 1$，这意味着 $|\zeta_1| &gt; 1$ 而 $| \zeta_2 | &lt; 1$。综上，有</p>
+<script type="math/tex; mode=display">
+s(z)
+= - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta 
+= - \frac{1}{2} \left ( \operatorname{Res}_{\zeta_0} f + \operatorname{Res}_{\zeta_2} f \right )
+= - \frac{z - \sqrt{z^2 - 4 \sigma^2}}{2 \sigma^2}.</script></blockquote>
+<h2 id="Marcenko–Pastur-Law"><a href="#Marcenko–Pastur-Law" class="headerlink" title="Marčenko–Pastur Law"></a>Marčenko–Pastur Law</h2><p><strong>M-P Law</strong> with scale parameter $\sigma &gt; 0$ and ratio parameter $y &gt; 0$:</p>
+<script type="math/tex; mode=display">
+\mu( \mathrm{d} x ) := \frac{1}{2\pi xy \sigma^2} \sqrt{(b-x)(x-a)} \cdot \mathbb{I}_{[a, b]}(x) \mathrm{d} x + \left( 1 - \frac{1}{y} \right)^+ \delta_0.</script><p>where $a = \sigma^2 \left (1 - \sqrt{y} \right)^2$ and $b = \sigma^2 \left (1 + \sqrt{y} \right)^2$.</p>
+<p>The Stieltjes transform for the M-P law is given by</p>
+<script type="math/tex; mode=display">
+s(z) = \frac{\sigma^2(1-y) - z +  \sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{2 \sigma^{2} yz}.</script><h3 id="Verification-of-M-P-law-as-a-Distribution"><a href="#Verification-of-M-P-law-as-a-Distribution" class="headerlink" title="Verification of M-P law as a Distribution"></a>Verification of M-P law as a Distribution</h3><blockquote>
+<p>如果 $y = 1$，那么 $a = 0$ 以及 $b = 4 \sigma^2$。利用变换 $x = 4 \sigma^2 \sin^2 w$，可以推出</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}} \mu(\mathrm{d} x)
+= \int_{0}^{4\sigma^2} \frac{1}{2\pi x \sigma^2} \sqrt{ x\left (4\sigma^2-x \right)} \mathrm{d} x
+= \frac{4}{\pi} \int_{0}^{\pi/2} \cos^2 w \mathrm{d} w 
+= 1.</script><p>现考虑 $y \not = 1$ 的情形。利用变换 $x = \sigma^2 \left( 1 + y + 2 \sqrt{y} \cos w \right )$ 以及 $\zeta = \mathrm{e}^{\mathrm{i} w}$，可以推出</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\int_{\mathbb{R}} \mu(\mathrm{d} x)
+& = \int_{a}^{b} \frac{1}{2\pi xy \sigma^2} \sqrt{(b-x)(x-a)} \mathrm{d} x \\
+& = \frac{2}{\pi} \int_{0}^{\pi} \frac{\sin^2 w}{1 + y + 2\sqrt{y} \cos w} \mathrm{d} w 
+= \frac{1}{\pi} \int_{0}^{2 \pi} \frac{\left [\left ( \mathrm{e}^{ \mathrm{i} w} - \mathrm{e}^{- \mathrm{i} w} \right ) / 2 \mathrm{i} \right ]^2}{1 + y + \sqrt{y} \left ( \mathrm{e}^{ \mathrm{i} w} + \mathrm{e}^{- \mathrm{i} w} \right )} \mathrm{d} w \\
+& = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} \frac{\left ( \zeta^2 - 1 \right )^2}{\zeta^2 \left [ (1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right ) \right ]} \mathrm{d} \zeta \triangleq - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta.
+\end{align*}</script><p>考察 $f$ 的 $3$ 个极点：</p>
+<ul>
+<li>$\zeta_0 = 0$，阶数为 $2$。计算可得 $f$ 在 $\zeta_0$ 处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_0} f 
+  & = \lim_{\zeta \to \zeta_0} \frac{\mathrm{d}}{\mathrm{d} \zeta} \left [ (\zeta - \zeta_0)^2 f(\zeta) \right ] \\
+  & = \lim_{\zeta \to \zeta_0} \frac{\left ( \zeta^2 - 1 \right ) \left [ 2 \sqrt{y} \zeta^3 + 3(1+y) \zeta^2 + 6\sqrt{y} \zeta + (1+y) \right ]}{\left [ (1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right ) \right ]^2}
+  = - 1 - \frac{1}{y} .
+  \end{align*}</script></li>
+<li>求解方程<script type="math/tex; mode=display">
+  (1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right )  = 0,</script>  即得 $f$ 的另外两个极点 $\zeta_1 = - \sqrt{y}$ 及 $\zeta_2 = - 1/ \sqrt{y}$，其阶数均为 $1$。计算可得 $f$ 在这两个极点处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_1} f 
+  & = \lim_{\zeta \to \zeta_1} (\zeta - \zeta_1) f(\zeta) 
+  = \frac{\left ( \zeta_1^2 - 1 \right )^2}{\sqrt{y} \zeta_1^2 \left (\zeta_1 - \zeta_2 \right)} 
+  = \frac{1}{y} - 1, \\
+  \operatorname{Res}_{\zeta_2} f 
+  & = \lim_{\zeta \to \zeta_2} (\zeta - \zeta_2) f(\zeta) 
+  = \frac{\left ( \zeta_2^2 - 1 \right )^2}{\sqrt{y} \zeta_2^2 \left (\zeta_2 - \zeta_1 \right)} 
+  = 1 - \frac{1}{y}.
+  \end{align*}</script></li>
+</ul>
+<p>对于 $y \in (0, 1)$ 的情形，有 $|\zeta_1| &lt; 1$ 而 $|\zeta_2| &gt; 1$，因此由留数公式</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}} \mu(\mathrm{d} x) = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta = - \frac{1}{2} \left ( \operatorname{Res}_{\zeta_0} f + \operatorname{Res}_{\zeta_1} f  \right ) 
+= 1.</script><p>最后，如果 $y \in (1, \infty)$，那么 $|\zeta_1| &gt; 1$ 而 $|\zeta_2| &lt; 1$，因此</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}} \mu(\mathrm{d} x)
+= - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta + \left( 1 - \frac{1}{y} \right)
+= - \frac{1}{2} \left ( \operatorname{Res}_{\zeta_0} f + \operatorname{Res}_{\zeta_2} f  \right )  + \left( 1 - \frac{1}{y} \right) = 1.</script></blockquote>
+<h3 id="Stieltjes-Transform-of-the-M-P-Law"><a href="#Stieltjes-Transform-of-the-M-P-Law" class="headerlink" title="Stieltjes Transform of the M-P Law"></a>Stieltjes Transform of the M-P Law</h3><blockquote>
+<p>先考虑 $y \not = 1$ 的情形。对任意固定的 $z = u+\mathrm{i} v \in \mathbb{C}_+$，利用变换 $x = \sigma^2 \left( 1 + y + 2 \sqrt{y} \cos w \right )$ 以及 $\zeta = \mathrm{e}^{\mathrm{i} w}$，可以推出</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+s(z) 
+& = \int_{\mathbb{R}} \frac{1}{x-z} \mu(\mathrm{d} x)
+= \int_{a}^{b} \frac{1}{x-z} \frac{1}{2\pi xy \sigma^2} \sqrt{(b-x)(x-a)} \mathrm{d} x \\
+& = \frac{2}{\pi} \int_{0}^{\pi} \frac{\sin^2 w}{\left (1 + y + 2\sqrt{y} \cos w \right ) \left [ \sigma^2 \left (1 + y + 2\sqrt{y} \cos w \right ) - z \right ]} \mathrm{d} w \\
+& = \frac{1}{\pi} \int_{0}^{2 \pi} \frac{\left [\left ( \mathrm{e}^{ \mathrm{i} w} - \mathrm{e}^{- \mathrm{i} w} \right ) / 2 \mathrm{i} \right ]^2}{\left (1 + y + 2\sqrt{y} \left ( \mathrm{e}^{ \mathrm{i} w} - \mathrm{e}^{- \mathrm{i} w} \right ) \right ) \left [ \sigma^2 \left (1 + y + 2\sqrt{y} \left ( \mathrm{e}^{ \mathrm{i} w} - \mathrm{e}^{- \mathrm{i} w} \right ) \right ) - z \right ]} \mathrm{d} w \\
+& = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} \frac{\left ( \zeta^2 - 1 \right )^2}{\zeta \left [ (1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right ) \right ] \left [ \sigma^2 (1+ y) \zeta + \sigma^2 \sqrt{y} \left ( \zeta^2 + 1 \right ) - z\zeta \right ]} \mathrm{d} \zeta \\ 
+& \triangleq - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta.
+\end{align*}</script><p>易知 $f$ 具有 $5$ 个极点：</p>
+<ul>
+<li>$\zeta_0 = 0$，阶数为 $1$。计算可得 $f$ 在 $\zeta_0$ 处的留数为<script type="math/tex; mode=display">
+  \operatorname{Res}_{\zeta_0} f 
+  = \lim_{\zeta \to \zeta_0} (\zeta - \zeta_0) f(\zeta) 
+  = \frac{1}{\sigma^2 y}.</script></li>
+<li>求解方程<script type="math/tex; mode=display">
+  (1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right )  = 0,</script>  得到 $f$ 的另外两个阶数均为 $1$ 的极点 $\zeta_1 = - \sqrt{y}$ 及 $\zeta_2 = - 1/ \sqrt{y}$。利用上述方程以及 $\zeta_1 \zeta_2 = 1$，可得出 $f$ 在这两个极点处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_1} f 
+  & = \lim_{\zeta \to \zeta_1} (\zeta - \zeta_1) f(\zeta) 
+  = \frac{\left ( \zeta_1^2 - 1 \right )^2}{\zeta_1 \cdot \sqrt{y} \left (\zeta_1 - \zeta_2 \right) \cdot (- z \zeta_1)} 
+  = \frac{y-1}{yz}, \\
+  \operatorname{Res}_{\zeta_2} f 
+  & = \lim_{\zeta \to \zeta_2} (\zeta - \zeta_2) f(\zeta) 
+  = \frac{\left ( \zeta_2^2 - 1 \right )^2}{\zeta_2 \cdot \sqrt{y} \left (\zeta_2 - \zeta_1 \right) \cdot (-z \zeta_2)} 
+  = \frac{1-y}{yz}.
+  \end{align*}</script></li>
+<li>求解方程<script type="math/tex; mode=display">
+  \sigma^2 \left [(1+ y) \zeta + \sqrt{y} \left ( \zeta^2 + 1 \right ) \right ] - z\zeta  = 0,</script>  即得 $f$ 的另外两个阶数均为 $1$ 的极点<script type="math/tex; mode=display">
+  \begin{align*}
+  \zeta_{3} & = \frac{-\sigma^{2}(1+y)+z+\sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{2 \sigma^{2} \sqrt{y}}, \\
+  \zeta_{4} & = \frac{-\sigma^{2}(1+y)+z-\sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{2 \sigma^{2} \sqrt{y}} .
+  \end{align*}</script>  利用上述方程以及 $\zeta_3 \zeta_4 = 1$，可得出 $f$ 在这两个极点处的留数为<script type="math/tex; mode=display">
+  \begin{align*}
+  \operatorname{Res}_{\zeta_3} f 
+  & = \lim_{\zeta \to \zeta_3} (\zeta - \zeta_3) f(\zeta) 
+  = \frac{\left ( \zeta_3^2 - 1 \right )^2}{\zeta_3 \cdot (z \zeta_3 / \sigma^{2}) \cdot \sigma^2 \sqrt{y} \left (\zeta_3 - \zeta_4 \right)} \\
+  & = \frac{\zeta_3 - \zeta_4}{\sqrt{y} z} = \frac{\sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{\sigma^{2} yz}, \\
+  \operatorname{Res}_{\zeta_4} f 
+  & = \lim_{\zeta \to \zeta_4} (\zeta - \zeta_4) f(\zeta) 
+  = \frac{\left ( \zeta_4^2 - 1 \right )^2}{\zeta_4 \cdot (z \zeta_3 / \sigma^{2}) \cdot \sigma^2 \sqrt{y} \left (\zeta_4 - \zeta_3 \right)} \\
+  & = \frac{\zeta_4 - \zeta_3}{\sqrt{y} z} = - \frac{\sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{\sigma^{2} yz}.
+  \end{align*}</script></li>
+</ul>
+<p>对于 $\zeta_3$ 与 $\zeta_4$，考察判定式</p>
+<script type="math/tex; mode=display">
+\Delta = \sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}.</script><p>首先 $\Im \sqrt{\Delta}$与 $\Im [ - \sigma^{2}(1+y) + z ] = v$ 都为非负的。另一方面，由于</p>
+<script type="math/tex; mode=display">
+\Re \sqrt{\Delta} = \frac{\Im \Delta}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}} 
+= \frac{2v \left [ u - \sigma^{2}(1+y) \right ]}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}} 
+= \frac{2v \cdot \Re [ - \sigma^{2}(1+y) + z ]}{\sqrt{2 \left ( |\Delta| - \Re \Delta \right )}},</script><p>因此 $\Re \sqrt{\Delta}$ 也与 $\Re [ - \sigma^{2}(1+y) + z ]$ 符号一致。由于 $|\zeta_3| \cdot |\zeta_4| = 1$，这意味着 $|\zeta_3| &gt; 1$ 而 $| \zeta_4 | &lt; 1$。</p>
+<p>对于 $y \in (0,1)$ 的情形，注意到 $|\zeta_1| &lt; 1$ 而 $|\zeta_2| &gt; 1$。因此</p>
+<script type="math/tex; mode=display">
+\begin{align*} 
+s(z)
+& = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta = - \frac{1}{2} \left ( \operatorname{Res}_{\zeta_0} f + \operatorname{Res}_{\zeta_1} f + \operatorname{Res}_{\zeta_4} f \right ) \\
+& = \frac{\sigma^2(1-y) - z +  \sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{2 \sigma^{2} yz}.
+\end{align*}</script><p>至于 $y \in (1, \infty)$ 的情形，此时 $|\zeta_1| &gt; 1$ 而 $|\zeta_2| &lt; 1$，因此仍旧有</p>
+<script type="math/tex; mode=display">
+\begin{align*} 
+s(z)
+& = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta - \frac{1}{z} \left( 1 - \frac{1}{y} \right) = - \frac{1}{2} \left ( \operatorname{Res}_{\zeta_0} f + \operatorname{Res}_{\zeta_2} f + \operatorname{Res}_{\zeta_4} f \right ) - \frac{y - 1}{yz} \\
+& = \frac{\sigma^2(1-y) - z +  \sqrt{\sigma^{4}(1-y)^{2}-2 \sigma^{2}(1+y) z+z^{2}}}{2 \sigma^{2} yz}.
+\end{align*}</script><p>最后，对于 $y = 1$，由 $s(z)$ 关于 $y$ 的连续性可得：这是由于 $f$ 关于 $y \in (0, \infty)$ 是连续的，并且</p>
+<script type="math/tex; mode=display">
+s(z) = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta - \frac{1}{z} \left( 1 - \frac{1}{y} \right)^+.</script></blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Semicircle-Law/" rel="tag"># Semicircle Law</a>
+              <a href="/tags/M-P-Law/" rel="tag"># M-P Law</a>
+              <a href="/tags/Stieltjes-Transform/" rel="tag"># Stieltjes Transform</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/11/30/prob-conditional-expectation/" rel="next" title="Conditional Expectation">
+                  <i class="fa fa-chevron-left"></i> Conditional Expectation
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Semicircular-Law"><span class="nav-number">1.</span> <span class="nav-text">Semicircular Law</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stieltjes-Transform-of-the-Semicircular-Law"><span class="nav-number">1.1.</span> <span class="nav-text">Stieltjes Transform of the Semicircular Law</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Marcenko%E2%80%93Pastur-Law"><span class="nav-number">2.</span> <span class="nav-text">Marčenko–Pastur Law</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Verification-of-M-P-law-as-a-Distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Verification of M-P law as a Distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stieltjes-Transform-of-the-M-P-Law"><span class="nav-number">2.2.</span> <span class="nav-text">Stieltjes Transform of the M-P Law</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Tsechin Lin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tsechin Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsechin Lin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

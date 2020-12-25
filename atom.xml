@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-01T13:14:25.807Z</updated>
+  <updated>2020-12-25T16:23:09.217Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Stieltjes Transform</title>
+    <link href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/"/>
+    <id>http://yoursite.com/2020/12/26/bai-stieltjes-transform/</id>
+    <published>2020-12-25T16:14:22.000Z</published>
+    <updated>2020-12-25T16:23:09.217Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] &lt;u&gt;Spectral analysis of large dimensional random matrices&lt;/u&gt; by Zhidong Bai &amp;amp; Jack W. Silverstein.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
+    
+      <category term="Semicircle Law" scheme="http://yoursite.com/tags/Semicircle-Law/"/>
+    
+      <category term="M-P Law" scheme="http://yoursite.com/tags/M-P-Law/"/>
+    
+      <category term="Stieltjes Transform" scheme="http://yoursite.com/tags/Stieltjes-Transform/"/>
+    
+  </entry>
   
   <entry>
     <title>Conditional Expectation</title>
@@ -38,15 +63,15 @@
   </entry>
   
   <entry>
-    <title>bai-chap2-semicircular-law-non-iid-matrix-simplification</title>
+    <title>Semicircular Law for Non-iid Wigner Matrices - Matrix Simplification</title>
     <link href="http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/"/>
     <id>http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/</id>
     <published>2020-11-10T08:01:56.000Z</published>
-    <updated>2020-12-01T13:22:17.596Z</updated>
+    <updated>2020-12-25T16:23:04.752Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;Reading Notes&lt;/strong&gt;: Bai, Zhidong, and Jack W. Silverstein. &lt;strong&gt;Spectral analysis of large dimensional random matrices&lt;/strong&gt;. Vol. 20. New York: Springer, 2010.&lt;/p&gt;
+      &lt;p&gt;[Notes] &lt;u&gt;Spectral analysis of large dimensional random matrices&lt;/u&gt; by Zhidong Bai &amp;amp; Jack W. Silverstein.&lt;/p&gt;
     
     </summary>
     
@@ -428,29 +453,6 @@
       <category term="Nuclear Norm" scheme="http://yoursite.com/tags/Nuclear-Norm/"/>
     
       <category term="Low Rank Matrix Recovery" scheme="http://yoursite.com/tags/Low-Rank-Matrix-Recovery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二次曲线线性规划 Conic Linear Programming (CLP)</title>
-    <link href="http://yoursite.com/2019/11/08/conic-linear-programming/"/>
-    <id>http://yoursite.com/2019/11/08/conic-linear-programming/</id>
-    <published>2019-11-08T12:26:08.000Z</published>
-    <updated>2019-11-09T06:58:54.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;查阅 SDP 的弱对偶性时碰到的一类规划问题，参考 David G. Luenberger 和 Yinyu Ye 的 Linear and Nonlinear Programming 一书第六章。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
-    
-    
-      <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
-    
-      <category term="Duality" scheme="http://yoursite.com/tags/Duality/"/>
     
   </entry>
   
