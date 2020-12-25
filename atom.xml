@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-25T16:23:09.217Z</updated>
+  <updated>2020-12-25T16:43:22.843Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/"/>
     <id>http://yoursite.com/2020/12/26/bai-stieltjes-transform/</id>
     <published>2020-12-25T16:14:22.000Z</published>
-    <updated>2020-12-25T16:23:09.217Z</updated>
+    <updated>2020-12-25T16:43:22.843Z</updated>
     
     <summary type="html">
     
@@ -64,10 +64,10 @@
   
   <entry>
     <title>Semicircular Law for Non-iid Wigner Matrices - Matrix Simplification</title>
-    <link href="http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/"/>
-    <id>http://yoursite.com/2020/11/10/bai-chap2-semicircular-law-non-iid-matrix-simplification/</id>
+    <link href="http://yoursite.com/2020/11/10/bai-semicircular-law-non-iid-simplification/"/>
+    <id>http://yoursite.com/2020/11/10/bai-semicircular-law-non-iid-simplification/</id>
     <published>2020-11-10T08:01:56.000Z</published>
-    <updated>2020-12-25T16:23:04.752Z</updated>
+    <updated>2020-12-25T16:40:11.992Z</updated>
     
     <summary type="html">
     
