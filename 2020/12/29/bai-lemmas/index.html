@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tsechin Lin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lemmas for Proofs in Random Matrix">
+<meta property="og:url" content="http://yoursite.com/2020/12/29/bai-lemmas/index.html">
+<meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-29T11:46:26.000Z">
+<meta property="article:modified_time" content="2020-12-29T12:06:11.693Z">
+<meta property="article:author" content="Tsechin Lin">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/12/29/bai-lemmas/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Lemmas for Proofs in Random Matrix | Tsechin Lin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tsechin Lin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">You Never Walk Alone</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/29/bai-lemmas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lemmas for Proofs in Random Matrix
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-29 19:46:26 / Modified: 20:06:11" itemprop="dateCreated datePublished" datetime="2020-12-29T19:46:26+08:00">2020-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Random-Matrix/" itemprop="url" rel="index">
+                    <span itemprop="name">Random Matrix</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai &amp; Jack W. Silverstein.</p>
+<a id="more"></a>
+<h2 id="Lemmas-Matrix-Analysis"><a href="#Lemmas-Matrix-Analysis" class="headerlink" title="Lemmas - Matrix Analysis"></a>Lemmas - Matrix Analysis</h2><h3 id="MA-1"><a href="#MA-1" class="headerlink" title="[MA-1]"></a>[MA-1]</h3><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $\mathbf{x} \in \mathbb{C}^{n}$ and $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have</p>
+<script type="math/tex; mode=display">
+\left | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \right | 
+\leq \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} 
+= \frac{1}{v} \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ].</script><blockquote>
+<p><strong>证明</strong>：由于 $\mathbf{A}$ 为 Hermite 矩阵，可以假设 $\mathbf{A} = \mathbf{U} \operatorname{diag} ( \lambda_1, \cdots, \lambda_n) \mathbf{U}^*$，其中 $\mathbf{U} \in \mathbb{C}^{n \times n}$ 为酉矩阵，而 $\lambda_1, \cdots, \lambda_n \in \mathbb{R}$ 为 $\mathbf{A}$ 的实特征根。此时如果记 $\mathbf{U}^* \mathbf{x} \triangleq \mathbf{y} = (y_1, \cdots, y_n)$，那么</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \right | 
+& = \left | \mathbf{y}^* \operatorname{diag} \left( (\lambda_1 - z)^{-2}, \cdots, (\lambda_n - z)^{-2} \right) \mathbf{y} \right | \\
+& \leq \sum_{k=1}^n \left |(\lambda_k - z)^{-2} \right | | y_k |^2 
+= \sum_{k=1}^n \left [ (\lambda_k - u)^{2} + v^2 \right ]^{-1} | y_k |^2 \\
+& = \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x}.
+\end{align*}</script><p>至于右端的等式，注意到</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} 
+& = \mathbf{y}^* \operatorname{diag} \left( (\lambda_1 - z)^{-1}, \cdots, (\lambda_n - z)^{-1} \right) \mathbf{y} \\
+& \leq \sum_{k=1}^n (\lambda_k - z)^{-1} | y_k |^2 
+= \sum_{k=1}^n \frac{(\lambda_k - u) + \mathrm{i} v}{(\lambda_k - u)^{2} + v^2} | y_k |^2 ,
+\end{align*}</script><p>因此</p>
+<script type="math/tex; mode=display">
+\Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] 
+= v \sum_{k=1}^n \left [ (\lambda_k - u)^{2} + v^2 \right ]^{-1} | y_k |^2 
+= v \cdot \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x}.</script></blockquote>
+<h3 id="MA-2"><a href="#MA-2" class="headerlink" title="[MA-2]"></a>[MA-2]</h3><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a matrix with the form</p>
+<script type="math/tex; mode=display">
+\mathbf{A} = \begin{bmatrix}
+\mathbf{B} & \mathbf{a} \\
+\mathbf{a}^* & c
+\end{bmatrix},</script><p>where $\mathbf{B} \in \mathbb{C}^{(n-1) \times (n-1)}$ and $\mathbf{a} \in \mathbb{C}^{n-1}$. If $\mathbf{B}$ is invertible with $d := c - \mathbf{a}^* \mathbf{B}^{-1} \mathbf{a} \not = 0$, then $\mathbf{A}$ is invertible with</p>
+<script type="math/tex; mode=display">
+\mathbf{A}^{-1} 
+= \begin{bmatrix}
+\mathbf{B}^{-1} + \mathbf{B}^{-1} \mathbf{a} \mathbf{a}^* \mathbf{B}^{-1} / d & -\mathbf{B}^{-1} \mathbf{a} /d \\
+- \mathbf{a}^* \mathbf{B}^{-1} / d & 1/d
+\end{bmatrix}.</script><p>Consequently,</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \mathbf{A}^{-1} - \operatorname{tr} \mathbf{B}^{-1} = \frac{1 + \mathbf{a}_n^* \mathbf{B}^{-2} \mathbf{a}_n}{c - \mathbf{a}^* \mathbf{B}^{-1} \mathbf{a}}.</script><blockquote>
+<p><strong>证明</strong>：考虑到</p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+\mathbf{I}_{n-1} & \mathbf{0} \\
+-\mathbf{a}^* \mathbf{B}^{-1} & 1
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{B} & \mathbf{a} \\
+\mathbf{a}^* & c
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{I}_{n-1} & - \mathbf{B}^{-1} \mathbf{a} \\
+\mathbf{0} & 1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+\mathbf{B} & \mathbf{0} \\
+\mathbf{0} & d
+\end{bmatrix},</script><p>上式右端可逆，因此</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbf{A}^{-1} & = 
+\begin{bmatrix}
+\mathbf{I}_{n-1} & - \mathbf{B}^{-1} \mathbf{a} \\
+\mathbf{0} & 1
+\end{bmatrix}
+\begin{bmatrix}
+\mathbf{B} & \mathbf{0} \\
+\mathbf{0} & d
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+\mathbf{I}_{n-1} & \mathbf{0} \\
+-\mathbf{a}^* \mathbf{B}^{-1} & 1
+\end{bmatrix} \\ 
+& = \begin{bmatrix}
+\mathbf{B}^{-1} + \mathbf{B}^{-1} \mathbf{a}_n d^{-1} \mathbf{a}_n^* \mathbf{B}^{-1} & -\mathbf{B}^{-1} \mathbf{a}_n d^{-1} \\
+- d^{-1} \mathbf{a}_n^* \mathbf{B}^{-1} & d^{-1}
+\end{bmatrix}.
+\end{align*}</script><p>最后，</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \mathbf{A}^{-1} - \operatorname{tr} \mathbf{B}^{-1} = \frac{1}{d} + \frac{1}{d} \operatorname{tr} \left ( \mathbf{B}^{-1} \mathbf{a}_n \mathbf{a}_n^* \mathbf{B}^{-1} \right ) 
+= \frac{1}{d} \left ( 1 + \mathbf{a}_n^* \mathbf{B}^{-2} \mathbf{a}_n \right ).</script></blockquote>
+<h3 id="MA-3"><a href="#MA-3" class="headerlink" title="[MA-3]"></a>[MA-3]</h3><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}_{k}$ be the $k$-th major submatrix of order $(n-1)$. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} = \frac{1 + \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k}{a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k},</script><p>where $\boldsymbol{\alpha}_k$ denotes the $k$-th column of $\mathbf{A}$ with $a_{kk}$ removed. Consequently,</p>
+<script type="math/tex; mode=display">
+\left | \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \right | \leq \frac{1}{v}.</script><blockquote>
+<p><strong>证明</strong>：首先，由于 $\mathbf{A}_{k}$ 为 Hermite 矩阵且 $z \in \mathbb{C}_+$，因此 $\mathbf{A}_k - z \mathbf{I}_{n-1}$ 可逆。另一方面，令</p>
+<script type="math/tex; mode=display">
+d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k,</script><p>借助引理 [MA-1] 以及 $v &gt; 0$，可以得出</p>
+<script type="math/tex; mode=display">
+\Im d 
+= - v - \Im \left [ \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k \right ] 
+\leq - v - v \left | \boldsymbol{\alpha}_k^* \left ( \mathbf{A}_{k} - z \mathbf{I}_{n-1} \right )^{-2} \boldsymbol{\alpha}_k \right | < 0.</script><p>于是 $d \not= 0$。这样一来，第一个结论可以通过引理 [MA-2] 得到。至于第二个结论，仅需注意到</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left | \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \right | 
+& = \frac{1}{ \left | d \right |} \left | 1 + \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \right | \\
+& \leq \frac{1}{\left | \Im d\right |} \left ( 1 + \left | \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \right | \right ) 
+\leq \frac{1}{v}.
+\end{align*}</script></blockquote>
+<h3 id="MA-4"><a href="#MA-4" class="headerlink" title="[MA-4]"></a>[MA-4]</h3><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is an invertible matrix. Let $\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbb{C}^n$ be vectors with $1 + \boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha} \not= 0$. Then the matrix $\mathbf{A} + \boldsymbol{\alpha} \boldsymbol{\beta}^{*}$ is invertible with</p>
+<script type="math/tex; mode=display">
+\left(\mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*}\right)^{-1}=\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1} \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1}}{1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha}}.</script><p>Consequently,</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \left(\mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*}\right)^{-1} - \operatorname{tr} \mathbf{A}^{-1} 
+= - \frac{\boldsymbol{\beta}^{*} \mathbf{A}^{-2} \boldsymbol{\alpha}}{1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha}}.</script><blockquote>
+<p><strong>证明</strong>：记 $\mathbf{E} = \mathbf{A}^{-1} \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} / \left ( 1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha} \right )$，那么</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left ( \mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*} \right )
+\left ( \mathbf{A}^{-1}- \mathbf{E} \right )
+& = \mathbf{I}_n + \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} - \frac{\boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} + \boldsymbol{\alpha} \left ( \boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha} \right ) \boldsymbol{\beta}^{*} \mathbf{A}^{-1}}{1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha}} \\
+& = \mathbf{I}_n + \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} - \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} 
+= \mathbf{I}_n.
+\end{align*}</script><p>类似可证 $\left ( \mathbf{A}^{-1}- \mathbf{E} \right ) \left ( \mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*} \right ) = \mathbf{I}_n$。至于第二个等式，仅需注意到</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \left [ \mathbf{A}^{-1} \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1} \right ] 
+= \boldsymbol{\beta}^{*} \mathbf{A}^{-2} \boldsymbol{\alpha}.</script></blockquote>
+<h3 id="MA-5"><a href="#MA-5" class="headerlink" title="[MA-5]"></a>[MA-5]</h3><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{x} \in \mathbb{C}^n$. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,</p>
+<script type="math/tex; mode=display">
+\operatorname{tr} \left(\mathbf{A} + \mathbf{x} \mathbf{x}^* - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} = \frac{\mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-2} \mathbf{x}}{1 + \mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \mathbf{x}},</script><p>Consequently,</p>
+<script type="math/tex; mode=display">
+\left | \operatorname{tr} \left(\mathbf{A} + \mathbf{x} \mathbf{x}^* - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \right | \leq \frac{1}{v}.</script><blockquote>
+<p><strong>证明</strong>：仅需考虑 $\mathbf{x} \not= 0$ 的情形。首先由于 $\mathbf{A}$ 为 Hermite 矩阵且 $z \in \mathbb{C}_+$，因此 $\mathbf{A} - z \mathbf{I}_{n}$ 可逆。另一方面，令</p>
+<script type="math/tex; mode=display">
+d := 1 + \mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \mathbf{x},</script><p>借助引理 [MA-1] 以及 $v &gt; 0$，可以得出</p>
+<script type="math/tex; mode=display">
+\Im d 
+= \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ]
+= v \cdot \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} > 0.</script><p>于是 $d \not= 0$。这样一来，第一个结论可以通过引理 [MA-4] 得到。至于第二个结论，再度应用引理 [MA-1] 即可：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left | \operatorname{tr} \left(\mathbf{A} + \mathbf{x} \mathbf{x}^* - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \right | 
+& = \frac{1}{ \left | d \right |} \left | \mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-2} \mathbf{x} \right | \\
+& \leq \frac{1}{\left | \Im d\right |} \left | \mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-2} \mathbf{x} \right |
+\leq \frac{1}{v}.
+\end{align*}</script></blockquote>
+<h2 id="Lemmas-Convergence-of-Random-Variables"><a href="#Lemmas-Convergence-of-Random-Variables" class="headerlink" title="Lemmas - Convergence of Random Variables"></a>Lemmas - Convergence of Random Variables</h2><h2 id="Lemmas-Probability-Inequalities"><a href="#Lemmas-Probability-Inequalities" class="headerlink" title="Lemmas - Probability Inequalities"></a>Lemmas - Probability Inequalities</h2><h2 id="Lemmas-Levy-Distance"><a href="#Lemmas-Levy-Distance" class="headerlink" title="Lemmas - Levy Distance"></a>Lemmas - Levy Distance</h2><h2 id="Lemmas-Stieltjes-Transform"><a href="#Lemmas-Stieltjes-Transform" class="headerlink" title="Lemmas - Stieltjes Transform"></a>Lemmas - Stieltjes Transform</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/12/26/bai-stieltjes-transform/" rel="next" title="Stieltjes Transform">
+                  <i class="fa fa-chevron-left"></i> Stieltjes Transform
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmas-Matrix-Analysis"><span class="nav-number">1.</span> <span class="nav-text">Lemmas - Matrix Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MA-1"><span class="nav-number">1.1.</span> <span class="nav-text">[MA-1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MA-2"><span class="nav-number">1.2.</span> <span class="nav-text">[MA-2]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MA-3"><span class="nav-number">1.3.</span> <span class="nav-text">[MA-3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MA-4"><span class="nav-number">1.4.</span> <span class="nav-text">[MA-4]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MA-5"><span class="nav-number">1.5.</span> <span class="nav-text">[MA-5]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmas-Convergence-of-Random-Variables"><span class="nav-number">2.</span> <span class="nav-text">Lemmas - Convergence of Random Variables</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmas-Probability-Inequalities"><span class="nav-number">3.</span> <span class="nav-text">Lemmas - Probability Inequalities</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmas-Levy-Distance"><span class="nav-number">4.</span> <span class="nav-text">Lemmas - Levy Distance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmas-Stieltjes-Transform"><span class="nav-number">5.</span> <span class="nav-text">Lemmas - Stieltjes Transform</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Tsechin Lin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tsechin Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsechin Lin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

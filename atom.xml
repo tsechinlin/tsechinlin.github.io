@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-25T16:43:22.843Z</updated>
+  <updated>2020-12-29T12:06:11.693Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Lemmas for Proofs in Random Matrix</title>
+    <link href="http://yoursite.com/2020/12/29/bai-lemmas/"/>
+    <id>http://yoursite.com/2020/12/29/bai-lemmas/</id>
+    <published>2020-12-29T11:46:26.000Z</published>
+    <updated>2020-12-29T12:06:11.693Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] &lt;u&gt;Spectral analysis of large dimensional random matrices&lt;/u&gt; by Zhidong Bai &amp;amp; Jack W. Silverstein.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Stieltjes Transform</title>
     <link href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/"/>
     <id>http://yoursite.com/2020/12/26/bai-stieltjes-transform/</id>
     <published>2020-12-25T16:14:22.000Z</published>
-    <updated>2020-12-25T16:43:22.843Z</updated>
+    <updated>2020-12-28T12:52:34.209Z</updated>
     
     <summary type="html">
     
@@ -420,29 +439,6 @@
     <summary type="html">
     
       &lt;p&gt;核范数的最小化问题算法，参考 &lt;u&gt;Linearized augmented Lagrangian and alternating direction methods for nuclear norm minimization&lt;/u&gt; [J Yang, X Yuan] 中的第三部分。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
-    
-    
-      <category term="Nuclear Norm" scheme="http://yoursite.com/tags/Nuclear-Norm/"/>
-    
-      <category term="Low Rank Matrix Recovery" scheme="http://yoursite.com/tags/Low-Rank-Matrix-Recovery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Low Rank Matrix Recovery - Preliminary</title>
-    <link href="http://yoursite.com/2019/11/09/low-rank-matrix-recovery-preliminary/"/>
-    <id>http://yoursite.com/2019/11/09/low-rank-matrix-recovery-preliminary/</id>
-    <published>2019-11-09T04:57:38.000Z</published>
-    <updated>2019-11-10T17:46:22.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;矩阵秩最小化问题在某些情况下可以通过核范数最小化来解决，参阅文章 &lt;u&gt;Guaranteed Minimum-Rank Solutions of Linear Matrix Equations via Nuclear Norm Minimization&lt;/u&gt; [B Recht, M Fazel, PA Parrilo]，此篇介绍文章涉及的一些有关核范数的基本知识，内容主要来自文章的第二部分。&lt;/p&gt;
     
     </summary>
     
