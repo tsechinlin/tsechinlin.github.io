@@ -27,7 +27,7 @@ $$
 
 ## Semicircular Law
 
-**Semicircular Law** with scale parameter $\sigma > 0$:
+**Semicircular Law** with scale index $\sigma > 0$:
 $$
 \mu( \mathrm{d} x ) := \frac{1}{2\pi \sigma^2} \sqrt{4 \sigma^2 - x^2} \cdot \mathbb{I}_{[-2\sigma, 2\sigma]}(x) \mathrm{d} x.
 $$
@@ -102,7 +102,7 @@ $$
 
 ## Marčenko–Pastur Law
 
-**M-P Law** with scale parameter $\sigma > 0$ and ratio parameter $y > 0$:
+**M-P Law** with scale index $\sigma > 0$ and ratio index $y > 0$:
 $$
 \mu( \mathrm{d} x ) := \frac{1}{2\pi xy \sigma^2} \sqrt{(b-x)(x-a)} \cdot \mathbb{I}_{[a, b]}(x) \mathrm{d} x + \left( 1 - \frac{1}{y} \right)^+ \delta_0.
 $$
@@ -266,7 +266,7 @@ $$
 > \end{align*}
 > $$
 >
-> 最后，对于 $y = 1$，由 $s(z)$ 关于 $y$ 的连续性可得：这是由于 $f$ 关于 $y \in (0, \infty)$ 是连续的，并且
+> 最后，对于 $y = 1$，仅需注意到 $s(z)$ 关于 $y$ 是连续的即可：而这是由于 $f$ 关于 $y \in (0, \infty)$ 是连续的，并且
 > $$
 > s(z) = - \frac{1}{4 \pi \mathrm{i}} \int_{| \zeta | = 1} f(\zeta) \mathrm{d} \zeta - \frac{1}{z} \left( 1 - \frac{1}{y} \right)^+.
 > $$
