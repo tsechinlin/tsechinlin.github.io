@@ -1,5 +1,5 @@
 ---
-title: Semicircular Law for Non-iid Wigner Matrices - Matrix Simplification
+title: Semicircular Law for Wigner Matrices - Matrix Simplification
 date: 2020-11-10 16:01:56
 tags: 
   - Eigenvalue
@@ -12,8 +12,6 @@ mathjax: true
 [Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai & Jack W. Silverstein.
 
 <!--more-->
-
-![](semicircle-law.svg)<!-- -->
 
 ## Step 0 - Truncation
 
