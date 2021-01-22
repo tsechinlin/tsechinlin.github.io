@@ -1,8 +1,6 @@
 ---
-title: Enumerative Combinatorics with Multiple Matrices
-date: 2021-01-20 17:26:14
+title: Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs
 tags: 
-  - Multiple Matrix
   - Graph Theory
   - Enumerative Combinatorics
 categories: Random Matrix
@@ -12,79 +10,6 @@ mathjax: true
 [Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai & Jack W. Silverstein.
 
 <!--more-->
-
-## Definitions and Notations
-
-### 多重指标 Multiple Index
-
-Let $t \in \mathbb{Z}_+$ and $n_1, \cdots, n_t \in \mathbb{Z}_+$ be positive integers. The tuple $\mathbf{n} = (n_1, \cdots, n_t)$ is called a **multiple dimension**.
-
-If $\mathbf{i} = (i_1, \cdots, i_t)$ is a tuple taking values in $[\mathbf{n}] := [n_1] \times \cdots \times [n_t]$, then $\mathbf{i}$ is called a **multiple index** with dimension $\mathbf{n}$.
-
-### 多重向量 Multiple Vector
-
-A **multiple vector** $\mathbf{a} = ( a_{\mathbf{i}} )$ with dimension $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{n}]$.
-
-The **norm** of the multiple vector $\mathbf{a}$ is defined by
-$$
-\| \mathbf{a} \| := \left ( \sum_{\mathbf{i} \in [\mathbf{n}]} | a_{\mathbf{i}} |^2 \right )^{1/2}.
-$$
-
-### 多重矩阵 Multiple Matrix
-
-A **multiple matrix** $\mathbf{A} = ( a_{\mathbf{i}, \mathbf{j}} )$ with dimension $\mathbf{m} = (m_1, \cdots, m_s)$ and $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{m}] \times [\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{m}]$ and $\mathbf{j} \in [\mathbf{n}]$.
-
-The **norm** of the multiple matrix $\mathbf{A}$ is defined by
-$$
-\|\mathbf{A}\|
-: = \sup_{\| \mathbf{g} \| = 1, \ \| \mathbf{h} \| = 1} 
-\left|\sum_{\mathbf{i} \in [\mathbf{m}], \ \mathbf{j} \in [\mathbf{n}]} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} h_{\mathbf{j}}\right|,
-$$
-
-here $\mathbf{g}$ and $\mathbf{h}$ are multiple vectors with dimensions $\mathbf{m}$ and $\mathbf{n}$, respectively.
-
-+ The norm of the multiple matrix $\mathbf{A}$ can be equivalently defined by
-    $$
-    \|\mathbf{A}\|^2
-    = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{j}} 
-    \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2
-    = \sup_{\| \mathbf{h} \| = 1} \sum_{\mathbf{i}} 
-    \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2.
-    $$
-+ For any $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$ and $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$, we have 
-    $$
-    \sum_{\mathbf{j}} \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2 
-    \leq \| \mathbf{A} \|^2 \| \mathbf{g} \|^2
-    \quad \text{ and } \quad
-    \sum_{\mathbf{i}} \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2 
-    \leq \| \mathbf{A} \|^2 \| \mathbf{h} \|^2.
-    $$
-
-> **注**：
->
-> 对于任意固定的满足 $\| \mathbf{g} \| = 1$ 的多重向量 $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$，如果 $\sum_{\mathbf{v}} \left| \sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}} \right|^2 \not= 0$，那么为了达到 $\|\mathbf{A}\|$ 定义中的最大值，只需取
-> $$
-> h_{\mathbf{j}} = \frac{\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}}}{\sqrt{\sum_{\mathbf{v}}\left|\sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}}\right|^{2}}}.
-> $$
-> 同理，对于任意固定的满足 $\| \mathbf{h} \| = 1$ 的多重向量 $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$，如果 $\sum_{\mathbf{u}} \left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}} \right|^2 \not= 0$，那么为了达到 $\|\mathbf{A}\|$ 定义中的最大值，只需取
-> $$
-> g_{\mathbf{i}}=\frac{\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}}}{\sqrt{\sum_{\mathbf{u}}\left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}}\right|^{2}}}.
-> $$
-
-### 有向图 Directed  Graph
-
-Let $G = (V, E, f \times g)$ be a **directed graph** with $t$ vertices and $k$ edges, that is,
-
-+ $V = [t] = \{ 1, \cdots, t \}$.
-+ $E = \big \{ e_j : j \in [k] \big \} = \{ e_1, \cdots, e_k \}$.
-+ $f \times g$ is a mapping from $[k]$ to $V \times V$, with the property that, for each $j \in [k]$, the $j$-th edge $e_j = \big( f(j), g(j) \big )$ goes from the vertex $f(j)$ to the vertex $g(j)$.
-
-### 维度一致性约束 Consistent Dimension Restriction
-
-Let $\big \{ \mathbf{T}^{(j)} : j \in [k] \big \}$ be a collection of matrices corresponding to the $k$ edges. We say that $\big \{ \mathbf{T}^{(j)} \big \}$ is subject to the **consistent dimension restriction** given by $G$ if
-
-+ for each $a \in V$, there exists a positive integers $m_a$ associated with the vertex $a$, such that
-+ for each $j \in [k]$, the dimension of matrix $\mathbf{T}^{(j)}$ is $m_{f(j)} \times m_{g(j)}$.
 
 ## $V_1$-based Graphs
 
