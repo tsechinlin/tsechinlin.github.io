@@ -53,20 +53,19 @@
 
   <meta name="description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Enumerative Combinatorics with Multiple Matrices">
-<meta property="og:url" content="http://yoursite.com/2021/01/20/bai-product-multi-matrix/index.html">
+<meta property="og:title" content="Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs">
+<meta property="og:url" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-2/index.html">
 <meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
 <meta property="og:description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-20T09:26:14.000Z">
-<meta property="article:modified_time" content="2021-01-20T09:48:00.428Z">
+<meta property="article:published_time" content="2021-01-22T01:50:46.198Z">
+<meta property="article:modified_time" content="2021-01-22T02:03:49.154Z">
 <meta property="article:author" content="Tsechin Lin">
-<meta property="article:tag" content="Multiple Matrix">
 <meta property="article:tag" content="Graph Theory">
 <meta property="article:tag" content="Enumerative Combinatorics">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2021/01/20/bai-product-multi-matrix/">
+<link rel="canonical" href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-2/">
 
 
 <script id="page-configurations">
@@ -80,7 +79,7 @@
   };
 </script>
 
-  <title>Enumerative Combinatorics with Multiple Matrices | Tsechin Lin's Blogs</title>
+  <title>Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs | Tsechin Lin's Blogs</title>
   
 
 
@@ -190,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/20/bai-product-multi-matrix/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -203,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Enumerative Combinatorics with Multiple Matrices
+          Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs
         </h1>
 
         <div class="post-meta">
@@ -214,7 +213,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-20 17:26:14 / Modified: 17:48:00" itemprop="dateCreated datePublished" datetime="2021-01-20T17:26:14+08:00">2021-01-20</time>
+              <time title="Created: 2021-01-22 09:50:46 / Modified: 10:03:49" itemprop="dateCreated datePublished" datetime="2021-01-22T09:50:46+08:00">2021-01-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,49 +240,6 @@
       
         <p>[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai &amp; Jack W. Silverstein.</p>
 <a id="more"></a>
-<h2 id="Definitions-and-Notations"><a href="#Definitions-and-Notations" class="headerlink" title="Definitions and Notations"></a>Definitions and Notations</h2><h3 id="多重指标-Multiple-Index"><a href="#多重指标-Multiple-Index" class="headerlink" title="多重指标 Multiple Index"></a>多重指标 Multiple Index</h3><p>Let $t \in \mathbb{Z}_+$ and $n_1, \cdots, n_t \in \mathbb{Z}_+$ be positive integers. The tuple $\mathbf{n} = (n_1, \cdots, n_t)$ is called a <strong>multiple dimension</strong>.</p>
-<p>If $\mathbf{i} = (i_1, \cdots, i_t)$ is a tuple taking values in $[\mathbf{n}] := [n_1] \times \cdots \times [n_t]$, then $\mathbf{i}$ is called a <strong>multiple index</strong> with dimension $\mathbf{n}$.</p>
-<h3 id="多重向量-Multiple-Vector"><a href="#多重向量-Multiple-Vector" class="headerlink" title="多重向量 Multiple Vector"></a>多重向量 Multiple Vector</h3><p>A <strong>multiple vector</strong> $\mathbf{a} = ( a_{\mathbf{i}} )$ with dimension $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{n}]$.</p>
-<p>The <strong>norm</strong> of the multiple vector $\mathbf{a}$ is defined by</p>
-<script type="math/tex; mode=display">
-\| \mathbf{a} \| := \left ( \sum_{\mathbf{i} \in [\mathbf{n}]} | a_{\mathbf{i}} |^2 \right )^{1/2}.</script><h3 id="多重矩阵-Multiple-Matrix"><a href="#多重矩阵-Multiple-Matrix" class="headerlink" title="多重矩阵 Multiple Matrix"></a>多重矩阵 Multiple Matrix</h3><p>A <strong>multiple matrix</strong> $\mathbf{A} = ( a_{\mathbf{i}, \mathbf{j}} )$ with dimension $\mathbf{m} = (m_1, \cdots, m_s)$ and $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{m}] \times [\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{m}]$ and $\mathbf{j} \in [\mathbf{n}]$.</p>
-<p>The <strong>norm</strong> of the multiple matrix $\mathbf{A}$ is defined by</p>
-<script type="math/tex; mode=display">
-\|\mathbf{A}\|
-: = \sup_{\| \mathbf{g} \| = 1, \ \| \mathbf{h} \| = 1} 
-\left|\sum_{\mathbf{i} \in [\mathbf{m}], \ \mathbf{j} \in [\mathbf{n}]} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} h_{\mathbf{j}}\right|,</script><p>here $\mathbf{g}$ and $\mathbf{h}$ are multiple vectors with dimensions $\mathbf{m}$ and $\mathbf{n}$, respectively.</p>
-<ul>
-<li>The norm of the multiple matrix $\mathbf{A}$ can be equivalently defined by<script type="math/tex; mode=display">
-  \|\mathbf{A}\|^2
-  = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{j}} 
-  \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2
-  = \sup_{\| \mathbf{h} \| = 1} \sum_{\mathbf{i}} 
-  \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2.</script></li>
-<li>For any $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$ and $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$, we have <script type="math/tex; mode=display">
-  \sum_{\mathbf{j}} \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2 
-  \leq \| \mathbf{A} \|^2 \| \mathbf{g} \|^2
-  \quad \text{ and } \quad
-  \sum_{\mathbf{i}} \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2 
-  \leq \| \mathbf{A} \|^2 \| \mathbf{h} \|^2.</script></li>
-</ul>
-<blockquote>
-<p><strong>注</strong>：</p>
-<p>对于任意固定的满足 $| \mathbf{g} | = 1$ 的多重向量 $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$，如果 $\sum_{\mathbf{v}} \left| \sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}} \right|^2 \not= 0$，那么为了达到 $|\mathbf{A}|$ 定义中的最大值，只需取</p>
-<script type="math/tex; mode=display">
-h_{\mathbf{j}} = \frac{\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}}}{\sqrt{\sum_{\mathbf{v}}\left|\sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}}\right|^{2}}}.</script><p>同理，对于任意固定的满足 $| \mathbf{h} | = 1$ 的多重向量 $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$，如果 $\sum_{\mathbf{u}} \left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}} \right|^2 \not= 0$，那么为了达到 $|\mathbf{A}|$ 定义中的最大值，只需取</p>
-<script type="math/tex; mode=display">
-g_{\mathbf{i}}=\frac{\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}}}{\sqrt{\sum_{\mathbf{u}}\left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}}\right|^{2}}}.</script></blockquote>
-<h3 id="有向图-Directed-Graph"><a href="#有向图-Directed-Graph" class="headerlink" title="有向图 Directed  Graph"></a>有向图 Directed  Graph</h3><p>Let $G = (V, E, f \times g)$ be a <strong>directed graph</strong> with $t$ vertices and $k$ edges, that is,</p>
-<ul>
-<li>$V = [t] = \{ 1, \cdots, t \}$.</li>
-<li>$E = \big \{ e_j : j \in [k] \big \} = \{ e_1, \cdots, e_k \}$.</li>
-<li>$f \times g$ is a mapping from $[k]$ to $V \times V$, with the property that, for each $j \in [k]$, the $j$-th edge $e_j = \big( f(j), g(j) \big )$ goes from the vertex $f(j)$ to the vertex $g(j)$.</li>
-</ul>
-<h3 id="维度一致性约束-Consistent-Dimension-Restriction"><a href="#维度一致性约束-Consistent-Dimension-Restriction" class="headerlink" title="维度一致性约束 Consistent Dimension Restriction"></a>维度一致性约束 Consistent Dimension Restriction</h3><p>Let $\big \{ \mathbf{T}^{(j)} : j \in [k] \big \}$ be a collection of matrices corresponding to the $k$ edges. We say that $\big \{ \mathbf{T}^{(j)} \big \}$ is subject to the <strong>consistent dimension restriction</strong> given by $G$ if</p>
-<ul>
-<li>for each $a \in V$, there exists a positive integers $m_a$ associated with the vertex $a$, such that</li>
-<li>for each $j \in [k]$, the dimension of matrix $\mathbf{T}^{(j)}$ is $m_{f(j)} \times m_{g(j)}$.</li>
-</ul>
 <h2 id="V-1-based-Graphs"><a href="#V-1-based-Graphs" class="headerlink" title="$V_1$-based Graphs"></a>$V_1$-based Graphs</h2><h3 id="图结构-Graph-Structure"><a href="#图结构-Graph-Structure" class="headerlink" title="图结构 Graph Structure"></a>图结构 Graph Structure</h3><p>Consider a directed graph $G = (V, E, f \times g)$ with the following structures.</p>
 <ul>
 <li>The vertex set of $G$ can be partitioned into $V = V_1 + V_2 + V_3$, where $V_1 = \{ 1, \cdots, s \}$, $V_2 = \{ s + 1, \cdots, t_1 \}$ and $V_3 = \{ t_1 + 1, \cdots, t \}$. Here $1 \leq s \leq t_1 &lt; t$.</li>
@@ -554,7 +510,6 @@ g(j) = g(j^\prime).</script><p>当待求和项非负时，去除上述约束可�
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Multiple-Matrix/" rel="tag"># Multiple Matrix</a>
               <a href="/tags/Graph-Theory/" rel="tag"># Graph Theory</a>
               <a href="/tags/Enumerative-Combinatorics/" rel="tag"># Enumerative Combinatorics</a>
           </div>
@@ -563,14 +518,17 @@ g(j) = g(j^\prime).</script><p>当待求和项非负时，去除上述约束可�
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/12/30/bai-M-P-law-stieltjes-transform/" rel="next" title="Marčenko-Pastur Law for Sample Covariance Matrices - Proof by Stieltjes Transform">
-                  <i class="fa fa-chevron-left"></i> Marčenko-Pastur Law for Sample Covariance Matrices - Proof by Stieltjes Transform
+                <a href="/2021/01/22/bai-ch4-product-multi-matrix-1/" rel="next" title="Enumerative Combinatorics with Multiple Matrices - Definitions and Notations">
+                  <i class="fa fa-chevron-left"></i> Enumerative Combinatorics with Multiple Matrices - Definitions and Notations
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2021/01/22/bai-ch4-product-multi-matrix-3/" rel="prev" title="Enumerative Combinatorics with Multiple Matrices - Connected Graphs">
+                  Enumerative Combinatorics with Multiple Matrices - Connected Graphs <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -609,7 +567,7 @@ g(j) = g(j^\prime).</script><p>当待求和项非负时，去除上述约束可�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions-and-Notations"><span class="nav-number">1.</span> <span class="nav-text">Definitions and Notations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E6%8C%87%E6%A0%87-Multiple-Index"><span class="nav-number">1.1.</span> <span class="nav-text">多重指标 Multiple Index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E5%90%91%E9%87%8F-Multiple-Vector"><span class="nav-number">1.2.</span> <span class="nav-text">多重向量 Multiple Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E7%9F%A9%E9%98%B5-Multiple-Matrix"><span class="nav-number">1.3.</span> <span class="nav-text">多重矩阵 Multiple Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE-Directed-Graph"><span class="nav-number">1.4.</span> <span class="nav-text">有向图 Directed  Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%B4%E5%BA%A6%E4%B8%80%E8%87%B4%E6%80%A7%E7%BA%A6%E6%9D%9F-Consistent-Dimension-Restriction"><span class="nav-number">1.5.</span> <span class="nav-text">维度一致性约束 Consistent Dimension Restriction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-1-based-Graphs"><span class="nav-number">2.</span> <span class="nav-text">$V_1$-based Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure"><span class="nav-number">2.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%85%B3%E8%81%94%E5%A4%9A%E9%87%8D%E7%9F%A9%E9%98%B5-Graph-Associated-Multiple-Matrix"><span class="nav-number">2.2.</span> <span class="nav-text">图关联多重矩阵 Graph-Associated Multiple Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-GM-1"><span class="nav-number">2.3.</span> <span class="nav-text">Lemma [GM-1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-for-Lemma-GM-1"><span class="nav-number">2.4.</span> <span class="nav-text">Proof for Lemma [GM-1]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hierarchical-Graphs"><span class="nav-number">3.</span> <span class="nav-text">Hierarchical Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure-1"><span class="nav-number">3.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-Graph-Associated-Matrix"><span class="nav-number">3.2.</span> <span class="nav-text">图关联矩阵 Graph-Associated Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-GM-2"><span class="nav-number">3.3.</span> <span class="nav-text">Lemma [GM-2]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E7%BA%A7%E6%8F%8F%E8%BF%B0-Hierarchical-Description"><span class="nav-number">3.4.</span> <span class="nav-text">层级描述 Hierarchical Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E9%AB%98%E5%AD%90%E5%9B%BE-Contour-Subgraphs"><span class="nav-number">3.5.</span> <span class="nav-text">等高子图 Contour Subgraphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E5%AD%90%E5%9B%BE-Level-Subgraphs"><span class="nav-number">3.6.</span> <span class="nav-text">水平子图 Level Subgraphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-for-Lemma-GM-2"><span class="nav-number">3.7.</span> <span class="nav-text">Proof for Lemma [GM-2]</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#V-1-based-Graphs"><span class="nav-number">1.</span> <span class="nav-text">$V_1$-based Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure"><span class="nav-number">1.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%85%B3%E8%81%94%E5%A4%9A%E9%87%8D%E7%9F%A9%E9%98%B5-Graph-Associated-Multiple-Matrix"><span class="nav-number">1.2.</span> <span class="nav-text">图关联多重矩阵 Graph-Associated Multiple Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-GM-1"><span class="nav-number">1.3.</span> <span class="nav-text">Lemma [GM-1]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-for-Lemma-GM-1"><span class="nav-number">1.4.</span> <span class="nav-text">Proof for Lemma [GM-1]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hierarchical-Graphs"><span class="nav-number">2.</span> <span class="nav-text">Hierarchical Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure-1"><span class="nav-number">2.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-Graph-Associated-Matrix"><span class="nav-number">2.2.</span> <span class="nav-text">图关联矩阵 Graph-Associated Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-GM-2"><span class="nav-number">2.3.</span> <span class="nav-text">Lemma [GM-2]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E7%BA%A7%E6%8F%8F%E8%BF%B0-Hierarchical-Description"><span class="nav-number">2.4.</span> <span class="nav-text">层级描述 Hierarchical Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E9%AB%98%E5%AD%90%E5%9B%BE-Contour-Subgraphs"><span class="nav-number">2.5.</span> <span class="nav-text">等高子图 Contour Subgraphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E5%AD%90%E5%9B%BE-Level-Subgraphs"><span class="nav-number">2.6.</span> <span class="nav-text">水平子图 Level Subgraphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-for-Lemma-GM-2"><span class="nav-number">2.7.</span> <span class="nav-text">Proof for Lemma [GM-2]</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -625,7 +583,7 @@ g(j) = g(j^\prime).</script><p>当待求和项非负时，去除上述约束可�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -638,7 +596,7 @@ g(j) = g(j^\prime).</script><p>当待求和项非负时，去除上述约束可�
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

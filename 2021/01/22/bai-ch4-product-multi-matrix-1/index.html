@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Tsechin Lin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Enumerative Combinatorics with Multiple Matrices - Definitions and Notations">
+<meta property="og:url" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/index.html">
+<meta property="og:site_name" content="Tsechin Lin&#39;s Blogs">
+<meta property="og:description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/graph-1.svg">
+<meta property="article:published_time" content="2021-01-22T01:50:29.000Z">
+<meta property="article:modified_time" content="2021-01-22T08:28:13.295Z">
+<meta property="article:author" content="Tsechin Lin">
+<meta property="article:tag" content="Graph Theory">
+<meta property="article:tag" content="Enumerative Combinatorics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/graph-1.svg">
+
+<link rel="canonical" href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Enumerative Combinatorics with Multiple Matrices - Definitions and Notations | Tsechin Lin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tsechin Lin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">You Never Walk Alone</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Tsechin Lin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tsechin Lin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Enumerative Combinatorics with Multiple Matrices - Definitions and Notations
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-22 09:50:29 / Modified: 16:28:13" itemprop="dateCreated datePublished" datetime="2021-01-22T09:50:29+08:00">2021-01-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Random-Matrix/" itemprop="url" rel="index">
+                    <span itemprop="name">Random Matrix</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai &amp; Jack W. Silverstein.</p>
+<a id="more"></a>
+<h2 id="Multiple-Matrix"><a href="#Multiple-Matrix" class="headerlink" title="Multiple Matrix"></a>Multiple Matrix</h2><h3 id="多重指标-Multiple-Index"><a href="#多重指标-Multiple-Index" class="headerlink" title="多重指标 Multiple Index"></a>多重指标 Multiple Index</h3><p>Let $t \in \mathbb{Z}_+$ and $n_1, \cdots, n_t \in \mathbb{Z}_+$ be positive integers. The tuple $\mathbf{n} = (n_1, \cdots, n_t)$ is called a <strong>multiple dimension</strong>.</p>
+<p>If $\mathbf{i} = (i_1, \cdots, i_t)$ is a tuple taking values in $[\mathbf{n}] := [n_1] \times \cdots \times [n_t]$, then $\mathbf{i}$ is called a <strong>multiple index</strong> with dimension $\mathbf{n}$.</p>
+<h3 id="多重向量-Multiple-Vector"><a href="#多重向量-Multiple-Vector" class="headerlink" title="多重向量 Multiple Vector"></a>多重向量 Multiple Vector</h3><p>A <strong>multiple vector</strong> $\mathbf{a} = ( a_{\mathbf{i}} )$ with dimension $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{n}]$.</p>
+<p>The <strong>norm</strong> of the multiple vector $\mathbf{a}$ is defined by</p>
+<script type="math/tex; mode=display">
+\| \mathbf{a} \| := \left ( \sum_{\mathbf{i} \in [\mathbf{n}]} | a_{\mathbf{i}} |^2 \right )^{1/2}.</script><h3 id="多重矩阵-Multiple-Matrix"><a href="#多重矩阵-Multiple-Matrix" class="headerlink" title="多重矩阵 Multiple Matrix"></a>多重矩阵 Multiple Matrix</h3><p>A <strong>multiple matrix</strong> $\mathbf{A} = ( a_{\mathbf{i}, \mathbf{j}} )$ with dimension $\mathbf{m} = (m_1, \cdots, m_s)$ and $\mathbf{n} = (n_1, \cdots, n_t)$ is a mapping from $[\mathbf{m}] \times [\mathbf{n}]$ to $\mathbb{C}$, that is, a collection of numbers indexed by $\mathbf{i} \in [\mathbf{m}]$ and $\mathbf{j} \in [\mathbf{n}]$.</p>
+<p>The <strong>norm</strong> of the multiple matrix $\mathbf{A}$ is defined by</p>
+<script type="math/tex; mode=display">
+\|\mathbf{A}\|
+: = \sup_{\| \mathbf{g} \| = 1, \ \| \mathbf{h} \| = 1} 
+\left|\sum_{\mathbf{i} \in [\mathbf{m}], \ \mathbf{j} \in [\mathbf{n}]} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} h_{\mathbf{j}}\right|,</script><p>here $\mathbf{g}$ and $\mathbf{h}$ are multiple vectors with dimensions $\mathbf{m}$ and $\mathbf{n}$, respectively.</p>
+<ul>
+<li>The norm of the multiple matrix $\mathbf{A}$ can be equivalently defined by<script type="math/tex; mode=display">
+  \|\mathbf{A}\|^2
+  = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{j}} 
+  \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2
+  = \sup_{\| \mathbf{h} \| = 1} \sum_{\mathbf{i}} 
+  \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2.</script></li>
+<li>For any $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$ and $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$, we have <script type="math/tex; mode=display">
+  \sum_{\mathbf{j}} \left|\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}} \right|^2 
+  \leq \| \mathbf{A} \|^2 \| \mathbf{g} \|^2
+  \quad \text{ and } \quad
+  \sum_{\mathbf{i}} \left|\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}} \right|^2 
+  \leq \| \mathbf{A} \|^2 \| \mathbf{h} \|^2.</script></li>
+</ul>
+<blockquote>
+<p><strong>注</strong>：</p>
+<p>对于任意固定的满足 $| \mathbf{g} | = 1$ 的多重向量 $\mathbf{g} \in \mathbb{C}^{[\mathbf{m}]}$，如果 $\sum_{\mathbf{v}} \left| \sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}} \right|^2 \not= 0$，那么为了达到 $|\mathbf{A}|$ 定义中的最大值，只需取</p>
+<script type="math/tex; mode=display">
+h_{\mathbf{j}} = \frac{\sum_{\mathbf{i}} a_{\mathbf{i}, \mathbf{j}} g_{\mathbf{i}}}{\sqrt{\sum_{\mathbf{v}}\left|\sum_{\mathbf{u}} a_{\mathbf{u}, \mathbf{v}} g_{\mathbf{u}}\right|^{2}}}.</script><p>同理，对于任意固定的满足 $| \mathbf{h} | = 1$ 的多重向量 $\mathbf{h} \in \mathbb{C}^{[\mathbf{n}]}$，如果 $\sum_{\mathbf{u}} \left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}} \right|^2 \not= 0$，那么为了达到 $|\mathbf{A}|$ 定义中的最大值，只需取</p>
+<script type="math/tex; mode=display">
+g_{\mathbf{i}}=\frac{\sum_{\mathbf{j}} a_{\mathbf{i}, \mathbf{j}} h_{\mathbf{j}}}{\sqrt{\sum_{\mathbf{u}}\left|\sum_{\mathbf{v}} a_{\mathbf{u}, \mathbf{v}} h_{\mathbf{v}}\right|^{2}}}.</script></blockquote>
+<h2 id="Graph-Associated-Multiple-Matrix"><a href="#Graph-Associated-Multiple-Matrix" class="headerlink" title="Graph-Associated Multiple Matrix"></a>Graph-Associated Multiple Matrix</h2><h3 id="有向图-Directed-Graph"><a href="#有向图-Directed-Graph" class="headerlink" title="有向图 Directed  Graph"></a>有向图 Directed  Graph</h3><p>Let $G = (V, E, f \times g)$ be a <strong>directed graph</strong> with $t$ vertices and $k$ edges, that is,</p>
+<ul>
+<li>$V = [t] = \{ 1, \cdots, t \}$.</li>
+<li>$E = \big \{ e_j : j \in [k] \big \} = \{ e_1, \cdots, e_k \}$.</li>
+<li>$f \times g$ is a mapping from $[k]$ to $V \times V$, with the property that, for each $j \in [k]$, the $j$-th edge $e_j = \big( f(j), g(j) \big )$ goes from the vertex $f(j)$ to the vertex $g(j)$.</li>
+</ul>
+<h3 id="维度一致性约束-Consistent-Dimension-Restriction"><a href="#维度一致性约束-Consistent-Dimension-Restriction" class="headerlink" title="维度一致性约束 Consistent Dimension Restriction"></a>维度一致性约束 Consistent Dimension Restriction</h3><p>Let $\big \{ \mathbf{T}^{(j)} : j \in [k] \big \}$ be a collection of matrices corresponding to the $k$ edges. We say that $\big \{ \mathbf{T}^{(j)} \big \}$ is subject to the <strong>consistent dimension restriction</strong> given by $G$ if</p>
+<ul>
+<li>for each $a \in V$, there exists a positive integers $m_a$ associated with the vertex $a$, such that</li>
+<li>for each $j \in [k]$, the dimension of matrix $\mathbf{T}^{(j)}$ is $m_{f(j)} \times m_{g(j)}$.</li>
+</ul>
+<h3 id="图关联多重矩阵-Graph-Associated-Multiple-Matrix"><a href="#图关联多重矩阵-Graph-Associated-Multiple-Matrix" class="headerlink" title="图关联多重矩阵 Graph-Associated Multiple Matrix"></a>图关联多重矩阵 Graph-Associated Multiple Matrix</h3><p>Let $U, W \subset V$ be two disjoint sets of vertices. Here $U$ and $W$ can be empty sets.</p>
+<p>Define the multiple indices</p>
+<script type="math/tex; mode=display">
+\mathbf{u} = (i_a)_{a \in U},
+\quad
+\mathbf{w} = (i_a)_{a \in W},
+\quad \text{ and } \quad
+\mathbf{v} = (i_a)_{a \in V \backslash (U \cup W)},</script><p>where $i_a$ takes values in $[m_a]$.</p>
+<p>Then the <strong>graph-associated multiple matrix</strong> $\mathbf{T}(G)$ with left index $\mathbf{u}$ and right index $\mathbf{w}$ is define by</p>
+<script type="math/tex; mode=display">
+\mathbf{T}(G)_{\mathbf{u}, \mathbf{w}} = 
+\sum_{\mathbf{v}} \prod_{j=1}^{k} t^{(j)}_{i_{f(j)}, i_{g(j)}}.</script><h3 id="边向逆转-Reverse-of-Edges"><a href="#边向逆转-Reverse-of-Edges" class="headerlink" title="边向逆转 Reverse of Edges"></a>边向逆转 Reverse of Edges</h3><p>Assume that $J \subset [k]$. </p>
+<p><strong>[graph]</strong> We can define a new graph $\widetilde{G}= \big ( V, \widetilde{E}, \phi \times \varphi \big )$ by reversing the edges in $\{ e_j: j \in J \}$. In other words,</p>
+<ul>
+<li>$\phi(j) = g(j)$ and $\varphi(j) = f(j)$ for $j \in J$.</li>
+<li>$\phi(j) = f(j)$ and $\varphi(j) = g(j)$ for $j \in [k] \backslash J$.</li>
+</ul>
+<p><img src="graph-1.svg" alt=""><!-- --></p>
+<p><strong>[matrices]</strong> Now define $\widetilde{\mathbf{T}}^{(j)} = \big ( \mathbf{T}^{(j)} \big ) ^ \top$ for $j \in J$ and $\widetilde{\mathbf{T}}^{(j)} = \mathbf{T}^{(j)}$ for $j \in [k] \backslash J$.</p>
+<p>Then $\big \{ \widetilde{\mathbf{T}}^{(j)} : j \in [k] \big \}$ satisfies the consistent dimension restriction given by $\widetilde{G}$.</p>
+<p><strong>[multiple matrix]</strong> Let $\widetilde{\mathbf{T}}(\widetilde{G})$ be the multiple matrix associated with the graph $\widetilde{G}$ with left index $\mathbf{u}$ and right index $\mathbf{w}$,</p>
+<script type="math/tex; mode=display">
+\widetilde{\mathbf{T}}(\widetilde{G})_{\mathbf{u}, \mathbf{w}} 
+= \sum_{\mathbf{v}} \prod_{j=1}^{k} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}}.</script><p>Note that for any $\mathbf{u}$ and $\mathbf{w}$,</p>
+<script type="math/tex; mode=display">
+\widetilde{\mathbf{T}}(\widetilde{G})_{\mathbf{u}, \mathbf{w}}  
+= \sum_{\mathbf{v}} \left ( \prod_{j \in J} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \prod_{j \in [k] \backslash J} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \right )
+= \sum_{\mathbf{v}} \left ( \prod_{j \in J} {t}^{(j)}_{i_{\varphi(j)}, i_{\phi(j)}} \prod_{j \in [k] \backslash J} {t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \right )
+= \mathbf{T}({G})_{\mathbf{u}, \mathbf{w}}.</script><p>Thus $\mathbf{T}(\widetilde{G}) = \mathbf{T}(G)$.</p>
+<h3 id="顶点分裂-Splitting-of-Vertex"><a href="#顶点分裂-Splitting-of-Vertex" class="headerlink" title="顶点分裂 Splitting of Vertex"></a>顶点分裂 Splitting of Vertex</h3><p>Assume that $1 \in V \backslash (U \cup W)$. </p>
+<p>Let $J_0, J_1 \subset [k]$ such that $\{ e_j: j \in J_0\}$ and $\{ e_j: j \in J_1\}$ form a partition of the set of edges adjacent with the vertex $1$.</p>
+<p><strong>[graph]</strong> Now define a new graph $\widetilde{G}= \big ( \{ 0 \} \cup V, \widetilde{E}, \phi \times \varphi \big)$ by splitting the vertex $1$ into two vertices.</p>
+<ul>
+<li><p>Add an edge $e_0$ from vertex $0$ to $1$, that is, $\phi(0) = 0$ and $\varphi(0) = 1$.</p>
+</li>
+<li><p>Attach all the edges indexed by $J_0$ to the new vertex $0$. In other words, for all $j \in J_0$, </p>
+<script type="math/tex; mode=display">
+  f(j) = 1 \ \Leftrightarrow \ \phi(j) = 0,
+  \quad \text{ and } \quad
+  g(j) = 1 \ \Leftrightarrow \ \varphi(j) = 0.</script></li>
+<li><p>All other edges remain the same, that is, $\phi(j) = f(j)$ and $\varphi(j) = g(j)$ for $j \in [k] \backslash J_0$.</p>
+</li>
+</ul>
+<p><strong>[matrices]</strong> Now define $\widetilde{\mathbf{T}}^{(0)} = \mathbf{I}_{m_1}$ and $\widetilde{\mathbf{T}}^{(j)} = \mathbf{T}^{(j)}$ for $j \in [k]$. Recall that $m_1$ is the dimension associated with the vertex $1$ in graph $G$.</p>
+<p>Then $\big \{ \widetilde{\mathbf{T}}^{(j)} : j = 0 \text{ or } j \in [k] \big \}$ satisfies the consistent dimension restriction given by $\widetilde{G}$.</p>
+<p><strong>[multiple matrix]</strong> Define the multiple index $\widetilde{\mathbf{v}} = (i_0, \mathbf{v})$, where $i_0$ takes values in $[m_0] = [m_1]$.</p>
+<p>Let $\widetilde{\mathbf{T}}(\widetilde{G})$ be the multiple matrix associated with the graph $\widetilde{G}$ with left index $\mathbf{u}$ and right index $\mathbf{w}$,</p>
+<script type="math/tex; mode=display">
+\widetilde{\mathbf{T}}(\widetilde{G})_{\mathbf{u}, \mathbf{w}} 
+= \sum_{\widetilde{\mathbf{v}}} \prod_{j=0}^{k} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}}.</script><p>Note that for any $\mathbf{u}$ and $\mathbf{w}$,</p>
+<script type="math/tex; mode=display">
+\widetilde{\mathbf{T}}(\widetilde{G})_{\mathbf{u}, \mathbf{w}}  
+= \sum_{i_0, \mathbf{v}} \left ( \delta_{i_0, i_1} \prod_{j \in J_0} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \prod_{j \in [k] \backslash J_0} \widetilde{t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \right )
+= \sum_{\mathbf{v}} \left ( \prod_{j \in J_0} {t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \prod_{j \in [k] \backslash J_0} {t}^{(j)}_{i_{\phi(j)}, i_{\varphi(j)}} \right )
+= \mathbf{T}({G})_{\mathbf{u}, \mathbf{w}}.</script><p>Thus $\mathbf{T}(\widetilde{G}) = \mathbf{T}(G)$.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Graph-Theory/" rel="tag"># Graph Theory</a>
+              <a href="/tags/Enumerative-Combinatorics/" rel="tag"># Enumerative Combinatorics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/12/30/bai-ch3-MP-stieltjes/" rel="next" title="Marčenko-Pastur Law for Sample Covariance Matrices - Proof by Stieltjes Transform">
+                  <i class="fa fa-chevron-left"></i> Marčenko-Pastur Law for Sample Covariance Matrices - Proof by Stieltjes Transform
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2021/01/22/bai-ch4-product-multi-matrix-2/" rel="prev" title="Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs">
+                  Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiple-Matrix"><span class="nav-number">1.</span> <span class="nav-text">Multiple Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E6%8C%87%E6%A0%87-Multiple-Index"><span class="nav-number">1.1.</span> <span class="nav-text">多重指标 Multiple Index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E5%90%91%E9%87%8F-Multiple-Vector"><span class="nav-number">1.2.</span> <span class="nav-text">多重向量 Multiple Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E7%9F%A9%E9%98%B5-Multiple-Matrix"><span class="nav-number">1.3.</span> <span class="nav-text">多重矩阵 Multiple Matrix</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph-Associated-Multiple-Matrix"><span class="nav-number">2.</span> <span class="nav-text">Graph-Associated Multiple Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE-Directed-Graph"><span class="nav-number">2.1.</span> <span class="nav-text">有向图 Directed  Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%B4%E5%BA%A6%E4%B8%80%E8%87%B4%E6%80%A7%E7%BA%A6%E6%9D%9F-Consistent-Dimension-Restriction"><span class="nav-number">2.2.</span> <span class="nav-text">维度一致性约束 Consistent Dimension Restriction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%85%B3%E8%81%94%E5%A4%9A%E9%87%8D%E7%9F%A9%E9%98%B5-Graph-Associated-Multiple-Matrix"><span class="nav-number">2.3.</span> <span class="nav-text">图关联多重矩阵 Graph-Associated Multiple Matrix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E5%90%91%E9%80%86%E8%BD%AC-Reverse-of-Edges"><span class="nav-number">2.4.</span> <span class="nav-text">边向逆转 Reverse of Edges</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E7%82%B9%E5%88%86%E8%A3%82-Splitting-of-Vertex"><span class="nav-number">2.5.</span> <span class="nav-text">顶点分裂 Splitting of Vertex</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Tsechin Lin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Tsechin Lin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsechin Lin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

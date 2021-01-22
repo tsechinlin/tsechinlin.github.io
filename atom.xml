@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-20T09:48:00.428Z</updated>
+  <updated>2021-01-22T08:35:45.889Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Enumerative Combinatorics with Multiple Matrices</title>
-    <link href="http://yoursite.com/2021/01/20/bai-product-multi-matrix/"/>
-    <id>http://yoursite.com/2021/01/20/bai-product-multi-matrix/</id>
-    <published>2021-01-20T09:26:14.000Z</published>
-    <updated>2021-01-20T09:48:00.428Z</updated>
+    <title>Enumerative Combinatorics with Multiple Matrices - Connected Graphs</title>
+    <link href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-3/"/>
+    <id>http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-3/</id>
+    <published>2021-01-22T01:50:51.000Z</published>
+    <updated>2021-01-22T08:35:45.889Z</updated>
     
     <summary type="html">
     
@@ -33,7 +33,51 @@
       <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
     
     
-      <category term="Multiple Matrix" scheme="http://yoursite.com/tags/Multiple-Matrix/"/>
+      <category term="Graph Theory" scheme="http://yoursite.com/tags/Graph-Theory/"/>
+    
+      <category term="Enumerative Combinatorics" scheme="http://yoursite.com/tags/Enumerative-Combinatorics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enumerative Combinatorics with Multiple Matrices - Hierarchical Graphs</title>
+    <link href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-2/"/>
+    <id>http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-2/</id>
+    <published>2021-01-22T01:50:46.198Z</published>
+    <updated>2021-01-22T02:03:49.154Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] &lt;u&gt;Spectral analysis of large dimensional random matrices&lt;/u&gt; by Zhidong Bai &amp;amp; Jack W. Silverstein.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
+    
+      <category term="Graph Theory" scheme="http://yoursite.com/tags/Graph-Theory/"/>
+    
+      <category term="Enumerative Combinatorics" scheme="http://yoursite.com/tags/Enumerative-Combinatorics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Enumerative Combinatorics with Multiple Matrices - Definitions and Notations</title>
+    <link href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/"/>
+    <id>http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/</id>
+    <published>2021-01-22T01:50:29.000Z</published>
+    <updated>2021-01-22T08:28:13.295Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] &lt;u&gt;Spectral analysis of large dimensional random matrices&lt;/u&gt; by Zhidong Bai &amp;amp; Jack W. Silverstein.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
     
       <category term="Graph Theory" scheme="http://yoursite.com/tags/Graph-Theory/"/>
     
@@ -43,10 +87,10 @@
   
   <entry>
     <title>Marčenko-Pastur Law for Sample Covariance Matrices - Proof by Stieltjes Transform</title>
-    <link href="http://yoursite.com/2020/12/30/bai-M-P-law-stieltjes-transform/"/>
-    <id>http://yoursite.com/2020/12/30/bai-M-P-law-stieltjes-transform/</id>
+    <link href="http://yoursite.com/2020/12/30/bai-ch3-MP-stieltjes/"/>
+    <id>http://yoursite.com/2020/12/30/bai-ch3-MP-stieltjes/</id>
     <published>2020-12-30T09:57:21.000Z</published>
-    <updated>2020-12-30T10:04:38.973Z</updated>
+    <updated>2021-01-22T08:40:38.144Z</updated>
     
     <summary type="html">
     
@@ -66,10 +110,10 @@
   
   <entry>
     <title>Lemmas for Proofs in Random Matrix</title>
-    <link href="http://yoursite.com/2020/12/29/bai-lemmas/"/>
-    <id>http://yoursite.com/2020/12/29/bai-lemmas/</id>
+    <link href="http://yoursite.com/2020/12/29/bai-ch1-lemmas/"/>
+    <id>http://yoursite.com/2020/12/29/bai-ch1-lemmas/</id>
     <published>2020-12-29T11:46:26.000Z</published>
-    <updated>2020-12-29T12:06:11.693Z</updated>
+    <updated>2021-01-22T08:40:45.876Z</updated>
     
     <summary type="html">
     
@@ -85,10 +129,10 @@
   
   <entry>
     <title>Stieltjes Transform</title>
-    <link href="http://yoursite.com/2020/12/26/bai-stieltjes-transform/"/>
-    <id>http://yoursite.com/2020/12/26/bai-stieltjes-transform/</id>
+    <link href="http://yoursite.com/2020/12/26/bai-ch1-stieltjes-transform/"/>
+    <id>http://yoursite.com/2020/12/26/bai-ch1-stieltjes-transform/</id>
     <published>2020-12-25T16:14:22.000Z</published>
-    <updated>2020-12-28T12:52:34.209Z</updated>
+    <updated>2021-01-22T08:41:28.622Z</updated>
     
     <summary type="html">
     
@@ -131,10 +175,10 @@
   
   <entry>
     <title>Semicircular Law for Wigner Matrices - Matrix Simplification</title>
-    <link href="http://yoursite.com/2020/11/10/bai-semicircular-law-simplification/"/>
-    <id>http://yoursite.com/2020/11/10/bai-semicircular-law-simplification/</id>
+    <link href="http://yoursite.com/2020/11/10/bai-ch2-semicircular-simplification/"/>
+    <id>http://yoursite.com/2020/11/10/bai-ch2-semicircular-simplification/</id>
     <published>2020-11-10T08:01:56.000Z</published>
-    <updated>2020-12-30T10:01:40.679Z</updated>
+    <updated>2021-01-22T08:41:09.748Z</updated>
     
     <summary type="html">
     
@@ -411,52 +455,6 @@
     
       <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Convex Analysis in $\mathbb{R}^n$ - Subdifferential</title>
-    <link href="http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/"/>
-    <id>http://yoursite.com/2019/11/15/convex-analysis-Rn-subdifferntial/</id>
-    <published>2019-11-14T16:56:59.000Z</published>
-    <updated>2019-11-14T17:02:44.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
-    
-    
-      <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
-    
-      <category term="Kone" scheme="http://yoursite.com/tags/Kone/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Convex Analysis in $\mathbb{R}^n$ - Convex Sets</title>
-    <link href="http://yoursite.com/2019/11/14/convex-analysis-Rn-convex-sets/"/>
-    <id>http://yoursite.com/2019/11/14/convex-analysis-Rn-convex-sets/</id>
-    <published>2019-11-13T18:30:25.000Z</published>
-    <updated>2019-11-14T16:55:26.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;$\mathbb{R}^n$ 中常用的凸分析定义与结论整理，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
-    
-    
-      <category term="Convex" scheme="http://yoursite.com/tags/Convex/"/>
-    
-      <category term="Kone" scheme="http://yoursite.com/tags/Kone/"/>
     
   </entry>
   
