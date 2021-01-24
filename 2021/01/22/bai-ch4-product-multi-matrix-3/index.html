@@ -64,7 +64,7 @@
 <meta property="og:image" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-3/graph-3-3.svg">
 <meta property="og:image" content="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-3/graph-3-4.svg">
 <meta property="article:published_time" content="2021-01-22T01:50:51.000Z">
-<meta property="article:modified_time" content="2021-01-22T08:35:45.889Z">
+<meta property="article:modified_time" content="2021-01-24T09:31:42.739Z">
 <meta property="article:author" content="Tsechin Lin">
 <meta property="article:tag" content="Graph Theory">
 <meta property="article:tag" content="Enumerative Combinatorics">
@@ -217,10 +217,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-01-22 09:50:51 / Modified: 16:35:45" itemprop="dateCreated datePublished" datetime="2021-01-22T09:50:51+08:00">2021-01-22</time>
+              <time title="Created: 2021-01-22 09:50:51" itemprop="dateCreated datePublished" datetime="2021-01-22T09:50:51+08:00">2021-01-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-01-24 17:31:42" itemprop="dateModified" datetime="2021-01-24T17:31:42+08:00">2021-01-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -332,6 +338,108 @@ T(G) = \sum_{\mathbf{v}} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)}.</script><p>
 <blockquote>
 <p><strong>[conclusion]</strong> 注意在上述递归步骤中，不在 $\widetilde{G}_d$ 中的边即未定向边至少减少 $1$ 条。因此最后总能使得 $\widetilde{G}_d = \widetilde{G}$，证毕。</p>
 </blockquote>
+<h2 id="Connected-Graphs"><a href="#Connected-Graphs" class="headerlink" title="Connected Graphs"></a>Connected Graphs</h2><p>Let $G = (V, E; f \times g)$ be a directed graph.</p>
+<p>An edge $e \in E$ is called a <strong>cutting edge</strong> if $\big ( V, E \backslash{\{ e \}} \big )$ is disconnected (in the sense of weakly connectivity).</p>
+<p>Let $E_0 = \{ e_j : j \in J_0 \}$ be the set of cutting edges in $G$. Here $J_0 \subset [k]$.</p>
+<p>Each of the connected components in the graph $\big ( V, E \backslash E_0 \big )$ is two-edge connected, call the <strong>MC blocks</strong>.</p>
+<p>Thus there exists a partition $\big \{ B_{\ell}: \ell \in [\ell_0] \big \}$ of $V$ such that for all $\ell \in [\ell_0]$, we have $B_{\ell} \not= \varnothing$, and the induced subgraph $G[B_\ell]$ forms a MC block of $G$.</p>
+<p>On the other hand, contracting all the MC blocks of $G$ will result in a tree formed by cutting edges.</p>
+<h3 id="GM-4"><a href="#GM-4" class="headerlink" title="[GM-4]"></a>[GM-4]</h3><p>Let $\mathbf{v} = (i_a)_{a \in V}$, define</p>
+<script type="math/tex; mode=display">
+T(G) = \sum_{\mathbf{v}} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)}.</script><p>Then it holds that</p>
+<script type="math/tex; mode=display">
+|T(G)| \leq m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.</script><p>where</p>
+<script type="math/tex; mode=display">
+m_0 : = \min \{ m_a : a \in V \}
+\quad \text{ and } \quad
+\left \| \mathbf{T}^{(j)} \right \|_{0} : = \left ( m_{f(j)} \vee m_{g(j)} \right ) \cdot \max_{u, v} \left | t_{u, v}^{(j)} \right |.</script><blockquote>
+<p><strong>证明</strong>：</p>
+<p>如果 $J_0 = \varnothing$，即 $G$ 为 $2$-边连通的，那么上述结论退化为 [GM-3]。</p>
+<p>现对割边的数量 $|J_0|$ 进行归纳：假设 $n \in \mathbb{N}$ 并且 [GM-4] 的结论在 $|J_0| \leq n$ 时成立，接下来考虑 $|J_0| = n+1$ 的情形。</p>
+<p>注意到 $G$ 在各个 MC 块收缩之后构成一棵树，因此仅与一条割边相连的 MC 块至少有两个。任取</p>
+<script type="math/tex; mode=display">
+a_0 \in \underset{a \in V}{\arg \min} \ m_a,</script><p>那么存在 $\ell \in [\ell_0]$ 使得 $a_0 \notin B$ 并且 MC 块 $B_\ell$ 仅与一条割边相连。不失一般性，可以假定</p>
+<ul>
+<li>$\ell = 1$，且诱导子图 $G[B_1]$ 的边集为 $\{e_j: j \in J_1 \}$，</li>
+<li>与 $B_1$ 相连的割边为 $e_1 = \big ( f(1), g(1) \big )$。注意到 $e_1$ 的指向既不影响 $|T(G)|$ 的值，也不影响 $\left | \mathbf{T}^{(1)} \right |_{0}$ 的值，因此还可以假定 $f(1) \in B_1$ 而 $g(1) \notin B_1$。</li>
+</ul>
+<p>现构造图 $\widetilde{G} = ( V \backslash B_1, \widetilde{E}, \phi \times \varphi )$ 如下：从 $G$ 中移除 MC 块 $B_1$ 中的所有顶点，并添加一条从 $g(1)$ 到自身的边 $\widetilde{e}_0$。换言之，$\phi$ 以及 $\varphi$ 的定义域是 $\widetilde{J} := \big ( \{ 0 \} \cup [k] \big ) \backslash \big ( \{ 1 \} \cup J_1 \big )$，并且</p>
+<ul>
+<li>$\phi(0) = \varphi(0) = g(1)$，</li>
+<li>对于其余的 $j \in [k] \backslash (\{ 1 \} \cup J_1 )$，则有 $\phi(j) = f(j)$ 与 $\varphi(j) = g(j)$。</li>
+</ul>
+<p>令 $\mathbf{v}_1 = (i_a)_{a \in B_1}$，并规定 $\widetilde{e}_0$ 对应 $m_{g(1)}$ 维的对角矩阵 $\mathbf{T}^{(0)}$，其中</p>
+<script type="math/tex; mode=display">
+t_{v, v}^{(0)} = \sum_{\mathbf{v}_1} t^{(1)}_{i_{f(1)}, v} \prod_{j \in J_1} t^{(j)}_{i_{f(j)}, i_{g(j)}},
+\quad \text{ for } v \in \left [ m_{g(1)} \right ].</script><p>此时 $\left \{ T^{(j)} : j \in \widetilde{J} \right \}$ 满足了图 $\widetilde{G}$ 给出的维度一致性条件。如果令 $\mathbf{v}_2 = (i_a)_{a \in V \backslash B_1}$，那么</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+T(G)
+& = \sum_{\mathbf{v}_2} \sum_{\mathbf{v}_1} \left ( t_{i_{f(1)}, i_{g(1)}}^{(1)} \prod_{j \in J_1} t_{i_{f(j)}, i_{g(j)}}^{(j)} \prod_{j \in [k] \backslash (\{ 1 \} \cup J_1 )} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right ) \\
+& = \sum_{\mathbf{v}_2} \left ( t_{i_{g(1)}, i_{g(1)}}^{(0)} \prod_{j \in [k] \backslash (\{ 1 \} \cup J_1 )} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right ) 
+= T (\widetilde{G} ).
+\end{align*}</script><p>注意 $\widetilde{e}_0$ 在 $\widetilde{G}$ 中必然不是割边，因此 $\widetilde{G}$ 中的割边构成的集合是 $\{ \widetilde{e}_j \}_{j \in J_0 \backslash \{ 1 \}}$，非割边构成的集合是 $\{ \widetilde{e}_j \}_{j \in (\{ 0 \} \cup [k]) \backslash (J_0 \cup J_1)}$。</p>
+<p>由于 $\big | J_0 \backslash \{ 1 \} \big | = n$，根据归纳假设，可以得到</p>
+<script type="math/tex; mode=display">
+\big | T(G) \big | = \left | T \big ( \widetilde{G} \big ) \right |
+\leq m_0 \left \| \mathbf{T}^{(0)} \right \|_{\mathrm{op}} \prod_{j \in J_0 \backslash \{ 1 \}} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash (J_0 \cup J_1)} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}} \\</script><p>考虑到 $G[B_1]$ 的 $2$-边连通性，应用引理 [GM-3]，可以得到</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left \| \mathbf{T}^{(0)} \right \|_{\mathrm{op}} 
+& = \max_{v} \left | t_{v, v}^{(0)} \right |
+\leq \max_{u, v} \left | t^{(1)}_{u, v} \right | \cdot \left | \sum_{\mathbf{v}_1} \prod_{j \in J_1} t^{(j)}_{i_{f(j)}, i_{g(j)}} \right | \\
+& \leq \max_{u, v} \left | t^{(1)}_{u, v} \right | \left ( m_{f(1)} \prod_{j \in J_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}} \right ) 
+\leq \left \| \mathbf{T}^{(1)} \right \|_{0} \prod_{j \in J_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+\end{align*}</script><p>综合上述两式，即可得到所需结论：</p>
+<script type="math/tex; mode=display">
+|T(G)| \leq m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.</script></blockquote>
+<h3 id="GM-5"><a href="#GM-5" class="headerlink" title="[GM-5]"></a>[GM-5]</h3><p>Let $W \subset V$ be a subset of vertices.</p>
+<p>Donate by $\sum_{\mathbf{v}|W}$ the summation running for $\mathbf{v}$ subject to the restriction that $i_a \not= i_b$ if $a, b \in W$ and $a \not= b$.</p>
+<p>Then,</p>
+<script type="math/tex; mode=display">
+\left | \sum_{\mathbf{v}|W} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+\leq 2^{|W|} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.</script><blockquote>
+<p><strong>证明</strong>：</p>
+<p>如果 $| W | \leq 1$，上述结论即为引理 [GM-4] 中的结论。</p>
+<p>现对 $W$ 的基数进行归纳：假设 $n \in \mathbb{N}$ 并且上述结论在 $|W| = t_0 (\geq 1)$ 时成立，那么对于 $|W| = t_0 + 1$ 的情形：</p>
+<p>不失一般性，假定 $1, 2 \in W$，并且 $m_1 \geq m_2$。</p>
+<p>现构造图 $\widetilde{G} = ( V \backslash \{ 1 \}, \widetilde{E}, \phi \times \varphi )$ 如下：将 $G$ 中的顶点 $1$ 和 $2$ 视作一个整体，换言之，对任意的 $j \in [k]$，规定</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\phi(j) = 2, & \text{ if } f(j) = 1, \\
+\phi(j) = f(j), & \text{ otherwise},
+\end{cases}
+\quad \text{ and } \quad
+\begin{cases}
+\varphi(j) = 2, & \text{ if } g(j) = 1, \\
+\varphi(j) = g(j), & \text{ otherwise}.
+\end{cases}</script><p>考虑到 $m_1 \geq m_2$，对于 $j \in [k]$，当 $f(j) = 1$ 或 $g(j) = 1$ 时，对应地规定 $\widetilde{\mathbf{T}}^{(j)}$ 为矩阵 $\mathbf{T}^{(j)}$ 前 $m_1$ 行或前 $m_1$ 列构成的子矩阵。否则就直接令 $\widetilde{\mathbf{T}}^{(j)} = \mathbf{T}^{(j)}$。</p>
+<p>这样一来，$\big \{ \widetilde{\mathbf{T}}^{(j)} : j \in [k] \big \}$ 就满足了图 $\widetilde{G}$ 给出的维度一致性约束。</p>
+<p>令 $\widetilde{W} = W \backslash \{ 1 \}$，并记 $\big \{ \widetilde{e}_j : j \in \widetilde{J}_0 \big \}$ 为图 $\widetilde{G}$ 中的割边构成的集合，根据归纳假设，</p>
+<script type="math/tex; mode=display">
+\left | \sum_{\mathbf{v}|\widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | 
+\leq 2^{| \widetilde{W} |} m_0 \prod_{j \in \widetilde{J}_0} \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{0} \prod_{j \in [k] \backslash \widetilde{J}_0} \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{\mathrm{op}}.</script><p>注意 $G$ 中的割边在 $\widetilde{G}$ 可能不再是割边。另一方面，一条边如果在 $G$ 中为割边，那么其在 $\widetilde{G}$ 中同样不会是割边，即 $\widetilde{J}_0 \subset J_0$。</p>
+<p>另一方面，对任意的 $j \in [k]$，不难验证</p>
+<script type="math/tex; mode=display">
+\big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{0}
+\leq \big \| \mathbf{T}^{(j)} \big \|_{0}
+\quad \text{ and } \quad
+\big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{\mathrm{op}}
+\leq \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}
+\leq \big \| \mathbf{T}^{(j)} \big \|_{0}</script><p>因此</p>
+<script type="math/tex; mode=display">
+\left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | 
+\leq 2^{| \widetilde{W} |} m_0 \prod_{j \in J_0} \big \| \mathbf{T}^{(j)} \big \|_{0} \prod_{j \in [k] \backslash J_0} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}.</script><p>再次利用归纳假设，</p>
+<script type="math/tex; mode=display">
+\left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+\leq 2^{| \widetilde{W} |} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.</script><p>结合上述两式即得</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left | \sum_{\mathbf{v} | W} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+& = \left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} - \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | \\
+& \leq 2^{| W |} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+\end{align*}</script><p>证毕。</p>
+</blockquote>
 
     </div>
 
@@ -395,7 +503,7 @@ T(G) = \sum_{\mathbf{v}} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)}.</script><p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-edge-Connected-Graphs"><span class="nav-number">1.</span> <span class="nav-text">Two-edge Connected Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure"><span class="nav-number">1.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-Associated-Value"><span class="nav-number">1.2.</span> <span class="nav-text">Graph-Associated Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-of-Lemma-GM-3"><span class="nav-number">1.3.</span> <span class="nav-text">Proof of Lemma [GM-3]</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-edge-Connected-Graphs"><span class="nav-number">1.</span> <span class="nav-text">Two-edge Connected Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%BB%93%E6%9E%84-Graph-Structure"><span class="nav-number">1.1.</span> <span class="nav-text">图结构 Graph Structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-Associated-Value"><span class="nav-number">1.2.</span> <span class="nav-text">Graph-Associated Value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proof-of-Lemma-GM-3"><span class="nav-number">1.3.</span> <span class="nav-text">Proof of Lemma [GM-3]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connected-Graphs"><span class="nav-number">2.</span> <span class="nav-text">Connected Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GM-4"><span class="nav-number">2.1.</span> <span class="nav-text">[GM-4]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GM-5"><span class="nav-number">2.2.</span> <span class="nav-text">[GM-5]</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
