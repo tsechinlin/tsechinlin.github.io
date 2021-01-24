@@ -15,146 +15,142 @@ mathjax: true
 
 ### 图结构 Graph Structure
 
-Consider a directed graph $G = (V, E, f \times g)$ with the following structures.
+Consider a directed graph $G = (V, E; f \times g)$ with the following structures.
 
-+ The vertex set of $G$ can be partitioned into $V = V_1 + V_2 + V_3$, where $V_1 = \{ 1, \cdots, s \}$, $V_2 = \{ s + 1, \cdots, t_1 \}$ and $V_3 = \{ t_1 + 1, \cdots, t \}$. Here $1 \leq s \leq t_1 < t$.
++ The vertex set of $G$ can be partitioned into $V = V_1 + V_2 + V_3$, where $V_1$ and $V_3$ is nonempty.
 + The end vertex of each edge is in $V_3$, i.e., for each $j \in [k]$, we have $g(j) \in V_3$.
-+ The edges initiated from $V_1$, $V_2$, or $V_3$ are called the first, second, or third type edges, respectively. Without loss of generality, assume that 
-    + the first $k_1$ edges of the graph $G$ are of the first type,
-    + and the next $k_2$ edges are of the second type,
-    + the last $k − k_1 − k_2$ are of the third type.
-+ The graph $G$ is $V_1$-based, in the sense that
++ The edges initiated from $V_1$, $V_2$, or $V_3$ are called the first, second, or third type edges, respectively. Let
+    $$
+    J_p = \big \{ j \in [k]: f(j) \in V_p \big \}, \quad \text{ for } p = 1, 2, 3.
+    $$
++ The graph $G$ is **$V_1$-based**, in the sense that
     + For any $a \in V_1$, there exists some vertex $b \in V_3$ such that $(a,b) \in E$.
     + For any $b \in V_3$, there exists some vertex $a \in V_1$ such that $(a,b) \in E$.
 
-Below we assume that $\big \{ \mathbf{T}^{(j)} : j \in [k] \big \}$ is a collection of matrices satisfying the consistent dimension restriction given by $G$.
+Below we assume that $\{ \mathbf{T}^{(j)} \}_{j \in [k]}$ is a collection of matrices satisfying the consistent dimension restriction given by $G$.
 
 ### 图关联多重矩阵 Graph-Associated Multiple Matrix
 
-The **graph-associated multiple matrix** $\mathbf{T}(G)$ is defined by
+Define the multiple indices
 $$
-\mathbf{T}(G)_{\mathbf{u}, \mathbf{v}} = 
-\prod_{j=1}^{k_1} t^{(j)}_{u_{f(j)}, v_{g(j)}} 
-\prod_{j= k_1 + 1}^{k} t^{(j)}_{v_{f(j)}, v_{g(j)}}.
+\mathbf{v}_p = (i_a)_{a \in V_p} \quad \text{ for } \quad p = 1, 2, 3.
 $$
-where
-
-+ $\mathbf{u} = (u_1, \cdots, u_s) \in [m_1] \times \cdots \times [m_{s}]$ is the left index,
-+ $\mathbf{v} = (\mathbf{v}_1, \mathbf{v}_2)$ is the right index, with $\mathbf{v}_1 = (v_{s+1}, \cdots, v_{t_1})$ taking values in $[m_{s+1}] \times \cdots \times [m_{t_1}]$, and $\mathbf{v}_2 = (v_{t_1+1}, \cdots, v_{t})$ taking values in $[m_{t_1+1}] \times \cdots \times [m_{t}]$.
-
+Then the multiple matrix associated with the graph $G$ with left index $\mathbf{v}_1$ and right index $(\mathbf{v}_2, \mathbf{v}_3)$ is given by
+$$
+\mathbf{T}(G)_{\mathbf{v}_1, (\mathbf{v}_2, \mathbf{v}_3)} 
+= \prod_{j \in [k]} t^{(j)}_{i_{f(j)} \ , i_{g(j)}}
+= \prod_{j \in J_1} t^{(j)}_{i_{f(j)} \ , i_{g(j)}} \prod_{j \in J_2 \cup J_3} t^{(j)}_{i_{f(j)} \ , i_{g(j)}}.
+$$
 ### Lemma [GM-1]
 
-Assume that $\mathbf{A} = \big ( a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \big )$ is a multiple matrix with left index $\mathbf{i}$ independent of $\mathbf{u}, \mathbf{v}_1$ and $\mathbf{v}_2$. 
+Assume that $\mathbf{A} = ( a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} )$ is a multiple matrix where the left index $\mathbf{i}$ is independent of $\mathbf{v}_1, \mathbf{v}_2$ and $\mathbf{v}_3$. 
 
-Define the product of $\mathbf{A}$ and $\mathbf{T} (G)$ by
+Define the product of $\mathbf{A}$ and $\mathbf{T} (G)$ by a multiple matrix with left index $\mathbf{i}$ and right index $(\mathbf{v}_2, \mathbf{v}_3)$,
 $$
-\big ( \mathbf{A} \cdot \mathbf{T} (G) \big )_{\mathbf{i}, \mathbf{v}} 
-= \sum_{\mathbf{u}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \mathbf{T}(G)_{\mathbf{u}, \mathbf{v}}.
+\big ( \mathbf{A} \cdot \mathbf{T} (G) \big )_{\mathbf{i}, (\mathbf{v}_2, \mathbf{v}_3)}
+= \sum_{\mathbf{v}_1} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \mathbf{T}(G)_{\mathbf{v}_1, (\mathbf{v}_2, \mathbf{v}_3)}.
 $$
 
 Then, we have
 $$
-\left \| \mathbf{A} \cdot \mathbf{T} (G) \right \|
-\leq \left \| \mathbf{A} \right \| \cdot \prod_{j= 1}^{k} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+\big \| \mathbf{A} \cdot \mathbf{T} (G) \big \|
+\leq \| \mathbf{A} \| \cdot \prod_{j \in [k]} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}.
 $$
-
-### Proof for Lemma [GM-1]
 
 > **证明**：
 >
-> 首先注意到，对任意的 $u \in [m_{f(j)}]$ 及 $v \in [m_{g(j)}]$，有
+> 首先注意到，对任意的 $u \in \left [ m_{f(j)} \right ]$ 及 $v \in \left [ m_{g(j)} \right ]$，有
 > $$
-> \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}} = \max_{\| \mathbf{x} \|_2 = 1, \ \| 
-> \mathbf{y} \|_2 = 1} \left | \big \langle \mathbf{T}^{(j)} \mathbf{x}, \ \mathbf{y} \big \rangle \right |
-> \geq \left | t^{(j)}_{u, v} \right |,
+> \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}} = \max_{\| \mathbf{x} \|_2 = 1, \ \| 
+> \mathbf{y} \|_2 = 1} \left | \big \langle \mathbf{T}^{(j)} \mathbf{x}, \mathbf{y} \big \rangle \right |
+> \geq \big | t^{(j)}_{u, v} \big |.
 > $$
 > 结合多重矩阵范数的定义，可以推出
 > $$
 > \begin{align*}
 > \big \| \mathbf{A} \cdot \mathbf{T} (G) \big \|^2
-> & = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}} 
-> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \cdot \big ( \mathbf{A} \cdot \mathbf{T} (G) \big )_{\mathbf{i}, \mathbf{v}} \right|^2 \\
-> & = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}_1} \sum_{\mathbf{v}_2} 
-> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \sum_{\mathbf{u}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \mathbf{T}(G)_{\mathbf{u}, \mathbf{v}} \right|^2 \\
-> & \leq \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}_1} \sum_{\mathbf{v}_2} 
-> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \sum_{\mathbf{u}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \prod_{j=1}^{k_1} t^{(j)}_{u_{f(j)}, v_{g(j)}} \right|^2 \cdot \prod_{j=k_1 + 1}^{k} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}^2.
+> & = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}_2, \mathbf{v}_3} 
+> \left|\sum_{\mathbf{i}} \big ( \mathbf{A} \cdot \mathbf{T} (G) \big )_{\mathbf{i}, (\mathbf{v}_2, \mathbf{v}_3)} g_{\mathbf{i}} \right|^2 \\
+> & = \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}_2, \mathbf{v}_3} 
+> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \sum_{\mathbf{v}_1} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \mathbf{T}(G)_{\mathbf{v}_1, (\mathbf{v}_2, \mathbf{v}_3)} \right|^2 \\
+> & \leq \sup_{\| \mathbf{g} \| = 1} \sum_{\mathbf{v}_2, \mathbf{v}_3} 
+> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \sum_{\mathbf{v}_1} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \prod_{j \in J_1} t^{(j)}_{i_{f(j)} \ , i_{g(j)}} \right|^2 \cdot \prod_{j \in J_2 \cup J_3} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}^2.
 > \end{align*}
 > $$
-> 以下假定矩阵 $\mathbf{T}^{(j)}$ 的奇异值分解为 $\mathbf{T}^{(j)} = \mathbf{H}^{(j)} \boldsymbol{\Sigma}^{(j)} \big ( \boldsymbol{\Xi}^{(j)} \big )^*$，换言之，
+> 对于 $j \in J_1$，假定矩阵 $\mathbf{T}^{(j)}$ 的奇异值分解为 $\mathbf{T}^{(j)} = \mathbf{H}^{(j)} \boldsymbol{\Sigma}^{(j)} ( \boldsymbol{\Xi}^{(j)} )^*$，此处 $\mathbf{H}^{(j)}$ 以及 $\boldsymbol{\Xi}^{(j)}$ 分别为 $m_{f(j)}$ 阶和 $m_{g(j)}$ 阶的酉矩阵。此时
 > $$
 > t_{u,v}^{(j)}=\sum_{\ell=1}^{r_{j}} \sigma_{\ell}^{(j)} \eta_{u,\ell}^{(j)} \overline{\xi}_{v,\ell}^{(j)},
-> \quad \text{ for } u \in [m_{f(j)}] \text{ and } v \in [m_{g(j)}],
+> \quad \text{ for } u \in \left [ m_{f(j)} \right ] \text{ and } v \in \left [ m_{g(j)} \right ],
 > $$
 > 其中 $r_j = m_{f(j)} \wedge m_{g(j)}$。
 >
-> 记 $w_j = v_{g(j)}$ 并令 $\mathbf{w} = (w_1, \cdots, w_{k_1})$，考虑到对每个 $V_3$ 中的顶点，都至少有一条从 $V_1$ 出发的边以其为终点，因此对 $\mathbf{v}_2 \in [m_{t_1+1}] \times \cdots \times [m_t]$ 求和就相当于对 $\mathbf{w} \in [m_{g(1)}] \times \cdots \times [m_{g(k_1)}]$ 求和，但附加约束
+> 用 $w_j$ 替换 $i_{g(j)}$ 并令 $\mathbf{w} = (w_j)_{j \in J_1}$。考虑到任意的 $a \in V_3$，都存在 $j \in J_1$ 使得 $g(j) = a$，因此对 $\mathbf{v}_3 \in \prod_{a \in V_3} [m_a]$ 求和就相当于对 $\mathbf{w} \in \prod_{j \in J_1} \big [ m_{g(j)} \big ]$ 求和，但附加约束
 > $$
-> w_j = w_{j^\prime} 
-> \quad \text{ if } \quad
+> w_j = w_{j^\prime},
+> \quad \text{ for any } j, j^\prime \in J_1 \text{ with }
 > g(j) = g(j^\prime).
 > $$
-> 当待求和项非负时，去除上述约束可以使总和变大，因此
+> 当待求和项非负时，去除上述约束不会使总和减小，因此
 > $$
 > \begin{align*}
-> \sum_{\mathbf{v}_1} \sum_{\mathbf{v}_2} 
-> \left|\sum_{\mathbf{i}} g_{\mathbf{i}} \sum_{\mathbf{u}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \prod_{j=1}^{k_1} t^{(j)}_{u_{f(j)}, v_{g(j)}} \right|^2
-> & \leq \sum_{\mathbf{v}_1} \sum_{\mathbf{w}} 
-> \left| \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \prod_{j=1}^{k_1} t^{(j)}_{u_{f(j)}, w_j} \right|^2 \\
-> & \triangleq \sum_{\mathbf{v}_1} \sum_{\mathbf{w}} 
-> \left| \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \sum_{\boldsymbol{\ell}} \sigma_{\boldsymbol{\ell}} \eta_{\mathbf{u}, \boldsymbol{\ell}} \overline{\xi}_{\mathbf{w}, \boldsymbol{\ell}} \right|^2,
+> \sum_{\mathbf{v}_2} \sum_{\mathbf{v}_3} 
+> \left| \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \prod_{j \in J_1} t^{(j)}_{i_{f(j)} \ , w_j} \right|^2
+> & \leq \sum_{\mathbf{v}_2} \sum_{\mathbf{w}} 
+> \left| \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \prod_{j \in J_1} t^{(j)}_{i_{f(j)} \ , w_j} \right|^2 \\
+> & \triangleq \sum_{\mathbf{v}_2} \sum_{\mathbf{w}} 
+> \left| \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \sum_{\boldsymbol{\ell}} \sigma_{\boldsymbol{\ell}} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \overline{\xi}_{\mathbf{w}, \boldsymbol{\ell}} \right|^2,
 > \end{align*}
 > $$
 >
-> 其中多重指标 $\boldsymbol{\ell} = (\ell_1, \cdots, \ell_{k_1}) \in [r_1] \times \cdots \times [r_{k_1}]$，另外
+> 此处多重指标 $\boldsymbol{\ell} = (\ell_j)_{j \in J_1}$，取值范围为 $\prod_{j \in J_1} [ r_{j} ]$，
 > $$
 > \sigma_{\boldsymbol{\ell}} 
-> : = \prod_{j=1}^{k_1} \sigma_{\ell_j}^{(j)} 
+> : = \prod_{j \in J_1} \sigma_{\ell_j}^{(j)} 
 > , \quad
-> \eta_{\mathbf{u}, \boldsymbol{\ell}} 
-> : = \prod_{j=1}^{k_1} \eta_{u_{f(j)}, \ell_j}^{(j)}, 
+> \eta_{\mathbf{v}_1, \boldsymbol{\ell}} 
+> : = \prod_{j \in J_1} \eta_{i_{f(j)} \ , \ell_j}^{(j)}, 
 > \quad \text{ and } \quad 
 > \xi_{\mathbf{w}, \boldsymbol{\ell}} 
-> : = \prod_{j=1}^{k_1} \xi_{w_j, \ell_j}^{(j)}.
+> : = \prod_{j \in J_1} \xi_{w_j, \ell_j}^{(j)}.
 > $$
-> 注意到 $\boldsymbol{\Xi}^{(j)}$ 为酉矩阵，因此对任意的 $\boldsymbol{\ell}$ 以及 $\boldsymbol{\ell}^\prime$，有
+> 注意到 $\boldsymbol{\Xi}^{(j)}$ 为酉矩阵，因此对任意的 $\boldsymbol{\ell}, \boldsymbol{\ell}^\prime \in \prod_{j \in J_1} [ r_{j} ]$，有
 > $$
 > \sum_{\mathbf{w}} \overline{\xi}_{\mathbf{w}, \boldsymbol{\ell}} \xi_{\mathbf{w}, \boldsymbol{\ell}^\prime}
-> = \sum_{\mathbf{w}} \prod_{j=1}^{k_1} \overline{\xi}_{w_j, \ell_j}^{(j)} \xi_{w_j, \ell_j^\prime}^{(j)}
-> = \prod_{j=1}^{k_1} \sum_{w_j} \overline{\xi}_{w_j, \ell_j}^{(j)} \xi_{w_j, \ell_j^\prime}^{(j)}
-> = \prod_{j=1}^{k_1} \delta_{\ell_j, \ell_j^\prime}
+> = \sum_{\mathbf{w}} \prod_{j \in J_1} \overline{\xi}_{w_j, \ell_j}^{(j)} \xi_{w_j, \ell_j^\prime}^{(j)}
+> = \prod_{j \in J_1} \sum_{w_j} \overline{\xi}_{w_j, \ell_j}^{(j)} \xi_{w_j, \ell_j^\prime}^{(j)}
+> = \prod_{j \in J_1} \delta_{\ell_j, \ell_j^\prime}
 > = \delta_{\boldsymbol{\ell}, \boldsymbol{\ell}^\prime}.
 > $$
-> 由于 $\sigma_{\boldsymbol{\ell}} \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \eta_{\mathbf{u}, \boldsymbol{\ell}}$ 与指标 $\mathbf{w}$ 无关， 利用上式以及 $\sigma_{\boldsymbol{\ell}} \leq \prod_{j=1}^{k_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}$ 可以推出
+> 再注意到 $\sigma_{\boldsymbol{\ell}} \leq \prod_{j \in J_1} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}$，可以推得
 > $$
 > \begin{align*}
-> \sum_{\mathbf{v}_1} \sum_{\mathbf{w}}
-> \left| \sum_{\boldsymbol{\ell}} \overline{\xi}_{\mathbf{w}, \boldsymbol{\ell}} \left ( \sigma_{\boldsymbol{\ell}} \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \eta_{\mathbf{u}, \boldsymbol{\ell}} \right ) \right|^2
-> & = \sum_{\mathbf{v}_1} \sum_{\boldsymbol{\ell}} \sigma_{\boldsymbol{\ell}}^2 \left | \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \eta_{\mathbf{u}, \boldsymbol{\ell}} \right |^2 \\
-> & \leq \prod_{j = 1}^{k_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}^2 \sum_{\mathbf{v}_1} \sum_{\boldsymbol{\ell}} \left | \sum_{\mathbf{i}, \mathbf{u}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \eta_{\mathbf{u}, \boldsymbol{\ell}} \right |^2.
+> \sum_{\mathbf{v}_2} \sum_{\mathbf{w}}
+> \left| \sum_{\boldsymbol{\ell}} \overline{\xi}_{\mathbf{w}, \boldsymbol{\ell}} \left ( \sigma_{\boldsymbol{\ell}} \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \right ) \right|^2
+> & = \sum_{\mathbf{v}_2} \sum_{\boldsymbol{\ell}} \sigma_{\boldsymbol{\ell}}^2 \left | \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \right |^2 \\
+> & \leq \prod_{j \in J_1} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}^2 \sum_{\mathbf{v}_2} \sum_{\boldsymbol{\ell}} \left | \sum_{\mathbf{i}, \mathbf{v}_1} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \right |^2 
 > \end{align*}
 > $$
-> 注意此处对于求和指标 $\boldsymbol{\ell}$ 的取值范围是 $[\mathbf{r}] = [r_1] \times \cdots \times [r_{k_1}]$。考虑到待求和项非负，因此将 $\boldsymbol{\ell}$ 的取值范围扩大为 $[\mathbf{m}_f] = [m_{f(1)}] \times \cdots \times [m_{f(k_1)}]$ 可以使总和变大。
+> 注意此处对于求和指标 $\boldsymbol{\ell}$ 的取值范围是 $\prod_{j \in J_1} [ r_{j} ] \triangleq [ \mathbf{r} ]$。考虑到待求和项非负，因此将 $\boldsymbol{\ell}$ 的取值范围扩大为 $\prod_{j \in J_1} \big [ m_{f(j)} \big ] \triangleq [ \mathbf{m}_f ]$ 不会使总和减小。
 >
-> 考虑到 $\mathbf{H}^{(j)}$ 也是酉矩阵，因此对任意的 $\mathbf{u}$ 以及 $\mathbf{u}^\prime$，有
+> 另外，由于 $\mathbf{H}^{(j)}$ 也是酉矩阵，因此对任意的 $\mathbf{v}_1, \mathbf{v}_1^\prime \in \prod_{a \in V_1} [ m_{a} ]$，有
 > $$
-> \sum_{\boldsymbol{\ell} \in [\mathbf{m}_f]} \eta_{\mathbf{u}, \boldsymbol{\ell}} \overline{\eta}_{\mathbf{u}^\prime, \boldsymbol{\ell}}
-> = \sum_{\boldsymbol{\ell} \in [\mathbf{m}_f]} \prod_{j=1}^{k_1} \eta_{u_{f(j)}, \ell_j}^{(j)} \overline{\eta}_{u_{f(j)}^\prime, \ell_j}^{(j)} 
-> = \prod_{j=1}^{k_1} \sum_{\ell_j \in [m_{f(j)}]} \eta_{u_{f(j)}, \ell_j}^{(j)} \overline{\eta}_{u_{f(j)}^\prime, \ell_j}^{(j)}
-> = \prod_{j=1}^{k_1} \delta_{u_{f(j)}, u_{f(j)}^\prime}
-> = \delta_{\mathbf{u}, \mathbf{u}^\prime}.
+> \sum_{\boldsymbol{\ell} \in \left [ \mathbf{m}_f \right ]} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \overline{\eta}_{\mathbf{v}_1^\prime, \boldsymbol{\ell}}
+> = \sum_{\boldsymbol{\ell} \in \left [ \mathbf{m}_f \right ]} \prod_{j \in J_1} \eta_{i_{f(j)} \ , \ell_j}^{(j)} \overline{\eta}_{i_{f(j)}^\prime \ , \ell_j}^{(j)} 
+> = \prod_{j \in J_1} \sum_{\ell_j \in \left [ m_{f(j)} \right ]} \eta_{i_{f(j)} \ , \ell_j}^{(j)} \overline{\eta}_{i_{f(j)}^\prime \ , \ell_j}^{(j)}
+> = \prod_{j \in J_1} \delta_{i_{f(j)} \ , i_{f(j)}^\prime}
+> = \delta_{\mathbf{v}_1, \mathbf{v}_1^\prime}.
 > $$
-> 这里最后一个等号成立是因为根据约定，$\big \{ f(j): j = 1, \cdots, k_1 \big \} = V_1$。
+> 这里最后一个等号成立是因为根据假设，$\big \{ f(j) \big \}_{j \in J_1} = V_1$。因此，
 >
-> 于是，结合上述两条论断，可以推出
 > $$
 > \begin{align*}
-> \sum_{\mathbf{v}_1} \sum_{\boldsymbol{\ell} \in [\mathbf{r}]} \left | \sum_{\mathbf{u}} \eta_{\mathbf{u}, \boldsymbol{\ell}} \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \right |^2
-> & \leq \sum_{\mathbf{v}_1} \sum_{\boldsymbol{\ell} \in [\mathbf{m}_f]} \left | \sum_{\mathbf{u}} \eta_{\mathbf{u}, \boldsymbol{\ell}} \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \right |^2 \\
-> & = \sum_{\mathbf{v}_1} \sum_{\mathbf{u}} \left | \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{u}, \mathbf{v}_1)} \right |^2
+> \sum_{\mathbf{v}_2} \sum_{\boldsymbol{\ell} \in [\mathbf{r}]} \left | \sum_{\mathbf{v}_1} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \left ( \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \right ) \right |^2
+> & \leq \sum_{\mathbf{v}_2} \sum_{\boldsymbol{\ell} \in \left [ \mathbf{m}_f \right ]} \left | \sum_{\mathbf{v}_1} \eta_{\mathbf{v}_1, \boldsymbol{\ell}} \left ( \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \right ) \right |^2 \\
+> & = \sum_{\mathbf{v}_2} \sum_{\mathbf{v}_1} \left | \sum_{\mathbf{i}} g_{\mathbf{i}} a_{\mathbf{i}, (\mathbf{v}_1, \mathbf{v}_2)} \right |^2
 > \leq \| \mathbf{A} \|^2.
 > \end{align*}
 > $$
-> 综上所述，原命题得证。
+> 综上所述，引理 [GM-1] 得证。
 
 ## Hierarchical Graphs
 

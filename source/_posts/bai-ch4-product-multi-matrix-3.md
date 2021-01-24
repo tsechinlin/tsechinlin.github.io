@@ -139,3 +139,166 @@ $$
 ![](graph-3-4.svg)<!-- -->
 
 > **[conclusion]** 注意在上述递归步骤中，不在 $\widetilde{G}_d$ 中的边即未定向边至少减少 $1$ 条。因此最后总能使得 $\widetilde{G}_d = \widetilde{G}$，证毕。
+
+## Connected Graphs
+
+Let $G = (V, E; f \times g)$ be a directed graph.
+
+An edge $e \in E$ is called a **cutting edge** if $\big ( V, E \backslash{\{ e \}} \big )$ is disconnected (in the sense of weakly connectivity).
+
+Let $E_0 = \{ e_j : j \in J_0 \}$ be the set of cutting edges in $G$. Here $J_0 \subset [k]$.
+
+Each of the connected components in the graph $\big ( V, E \backslash E_0 \big )$ is two-edge connected, call the **MC blocks**.
+
+Thus there exists a partition $\big \{ B_{\ell}: \ell \in [\ell_0] \big \}$ of $V$ such that for all $\ell \in [\ell_0]$, we have $B_{\ell} \not= \varnothing$, and the induced subgraph $G[B_\ell]$ forms a MC block of $G$.
+
+On the other hand, contracting all the MC blocks of $G$ will result in a tree formed by cutting edges.
+
+### [GM-4]
+
+Let $\mathbf{v} = (i_a)_{a \in V}$, define
+$$
+T(G) = \sum_{\mathbf{v}} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)}.
+$$
+
+Then it holds that
+$$
+|T(G)| \leq m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+$$
+
+where
+$$
+m_0 : = \min \{ m_a : a \in V \}
+\quad \text{ and } \quad
+\left \| \mathbf{T}^{(j)} \right \|_{0} : = \left ( m_{f(j)} \vee m_{g(j)} \right ) \cdot \max_{u, v} \left | t_{u, v}^{(j)} \right |.
+$$
+
+> **证明**：
+>
+> 如果 $J_0 = \varnothing$，即 $G$ 为 $2$-边连通的，那么上述结论退化为 [GM-3]。
+>
+> 现对割边的数量 $|J_0|$ 进行归纳：假设 $n \in \mathbb{N}$ 并且 [GM-4] 的结论在 $|J_0| \leq n$ 时成立，接下来考虑 $|J_0| = n+1$ 的情形。
+>
+> 注意到 $G$ 在各个 MC 块收缩之后构成一棵树，因此仅与一条割边相连的 MC 块至少有两个。任取
+> $$
+> a_0 \in \underset{a \in V}{\arg \min} \ m_a,
+> $$
+> 那么存在 $\ell \in [\ell_0]$ 使得 $a_0 \notin B$ 并且 MC 块 $B_\ell$ 仅与一条割边相连。不失一般性，可以假定
+>
+> + $\ell = 1$，且诱导子图 $G[B_1]$ 的边集为 $\{e_j: j \in J_1 \}$，
+> + 与 $B_1$ 相连的割边为 $e_1 = \big ( f(1), g(1) \big )$。注意到 $e_1$ 的指向既不影响 $|T(G)|$ 的值，也不影响 $\left \| \mathbf{T}^{(1)} \right \|_{0}$ 的值，因此还可以假定 $f(1) \in B_1$ 而 $g(1) \notin B_1$。
+>
+> 现构造图 $\widetilde{G} = ( V \backslash B_1, \widetilde{E}, \phi \times \varphi )$ 如下：从 $G$ 中移除 MC 块 $B_1$ 中的所有顶点，并添加一条从 $g(1)$ 到自身的边 $\widetilde{e}_0$。换言之，$\phi$ 以及 $\varphi$ 的定义域是 $\widetilde{J} := \big ( \{ 0 \} \cup [k] \big ) \backslash \big ( \{ 1 \} \cup J_1 \big )$，并且
+>
+> + $\phi(0) = \varphi(0) = g(1)$，
+> + 对于其余的 $j \in [k] \backslash (\{ 1 \} \cup J_1 )$，则有 $\phi(j) = f(j)$ 与 $\varphi(j) = g(j)$。
+>
+> 令 $\mathbf{v}_1 = (i_a)_{a \in B_1}$，并规定 $\widetilde{e}_0$ 对应 $m_{g(1)}$ 维的对角矩阵 $\mathbf{T}^{(0)}$，其中
+> $$
+> t_{v, v}^{(0)} = \sum_{\mathbf{v}_1} t^{(1)}_{i_{f(1)}, v} \prod_{j \in J_1} t^{(j)}_{i_{f(j)}, i_{g(j)}},
+> \quad \text{ for } v \in \left [ m_{g(1)} \right ].
+> $$
+> 此时 $\left \{ T^{(j)} : j \in \widetilde{J} \right \}$ 满足了图 $\widetilde{G}$ 给出的维度一致性条件。如果令 $\mathbf{v}_2 = (i_a)_{a \in V \backslash B_1}$，那么
+> $$
+> \begin{align*}
+> T(G)
+> & = \sum_{\mathbf{v}_2} \sum_{\mathbf{v}_1} \left ( t_{i_{f(1)}, i_{g(1)}}^{(1)} \prod_{j \in J_1} t_{i_{f(j)}, i_{g(j)}}^{(j)} \prod_{j \in [k] \backslash (\{ 1 \} \cup J_1 )} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right ) \\
+> & = \sum_{\mathbf{v}_2} \left ( t_{i_{g(1)}, i_{g(1)}}^{(0)} \prod_{j \in [k] \backslash (\{ 1 \} \cup J_1 )} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right ) 
+> = T (\widetilde{G} ).
+> \end{align*}
+> $$
+> 注意 $\widetilde{e}_0$ 在 $\widetilde{G}$ 中必然不是割边，因此 $\widetilde{G}$ 中的割边构成的集合是 $\{ \widetilde{e}_j \}_{j \in J_0 \backslash \{ 1 \}}$，非割边构成的集合是 $\{ \widetilde{e}_j \}_{j \in (\{ 0 \} \cup [k]) \backslash (J_0 \cup J_1)}$。
+>
+> 由于 $\big | J_0 \backslash \{ 1 \} \big | = n$，根据归纳假设，可以得到
+> $$
+> \big | T(G) \big | = \left | T \big ( \widetilde{G} \big ) \right |
+> \leq m_0 \left \| \mathbf{T}^{(0)} \right \|_{\mathrm{op}} \prod_{j \in J_0 \backslash \{ 1 \}} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash (J_0 \cup J_1)} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}} \\
+> $$
+> 考虑到 $G[B_1]$ 的 $2$-边连通性，应用引理 [GM-3]，可以得到
+> $$
+> \begin{align*}
+> \left \| \mathbf{T}^{(0)} \right \|_{\mathrm{op}} 
+> & = \max_{v} \left | t_{v, v}^{(0)} \right |
+> \leq \max_{u, v} \left | t^{(1)}_{u, v} \right | \cdot \left | \sum_{\mathbf{v}_1} \prod_{j \in J_1} t^{(j)}_{i_{f(j)}, i_{g(j)}} \right | \\
+> & \leq \max_{u, v} \left | t^{(1)}_{u, v} \right | \left ( m_{f(1)} \prod_{j \in J_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}} \right ) 
+> \leq \left \| \mathbf{T}^{(1)} \right \|_{0} \prod_{j \in J_1} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+> \end{align*}
+> $$
+> 综合上述两式，即可得到所需结论：
+> $$
+> |T(G)| \leq m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+> $$
+
+### [GM-5]
+
+Let $W \subset V$ be a subset of vertices.
+
+Donate by $\sum_{\mathbf{v}|W}$ the summation running for $\mathbf{v}$ subject to the restriction that $i_a \not= i_b$ if $a, b \in W$ and $a \not= b$.
+
+Then,
+$$
+\left | \sum_{\mathbf{v}|W} \prod_{j=1}^k t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+\leq 2^{|W|} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+$$
+
+> **证明**：
+>
+> 如果 $| W | \leq 1$，上述结论即为引理 [GM-4] 中的结论。
+>
+> 现对 $W$ 的基数进行归纳：假设 $n \in \mathbb{N}$ 并且上述结论在 $|W| = t_0 (\geq 1)$ 时成立，那么对于 $|W| = t_0 + 1$ 的情形：
+>
+> 不失一般性，假定 $1, 2 \in W$，并且 $m_1 \geq m_2$。
+>
+> 现构造图 $\widetilde{G} = ( V \backslash \{ 1 \}, \widetilde{E}, \phi \times \varphi )$ 如下：将 $G$ 中的顶点 $1$ 和 $2$ 视作一个整体，换言之，对任意的 $j \in [k]$，规定
+> $$
+> \begin{cases}
+> \phi(j) = 2, & \text{ if } f(j) = 1, \\
+> \phi(j) = f(j), & \text{ otherwise},
+> \end{cases}
+> \quad \text{ and } \quad
+> \begin{cases}
+> \varphi(j) = 2, & \text{ if } g(j) = 1, \\
+> \varphi(j) = g(j), & \text{ otherwise}.
+> \end{cases}
+> $$
+> 考虑到 $m_1 \geq m_2$，对于 $j \in [k]$，当 $f(j) = 1$ 或 $g(j) = 1$ 时，对应地规定 $\widetilde{\mathbf{T}}^{(j)}$ 为矩阵 $\mathbf{T}^{(j)}$ 前 $m_1$ 行或前 $m_1$ 列构成的子矩阵。否则就直接令 $\widetilde{\mathbf{T}}^{(j)} = \mathbf{T}^{(j)}$。
+>
+> 这样一来，$\big \{ \widetilde{\mathbf{T}}^{(j)} : j \in [k] \big \}$ 就满足了图 $\widetilde{G}$ 给出的维度一致性约束。
+>
+> 令 $\widetilde{W} = W \backslash \{ 1 \}$，并记 $\big \{ \widetilde{e}_j : j \in \widetilde{J}_0 \big \}$ 为图 $\widetilde{G}$ 中的割边构成的集合，根据归纳假设，
+> $$
+> \left | \sum_{\mathbf{v}|\widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | 
+> \leq 2^{| \widetilde{W} |} m_0 \prod_{j \in \widetilde{J}_0} \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{0} \prod_{j \in [k] \backslash \widetilde{J}_0} \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{\mathrm{op}}.
+> $$
+> 注意 $G$ 中的割边在 $\widetilde{G}$ 可能不再是割边。另一方面，一条边如果在 $G$ 中为割边，那么其在 $\widetilde{G}$ 中同样不会是割边，即 $\widetilde{J}_0 \subset J_0$。
+>
+> 另一方面，对任意的 $j \in [k]$，不难验证
+> $$
+> \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{0}
+> \leq \big \| \mathbf{T}^{(j)} \big \|_{0}
+> \quad \text{ and } \quad
+> \big \| \widetilde{\mathbf{T}}^{(j)} \big \|_{\mathrm{op}}
+> \leq \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}
+> \leq \big \| \mathbf{T}^{(j)} \big \|_{0}
+> $$
+> 因此
+> $$
+> \left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | 
+> \leq 2^{| \widetilde{W} |} m_0 \prod_{j \in J_0} \big \| \mathbf{T}^{(j)} \big \|_{0} \prod_{j \in [k] \backslash J_0} \big \| \mathbf{T}^{(j)} \big \|_{\mathrm{op}}.
+> $$
+> 再次利用归纳假设，
+> $$
+> \left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+> \leq 2^{| \widetilde{W} |} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+> $$
+> 结合上述两式即得
+> $$
+> \begin{align*}
+> \left | \sum_{\mathbf{v} | W} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} \right | 
+> & = \left | \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} t_{i_{f(j)}, i_{g(j)}}^{(j)} - \sum_{\mathbf{v} | \widetilde{W}} \prod_{j \in [k]} \widetilde{t}_{i_{\phi(j)}, i_{\varphi(j)}}^{(j)} \right | \\
+> & \leq 2^{| W |} m_0 \prod_{j \in J_0} \left \| \mathbf{T}^{(j)} \right \|_{0} \prod_{j \in [k] \backslash J_0} \left \| \mathbf{T}^{(j)} \right \|_{\mathrm{op}}.
+> \end{align*}
+> $$
+> 证毕。
+
+
