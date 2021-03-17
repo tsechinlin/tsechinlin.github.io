@@ -59,7 +59,7 @@
 <meta property="og:description" content="[Notes] Spectral analysis of large dimensional random matrices by Zhidong Bai &amp; Jack W. Silverstein.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-29T11:46:26.000Z">
-<meta property="article:modified_time" content="2021-03-17T12:46:25.850Z">
+<meta property="article:modified_time" content="2021-03-17T12:49:17.015Z">
 <meta property="article:author" content="Tsechin Lin">
 <meta name="twitter:card" content="summary">
 
@@ -217,7 +217,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-17 20:46:25" itemprop="dateModified" datetime="2021-03-17T20:46:25+08:00">2021-03-17</time>
+                <time title="Modified: 2021-03-17 20:49:17" itemprop="dateModified" datetime="2021-03-17T20:49:17+08:00">2021-03-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,7 +244,7 @@
       
         <p>[Notes] <u>Spectral analysis of large dimensional random matrices</u> by Zhidong Bai &amp; Jack W. Silverstein.</p>
 <a id="more"></a>
-<h2 id="Lemma-IM-1"><a href="#Lemma-IM-1" class="headerlink" title="Lemma [IM-1]"></a>Lemma [IM-1]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have</p>
+<h2 id="IM-1"><a href="#IM-1" class="headerlink" title="[IM-1]"></a>[IM-1]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have</p>
 <script type="math/tex; mode=display">
 \left \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \right \|_{\mathrm{op}} \leq \frac{1}{v}.</script><blockquote>
 <p><strong>Proof</strong>: </p>
@@ -255,7 +255,7 @@
 = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \mathbf{x}^* \left ( \mathbf{A} - \bar{z} \mathbf{I}_n \right)^{-1} \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \mathbf{x} \\
 &= \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} \leq \frac{1}{v^2}.
 \end{align*}</script></blockquote>
-<h2 id="Lemma-IM-2"><a href="#Lemma-IM-2" class="headerlink" title="Lemma [IM-2]"></a>Lemma [IM-2]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $\mathbf{x} \in \mathbb{C}^{n}$ and $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have</p>
+<h2 id="IM-2"><a href="#IM-2" class="headerlink" title="[IM-2]"></a>[IM-2]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $\mathbf{x} \in \mathbb{C}^{n}$ and $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have</p>
 <script type="math/tex; mode=display">
 \left | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \right | 
 \leq \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} 
@@ -303,7 +303,7 @@ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x
 \end{align*}</script><p>When $\mathbf{A}$ is nonnegative definite, we have $\lambda_k \geq 0$ for each $k \in [n]$, which implies</p>
 <script type="math/tex; mode=display">
 \Im \left [ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] =  \sum_{k=1}^n \frac{\lambda_k v}{(\lambda_k - u)^{2} + v^2} | y_k |^2 \geq 0.</script></blockquote>
-<h2 id="Lemma-IM-3"><a href="#Lemma-IM-3" class="headerlink" title="Lemma [IM-3]"></a>Lemma [IM-3]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a matrix taking the form</p>
+<h2 id="IM-3"><a href="#IM-3" class="headerlink" title="[IM-3]"></a>[IM-3]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a matrix taking the form</p>
 <script type="math/tex; mode=display">
 \mathbf{A} = \begin{bmatrix}
 \mathbf{B} & \mathbf{a} \\
@@ -360,7 +360,7 @@ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x
 <script type="math/tex; mode=display">
 \operatorname{tr} \mathbf{A}^{-1} = \operatorname{tr} \mathbf{B}^{-1} + \frac{1}{d} \operatorname{tr} \left ( \mathbf{B}^{-1} \mathbf{a} \mathbf{a}^* \mathbf{B}^{-1} \right ) + \frac{1}{d}
 = \operatorname{tr} \mathbf{B}^{-1} + \frac{1}{d} \left ( 1 + \mathbf{a}^* \mathbf{B}^{-2} \mathbf{a} \right ).</script></blockquote>
-<h2 id="Lemma-IM-4"><a href="#Lemma-IM-4" class="headerlink" title="Lemma [IM-4]"></a>Lemma [IM-4]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}_{k}$ be the $k$-th principle submatrix of order $(n-1)$, i.e. the submatrix obtained by removing the $k$-th row and column. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,</p>
+<h2 id="IM-4"><a href="#IM-4" class="headerlink" title="[IM-4]"></a>[IM-4]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}_{k}$ be the $k$-th principle submatrix of order $(n-1)$, i.e. the submatrix obtained by removing the $k$-th row and column. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,</p>
 <script type="math/tex; mode=display">
 \left | \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \right | \leq \frac{1}{v}.</script><blockquote>
 <p><strong>Proof</strong>:</p>
@@ -380,7 +380,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 & \leq \frac{1 + \big | \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \big |}{ \left | \Im d \right |} \\ 
 & \leq \frac{1 + \big | \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \big |}{v + \Im \big [ \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k \big ] } \leq \frac{1}{v} .
 \end{align*}</script></blockquote>
-<h2 id="Lemma-IM-5"><a href="#Lemma-IM-5" class="headerlink" title="Lemma [IM-5]"></a>Lemma [IM-5]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is an invertible matrix. Let $\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbb{C}^n$ be vectors with $1 + \boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha} \not= 0$. Then the matrix $\mathbf{A} + \boldsymbol{\alpha} \boldsymbol{\beta}^{*}$ is invertible with</p>
+<h2 id="IM-5"><a href="#IM-5" class="headerlink" title="[IM-5]"></a>[IM-5]</h2><p>Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is an invertible matrix. Let $\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbb{C}^n$ be vectors with $1 + \boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha} \not= 0$. Then the matrix $\mathbf{A} + \boldsymbol{\alpha} \boldsymbol{\beta}^{*}$ is invertible with</p>
 <script type="math/tex; mode=display">
 \left(\mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*}\right)^{-1}=\mathbf{A}^{-1}-\frac{\mathbf{A}^{-1} \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1}}{1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha}}.</script><p>Consequently, we have</p>
 <script type="math/tex; mode=display">
@@ -401,7 +401,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 <script type="math/tex; mode=display">
 \left ( \mathbf{A}^{-1} - \frac{\mathbf{A}^{-1} \boldsymbol{\alpha} \boldsymbol{\beta}^{*} \mathbf{A}^{-1}}{1+\boldsymbol{\beta}^{*} \mathbf{A}^{-1} \boldsymbol{\alpha}} \right ) \left ( \mathbf{A}+\boldsymbol{\alpha} \boldsymbol{\beta}^{*} \right ) = \mathbf{I}_n.</script><p>Therefore, the first statement follows.</p>
 </blockquote>
-<h2 id="Lemma-IM-6"><a href="#Lemma-IM-6" class="headerlink" title="Lemma [IM-6]"></a>Lemma [IM-6]</h2><p>Let $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ be Hermitian matrices and $\mathbf{x} \in \mathbb{C}^n$. For any $z = u + \mathrm{i} v \in \mathbb{C}_+$, define</p>
+<h2 id="IM-6"><a href="#IM-6" class="headerlink" title="[IM-6]"></a>[IM-6]</h2><p>Let $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ be Hermitian matrices and $\mathbf{x} \in \mathbb{C}^n$. For any $z = u + \mathrm{i} v \in \mathbb{C}_+$, define</p>
 <script type="math/tex; mode=display">
 \mathbf{D} := \left(\mathbf{A} + \mathbf{x} \mathbf{x}^* - z \mathbf{I}_n \right)^{-1} - \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1}.</script><p>Then we have</p>
 <script type="math/tex; mode=display">
@@ -430,7 +430,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 <script type="math/tex; mode=display">
 \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
 \leq \frac{\mathbf{x}^* \big [ \left(\mathbf{A} - u \mathbf{I}_{n} \right)^2 + v^2 \mathbf{I}_{n} \big ]^{-1} \mathbf{x}}{\Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ]} \| \mathbf{B} \|_{\mathrm{op}} = \frac{1}{v} \| \mathbf{B} \|_{\mathrm{op}}.</script></blockquote>
-<h2 id="Lemma-IM-7"><a href="#Lemma-IM-7" class="headerlink" title="Lemma [IM-7]"></a>Lemma [IM-7]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices. Let $z_1, z_2 \in \mathbb{C}_+$ with $\min ( \Im z_1, \Im z_2) \geq v &gt; 0$. Define</p>
+<h2 id="IM-7"><a href="#IM-7" class="headerlink" title="[IM-7]"></a>[IM-7]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices. Let $z_1, z_2 \in \mathbb{C}_+$ with $\min ( \Im z_1, \Im z_2) \geq v &gt; 0$. Define</p>
 <script type="math/tex; mode=display">
 \mathbf{D} := \left ( \mathbf{A} - z_1 \mathbf{I}_n \right)^{-1} - \left(\mathbf{A} - z_2 \mathbf{I}_{n} \right)^{-1}.</script><p>Then,</p>
 <script type="math/tex; mode=display">
@@ -460,7 +460,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 \leq \| \mathbf{B} \mathbf{D} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2
 \leq \| \mathbf{D} \|_{\mathrm{op}} \| \mathbf{B} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2
 \leq \frac{|z_1 - z_2|}{v^2} \| \mathbf{B} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2.</script></blockquote>
-<h2 id="Lemma-IM-8"><a href="#Lemma-IM-8" class="headerlink" title="Lemma [IM-8]"></a>Lemma [IM-8]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.’s. Then,</p>
+<h2 id="IM-8"><a href="#IM-8" class="headerlink" title="[IM-8]"></a>[IM-8]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.’s. Then,</p>
 <script type="math/tex; mode=display">
 \left\|\left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\right\|_{\mathrm{op}} \leq \max \left ( 2, \frac{4}{v} \|\mathbf{A}\|_{\mathrm{op}} \right ).</script><p>Define</p>
 <script type="math/tex; mode=display">
@@ -507,7 +507,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 \| \mathbf{D} \|_{\mathrm{op}} 
 & \leq |m_{1}(z) - m_{2}(z)| \big \| \left ( m_{1}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \| \mathbf{A} \|_{\mathrm{op}}  \big \| \left ( m_{2}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \\
 & \leq |m_{1}(z) - m_{2}(z)| \| \mathbf{A} \|_{\mathrm{op}} \max \left ( 4, \frac{16}{v^2} \|\mathbf{A}\|_{\mathrm{op}}^2 \right ).
-\end{align*}</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n | \mathbf{B} |_{\mathrm{op}} | \mathbf{D} |_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq | \mathbf{D} |_{\mathrm{op}} | \mathbf{B} |_{\mathrm{op}} | \mathbf{x} |_2^2$.</p>
+\end{align*}</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.</p>
 </blockquote>
 
     </div>
@@ -571,7 +571,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-1"><span class="nav-number">1.</span> <span class="nav-text">Lemma [IM-1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-2"><span class="nav-number">2.</span> <span class="nav-text">Lemma [IM-2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-3"><span class="nav-number">3.</span> <span class="nav-text">Lemma [IM-3]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-4"><span class="nav-number">4.</span> <span class="nav-text">Lemma [IM-4]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-5"><span class="nav-number">5.</span> <span class="nav-text">Lemma [IM-5]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-6"><span class="nav-number">6.</span> <span class="nav-text">Lemma [IM-6]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-7"><span class="nav-number">7.</span> <span class="nav-text">Lemma [IM-7]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemma-IM-8"><span class="nav-number">8.</span> <span class="nav-text">Lemma [IM-8]</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-1"><span class="nav-number">1.</span> <span class="nav-text">[IM-1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-2"><span class="nav-number">2.</span> <span class="nav-text">[IM-2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-3"><span class="nav-number">3.</span> <span class="nav-text">[IM-3]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-4"><span class="nav-number">4.</span> <span class="nav-text">[IM-4]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-5"><span class="nav-number">5.</span> <span class="nav-text">[IM-5]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-6"><span class="nav-number">6.</span> <span class="nav-text">[IM-6]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-7"><span class="nav-number">7.</span> <span class="nav-text">[IM-7]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-8"><span class="nav-number">8.</span> <span class="nav-text">[IM-8]</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
