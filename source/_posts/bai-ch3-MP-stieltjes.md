@@ -12,7 +12,7 @@ mathjax: true
 
 <!--more-->
 
-**[Theorem]** Suppose that, for each $n \in \mathbb{Z}_+$, the entries of $\mathbf{X}_n = \big ( x_{ij}^{(n)} \big )_{i,j = 1}^n$ are independent complex variables with a common mean $\mu$ and variance $\sigma^2$. Assume that $p/n \to y \in (0, \infty)$ and that, for any $\eta > 0$,
+**[Theorem]** Suppose that, for each $n \in \mathbb{Z}_+$, the entries of the $p \times n$ matrix $\mathbf{X}_n = \big ( x_{ij}^{(n)} \big )$ are independent complex variables with a common mean $\mu$ and variance $\sigma^2$. Assume that $p/n \to y \in (0, \infty)$ and that, for any $\eta > 0$,
 $$
 \lim _{n \rightarrow \infty} \frac{1}{n p} \sum_{j, k = 1}^n \mathbb{E} \left [ \left|x_{j k}^{(n)}\right|^{2} \cdot \mathbb{I}\left(\left|x_{j k}^{(n)}\right| \geq \eta \sqrt{n}\right) \right ]=0.
 $$
