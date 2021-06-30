@@ -1,20 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="https://www.w3.org/2005/Atom">
-  <title>Tsechin Lin&#39;s Blogs</title>
+  <title>LIN Zeqin&#39;s Blogs</title>
   
-  <subtitle>You Never Walk Alone</subtitle>
+  <subtitle>?</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-24T09:31:42.739Z</updated>
+  <updated>2021-06-30T09:09:44.355Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>Tsechin Lin</name>
+    <name>LIN Zeqin</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Note A - Stochastic Domination</title>
+    <link href="http://yoursite.com/2021/06/30/local-semicircle-law-note-A/"/>
+    <id>http://yoursite.com/2021/06/30/local-semicircle-law-note-A/</id>
+    <published>2021-06-30T08:44:28.000Z</published>
+    <updated>2021-06-30T09:09:44.355Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Notes] Benaych-Georges, Florent, and Antti Knowles. “Lectures on the local semicircle law for Wigner matrices.” arXiv preprint arXiv:1601.04055 (2016).&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Random Matrix" scheme="http://yoursite.com/categories/Random-Matrix/"/>
+    
+    
+      <category term="Stochastic Domination" scheme="http://yoursite.com/tags/Stochastic-Domination/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Moment Inequalities for Log-convex Transformation of Gaussian Vectors</title>
+    <link href="http://yoursite.com/2021/05/03/MI-log-convex-guassian-vector/"/>
+    <id>http://yoursite.com/2021/05/03/MI-log-convex-guassian-vector/</id>
+    <published>2021-05-03T11:08:18.000Z</published>
+    <updated>2021-05-03T11:20:14.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;[Reference] Brascamp, Herm Jan, and Elliott H. Lieb. &lt;strong&gt;On extensions of the Brunn-Minkowski and Prékopa-Leindler theorems, including inequalities for log concave functions, and with an application to the diffusion equation.&lt;/strong&gt; Inequalities. Springer, Berlin, Heidelberg, 2002. 441-464.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Moment Inequalities" scheme="http://yoursite.com/categories/Moment-Inequalities/"/>
+    
+    
+      <category term="Log-convex Functions" scheme="http://yoursite.com/tags/Log-convex-Functions/"/>
+    
+      <category term="Guassian Distribution" scheme="http://yoursite.com/tags/Guassian-Distribution/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prekopa-Leindler Inequality</title>
+    <link href="http://yoursite.com/2021/04/30/CTI-prekopa-leindler-inequality/"/>
+    <id>http://yoursite.com/2021/04/30/CTI-prekopa-leindler-inequality/</id>
+    <published>2021-04-30T07:06:05.000Z</published>
+    <updated>2021-06-30T09:02:30.160Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Prekopa-Leindler Inequality&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Concentration Inequalities" scheme="http://yoursite.com/categories/Concentration-Inequalities/"/>
+    
+    
+      <category term="Convex Functions" scheme="http://yoursite.com/tags/Convex-Functions/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Brascamp–Lieb Inequality</title>
+    <link href="http://yoursite.com/2021/04/30/CTI-brascamp-lieb-inequality/"/>
+    <id>http://yoursite.com/2021/04/30/CTI-brascamp-lieb-inequality/</id>
+    <published>2021-04-30T07:00:34.000Z</published>
+    <updated>2021-06-30T09:02:03.131Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Brascamp–Lieb Inequality&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Concentration Inequalities" scheme="http://yoursite.com/categories/Concentration-Inequalities/"/>
+    
+    
+      <category term="Convex Functions" scheme="http://yoursite.com/tags/Convex-Functions/"/>
+    
+      <category term="Subguassian Density" scheme="http://yoursite.com/tags/Subguassian-Density/"/>
+    
+  </entry>
   
   <entry>
     <title>Enumerative Combinatorics with Multiple Matrices - Connected Graphs</title>
@@ -67,7 +155,7 @@
     <link href="http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/"/>
     <id>http://yoursite.com/2021/01/22/bai-ch4-product-multi-matrix-1/</id>
     <published>2021-01-22T01:50:29.000Z</published>
-    <updated>2021-01-24T13:37:46.096Z</updated>
+    <updated>2021-03-22T05:24:05.233Z</updated>
     
     <summary type="html">
     
@@ -373,88 +461,6 @@
     
     
       <category term="Compressed Sensing" scheme="http://yoursite.com/tags/Compressed-Sensing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微分流形笔记 - 微分形式 Differential Forms</title>
-    <link href="http://yoursite.com/2020/01/11/sm-differential-forms/"/>
-    <id>http://yoursite.com/2020/01/11/sm-differential-forms/</id>
-    <published>2020-01-10T16:31:18.000Z</published>
-    <updated>2020-01-10T16:41:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第十四章笔记。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
-    
-    
-      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微分流形笔记 - Integral Curves and Flows 积分曲线与流</title>
-    <link href="http://yoursite.com/2020/01/09/sm-integral-curves-and-flows/"/>
-    <id>http://yoursite.com/2020/01/09/sm-integral-curves-and-flows/</id>
-    <published>2020-01-08T17:01:02.000Z</published>
-    <updated>2020-01-09T16:50:52.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第九章笔记。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
-    
-    
-      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>微分流形笔记 - Tangent Vectors 切向量</title>
-    <link href="http://yoursite.com/2019/12/28/sm-tangent-vectors/"/>
-    <id>http://yoursite.com/2019/12/28/sm-tangent-vectors/</id>
-    <published>2019-12-27T17:12:04.000Z</published>
-    <updated>2020-01-08T17:12:20.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[GTM-218] John M. Lee - Introduction to Smooth Manifolds 第三章笔记。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Manifolds" scheme="http://yoursite.com/categories/Manifolds/"/>
-    
-    
-      <category term="Smooth Manifolds" scheme="http://yoursite.com/tags/Smooth-Manifolds/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Optimality Conditions</title>
-    <link href="http://yoursite.com/2019/11/15/optimality-conditions/"/>
-    <id>http://yoursite.com/2019/11/15/optimality-conditions/</id>
-    <published>2019-11-14T16:57:40.000Z</published>
-    <updated>2019-11-14T17:03:28.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;$\mathbb{R}^n$ 中常用优化问题最优性条件，内容来自 &lt;u&gt;Nonlinear Optimization&lt;/u&gt; [Andrzej Ruszczynski]。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Optimization/"/>
-    
     
   </entry>
   

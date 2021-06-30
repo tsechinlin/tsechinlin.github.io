@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="LIN Zeqin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="[Notes] Benaych-Georges, Florent, and Antti Knowles. “Lectures on the local semicircle law for Wigner matrices.” arXiv preprint arXiv:1601.04055 (2016).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Note A - Stochastic Domination">
+<meta property="og:url" content="http://yoursite.com/2021/06/30/local-semicircle-law-note-A/index.html">
+<meta property="og:site_name" content="LIN Zeqin&#39;s Blogs">
+<meta property="og:description" content="[Notes] Benaych-Georges, Florent, and Antti Knowles. “Lectures on the local semicircle law for Wigner matrices.” arXiv preprint arXiv:1601.04055 (2016).">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-30T08:44:28.000Z">
+<meta property="article:modified_time" content="2021-06-30T09:09:44.355Z">
+<meta property="article:author" content="LIN Zeqin">
+<meta property="article:tag" content="Stochastic Domination">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/06/30/local-semicircle-law-note-A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Note A - Stochastic Domination | LIN Zeqin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIN Zeqin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">?</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/30/local-semicircle-law-note-A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="LIN Zeqin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIN Zeqin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Note A - Stochastic Domination
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-06-30 16:44:28 / Modified: 17:09:44" itemprop="dateCreated datePublished" datetime="2021-06-30T16:44:28+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Random-Matrix/" itemprop="url" rel="index">
+                    <span itemprop="name">Random Matrix</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[Notes] Benaych-Georges, Florent, and Antti Knowles. “Lectures on the local semicircle law for Wigner matrices.” arXiv preprint arXiv:1601.04055 (2016).</p>
+<a id="more"></a>
+<h2 id="Definitions-and-Notations"><a href="#Definitions-and-Notations" class="headerlink" title="Definitions and Notations"></a>Definitions and Notations</h2><p>Consider two families of nonnegative random variables</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X = \big \{ X^{(N)}(u) : N \in \mathbb{N}, u \in U^{(N)} \big \}
+\quad \text{ and } \quad
+Y = \big \{ Y^{(N)}(u) : N \in \mathbb{N}, u \in U^{(N)} \big \},
+\end{equation*}</script><p>where $U^{(N)}$ is a possibly $N$-dependent parameter set.</p>
+<h3 id="Definition-A-1-stochastic-domination"><a href="#Definition-A-1-stochastic-domination" class="headerlink" title="Definition A.1 (stochastic domination)"></a>Definition A.1 (stochastic domination)</h3><p>We say that $X$ is <strong>stochastically dominated</strong> by $Y$, uniformly in $u$, if for any (small) $\varepsilon &gt; 0$ and (large) $D &gt; 0$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{P} \big ( X^{(N)}(u)>N^{\varepsilon} Y^{(N)}(u) \big ) \leq N^{-D}
+\end{equation}</script><p>for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U^{(N)}$.</p>
+<p>If $X$ is stochastically dominated by $Y$, uniformly in $u$, we use the notation $X \prec Y$.</p>
+<p>Moreover, if for some family of complex variables $X$ we have $|X| \prec Y$, we also write $X = O_\prec(Y)$.</p>
+<h3 id="Definition-A-2-boundedness-up-to-a-constant-factor"><a href="#Definition-A-2-boundedness-up-to-a-constant-factor" class="headerlink" title="Definition A.2 (boundedness up to a constant factor)"></a>Definition A.2 (boundedness up to a constant factor)</h3><p>In this note, we will also use the notation $X \lesssim Y$, which means that there exists some universal constant $C &gt; 0$ such that</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+X^{(N)}(u) \leq C Y^{(N)}(u)
+\end{equation}</script><p>for all (large) $N \in \mathbb{N}$ and $u \in U^{(N)}$.</p>
+<p>When we have both $X \lesssim Y$ and $X \gtrsim Y$, we use the notation $X \sim Y$.</p>
+<h3 id="Definition-A-3-high-probability-events"><a href="#Definition-A-3-high-probability-events" class="headerlink" title="Definition A.3 (high probability events)"></a>Definition A.3 (high probability events)</h3><p>Finally, we say that an event $\Xi = \Xi^{(N)}$ <strong>holds with high probability</strong> if $1 - \mathbb{I} (\Xi) \prec 0$, i.e. if for any $D &gt; 0$, there exists $N_0 = N_0 (D)$ such that</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{P} \big ( \Xi^{(N)} \big ) \geq 1 - N^{-D}.
+\end{equation}</script><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Lemma-A-1-constant-factors"><a href="#Lemma-A-1-constant-factors" class="headerlink" title="Lemma A.1 (constant factors) "></a>Lemma A.1 (constant factors) <a name="lemma-A-1"></a></h3><p>Suppose that $X(u) \lesssim Y(u)$. Then $X(u) \prec Y(u)$.</p>
+<blockquote>
+<p>By assumption there exists some constant $C &gt; 0$ such that $X(u) \leq C Y(u)$ for all $N$ and $u \in U$.</p>
+<p>Fix $\varepsilon &gt; 0$. Then, for all $N \geq C^{1/\varepsilon}$ and $u \in U$, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( X(u) > N^\varepsilon Y(u) \big )
+\leq \mathbb{P} \big ( X(u) > C Y(u) \big )
+= 0.
+\end{equation*}</script></blockquote>
+<h3 id="Lemma-A-2-addition-and-multiplication"><a href="#Lemma-A-2-addition-and-multiplication" class="headerlink" title="Lemma A.2 (addition and multiplication) "></a>Lemma A.2 (addition and multiplication) <a name="lemma-A-2"></a></h3><p>Suppose that $X_1 (u) \prec Y_1 (u)$ and $X_2 (u) \prec Y_2 (u)$. Then</p>
+<ul>
+<li>$X_1 (u) + X_2 (u) \prec Y_1 (u) + Y_2(u)$.</li>
+<li>$X_1 (u) X_2 (u) \prec Y_1 (u) Y_2(u)$.</li>
+</ul>
+<blockquote>
+<p>By assumption, for any $\varepsilon &gt; 0$ and $D &gt; 0$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( X_1(u) > N^{\varepsilon} Y_1(u) \big ) \leq N^{-D}
+\quad \text{ and } \quad
+\mathbb{P} \big ( X_2(u) > N^{\varepsilon} Y_2(u) \big ) \leq N^{-D}
+\end{equation*}</script><p>for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U$.</p>
+<p>As a result, when $N \geq N_0(\varepsilon, D + 1)$, for any $u \in U$ we have</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \ \mathbb{P} \big ( X_1(u) + X_2 (u) > N^{\varepsilon} Y_1(u) + N^{\varepsilon} Y_2(u) \big ) \\
+\leq & \ \mathbb{P} \big ( X_1(u) > N^{\varepsilon} Y_1(u) \big ) + \mathbb{P} \big ( X_2(u) > N^{\varepsilon} Y_2(u) \big )
+\leq 2 N^{-(D + 1)} \leq N^{-D}.
+\end{align*}</script><p>Similarly, when $N \geq N_0(\varepsilon / 2, D + 1)$, for any $u \in U$ we have</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \ \mathbb{P} \big ( X_1(u) X_2(u) > N^{\varepsilon} Y_1(u) Y_2(u) \big ) \\
+\leq & \ \mathbb{P} \big ( X_1(u)>N^{\varepsilon / 2} Y_1(u) \big ) + \mathbb{P} \big ( X_2(u) > N^{\varepsilon/2} Y_2(u) \big )
+\leq 2 N^{-(D + 1)} \leq N^{-D}.
+\end{align*}</script></blockquote>
+<h3 id="Lemma-A-3-p-th-power"><a href="#Lemma-A-3-p-th-power" class="headerlink" title="Lemma A.3 ($p$-th power) "></a>Lemma A.3 ($p$-th power) <a name="lemma-A-3"></a></h3><p>Suppose that $X (u) \prec Y (u)$. Then</p>
+<ul>
+<li>$X (u)^p \prec Y (u)^p$ for any fixed $p \in (0, \infty)$.</li>
+<li>$X (u)^p \succ Y (u)^p$ for any fixed $p \in (-\infty, 0)$.</li>
+</ul>
+<blockquote>
+<p>Fix $p \in (0, \infty)$. When $N \geq N_0 (\varepsilon / p, D)$, for any $u \in U$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( X(u)^p > N^\varepsilon Y(u)^p \big )
+= \mathbb{P} \big ( X(u) > N^{\varepsilon / p} Y(u) \big )
+\leq N^{-D}.
+\end{equation*}</script><p>The second statement follows directly from the first one since</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X (u) \prec Y (u) \quad \iff \quad \frac{1}{X (u)} \succ \frac{1}{Y (u)}.
+\end{equation*}</script></blockquote>
+<h3 id="Lemma-A-4-transitivity"><a href="#Lemma-A-4-transitivity" class="headerlink" title="Lemma A.4 (transitivity) "></a>Lemma A.4 (transitivity) <a name="lemma-A-4"></a></h3><p>Suppose that $X (u) \prec Y (u)$ and $Y (u) \prec Z (u)$. Then $X (u) \prec Z (u)$.</p>
+<blockquote>
+<p>Note that</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X (u) \prec Y (u) \iff \frac{X(u)}{Y(u)} \prec 1
+\quad \text{ and } \quad
+Y (u) \prec Z (u) \iff \frac{Y(u)}{Z(u)} \prec 1.
+\end{equation*}</script><p>Therefore, by <a href="#lemma-A-2">Lemma A.2</a> we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\frac{Z(u)}{X(u)} 
+= \frac{Z(u)}{Y(u)} \frac{Y(u)}{X(u)}
+\prec 1,
+\end{equation*}</script><p>which means precisely $X (u) \prec Z (u)$.</p>
+</blockquote>
+<h3 id="Lemma-A-5-summation"><a href="#Lemma-A-5-summation" class="headerlink" title="Lemma A.5 (summation) "></a>Lemma A.5 (summation) <a name="lemma-A-5"></a></h3><p>Suppose that $X (u, v) \prec Y (u, v)$ uniformly in $u \in U$ and $v \in V$. If $|V| \leq N^C$ for some constant $C$, then</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\sum_{v \in V} X (u, v) \prec \sum_{v \in V} Y (u, v)
+\end{equation}</script><p>uniformly in $u \in U$.</p>
+<blockquote>
+<p>Fix $\varepsilon &gt; 0$ and $D &gt; 0$. Then, for any $N \geq N_0 (\varepsilon, D + C)$ and $u \in U$,</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \left ( \sum_{v \in V} X (u, v) > N^\varepsilon \sum_{v \in V} Y (u, v) \right )
+\leq \sum_{v \in V} \mathbb{P} \big ( X(u, v)>N^{\varepsilon} Y(u, v) \big )
+\leq |V| N^{-(D + C)} \leq N^{-D}.
+\end{equation*}</script></blockquote>
+<h3 id="Lemma-A-6-subtraction"><a href="#Lemma-A-6-subtraction" class="headerlink" title="Lemma A.6 (subtraction) "></a>Lemma A.6 (subtraction) <a name="lemma-A-6"></a></h3><p>Suppose that $X(u)$ and $Y(u)$ are two families of complex variables satisfying</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+| X (u) | \prec N^{-c} | Y (u) |,
+\end{equation}</script><p>where $c &gt; 0$ is constant. Then, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\big | Y (u) - X (u) \big | \succ | Y (u) |.
+\end{equation}</script><blockquote>
+<p>By assumption, for any $\varepsilon &gt; 0$ and $D &gt; 0$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( |X(u)| > N^{\varepsilon - c} | Y(u) | \big ) \leq N^{-D}
+\end{equation*}</script><p>for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U$.</p>
+<p>Fix $\varepsilon \in (0, c/2)$ and $D &gt; 0$. Then, for $N$ large enough with $N \geq N_0 (\varepsilon, D) \vee 2^{1/\varepsilon}$, we have</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+& \ \mathbb{P} \big ( |Y(u)| > N^{\varepsilon} | Y(u) - X(u) | \big ) \\
+\leq & \ \mathbb{P} \big ( |Y(u)| > N^{\varepsilon} | Y(u) | - N^{\varepsilon} | X(u) | \big )
+= \mathbb{P} \big ( | X(u) | > (1 - N^{-\varepsilon}) | Y(u) | \big )
+\leq N^{-D}.
+\end{align*}</script><p>for any $u \in U$, where in the last step we used $1 - N^{-\varepsilon} \geq N^{-\varepsilon} \geq N^{\varepsilon - c}$.</p>
+</blockquote>
+<h3 id="Lemma-A-7-expectation-and-conditional-expectation"><a href="#Lemma-A-7-expectation-and-conditional-expectation" class="headerlink" title="Lemma A.7 (expectation and conditional expectation) "></a>Lemma A.7 (expectation and conditional expectation) <a name="lemma-A-7"></a></h3><p>Suppose that </p>
+<ul>
+<li><p>there exists some constant $C &gt; 0$ such that, for all (large) $N \in \mathbb{N}$, the deterministic control parameter $\Phi (u)$ satisfies</p>
+<script type="math/tex; mode=display">
+  \begin{equation}
+  \Phi(u) \geq N^{−C}
+  \label{asm-7-1}
+  \end{equation}</script></li>
+<li><p>for all $p \in \mathbb{N}$ there is a constant $C_p &gt; 0$ such that, for all (large) $N \in \mathbb{N}$ and $u \in U$, the nonnegative random variable $X(u)$ satisfies</p>
+<script type="math/tex; mode=display">
+  \begin{equation}
+  \mathbb{E} X(u)^p \leq N^{C_p}.
+  \label{asm-7-2}
+  \end{equation}</script></li>
+</ul>
+<h4 id="Part-I-expectation"><a href="#Part-I-expectation" class="headerlink" title="Part I (expectation)"></a>Part I (expectation)</h4><p>We have the equivalence</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+X(u) \prec \Phi(u)
+\quad \iff \quad
+\mathbb{E} X(u)^p \prec \Phi(u)^p \text{ for any fixed } p \in \mathbb{N}.
+\label{eq-7-1}
+\end{equation}</script><blockquote>
+<p><strong>Proof for ($\Leftarrow$)</strong>: Fix $\varepsilon &gt; 0$ and $D &gt; 0$. Now choose $p \equiv p(\varepsilon, D)$ large enough such that $p \geq D/\varepsilon + 1$.</p>
+<p>Then, by $\mathbb{E} X(u)^p \prec \Phi(u)^p$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{E} X(u)^p \leq N^\varepsilon \Phi(u)^p
+\end{equation*}</script><p>for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U$. Hence, by Markov’s inequality, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( X(u) \geq N^{\varepsilon} \Phi(u) \big )
+\leq \frac{\mathbb{E} X(u)^p}{N^{\varepsilon p} \Phi(u)^p} 
+\leq N^{- \varepsilon (p -1)}
+\leq N^{-D}.
+\end{equation*}</script><p><strong>Proof for ($\Rightarrow$)</strong>: Note that by <a href="#lemma-A-3">Lemma A.3</a>, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X(u) \prec \Phi(u)
+\quad \Longrightarrow \quad
+X(u)^q \prec \Phi(u)^q \text{ for any fixed } q \in \mathbb{N}.
+\end{equation*}</script><p>Moreover, the two assumptions $\eqref{asm-7-1}$ and $\eqref{asm-7-2}$ are still fulfilled when $X(u)$ and $\Phi(u)$ are replaced by $X(u)^q$ and $\Phi(u)^q$.</p>
+<p>Therefore, it suffices to show that</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X(u) \prec \Phi(u)
+\quad \Longrightarrow \quad
+\mathbb{E} X(u) \prec \Phi(u).
+\end{equation*}</script><p>Fix any $\varepsilon &gt; 0$, and let $D \geq C_{2} + 2 C$. Then, by $X(u) \prec \Phi(u)$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( X(u) > N^{\varepsilon} \Phi(u) \big ) \leq N^{-D}
+\end{equation*}</script><p>for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U$. Then, by Cauchy–Schwarz inequality, it follows that</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbb{E} X(u)
+& = \mathbb{E} \big [ X(u) \cdot \mathbb{I} \big ( X(u) > N^{\varepsilon} \Phi(u) \big ) \big ] + \mathbb{E} \big [ X(u) \cdot \mathbb{I} \big ( X(u) \leq N^{\varepsilon} \Phi(u) \big ) \big ] \\
+& \leq \big [ \mathbb{E} X(u)^{2} \big ]^{1/2} \cdot \mathbb{P} \big ( X(u) > N^{\varepsilon} \Phi(u) \big )^{1/2} + N^{\varepsilon} \Phi(u) \\
+& \leq N^{C_{2} / 2 - D/2} + N^{\varepsilon} \Phi(u) \\
+& \leq N^{- C} + N^{\varepsilon} \Phi(u)
+\leq 2 N^{\varepsilon} \Phi(u),
+\end{align*}</script><p>where in the last step we used the assumption $\Phi(u) \geq N^{−C}$.</p>
+</blockquote>
+<h4 id="Part-II-conditional-expectation"><a href="#Part-II-conditional-expectation" class="headerlink" title="Part II (conditional expectation)"></a>Part II (conditional expectation)</h4><p>We further assume the family $X(u)$ is defined on the space $(\Omega, \mathcal{F}, \mathbb{P})$, and $\{ \mathcal{F}_{v} \}_{v \in V}$ is a collection of sub-$\sigma$-fields, i.e., $\mathcal{F}_v \subset \mathcal{F}$ for each $v \in V$.</p>
+<p>For any $\mathcal{F}$-measurable variable $Z$, define</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathcal{P}_v Z := \mathbb{E} (Z | \mathcal{F}_v) 
+\quad \text{ and } \quad
+\mathcal{Q}_v Z := Z - \mathcal{P}_v Z.
+\end{equation}</script><p>Then, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+X(u) \prec \Phi(u)
+\quad \Longrightarrow \quad
+\begin{cases}
+\mathcal{P}_v \big ( X(u)^p \big ) = O_\prec \big ( \Phi(u)^p \big ) \\
+\mathcal{Q}_v \big ( X(u)^p \big ) = O_\prec \big ( \Phi(u)^p \big ) 
+\end{cases}
+\text{ for any fixed } p \in \mathbb{N}.
+\label{eq-7-2}
+\end{equation}</script><blockquote>
+<p>Again, by <a href="#lemma-A-3">Lemma A.3</a>, it suffices to show that</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X(u) \prec \Phi(u)
+\quad \Longrightarrow \quad
+\begin{cases}
+\mathcal{P}_v X(u) = O_\prec \big ( \Phi(u) \big ), \\
+\mathcal{Q}_v X(u) = O_\prec \big ( \Phi(u) \big ) .
+\end{cases}
+\end{equation*}</script><p>Note that by Jensen’s inequality for conditional expectations, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{E} | \mathcal{P}_v Z |^q \leq \mathbb{E} \big ( \mathcal{P}_v | Z |^q \big ) = \mathbb{E} | Z |^q
+\end{equation*}</script><p>for any variable $Z \in \mathcal{F}$ and $q \in \mathbb{N}$.</p>
+<p>Now, for any $\varepsilon &gt; 0$ and $D &gt; 0$, we choose $q \equiv q(\varepsilon, D)$ large enough such that $q \geq D/\varepsilon + 1$. Then, by part I,</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+X(u) \prec \Phi(u) 
+\quad \Longrightarrow \quad
+\mathbb{E} X(u)^{q} \prec \Phi(u)^{q}.
+\end{equation*}</script><p>This means that for all large enough $N \geq N_0 (\varepsilon, D)$ and $u \in U$,</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{E} X(u)^{q} \leq N^\varepsilon \Phi(u)^{q}
+\end{equation*}</script><p>Consequently, when $N \geq N_0 (\varepsilon, D)$, for any $u \in U$ and $v \in V$ we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\mathbb{P} \big ( \mathcal{P}_v X(u) \geq N^{\varepsilon} \Phi (u) \big )
+\leq \frac{\mathbb{E} \big | \mathcal{P}_v X(u) \big |^q}{N^{\varepsilon q} \Phi (u) ^{q}}
+\leq \frac{\mathbb{E} X(u)^{q}}{N^{\varepsilon q} \Phi (u) ^{q}}
+\leq N^{- \varepsilon (q - 1)}
+\leq N^{-D}.
+\end{equation*}</script><p>Now we have proved that $\mathcal{P}_v X(u) \prec \Phi(u)$. Finally, by definition of $\mathcal{Q}_v$ and <a href="#lemma-A-2">Lemma A.2</a>, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation*}
+\big | \mathcal{Q}_v X(u) \big |
+= \big | X(u) - \mathcal{P}_v X(u) \big |
+\leq X(u) + \mathcal{P}_v X(u)
+\prec \Phi
+\end{equation*}</script><p>uniformly in $u \in U$ and $v \in V$.</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Stochastic-Domination/" rel="tag"># Stochastic Domination</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2021/05/03/MI-log-convex-guassian-vector/" rel="next" title="Moment Inequalities for Log-convex Transformation of Gaussian Vectors">
+                  <i class="fa fa-chevron-left"></i> Moment Inequalities for Log-convex Transformation of Gaussian Vectors
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions-and-Notations"><span class="nav-number">1.</span> <span class="nav-text">Definitions and Notations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-A-1-stochastic-domination"><span class="nav-number">1.1.</span> <span class="nav-text">Definition A.1 (stochastic domination)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-A-2-boundedness-up-to-a-constant-factor"><span class="nav-number">1.2.</span> <span class="nav-text">Definition A.2 (boundedness up to a constant factor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-A-3-high-probability-events"><span class="nav-number">1.3.</span> <span class="nav-text">Definition A.3 (high probability events)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">2.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-1-constant-factors"><span class="nav-number">2.1.</span> <span class="nav-text">Lemma A.1 (constant factors) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-2-addition-and-multiplication"><span class="nav-number">2.2.</span> <span class="nav-text">Lemma A.2 (addition and multiplication) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-3-p-th-power"><span class="nav-number">2.3.</span> <span class="nav-text">Lemma A.3 ($p$-th power) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-4-transitivity"><span class="nav-number">2.4.</span> <span class="nav-text">Lemma A.4 (transitivity) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-5-summation"><span class="nav-number">2.5.</span> <span class="nav-text">Lemma A.5 (summation) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-6-subtraction"><span class="nav-number">2.6.</span> <span class="nav-text">Lemma A.6 (subtraction) </span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-A-7-expectation-and-conditional-expectation"><span class="nav-number">2.7.</span> <span class="nav-text">Lemma A.7 (expectation and conditional expectation) </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Part-I-expectation"><span class="nav-number">2.7.1.</span> <span class="nav-text">Part I (expectation)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Part-II-conditional-expectation"><span class="nav-number">2.7.2.</span> <span class="nav-text">Part II (conditional expectation)</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="LIN Zeqin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">LIN Zeqin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LIN Zeqin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="LIN Zeqin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="[Reference] Brascamp, Herm Jan, and Elliott H. Lieb. On extensions of the Brunn-Minkowski and Prékopa-Leindler theorems, including inequalities for log concave functions, and with an application to th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moment Inequalities for Log-convex Transformation of Gaussian Vectors">
+<meta property="og:url" content="http://yoursite.com/2021/05/03/MI-log-convex-guassian-vector/index.html">
+<meta property="og:site_name" content="LIN Zeqin&#39;s Blogs">
+<meta property="og:description" content="[Reference] Brascamp, Herm Jan, and Elliott H. Lieb. On extensions of the Brunn-Minkowski and Prékopa-Leindler theorems, including inequalities for log concave functions, and with an application to th">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-03T11:08:18.000Z">
+<meta property="article:modified_time" content="2021-05-03T11:20:14.746Z">
+<meta property="article:author" content="LIN Zeqin">
+<meta property="article:tag" content="Log-convex Functions">
+<meta property="article:tag" content="Guassian Distribution">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/05/03/MI-log-convex-guassian-vector/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Moment Inequalities for Log-convex Transformation of Gaussian Vectors | LIN Zeqin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIN Zeqin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">?</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/03/MI-log-convex-guassian-vector/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="LIN Zeqin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIN Zeqin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Moment Inequalities for Log-convex Transformation of Gaussian Vectors
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-05-03 19:08:18 / Modified: 19:20:14" itemprop="dateCreated datePublished" datetime="2021-05-03T19:08:18+08:00">2021-05-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Moment-Inequalities/" itemprop="url" rel="index">
+                    <span itemprop="name">Moment Inequalities</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>[Reference] Brascamp, Herm Jan, and Elliott H. Lieb. <strong>On extensions of the Brunn-Minkowski and Prékopa-Leindler theorems, including inequalities for log concave functions, and with an application to the diffusion equation.</strong> Inequalities. Springer, Berlin, Heidelberg, 2002. 441-464.</p>
+<a id="more"></a>
+<h2 id="Preservation-of-Log-convexity"><a href="#Preservation-of-Log-convexity" class="headerlink" title="Preservation of Log-convexity"></a>Preservation of Log-convexity</h2><p>Let $f: \mathbb{R}^{n} \to [0, \infty)$ be a nonnegative function.</p>
+<p>$f$ is said to be <strong>logarithmically convex</strong> (or <strong>log-convex</strong>) if for any $\mathbf{x}_1, \mathbf{x}_2 \in \mathbb{R}^{n}$ and $\lambda \in (0, 1)$,</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+f( \lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2) 
+\leq f(\mathbf{x}_1)^{\lambda} f(\mathbf{x}_2)^{1 - \lambda}.
+\end{equation}</script><h3 id="Affine-Transformation"><a href="#Affine-Transformation" class="headerlink" title="Affine Transformation"></a>Affine Transformation</h3><p>Let $f: \mathbb{R}^{n} \to [0, \infty)$ be log-convex. For any $\mathbf{A} \in \mathbb{R}^{n \times k}$ and $\mathbf{b} \in \mathbb{R}^{k}$, define $g: \mathbb{R}^{k} \to [0, \infty)$ by</p>
+<script type="math/tex; mode=display">
+g(\mathbf{y}) = f(\mathbf{A} \mathbf{y} + \mathbf{b}).</script><p>Then $g$ is log-convex.</p>
+<h3 id="Multiplication"><a href="#Multiplication" class="headerlink" title="Multiplication"></a>Multiplication</h3><p>Let $f,g : \mathbb{R}^{n} \to [0, \infty)$ be log-convex. Then $fg$ is log-convex.</p>
+<h3 id="Addition"><a href="#Addition" class="headerlink" title="Addition"></a>Addition</h3><p>Let $f,g : \mathbb{R}^{n} \to [0, \infty)$ be log-convex. Then $f + g$ is log-convex.</p>
+<blockquote>
+<p>Fix $\lambda \in (0, 1)$. For any $u_1, u_2 &gt; 0$, by concavity of logarithm, we have</p>
+<script type="math/tex; mode=display">
+\ln (\lambda u_1 + (1 - \lambda) u_2) 
+\geq \lambda \ln u_1 + (1 - \lambda) \ln u_2 
+= \ln \left ( u_1^\lambda u_2^{1 - \lambda} \right ).</script><p>In other words, $u_1^\lambda u_2^{1 - \lambda} \leq \lambda u_1 + (1 - \lambda) u_2$.</p>
+<p>Therefore, if $u_1, u_2, v_1, v_2 &gt; 0$ are positive numbers, then</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\left ( \frac{u_1}{u_1 + v_1} \right )^\lambda \left ( \frac{u_2}{u_2 + v_2} \right )^{1 - \lambda} & \leq \lambda \frac{u_1}{u_1 + v_1} + (1 - \lambda) \frac{u_2}{u_2 + v_2}, \\
+\left ( \frac{v_1}{u_1 + v_1} \right )^\lambda \left ( \frac{v_2}{u_2 + v_2} \right )^{1 - \lambda} & \leq \lambda \frac{v_1}{u_1 + v_1} + (1 - \lambda) \frac{v_2}{u_2 + v_2}.
+\end{align*}</script><p>It follows that</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+u_1^\lambda u_2^{1 - \lambda} + v_1^\lambda v_2^{1 - \lambda} 
+\leq (u_1 + v_1)^\lambda (u_2 + v_2)^{1 - \lambda}.
+\end{equation}</script><p>Note that (2) is still true when any of $u_1, u_2, v_1, v_2$ becomes $0$.</p>
+<p>Hence, for any $\mathbf{x}_1, \mathbf{x}_2 \in \mathbb{R}^{n}$,</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+(f + g)( \lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2) 
+& = f( \lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2)  + g( \lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2) \\
+& \leq f(\mathbf{x}_1)^{\lambda} f(\mathbf{x}_2)^{1 - \lambda} + g(\mathbf{x}_1)^{\lambda} g(\mathbf{x}_2)^{1 - \lambda} \\
+& \leq \big [ f(\mathbf{x}_1) + g(\mathbf{x}_1) \big ]^\lambda \big [ f(\mathbf{x}_2) + g(\mathbf{x}_2) \big ]^{1 - \lambda}
+= (f + g)(\mathbf{x}_1)^\lambda \cdot (f + g)(\mathbf{x}_2)^{1 - \lambda},
+\end{align*}</script><p>from which we can conclude the log-convexity of $f + g$.</p>
+</blockquote>
+<h3 id="Marginalization"><a href="#Marginalization" class="headerlink" title="Marginalization"></a>Marginalization</h3><p>Let $f: \mathbb{R}^{n+k} \to [0, \infty)$ be nonnegative with $f \in L^{1} (\mathbb{R}^{n+k})$. For each $\mathbf{x} \in \mathbb{R}^{n}$, let</p>
+<script type="math/tex; mode=display">
+g(\mathbf{x}) := \int_{\mathbb{R}^k} f(\mathbf{x}, \mathbf{y}) \mathrm{d} \mathbf{y}.</script><p>If $f(\mathbf{x}, \mathbf{y})$ is log-convex on $\mathbb{R}^{n}$ for each fixed $\mathbf{y} \in \mathbb{R}^k$, then $g$ is log-convex.</p>
+<blockquote>
+<p>Let $D = \{ \mathbf{x} \in \mathbb{R}^{n}: g(\mathbf{x}) &lt; \infty \}$.</p>
+<p>For any $\mathbf{x}_1, \mathbf{x}_2 \in \mathbb{R}^{n}$ and $\lambda \in (0, 1)$, by Hölder’s inequality, we have</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+g( \lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2) 
+& = \int_{\mathbb{R}^k} f (\lambda \mathbf{x}_1 + (1 - \lambda) \mathbf{x}_2, \mathbf{y}) \mathrm{d} \mathbf{y}
+\leq \int_{\mathbb{R}^k} f (\mathbf{x}_1, \mathbf{y})^{\lambda} f(\mathbf{x}_2, \mathbf{y})^{1 - \lambda} \mathrm{d} \mathbf{y} \\
+& \leq \left [ \int_{\mathbb{R}^k} f (\mathbf{x}_1, \mathbf{y}) \mathrm{d} \mathbf{y} \right ]^{\lambda} \left [ \int_{\mathbb{R}^m} f (\mathbf{x}_2, \mathbf{y}) \mathrm{d} \mathbf{y} \right ]^{1 - \lambda} = g(\mathbf{x}_1)^{\lambda} g(\mathbf{x}_2)^{1 - \lambda}.
+\end{align*}</script><p>Hence, to conclude the log-convex of $g$, it remains to show that $D = \mathbb{R}^{n}$.</p>
+<p>But this is trivial since $D$ is convex by the inequality above and $\mathbb{R}^{n} \backslash D$ is a null set by $f \in L^{1} (\mathbb{R}^{n+k})$.</p>
+</blockquote>
+<h2 id="Log-convex-Transformation-of-Gaussian-Vectors"><a href="#Log-convex-Transformation-of-Gaussian-Vectors" class="headerlink" title="Log-convex Transformation of Gaussian Vectors"></a>Log-convex Transformation of Gaussian Vectors</h2><h3 id="Log-convexity-of-Conditional-Expectation"><a href="#Log-convexity-of-Conditional-Expectation" class="headerlink" title="Log-convexity of Conditional Expectation"></a>Log-convexity of Conditional Expectation</h3><p>Assume that $(\mathbf{X}, \mathbf{Y}) \sim \mathrm{N} (\mathbf{m}, \boldsymbol{\Sigma})$ is a $(n+k)$-dimensional gaussian random vector, with $\boldsymbol{\Sigma}$ positive definite.</p>
+<p>Let $f: \mathbb{R}^{n+k} \to [0, \infty)$ be log-convex with $\mathbb{E} f(\mathbf{X}, \mathbf{Y}) &lt; \infty$. Define $g: \mathbb{R}^{n} \to [0, \infty)$ by</p>
+<script type="math/tex; mode=display">
+g(\mathbf{x}) := \mathbb{E} ( f(\mathbf{X}, \mathbf{Y}) | \mathbf{X} = \mathbf{x} ).</script><p>Then, $g$ is log-convex.</p>
+<blockquote>
+<p>Write</p>
+<script type="math/tex; mode=display">
+\mathbf{m} = \begin{bmatrix}
+\mathbf{m}_{\mathbf{X}} \\
+\mathbf{m}_{\mathbf{Y}}
+\end{bmatrix}
+\quad \text{ and } \quad 
+\boldsymbol{\Sigma} 
+= \begin{bmatrix}
+\boldsymbol{\Sigma}_{\mathbf{X} \mathbf{X}} & \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{Y}} \\
+\boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{X}} & \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y}}
+\end{bmatrix}.</script><p>It is well known that $( \mathbf{Y} \big| \mathbf{X} = \mathbf{x} ) \sim \mathrm{N} ( \boldsymbol{\mu}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} , \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y} | \mathbf{X}}  )$, with</p>
+<script type="math/tex; mode=display">
+\mathbf{m}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} :=
+\mathbf{m}_{\mathbf{Y}} + \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{X}} \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{X}}^{-1} (\mathbf{x} - \mathbf{m}_{\mathbf{X}})
+\quad \text{ and } \quad 
+\boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y} | \mathbf{X}} := \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y}} - \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{X}} \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{X}}^{-1} \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{Y}}.</script><p>Therefore, we can write</p>
+<script type="math/tex; mode=display">
+g(\mathbf{x}) 
+= \mathbb{E} ( f(\mathbf{X}, \mathbf{Y}) | \mathbf{X} = \mathbf{x} ) 
+= C \int_{\mathbb{R}^k} f ( \mathbf{x}, \mathbf{y} + \mathbf{m}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} ) \exp \big ( - \langle \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y} | \mathbf{X}}^{-1} \mathbf{y}, \mathbf{y} \rangle /2 \big ) \mathrm{d} \mathbf{y}
+\triangleq \int_{\mathbb{R}^m} F (\mathbf{x}, \mathbf{y}) \mathrm{d} \mathbf{y}</script><p>where $C = {(2\pi)^{-k/2} | \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y} | \mathbf{X}} |^{-1/2}}$.</p>
+<p>Note that the transformation $(\mathbf{x}, \mathbf{y}) \mapsto ( \mathbf{x}, \mathbf{y} + \mathbf{m}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} )$ is affine. </p>
+<p>Hence, for each fixed $\mathbf{y} \in \mathbb{R}^k$, the function $F (\mathbf{x}, \mathbf{y})$ is log-convex on $\mathbb{R}^{n}$, from which we can conclude the log-convexity of $g$.</p>
+</blockquote>
+<h3 id="Moment-Inequalities-One-dimensional"><a href="#Moment-Inequalities-One-dimensional" class="headerlink" title="Moment Inequalities (One-dimensional)"></a>Moment Inequalities (One-dimensional)</h3><p>Assume that $X \sim \mathrm{N} (0, \sigma^2)$ is a normal random variable, where $\sigma^2 &gt; 0$.</p>
+<p>Let $f: \mathbb{R}^{n} \to [0, \infty)$ be log-convex and assume that</p>
+<script type="math/tex; mode=display">
+\mathbb{E} f(X) = \int_{-\infty}^{\infty} f (x) \phi (x) \mathrm{d} x = 1,
+\quad \text{ where }
+\phi(x) = \frac{1}{\sqrt{2\pi}} \exp \left ( - {x^2} / 2 \right ).</script><p>Let $\mu$ denote the probability measure on $\mathbb{R}$ with density function $f(x) \phi(x)$. </p>
+<p>Then, for arbitrary $p &gt; 0$ and $a \in \mathbb{R}$,</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{E}_{\mu} | X - a |^p \geq \mathbb{E} | X |^p.
+\end{equation}</script><blockquote>
+<p>Without loss of generality, we can assume that $\sigma = 1$.</p>
+<p>By transforming the variables, we get</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbb{E}_{\mu} | X - a |^p 
+& = \mathbb{E} \big [ | X - a |^p \cdot f(X) \big ]
+= \int_{-\infty}^{\infty} | x - a |^p f(x) \phi(x) \mathrm{d} x \\
+& = \int_{-\infty}^{\infty} | x |^p f(x + a) \exp ( -ax - a^2/2 ) \phi(x) \mathrm{d} x
+\triangleq \mathbb{E} \big [ | X |^p \cdot g(X) \big ],
+\end{align*}</script><p>where</p>
+<script type="math/tex; mode=display">
+g(x) := f(x + a) \exp ( -ax - a^2/2 ).</script><p>Note that we also have</p>
+<script type="math/tex; mode=display">
+1 = \mathbb{E} f(X) = \int_{-\infty}^{\infty} f (x) \phi (x) \mathrm{d} x
+= \int_{-\infty}^{\infty} f(x + a) \exp ( -ax - a^2/2 ) \phi(x) \mathrm{d} x
+= \mathbb{E} g(X).</script><p>Since $-X$ has the same distribution as $X$,</p>
+<script type="math/tex; mode=display">
+\mathbb{E} \big [ | X |^p \cdot g(X) \big ] = \mathbb{E} \big [ | X |^p \cdot g(-X) \big ]
+\quad \text{ and } \quad
+\mathbb{E} g(X) = \mathbb{E} g(-X).</script><p>Letting $h(x) := g(x) /2 + g(-x) /2$ for $x \in \mathbb{R}$, it follows that</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} | X - a |^p = \mathbb{E} \big [ | X |^p \cdot h(X) \big ]
+\quad \text{ and } \quad
+\mathbb{E} h(X) = 1.</script><p>By log-convexity of $f$ and $\exp ( -ax - a^2/2 )$, we know that $g$ and $h$ are log-convex. </p>
+<p>Moreover, $h$ is even. Thus we can write</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbb{E}_{\mu} | X - a |^p 
+& = \mathbb{E} \big [ | X |^p \cdot h(X) \big ]
+= 4 \int_{0}^{\infty} x^p h(x) \phi(x) \mathrm{d} x \int_{0}^{\infty} \phi(y) \mathrm{d} y \\
+& = 2 \int_{0}^{\infty} \int_{0}^{\infty} \big [ x^p h(x) + y^p h(y) \big ] \phi(x) \phi(y) \mathrm{d} x \mathrm{d} y
+\end{align*}</script><p>and</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\mathbb{E} | X |^p 
+& = \mathbb{E} | X |^p \cdot \mathbb{E} h(X)
+= 4 \int_{0}^{\infty} x^p \phi(x) \mathrm{d} x \int_{0}^{\infty} h(y) \phi(y) \mathrm{d} y \\
+& = 2 \int_{0}^{\infty} \int_{0}^{\infty} \big [ x^p h(y) + y^p h(x) \big ] \phi(x) \phi(y) \mathrm{d} x \mathrm{d} y.
+\end{align*}</script><p>In other words,</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} | X - a |^p - \mathbb{E} | X |^p 
+= \int_{0}^{\infty} \int_{0}^{\infty} ( x^p - y^p ) \big [ h(x) - h(y) \big ] \phi(x) \phi(y) \mathrm{d} x \mathrm{d} y</script><p>Therefore, (3) follows by noting that $x^p$ and $h(x)$ are both non-decreasing on $[0, \infty)$.</p>
+<p>Here, $h(x)$ is non-decreasing on $[0, \infty)$ since it is even and log-convex.</p>
+</blockquote>
+<h3 id="Moment-Inequalities-Multi-dimensional"><a href="#Moment-Inequalities-Multi-dimensional" class="headerlink" title="Moment Inequalities (Multi-dimensional)"></a>Moment Inequalities (Multi-dimensional)</h3><p>Assume that $\mathbf{X} \sim \mathrm{N} (\mathbf{0}, \boldsymbol{\Sigma})$ is a $n$-dimensional gaussian random vector, where $\boldsymbol{\Sigma} \succ \mathbf{0}$.</p>
+<p>Let $f: \mathbb{R}^{n} \to [0, \infty)$ be log-convex and assume that</p>
+<script type="math/tex; mode=display">
+\mathbb{E} f(\mathbf{X}) = \int_{-\infty}^{\infty} f (\mathbf{x}) \phi (\mathbf{x}) \mathrm{d} \mathbf{x} = 1,
+\quad \text{ where }
+\phi(\mathbf{x}) = {(2\pi)^{-n/2} | \boldsymbol{\Sigma} |^{-1/2}} \exp \big ( - \langle \boldsymbol{\Sigma}^{-1} \mathbf{x}, \mathbf{x} \rangle / 2 \big ).</script><p>Let $\mu$ denote the probability measure on $\mathbb{R}^n$ with density function $f(\mathbf{x}) \phi(\mathbf{x})$. </p>
+<p>Then, for arbitrary $p &gt; 0$, $a \in \mathbb{R}$ and $\boldsymbol{\alpha} \in \mathbb{R}^n$,</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle - a |^p
+\geq \mathbb{E} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle |^p.</script><p>In particular, if we let</p>
+<script type="math/tex; mode=display">
+\boldsymbol{\Sigma}_{\mu} := \operatorname{Cov}_{\mu} (\mathbf{X}, \mathbf{X})
+= \mathbb{E}_{\mu} (\mathbf{X} \mathbf{X}^\top) - \mathbf{m}_{\mu}\mathbf{m}_{\mu}^\top
+\quad \text{ where }
+\mathbf{m}_{\mu} :=  \mathbb{E}_{\mu}\mathbf{X},</script><p>Then $\boldsymbol{\Sigma}_{\mu} \succeq \boldsymbol{\Sigma}$.</p>
+<blockquote>
+<p><strong>[Part 1]</strong> Without loss of generality, assume that $| \boldsymbol{\alpha} |_2 = 1$.</p>
+<p>Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ be the orthogonal matrix with $\mathbf{A}^\top = [\boldsymbol{\alpha}_1, \cdots, \boldsymbol{\alpha}_n]$ and $\boldsymbol{\alpha}_1 = \boldsymbol{\alpha}$.</p>
+<p>Let $\mathbf{Y} = \mathbf{A} \mathbf{X}$. Then $\mathbf{Y} \sim \mathrm{N} (\mathbf{0}, \mathbf{A} \boldsymbol{\Sigma} \mathbf{A}^*)$ and $Y_1 = \langle \boldsymbol{\alpha}, \mathbf{X} \rangle$. Therefore, we can write</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle - a |^p
+= \mathbb{E} \big [ | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle - a |^p \cdot f(\mathbf{X}) \big ] 
+= \mathbb{E} \big [ | Y_1 - a |^p \cdot f(\mathbf{A}^\top \mathbf{Y}) \big ]
+= \mathbb{E} \big [ | Y_1 - a |^p \cdot g(Y_1) \big ],</script><p>where for $y_1 \in \mathbb{R}$,</p>
+<script type="math/tex; mode=display">
+g(y_1) := \mathbb{E} ( f(\mathbf{A}^\top \mathbf{Y}) | Y_1 = y_1 ).</script><p>Since $\mathbb{E} f(\mathbf{A}^\top \mathbf{Y}) = \mathbb{E} f(\mathbf{X}) &lt; \infty$, by normality of $\mathbf{Y}$ and log-convexity of $f \circ \mathbf{A}^\top$ we know that $g$ is log-convex.</p>
+<p>Therefore, by (3) we can conclude that</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle - a |^p
+= \mathbb{E} \big [ | Y_1 - a |^p \cdot g(Y_1) \big ]
+\geq \mathbb{E} | Y_1 |^p =  \mathbb{E} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle |^p.</script><p><strong>[Part 2]</strong> For any $\boldsymbol{\alpha} \in \mathbb{R}^n$, by part 1 we have</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\langle \boldsymbol{\Sigma}_{\mu} \boldsymbol{\alpha}, \boldsymbol{\alpha} \rangle
+= \operatorname{Var}_{\mu} (\langle \boldsymbol{\alpha}, \mathbf{X} \rangle)
+& = \mathbb{E}_{\mu} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle - \langle \boldsymbol{\alpha}, \mathbf{m}_{\mu} \rangle |^2 \\
+&\geq \mathbb{E} | \langle \boldsymbol{\alpha}, \mathbf{X} \rangle |^2
+= \operatorname{Var} (\langle \boldsymbol{\alpha}, \mathbf{X} \rangle)
+= \langle \boldsymbol{\Sigma} \boldsymbol{\alpha}, \boldsymbol{\alpha} \rangle.
+\end{align*}</script></blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Log-convex-Functions/" rel="tag"># Log-convex Functions</a>
+              <a href="/tags/Guassian-Distribution/" rel="tag"># Guassian Distribution</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2021/04/30/CTI-prekopa-leindler-inequality/" rel="next" title="Prekopa-Leindler Inequality">
+                  <i class="fa fa-chevron-left"></i> Prekopa-Leindler Inequality
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2021/06/30/local-semicircle-law-note-A/" rel="prev" title="Note A - Stochastic Domination">
+                  Note A - Stochastic Domination <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preservation-of-Log-convexity"><span class="nav-number">1.</span> <span class="nav-text">Preservation of Log-convexity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Affine-Transformation"><span class="nav-number">1.1.</span> <span class="nav-text">Affine Transformation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiplication"><span class="nav-number">1.2.</span> <span class="nav-text">Multiplication</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Addition"><span class="nav-number">1.3.</span> <span class="nav-text">Addition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Marginalization"><span class="nav-number">1.4.</span> <span class="nav-text">Marginalization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Log-convex-Transformation-of-Gaussian-Vectors"><span class="nav-number">2.</span> <span class="nav-text">Log-convex Transformation of Gaussian Vectors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Log-convexity-of-Conditional-Expectation"><span class="nav-number">2.1.</span> <span class="nav-text">Log-convexity of Conditional Expectation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-Inequalities-One-dimensional"><span class="nav-number">2.2.</span> <span class="nav-text">Moment Inequalities (One-dimensional)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-Inequalities-Multi-dimensional"><span class="nav-number">2.3.</span> <span class="nav-text">Moment Inequalities (Multi-dimensional)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="LIN Zeqin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">LIN Zeqin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LIN Zeqin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>

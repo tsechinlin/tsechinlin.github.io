@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="LIN Zeqin's Blogs" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Brascamp–Lieb Inequality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Brascamp–Lieb Inequality">
+<meta property="og:url" content="http://yoursite.com/2021/04/30/CTI-brascamp-lieb-inequality/index.html">
+<meta property="og:site_name" content="LIN Zeqin&#39;s Blogs">
+<meta property="og:description" content="Brascamp–Lieb Inequality">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-30T07:00:34.000Z">
+<meta property="article:modified_time" content="2021-06-30T09:02:03.131Z">
+<meta property="article:author" content="LIN Zeqin">
+<meta property="article:tag" content="Convex Functions">
+<meta property="article:tag" content="Subguassian Density">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/04/30/CTI-brascamp-lieb-inequality/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Brascamp–Lieb Inequality | LIN Zeqin's Blogs</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LIN Zeqin's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">?</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/30/CTI-brascamp-lieb-inequality/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="LIN Zeqin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LIN Zeqin's Blogs">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Brascamp–Lieb Inequality
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-30 15:00:34" itemprop="dateCreated datePublished" datetime="2021-04-30T15:00:34+08:00">2021-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-30 17:02:03" itemprop="dateModified" datetime="2021-06-30T17:02:03+08:00">2021-06-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Concentration-Inequalities/" itemprop="url" rel="index">
+                    <span itemprop="name">Concentration Inequalities</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Brascamp–Lieb Inequality</p>
+<a id="more"></a>
+<p>Consider a probability measure $\mu$ on $\mathbb{R}^n$ with density $\exp(-\varphi(\mathbf{z}))$ w.r.t. Lebesgue measure, where $\varphi \in C^2(\mathbb{R}^n)$ is strictly convex.</p>
+<p>Then, for every $f \in C_1(\mathbb{R}^n)$ with $\mathbb{E}_\mu (f^2) &lt; \infty$, it holds that</p>
+<script type="math/tex; mode=display">
+\operatorname{Var}_{\mu} (f) 
+\leq \mathbb{E}_\mu \left \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \right \rangle,</script><p>where $\mathbf{H}_\varphi = \operatorname{Hess} \varphi$ is the Hessian matrix of $\varphi$.</p>
+<hr>
+<p><strong>[Assumption 1]</strong> Assume that $f$ is nonnegative with $f \in C_c^\infty(\mathbb{R}^n)$, i.e. $f$ vanishes outside some compact set $K \subset \mathbb{R}^n$.</p>
+<p><strong>[Assumption 2]</strong> Assume that $\mathbf{H}_\varphi \geq \rho \mathbf{I}_n$ for some $\rho &gt; 0$.</p>
+<p>By assumption 1, there exists some $M &gt; 0$ such that for any $\mathbf{z} \in \mathbb{R}^n$,</p>
+<script type="math/tex; mode=display">
+\left | f(\mathbf{z}) \right | \leq M, 
+\quad
+\left \| \nabla f(\mathbf{z}) \right \|_2 \leq M,
+\quad \text{ and } \quad
+\left \| \mathbf{H}_f(\mathbf{z}) \right \|_{\mathrm{op}} \leq M.</script><hr>
+<p>For each $\delta \in (0, 1)$ and $\mathbf{z} \in \mathbb{R}^n$, let</p>
+<script type="math/tex; mode=display">
+f_{\delta} (\mathbf{z}) = \sup_{\mathbf{h} \in \mathbb{R}^n} \psi_{\delta} (\mathbf{z}, \mathbf{h}) :=
+\sup_{\mathbf{h} \in \mathbb{R}^n} \left [ \delta f(\mathbf{z} + \mathbf{h}) - \frac{1}{2} \varphi(\mathbf{z} + \mathbf{h}) - \frac{1}{2} \varphi(\mathbf{z} - \mathbf{h}) + \varphi(\mathbf{z}) \right ].</script><p>Let $\delta \in (0, 1)$ and $\mathbf{z} \in \mathbb{R}^n$ be fixed. Then, by convexity of $\varphi$, for any $\mathbf{h} \in \mathbb{R}^n$ we have</p>
+<script type="math/tex; mode=display">
+\psi_{\delta} (\mathbf{z}, \mathbf{h}) \leq \delta f(\mathbf{z} + \mathbf{h}) \leq \delta M.</script><p>This implies that $f_{\delta} (\mathbf{z})$ is finite. In addition, by nonnegativity of $f$ we have</p>
+<script type="math/tex; mode=display">
+f_{\delta} (\mathbf{z}) \geq \psi_{\delta} (\mathbf{z}, \mathbf{0}) = \delta f(\mathbf{z}) \geq 0.</script><p>That is to say, $f_{\delta} (\mathbf{z}) \in [0, \infty)$. </p>
+<hr>
+<p>Moreover, we claim that there exists some $\mathbf{h}_{\delta} \in \mathbb{R}^n$, depending on $\delta$ and $\mathbf{z}$, such that $f_{\delta} (\mathbf{z}) = \psi_{\delta} (\mathbf{z}, \mathbf{h}_{\delta})$.</p>
+<ul>
+<li><p>If $f_{\delta} (\mathbf{z}) = 0$, then</p>
+<script type="math/tex; mode=display">
+  0 = f_{\delta} (\mathbf{z}) \geq \psi_{\delta} (\mathbf{z}, \mathbf{0}) = \delta f(\mathbf{z}) \geq 0.</script><p>  In other words, we have $f(\mathbf{z}) = 0$. Hence, we can simply let $\mathbf{h}_{\delta} = \mathbf{0}$.</p>
+</li>
+<li><p>If $f_{\delta} (\mathbf{z}) &gt; 0$, then there exists a sequence $\{ \mathbf{h}^{(k)} \} \subset \mathbb{R}^n$ such that $\psi_{\delta} (\mathbf{z}, \mathbf{h}^{(k)}) \to f_{\delta} (\mathbf{z})$.</p>
+<p>  For sufficiently large $n$, we have $\psi_{\delta} (\mathbf{z}, \mathbf{h}^{(k)}) &gt; 0$, which implies</p>
+<script type="math/tex; mode=display">
+  \delta f(\mathbf{z} + \mathbf{h}^{(k)}) \geq \psi_{\delta} (\mathbf{z}, \mathbf{h}^{(k)}) > 0.</script><p>  Since $f$ vanishes outside $K$, we have $\{ \mathbf{z} + \mathbf{h}^{(k)} \} \subset K$.</p>
+<p>  By compactness of $K$ and continuity of $\psi_{\delta}$, there exists some $\mathbf{h}_{\delta} \in K - \mathbf{z}$ such that $\psi_{\delta} (\mathbf{z}, \mathbf{h}_\delta) = f_{\delta} (\mathbf{z})$.</p>
+</li>
+</ul>
+<hr>
+<p>Now, by optimality of $\mathbf{h}_\delta$, we have</p>
+<script type="math/tex; mode=display">
+2 \delta \nabla f(\mathbf{z} + \mathbf{h}_{\delta}) = \nabla \varphi(\mathbf{z} + \mathbf{h}_{\delta}) - \nabla \varphi(\mathbf{z} - \mathbf{h}_{\delta}).</script><ul>
+<li><p>For the LHS,</p>
+<script type="math/tex; mode=display">
+  \big \langle 2 \delta \nabla f(\mathbf{z} + \mathbf{h}_{\delta}),  \mathbf{h}_{\delta} \big \rangle 
+  \leq 2 \delta \| \nabla f(\mathbf{z} + \mathbf{h}_{\delta}) \|_2 \| \mathbf{h}_{\delta} \|_2 
+  \leq 2 M \delta \| \mathbf{h}_{\delta} \|_2.</script></li>
+<li><p>For the RHS, by the mean value theorem and assumption 2 we have</p>
+<script type="math/tex; mode=display">
+  \big \langle \nabla \varphi(\mathbf{z} + \mathbf{h}_{\delta}) - \nabla \varphi(\mathbf{z} - \mathbf{h}_{\delta}),  \mathbf{h}_{\delta} \big \rangle  
+  = \big \langle 2 \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) \mathbf{h}_{\delta}, \mathbf{h}_{\delta} \big \rangle  
+  \geq 2 \rho \| \mathbf{h}_{\delta} \|_2^2,</script><p>  where $t_{\delta} \in (-1, 1)$ depends on both $\delta$ and $\mathbf{z}$.</p>
+</li>
+</ul>
+<p>Therefore, we have $| \mathbf{h}_{\delta} |_2 \leq M \delta / \rho$.</p>
+<hr>
+<p>Let $K^\prime \subset \mathbb{R}^n$ be the compact set given by</p>
+<script type="math/tex; mode=display">
+K^\prime := \{ \mathbf{z} \in \mathbb{R}^n : d (\mathbf{z}, K) \leq 2 M / \rho \}.</script><p>Note that $\mathbf{H}_\varphi$ is uniformly continuous on $K^\prime$. Hence, for $\delta \in (0, 1)$ we can let</p>
+<script type="math/tex; mode=display">
+c(\delta) := \sup \left \{ \big \| \mathbf{H}_\varphi (\mathbf{z}_1) - \mathbf{H}_\varphi (\mathbf{z}_2) \big \|_{\mathrm{op}} : \mathbf{z}_1, \mathbf{z}_2 \in K^\prime \text{ and } \| \mathbf{z}_1 - \mathbf{z}_2 \|_2 \leq \delta \right \}.</script><p>It follows that $c(\delta) \downarrow 0$ as $\delta \downarrow 0$.</p>
+<hr>
+<p>Consider again the both sides of optimality condition (&amp;&amp;&amp;&amp;). </p>
+<p>If $d (\mathbf{z}, K) &gt; M / \rho$, then for any $\delta \in (0, 1)$ we have $\mathbf{z} + \mathbf{h}_{\delta} \notin K$. It follows that</p>
+<script type="math/tex; mode=display">
+2 \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) \mathbf{h}_{\delta}
+= \nabla \varphi(\mathbf{z} + \mathbf{h}_{\delta}) - \nabla \varphi(\mathbf{z} - \mathbf{h}_{\delta})
+= 2 \delta \nabla f(\mathbf{z} + \mathbf{h}_{\delta}) = \mathbf{0}.</script><p>Since $\mathbf{H}_\varphi \geq \rho \mathbf{I}_n$, we must have $\mathbf{h}_{\delta} = \mathbf{0}$. In this case, it holds trivially that</p>
+<script type="math/tex; mode=display">
+\delta \nabla f(\mathbf{z}) = \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta}.</script><p>Now assume that $d (\mathbf{z}, K) \leq M / \rho$.</p>
+<ul>
+<li><p>For the LHS, by the mean value theorem again, there exists some $s_\delta \in (0,1)$, depending on $\delta$ and $\mathbf{z}$, such that</p>
+<script type="math/tex; mode=display">
+  2 \delta \nabla f(\mathbf{z} + \mathbf{h}_{\delta})
+  = 2 \delta \nabla f(\mathbf{z}) + 2 \delta \mathbf{H}_f(\mathbf{z} + s_\delta \mathbf{h}_{\delta}) \mathbf{h}_{\delta}.</script><p>  Here</p>
+<script type="math/tex; mode=display">
+  \big \| \delta \mathbf{H}_f(\mathbf{z} + s_\delta \mathbf{h}_{\delta}) \mathbf{h}_{\delta} \big \|_2 
+  \leq \delta \big \| \mathbf{H}_f(\mathbf{z} + s_\delta \mathbf{h}_{\delta}) \big \|_{\mathrm{op}} \left \| \mathbf{h}_{\delta} \right \|_2
+  \leq M^2 \delta^2 / \rho.</script></li>
+<li><p>For the RHS, write</p>
+<script type="math/tex; mode=display">
+  \nabla \varphi(\mathbf{z} + \mathbf{h}_{\delta}) - \nabla \varphi(\mathbf{z} - \mathbf{h}_{\delta}) 
+  = 2 \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) \mathbf{h}_{\delta}
+  = 2 \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta} + 2 \big [ \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) \mathbf{h}_{\delta} - \mathbf{H}_\varphi (\mathbf{z}) \mathbf{h}_{\delta} \big ].</script><p>  Note that we have assume $d (\mathbf{z}, K) \leq M / \rho$. </p>
+<p>  In this case, for any $\delta \in (0, 1)$ we have $\mathbf{z}, \mathbf{z} + t_{\delta} \mathbf{h}_{\delta} \in K^\prime$ and thus</p>
+<script type="math/tex; mode=display">
+  \big \| \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) \mathbf{h}_{\delta} - \mathbf{H}_\varphi (\mathbf{z}) \mathbf{h}_{\delta} \big \|_2
+  \leq \big \| \mathbf{H}_\varphi(\mathbf{z} + t_{\delta} \mathbf{h}_{\delta}) - \mathbf{H}_\varphi (\mathbf{z}) \big \|_{\mathrm{op}} \left \| \mathbf{h}_{\delta} \right \|_2
+  \leq (M \delta / \rho) \cdot c (M \delta / \rho).</script></li>
+</ul>
+<p>Combining the both parts, we get</p>
+<script type="math/tex; mode=display">
+\big \| \delta \nabla f(\mathbf{z}) - \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta}\big \|_2 \leq M^2 \delta^2 / \rho + (M \delta / \rho) \cdot c (M \delta / \rho).</script><p>Note that this inequality still holds when $d (\mathbf{z}, K) \leq M / \rho$. This means that we can write</p>
+<script type="math/tex; mode=display">
+\delta \nabla f(\mathbf{z}) 
+= \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta} + \mathbf{o}(\delta),</script><p>where $\mathbf{o}(\delta) / \delta$ converges to $\mathbf{0}$ in $\ell^2$ as $\delta \downarrow 0$, uniformly in $\mathbf{z} \in \mathbb{R}^n$.</p>
+<p>Finally, by $\mathbf{H}_\varphi \geq \rho \mathbf{I}_n$, we have $\lVert \mathbf{H}_\varphi^{-1} \rVert_{\mathrm{op}} \leq 1 / \rho$ and thus</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbf{h}_{\delta} = \delta \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) + \mathbf{o}(\delta).
+\end{equation}</script><hr>
+<p>The argument above can be apply to $\varphi(\mathbf{z} + \mathbf{h}_\delta)$ and $\varphi(\mathbf{z} - \mathbf{h}_\delta)$.</p>
+<p>For example, let $r_\delta \in (0, 1)$ such that</p>
+<script type="math/tex; mode=display">
+\varphi(\mathbf{z} + \mathbf{h}_\delta) 
+= \varphi(\mathbf{z}) + \langle \nabla \varphi(\mathbf{z}), \mathbf{h}_\delta \rangle + \frac{1}{2} \big \langle \mathbf{H}_\varphi(\mathbf{z} + r_\delta \mathbf{h}_\delta) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle</script><p>Then for all $\mathbf{z}$ with $d (\mathbf{z}, K) \leq M / \rho$, we have $\mathbf{z} + r_\delta \mathbf{h}_\delta \in K^\prime$ and thus</p>
+<script type="math/tex; mode=display">
+\big \langle \mathbf{H}_\varphi(\mathbf{z} + r_\delta \mathbf{h}_\delta) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle - \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle
+\leq  \big \| \mathbf{H}_\varphi(\mathbf{z} + r_{\delta} \mathbf{h}_{\delta}) - \mathbf{H}_\varphi (\mathbf{z}) \big \|_{\mathrm{op}} \left \| \mathbf{h}_{\delta} \right \|_2^2
+\leq (M \delta / \rho)^2 \cdot c (M \delta / \rho).</script><p>The inequality also holds if $d (\mathbf{z}, K) &gt; M / \rho$, since we have $\mathbf{h}_\delta = \mathbf{0}$ in this case. </p>
+<p>In other words, it holds that</p>
+<script type="math/tex; mode=display">
+\varphi(\mathbf{z} + \mathbf{h}_\delta) 
+= \varphi(\mathbf{z}) + \langle \nabla \varphi(\mathbf{z}), \mathbf{h}_\delta \rangle + \frac{1}{2} \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle + o(\delta^2).</script><p>where $o(\delta) / \delta$ converges to $\mathbf{0}$ as $\delta \downarrow 0$, uniformly in $\mathbf{z} \in \mathbb{R}^n$. Similarly,</p>
+<script type="math/tex; mode=display">
+\varphi(\mathbf{z} - \mathbf{h}_\delta) 
+= \varphi(\mathbf{z}) - \langle \nabla \varphi(\mathbf{z}), \mathbf{h}_\delta \rangle + \frac{1}{2} \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle + o(\delta^2).</script><p>By the two equality above, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\varphi(\mathbf{z} + \mathbf{h}_\delta) + \varphi(\mathbf{z} - \mathbf{h}_\delta)  
+= 2 \varphi(\mathbf{z}) + \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_\delta, \mathbf{h}_\delta \big \rangle + o(\delta^2).
+\end{equation}</script><hr>
+<p>Now, using (&amp;&amp;&amp;&amp;), it follows that</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+f_{\delta} (\mathbf{z}) 
+& = \psi_{\delta} (\mathbf{z}, \mathbf{h}_{\delta}) = \delta f(\mathbf{z} + \mathbf{h}_\delta) - \frac{1}{2} \varphi(\mathbf{z} + \mathbf{h}_\delta) - \frac{1}{2} \varphi(\mathbf{z} - \mathbf{h}_\delta) + \varphi(\mathbf{z}) \\
+& = \delta f(\mathbf{z}) + \delta \left \langle \nabla f(\mathbf{z}), \mathbf{h}_{\delta} \right \rangle - \frac{1}{2} \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta}, \mathbf{h}_{\delta} \big \rangle + o(\delta^2)
+\end{align*}</script><ul>
+<li><p>For the second term, using (&amp;&amp;&amp;&amp;), we get</p>
+<script type="math/tex; mode=display">
+  \begin{align*}
+  \delta \big \langle \nabla f(\mathbf{z}), \mathbf{h}_{\delta} \big \rangle 
+  & = \delta \left \langle \nabla f(\mathbf{z}), \delta \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) + \mathbf{o}(\delta) \right \rangle \\
+  & = \delta^2 \left \langle \nabla f(\mathbf{z}), \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) \right \rangle  + \delta \left \langle \nabla f(\mathbf{z}), \mathbf{o}(\delta) \right \rangle \\
+  & = \delta^2 \big \langle \nabla f(\mathbf{z}), \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) \big \rangle + o(\delta^2)
+  \end{align*}</script><p>  where the last equality follows from the fact that $\lVert \nabla f(\mathbf{z}) \rVert_2$ is uniformly bounded by $M$. </p>
+</li>
+<li><p>As for the second term, note that we have (&amp;&amp;&amp;&amp;) and (&amp;&amp;&amp;&amp;). Hence,</p>
+<script type="math/tex; mode=display">
+  \begin{align*}
+  \big \langle \mathbf{H}_\varphi(\mathbf{z}) \mathbf{h}_{\delta}, \mathbf{h}_{\delta} \big \rangle
+  & = \big \langle \delta \nabla f(\mathbf{z}) + \mathbf{o}(\delta), \delta \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) + \mathbf{o}(\delta) \big \rangle \\
+  & = \delta^2 \big \langle \nabla f(\mathbf{z}), \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) \big \rangle 
+  + \delta \left \langle \nabla f(\mathbf{z}), \mathbf{o}(\delta) \right \rangle 
+  + \delta \left \langle \mathbf{o}(\delta), \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) \right \rangle 
+  + \left \langle \mathbf{o}(\delta), \mathbf{o}(\delta) \right \rangle \\
+  & = \delta^2 \big \langle \nabla f(\mathbf{z}), \mathbf{H}_\varphi(\mathbf{z})^{-1} \nabla f(\mathbf{z}) \big \rangle + {o}(\delta^2).
+  \end{align*}</script><p>  Again, it relies on the fact that $\lVert \nabla f(\mathbf{z}) \rVert_2$ and $\lVert \mathbf{H}_\varphi^{-1} \rVert_{\mathrm{op}}$ are uniformly bounded.</p>
+</li>
+</ul>
+<p>In conclusion, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+f_{\delta} = \delta f + \frac{\delta^2}{2} \big \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \big \rangle + o(\delta^2).
+\end{equation}</script><hr>
+<p>For each $\delta &gt; 0$, let $u_{\delta}, v_{\delta}, w_{\delta}$ be functions on $\mathbb{R}^n$ given by</p>
+<script type="math/tex; mode=display">
+u_{\delta} (\mathbf{x}) = \exp \left [ \frac{\delta}{2} f (\mathbf{x}) - \varphi(\mathbf{x}) \right ],
+\quad
+v_{\delta} (\mathbf{y}) = \exp \big [ - \varphi(\mathbf{y}) \big ]
+\quad \text{ and } \quad
+w_{\delta} (\mathbf{z}) = \exp \big [ f_{\delta} (\mathbf{z}) - \varphi(\mathbf{z}) \big ].</script><p>Note that both $u_{\delta}$ is integrable since $f$ is bounded by assumption.</p>
+<p>Then, for any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$, letting $\mathbf{z} = (\mathbf{x} + \mathbf{y}) / 2$, by definition of $f_{\delta}$ we can get</p>
+<script type="math/tex; mode=display">
+f_{\delta} (\mathbf{z}) \geq \psi_{\delta} \left ( \mathbf{z}, \frac{\mathbf{x} - \mathbf{y}}{2} \right) = \delta f(\mathbf{x}) - \frac{1}{2} \varphi(\mathbf{x}) - \frac{1}{2} \varphi(\mathbf{y}) + \varphi(\mathbf{z}),</script><p>which implies that</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+w_{\delta} (\mathbf{z})
+= \exp \big [ f_{\delta} (\mathbf{z}) - \varphi(\mathbf{z}) \big ]
+\geq \exp \left [ \delta f(\mathbf{x}) - \frac{1}{2} \varphi(\mathbf{x}) - \frac{1}{2} \varphi(\mathbf{y}) \right ]
+= u_{\delta} (\mathbf{x})^{1/2} v_{\delta} (\mathbf{y})^{1/2}.
+\end{align*}</script><p>Therefore, by Prékopa-Leindler inequality, we have</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{E}_{\mu} \big ( \mathrm{e}^{f_\delta} \big ) =
+\int w_{\delta} (\mathbf{z}) \mathrm{d} \mathbf{z} 
+\geq \left ( \int u_{\delta} (\mathbf{x}) \mathrm{d} \mathbf{x} \right )^{1/2} \left ( \int v_{\delta} (\mathbf{y}) \mathrm{d} \mathbf{y} \right )^{1/2} 
+= \mathbb{E}_{\mu}^{1/2} \big ( \mathrm{e}^{2 \delta f} \big ).
+\end{equation}</script><hr>
+<p>Again, by uniformly boundedness of $|f|$, $\lVert \nabla f \rVert_2$ and $\lVert \mathbf{H}_\varphi^{-1} \rVert_{\mathrm{op}}$, we can conclude from (&amp;&amp;&amp;&amp;) that $f_{\delta} = O(\delta)$. Hence,</p>
+<script type="math/tex; mode=display">
+\mathrm{e}^{f_\delta}
+= 1 + f_{\delta} + \frac{1}{2} f_{\delta}^2 + o(\delta^2)
+= 1 + \delta f + \frac{\delta^2}{2} \left \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \right \rangle + \frac{\delta^2}{2} f^2 + o(\delta^2).</script><p>It follows that</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\mu} \big ( \mathrm{e}^{f_\delta} \big )
+= 1 + \delta \mathbb{E}_{\mu} ( f ) + \frac{\delta^2}{2} \mathbb{E}_\mu \left \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \right \rangle + \frac{\delta^2}{2} \mathbb{E}_{\mu} ( f^2 ) + o(\delta^2),</script><p>and thus</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{E}_{\mu}^2 \big ( \mathrm{e}^{f_\delta} \big )
+= 1 + \delta^2 \mathbb{E}_{\mu}^2 ( f ) + 2 \delta \mathbb{E}_{\mu} ( f ) + \delta^2 \mathbb{E}_\mu \left \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \right \rangle + \delta^2 \mathbb{E}_{\mu} ( f^2 ) + o(\delta^2).
+\end{equation}</script><p>On the other hand, by uniformly boundedness of $|f|$, we have $2 \delta f = O(\delta)$ and thus</p>
+<script type="math/tex; mode=display">
+\mathrm{e}^{2 \delta f} = 1 + 2 \delta f + 2 \delta^2 f^2 + o(\delta^2).</script><p>Hence,</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\mathbb{E}_{\mu} \big ( \mathrm{e}^{2 \delta f} \big ) 
+= 1 + 2 \delta \mathbb{E}_{\mu} (f) + 2 \delta^2 \mathbb{E}_{\mu} (f^2) + o(\delta^2)
+\end{equation}</script><p>Substituting (&amp;&amp;&amp;&amp;) and (&amp;&amp;&amp;&amp;) into (&amp;&amp;&amp;&amp;), we get</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_\mu \left \langle \nabla f, \mathbf{H}_\varphi^{-1} \nabla f \right \rangle 
+\geq \mathbb{E}_{\mu} (f^2) - \mathbb{E}_{\mu}^2 ( f ) + o(\delta^2)
+= \operatorname{Var}_{\mu} (f) + o(1),</script><p>from which the Brascamp–Lieb inequality easily follows as $\delta \downarrow 0$.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Convex-Functions/" rel="tag"># Convex Functions</a>
+              <a href="/tags/Subguassian-Density/" rel="tag"># Subguassian Density</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2021/01/22/bai-ch4-product-multi-matrix-3/" rel="next" title="Enumerative Combinatorics with Multiple Matrices - Connected Graphs">
+                  <i class="fa fa-chevron-left"></i> Enumerative Combinatorics with Multiple Matrices - Connected Graphs
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/2021/04/30/CTI-prekopa-leindler-inequality/" rel="prev" title="Prekopa-Leindler Inequality">
+                  Prekopa-Leindler Inequality <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="LIN Zeqin"
+    src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">LIN Zeqin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LIN Zeqin</span>
+</div>
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total Views: <span id="busuanzi_value_site_pv"></span>
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total Visitors: <span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v5.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+
+  
+
+</body>
+</html>
