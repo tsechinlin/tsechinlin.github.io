@@ -194,7 +194,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/29/bai-ch1-inverse/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar3.jpg">
       <meta itemprop="name" content="LIN Zeqin">
       <meta itemprop="description" content="">
     </span>
@@ -381,13 +381,13 @@ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x
 <script type="math/tex; mode=display">
 \operatorname{tr} \mathbf{A}^{-1} = \operatorname{tr} \mathbf{B}^{-1} + \frac{1}{d} \operatorname{tr} \left ( \mathbf{B}^{-1} \mathbf{a} \mathbf{a}^* \mathbf{B}^{-1} \right ) + \frac{1}{d}
 = \operatorname{tr} \mathbf{B}^{-1} + \frac{1}{d} \left ( 1 + \mathbf{a}^* \mathbf{B}^{-2} \mathbf{a} \right ).</script></blockquote>
-<h2 id="IM-5"><a href="#IM-5" class="headerlink" title="[IM-5]"></a>[IM-5]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}<em>{k}$ be the $k$-th principle submatrix of order $(n-1)$, i.e. the submatrix obtained by removing the $k$-th row and column. Then for any $z = u + \mathrm{i} v \in \mathbb{C}</em>+$,</p>
+<h2 id="IM-5"><a href="#IM-5" class="headerlink" title="[IM-5]"></a>[IM-5]</h2><p>Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}_{k}$ be the $k$-th principle submatrix of order $(n-1)$, i.e. the submatrix obtained by removing the $k$-th row and column. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,</p>
 <script type="math/tex; mode=display">
 \left | \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \right | \leq \frac{1}{v}.</script><blockquote>
 <p><strong>Proof</strong>:</p>
-<p>Note that $\mathbf{A}<em>{k}$ is also Hermitian. Since $z \in \mathbb{C}</em>+$, the matrix $\mathbf{A}<em>k - z \mathbf{I}</em>{n-1}$ is invertible. Define</p>
+<p>Note that $\mathbf{A}_{k}$ is also Hermitian. Since $z \in \mathbb{C}_+$, the matrix $\mathbf{A}_k - z \mathbf{I}_{n-1}$ is invertible. Define</p>
 <script type="math/tex; mode=display">
-d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k,</script><p>where $\boldsymbol{\alpha}<em>k$ denotes the $k$-th column of $\mathbf{A}$ with $a</em>{kk}$ removed.</p>
+d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k,</script><p>where $\boldsymbol{\alpha}_k$ denotes the $k$-th column of $\mathbf{A}$ with $a_{kk}$ removed.</p>
 <p>Note $a_{kk} \in \mathbb{R}$ since $\mathbf{A}$ is Hermitian. Hence, by <strong>[IM-3]</strong>, we have</p>
 <script type="math/tex; mode=display">
 \Im d 
@@ -431,7 +431,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |  \leq \frac{1}{v} \| \mathbf{B} \|_{\mathrm{op}}.</script><blockquote>
 <p><strong>Proof</strong>:</p>
 <p>We only need to consider the case where $\mathbf{x} \not= \mathbf{0}$.</p>
-<p>Since $\mathbf{A}$ is Hermitian and $z \in \mathbb{C}<em>+$, we know that $\mathbf{A} - z \mathbf{I}</em>{n}$ is invertible. By <strong>[IM-3]</strong>, we have</p>
+<p>Since $\mathbf{A}$ is Hermitian and $z \in \mathbb{C}_+$, we know that $\mathbf{A} - z \mathbf{I}_{n}$ is invertible. By <strong>[IM-3]</strong>, we have</p>
 <script type="math/tex; mode=display">
 \big | 1 + \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big |
 \geq \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] > 0.</script><p>Therefore, by <strong>[IM-6]</strong> we have</p>
@@ -451,7 +451,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 <script type="math/tex; mode=display">
 \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
 \leq \frac{\mathbf{x}^* \big [ \left(\mathbf{A} - u \mathbf{I}_{n} \right)^2 + v^2 \mathbf{I}_{n} \big ]^{-1} \mathbf{x}}{\Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ]} \| \mathbf{B} \|_{\mathrm{op}} = \frac{1}{v} \| \mathbf{B} \|_{\mathrm{op}}.</script></blockquote>
-<h2 id="IM-8"><a href="#IM-8" class="headerlink" title="[IM-8]"></a>[IM-8]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices. Let $z<em>1, z_2 \in \mathbb{C}</em>+$ with $\min ( \Im z_1, \Im z_2) \geq v &gt; 0$. Define</p>
+<h2 id="IM-8"><a href="#IM-8" class="headerlink" title="[IM-8]"></a>[IM-8]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices. Let $z_1, z_2 \in \mathbb{C}_+$ with $\min ( \Im z_1, \Im z_2) \geq v &gt; 0$. Define</p>
 <script type="math/tex; mode=display">
 \mathbf{D} := \left ( \mathbf{A} - z_1 \mathbf{I}_n \right)^{-1} - \left(\mathbf{A} - z_2 \mathbf{I}_{n} \right)^{-1}.</script><p>Then,</p>
 <script type="math/tex; mode=display">
@@ -470,9 +470,9 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 <script type="math/tex; mode=display">
 \| \mathbf{D} \|_{\mathrm{op}} 
 = |z_1 - z_2| \big \| \left ( \mathbf{A} - z_1 \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \big \| \left ( \mathbf{A} - z_2 \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}}
-\leq \frac{|z_1 - z_2|}{\Im z_1 \Im z_2} \leq \frac{|z_1 - z_2|}{v^2}.</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n \lVert \mathbf{B} \rVert<em>{\mathrm{op}} \lVert \mathbf{D} \rVert</em>{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert<em>{\mathrm{op}} \lVert \mathbf{B} \rVert</em>{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.</p>
+\leq \frac{|z_1 - z_2|}{\Im z_1 \Im z_2} \leq \frac{|z_1 - z_2|}{v^2}.</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.</p>
 </blockquote>
-<h2 id="IM-9"><a href="#IM-9" class="headerlink" title="[IM-9]"></a>[IM-9]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.’s. Define</p>
+<h2 id="IM-9"><a href="#IM-9" class="headerlink" title="[IM-9]"></a>[IM-9]</h2><p>Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.&#39;s. Define</p>
 <script type="math/tex; mode=display">
 \mathbf{D} := \left ( m_{1}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} - \left ( m_{2}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1}.</script><p>Then,</p>
 <script type="math/tex; mode=display">
@@ -494,7 +494,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
 \| \mathbf{D} \|_{\mathrm{op}} 
 & \leq |m_{1}(z) - m_{2}(z)| \big \| \left ( m_{1}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \| \mathbf{A} \|_{\mathrm{op}}  \big \| \left ( m_{2}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \\
 & \leq |m_{1}(z) - m_{2}(z)| \| \mathbf{A} \|_{\mathrm{op}} \max \left ( 4, \frac{16}{v^2} \|\mathbf{A}\|_{\mathrm{op}}^2 \right ).
-\end{align*}</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n \lVert \mathbf{B} \rVert<em>{\mathrm{op}} \lVert \mathbf{D} \rVert</em>{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert<em>{\mathrm{op}} \lVert \mathbf{B} \rVert</em>{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.</p>
+\end{align*}</script><p>The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right |<br>\leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.</p>
 </blockquote>
 
     </div>
@@ -565,7 +565,7 @@ d := a_{kk} - z - \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="LIN Zeqin"
-    src="/images/avatar.jpg">
+    src="/images/avatar3.jpg">
   <p class="site-author-name" itemprop="name">LIN Zeqin</p>
   <div class="site-description" itemprop="description"></div>
 </div>

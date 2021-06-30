@@ -196,7 +196,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/low-rank-matrix-recovery-preliminary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="image" content="/images/avatar3.jpg">
       <meta itemprop="name" content="LIN Zeqin">
       <meta itemprop="description" content="">
     </span>
@@ -291,11 +291,11 @@
 <p><strong>证明</strong>：对于任意 $Z \in \mathbb{R}^{m \times n}$，</p>
 <script type="math/tex; mode=display">
 \|Z\| \leq t \quad \Longleftrightarrow \quad t^{2} I_{m}-Z Z^{\prime} \succeq 0 \quad \Longleftrightarrow \quad\left[\begin{array}{cc}{t I_{m}} & {Z} \\ {Z^{\prime}} & {t I_{n}}\end{array}\right] \succeq 0</script><ul>
-<li>第一个等价关系是由于 $\sigma_i(Z)$ 就是 $ZZ’$ 第 $i$ 大的特征值</li>
+<li>第一个等价关系是由于 $\sigma_i(Z)$ 就是 $ZZ&#39;$ 第 $i$ 大的特征值</li>
 <li>第二个等价关系就是  Schur complement 的性质，也可以通过对二次型求梯度，从而说明二次型的非负性来验证</li>
 </ul>
-<p>假设 $X \in \mathbb{R}^{m \times n}$ 的 SVD 分解为 $X = U\Sigma V’$，其中 $U \in \mathbb{R}^{m \times r}, V \in \mathbb{R}^{n \times r}$ 且各自的列向量都是标准正交的，$\Sigma$ 为 $r$ 阶对角矩阵，这里 $r = rank(X)$。</p>
-<p>首先取 $Y = UV’$，于是 $\left\lVert Y \right\rVert = 1$ 并且 $\langle X, Y\rangle = \operatorname{Tr}(\Sigma) = \sum_{i=1}^r{\sigma_i(X)} = \left\lVert X \right\rVert_{*}$，从而</p>
+<p>假设 $X \in \mathbb{R}^{m \times n}$ 的 SVD 分解为 $X = U\Sigma V&#39;$，其中 $U \in \mathbb{R}^{m \times r}, V \in \mathbb{R}^{n \times r}$ 且各自的列向量都是标准正交的，$\Sigma$ 为 $r$ 阶对角矩阵，这里 $r = rank(X)$。</p>
+<p>首先取 $Y = UV&#39;$，于是 $\left\lVert Y \right\rVert = 1$ 并且 $\langle X, Y\rangle = \operatorname{Tr}(\Sigma) = \sum_{i=1}^r{\sigma_i(X)} = \left\lVert X \right\rVert_{*}$，从而</p>
 <script type="math/tex; mode=display">
 \|X\|_{*} \leq \sup \left\{\langle X, Y\rangle : Y \in \mathbb{R}^{m \times n},\|Y\| \leq 1\right\}</script><p>另一方面，$\left\lVert \cdot \right\rVert$ 的对偶范数的求解可以看作优化问题：</p>
 <script type="math/tex; mode=display">
@@ -329,7 +329,7 @@ a^{(ij)}_{kl} =
 & \left[\begin{array}{cc}{W_{1}} & {X} \\ {X^{\prime}} & {W_{2}}\end{array}\right] \succeq 0
 \end{alignat*}</script><p>原问题与对偶问题可行性满足时，弱对偶性总是成立的：</p>
 <script type="math/tex; mode=display">
-\frac{1}{2} \left(\operatorname{Tr}\left(W_{1}\right)+\operatorname{Tr}\left(W_{2}\right)\right) \geq \operatorname{Tr}(X'Y)</script><p>特别的，取 $W_1 = U\Sigma U’, W_2 = V\Sigma V’$，那么其显然为可行解，并且 </p>
+\frac{1}{2} \left(\operatorname{Tr}\left(W_{1}\right)+\operatorname{Tr}\left(W_{2}\right)\right) \geq \operatorname{Tr}(X'Y)</script><p>特别的，取 $W_1 = U\Sigma U&#39;, W_2 = V\Sigma V&#39;$，那么其显然为可行解，并且 </p>
 <script type="math/tex; mode=display">
 \frac{1}{2} \left(\operatorname{Tr}\left(W_{1}\right)+\operatorname{Tr}\left(W_{2}\right)\right) = \operatorname{Tr}\left(\Sigma\right) =\left\lVert X \right\rVert_{*}</script><p>于是根据弱对偶性，</p>
 <script type="math/tex; mode=display">
@@ -416,7 +416,7 @@ rank(X_*) \geq rank(X_0) = rank(\frac{X_0}{M}) \geq \frac{\|X_0\|_*}{M} \geq \fr
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <img class="site-author-image" itemprop="image" alt="LIN Zeqin"
-    src="/images/avatar.jpg">
+    src="/images/avatar3.jpg">
   <p class="site-author-name" itemprop="name">LIN Zeqin</p>
   <div class="site-description" itemprop="description"></div>
 </div>
