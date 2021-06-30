@@ -59,7 +59,7 @@
 <meta property="og:description" content="[Reference] Brascamp, Herm Jan, and Elliott H. Lieb. On extensions of the Brunn-Minkowski and Prékopa-Leindler theorems, including inequalities for log concave functions, and with an application to th">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-03T11:08:18.000Z">
-<meta property="article:modified_time" content="2021-05-03T11:20:14.746Z">
+<meta property="article:modified_time" content="2021-06-30T12:05:38.139Z">
 <meta property="article:author" content="LIN Zeqin">
 <meta property="article:tag" content="Log-convex Functions">
 <meta property="article:tag" content="Guassian Distribution">
@@ -110,7 +110,11 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -211,10 +215,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-05-03 19:08:18 / Modified: 19:20:14" itemprop="dateCreated datePublished" datetime="2021-05-03T19:08:18+08:00">2021-05-03</time>
+              <time title="Created: 2021-05-03 19:08:18" itemprop="dateCreated datePublished" datetime="2021-05-03T19:08:18+08:00">2021-05-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-06-30 20:05:38" itemprop="dateModified" datetime="2021-06-30T20:05:38+08:00">2021-06-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -282,7 +292,7 @@ u_1^\lambda u_2^{1 - \lambda} + v_1^\lambda v_2^{1 - \lambda}
 <script type="math/tex; mode=display">
 g(\mathbf{x}) := \int_{\mathbb{R}^k} f(\mathbf{x}, \mathbf{y}) \mathrm{d} \mathbf{y}.</script><p>If $f(\mathbf{x}, \mathbf{y})$ is log-convex on $\mathbb{R}^{n}$ for each fixed $\mathbf{y} \in \mathbb{R}^k$, then $g$ is log-convex.</p>
 <blockquote>
-<p>Let $D = \{ \mathbf{x} \in \mathbb{R}^{n}: g(\mathbf{x}) &lt; \infty \}$.</p>
+<p>Let $D = { \mathbf{x} \in \mathbb{R}^{n}: g(\mathbf{x}) &lt; \infty }$.</p>
 <p>For any $\mathbf{x}_1, \mathbf{x}_2 \in \mathbb{R}^{n}$ and $\lambda \in (0, 1)$, by Hölder’s inequality, we have</p>
 <script type="math/tex; mode=display">
 \begin{align*}
@@ -309,7 +319,7 @@ g(\mathbf{x}) := \mathbb{E} ( f(\mathbf{X}, \mathbf{Y}) | \mathbf{X} = \mathbf{x
 = \begin{bmatrix}
 \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{X}} & \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{Y}} \\
 \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{X}} & \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y}}
-\end{bmatrix}.</script><p>It is well known that $( \mathbf{Y} \big| \mathbf{X} = \mathbf{x} ) \sim \mathrm{N} ( \boldsymbol{\mu}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} , \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{Y} | \mathbf{X}}  )$, with</p>
+\end{bmatrix}.</script><p>It is well known that $( \mathbf{Y} \big| \mathbf{X} = \mathbf{x} ) \sim \mathrm{N} ( \boldsymbol{\mu}<em>{\mathbf{Y} |\mathbf{X} = \mathbf{x}} , \boldsymbol{\Sigma}</em>{\mathbf{Y} \mathbf{Y} | \mathbf{X}}  )$, with</p>
 <script type="math/tex; mode=display">
 \mathbf{m}_{\mathbf{Y} |\mathbf{X} = \mathbf{x}} :=
 \mathbf{m}_{\mathbf{Y}} + \boldsymbol{\Sigma}_{\mathbf{Y} \mathbf{X}} \boldsymbol{\Sigma}_{\mathbf{X} \mathbf{X}}^{-1} (\mathbf{x} - \mathbf{m}_{\mathbf{X}})

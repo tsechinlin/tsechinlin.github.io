@@ -59,7 +59,7 @@
 <meta property="og:description" content="Prekopa-Leindler Inequality">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-30T07:06:05.000Z">
-<meta property="article:modified_time" content="2021-06-30T09:02:30.160Z">
+<meta property="article:modified_time" content="2021-06-30T12:05:38.133Z">
 <meta property="article:author" content="LIN Zeqin">
 <meta property="article:tag" content="Convex Functions">
 <meta name="twitter:card" content="summary">
@@ -109,7 +109,11 @@
   </style>
 </noscript>
 
-</head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -218,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-30 17:02:30" itemprop="dateModified" datetime="2021-06-30T17:02:30+08:00">2021-06-30</time>
+                <time title="Modified: 2021-06-30 20:05:38" itemprop="dateModified" datetime="2021-06-30T20:05:38+08:00">2021-06-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,7 +274,7 @@ b := \inf B^\prime \in B^\prime.</script><p>In this case, we have both $A^\prime
 = \mu_1 (A^\prime) + \mu_1 (B^\prime)
 \geq \mu_1 (A) + \mu_1 (B) - 2 \varepsilon.</script><p>The proof is completed by letting $\varepsilon \to 0$.</p>
 </blockquote>
-<h2 id="p-Average"><a href="#p-Average" class="headerlink" title="$p$-Average"></a>$p$-Average</h2><p>Fix $\lambda \in (0, 1)$. For each $p \in [-\infty, + \infty]$, let the function $M_p^\lambda : \mathbb{R}_+ \times \mathbb{R}_+ \to \mathbb{R}_+$ be defined as following.</p>
+<h2 id="p-Average"><a href="#p-Average" class="headerlink" title="$p$-Average"></a>$p$-Average</h2><p>Fix $\lambda \in (0, 1)$. For each $p \in [-\infty, + \infty]$, let the function $M<em>p^\lambda : \mathbb{R}</em>+ \times \mathbb{R}<em>+ \to \mathbb{R}</em>+$ be defined as following.</p>
 <ul>
 <li><p>For $x, y \in \mathbb{R}_+$ with $xy &gt; 0$, set</p>
 <script type="math/tex; mode=display">
@@ -286,7 +290,7 @@ b := \inf B^\prime \in B^\prime.</script><p>In this case, we have both $A^\prime
   M_p^\lambda (x , y) = 0.</script></li>
 </ul>
 <p><strong>[Fact 1]</strong> For each $p \in [-\infty, + \infty]$, the function $M_p^\lambda$ is continuous on $(0, \infty) \times (0, \infty)$.</p>
-<p><strong>[Fact 2]</strong> For each $p \in [-\infty, + \infty]$, and any $x_1, x_2, y_1, y_2 \in \mathbb{R}_+$ with $x_1 \geq x_2$ and $y_1 \geq y_2$,</p>
+<p><strong>[Fact 2]</strong> For each $p \in [-\infty, + \infty]$, and any $x<em>1, x_2, y_1, y_2 \in \mathbb{R}</em>+$ with $x_1 \geq x_2$ and $y_1 \geq y_2$,</p>
 <script type="math/tex; mode=display">
 M_p^\lambda (x_1, y_1) \geq M_p^\lambda (x_2, y_2).</script><p><strong>[Fact 3]</strong> For any $x, y \in \mathbb{R}_+$,</p>
 <script type="math/tex; mode=display">
@@ -307,7 +311,7 @@ M_p^\lambda (x, y) \leq M_q^\lambda (x, y).</script><blockquote>
   \left [ M_p^\lambda (x, y) \right ]^p
   = \lambda x^{p}+(1-\lambda) y^{p}
   \leq (x \vee y)^q
-  = \left [ M_{\infty}^\lambda (x, y) \right ]^q</script><p>  we can obtain $M_p^\lambda (x, y) \leq M_{\infty}^\lambda (x, y)$.</p>
+  = \left [ M_{\infty}^\lambda (x, y) \right ]^q</script><p>  we can obtain $M<em>p^\lambda (x, y) \leq M</em>{\infty}^\lambda (x, y)$.</p>
 </li>
 <li><p>If $0 &lt; p &lt; q &lt; +\infty$, then $q/p &gt; 1$. By Jensen’s inequality, we have</p>
 <script type="math/tex; mode=display">
@@ -328,11 +332,11 @@ M_p^\lambda (x, y) \leq M_q^\lambda (x, y).</script><blockquote>
   \left [ M_q^\lambda (x, y) \right ]^q 
   = \lambda x^{q}+(1-\lambda) y^{q}
   \leq (x \wedge y)^q
-  = \left [ M_{-\infty}^\lambda (x, y) \right ]^q</script><p>  we can obtain $M_q^\lambda (x, y) \geq M_{-\infty}^\lambda (x, y)$.</p>
+  = \left [ M_{-\infty}^\lambda (x, y) \right ]^q</script><p>  we can obtain $M<em>q^\lambda (x, y) \geq M</em>{-\infty}^\lambda (x, y)$.</p>
 </li>
 </ul>
 </blockquote>
-<p><strong>[Fact 5]</strong> For any $x_1, x_2, y_1, y_2 \in \mathbb{R}_+$, and $p, q, r \in (0, \infty)$ with $1/p + 1/q = 1/r$, we have</p>
+<p><strong>[Fact 5]</strong> For any $x<em>1, x_2, y_1, y_2 \in \mathbb{R}</em>+$, and $p, q, r \in (0, \infty)$ with $1/p + 1/q = 1/r$, we have</p>
 <script type="math/tex; mode=display">
 M_r^\lambda (x_1 x_2, y_1 y_2) \leq M_p^\lambda (x_1, y_1) \cdot M_q^\lambda (x_2 , y_2).</script><blockquote>
 <p>It suffices to consider the case where $x_1, x_2, y_1, y_2$ are all positive.</p>
@@ -344,7 +348,7 @@ M_r^\lambda (x_1 x_2, y_1 y_2) \leq M_p^\lambda (x_1, y_1) \cdot M_q^\lambda (x_
 & \geq \lambda x_1^{r} x_2^{r} +(1-\lambda) y_1^{r} y_2^{r} 
 = \left [ M_r^\lambda (x_1 x_2, y_1 y_2) \right ]^r.
 \end{align*}</script></blockquote>
-<p><strong>[Fact 6]</strong> For any $x_1, x_2, y_1, y_2 \in \mathbb{R}_+$, and $p \in [0, \infty)$, we have</p>
+<p><strong>[Fact 6]</strong> For any $x<em>1, x_2, y_1, y_2 \in \mathbb{R}</em>+$, and $p \in [0, \infty)$, we have</p>
 <script type="math/tex; mode=display">
 M_p^\lambda (x_1 x_2, y_1 y_2) \geq M_p^\lambda (x_1, y_1) \cdot M_{-\infty}^\lambda (x_2 , y_2).</script><blockquote>
 <p>It suffices to consider the case where $x_1, x_2, y_1, y_2$ are all positive.</p>
@@ -370,7 +374,7 @@ M_p^\lambda (x_1 x_2, y_1 y_2) \geq M_p^\lambda (x_1, y_1) \cdot M_{-\infty}^\la
 </ul>
 </blockquote>
 <h2 id="Prekopa-Leindler-Inequality-One-dimensional"><a href="#Prekopa-Leindler-Inequality-One-dimensional" class="headerlink" title="Prékopa-Leindler Inequality (One-dimensional)"></a>Prékopa-Leindler Inequality (One-dimensional)</h2><p>Fix $\lambda \in (0, 1)$, and let $f, g : \mathbb{R} \to \mathbb{R}_+$ and $h: \mathbb{R} \to [0, \infty]$ be nonnegative measurable functions with $f, g \in L^{1} (\mathbb{R})$.</p>
-<h3 id="Prekopa-Leindler-Inequality-for-p-infty"><a href="#Prekopa-Leindler-Inequality-for-p-infty" class="headerlink" title="Prékopa-Leindler Inequality for $p = -\infty$"></a>Prékopa-Leindler Inequality for $p = -\infty$</h3><p>Let $p = -\infty$. Assume that $| f |_{\infty} = | g |_{\infty} = 1$, and for every $x, y \in \mathbb{R}$,</p>
+<h3 id="Prekopa-Leindler-Inequality-for-p-infty"><a href="#Prekopa-Leindler-Inequality-for-p-infty" class="headerlink" title="Prékopa-Leindler Inequality for $p = -\infty$"></a>Prékopa-Leindler Inequality for $p = -\infty$</h3><p>Let $p = -\infty$. Assume that $| f |<em>{\infty} = | g |</em>{\infty} = 1$, and for every $x, y \in \mathbb{R}$,</p>
 <script type="math/tex; mode=display">
 h(\lambda x + (1-\lambda) y) \geq M_{-\infty}^{\lambda}(f(x), g(y)) = f(x) \wedge g(y) .</script><p>Then,</p>
 <script type="math/tex; mode=display">
@@ -408,15 +412,15 @@ D_t := \{ h > t \}.</script><p>Note that all the sets $A_t, B_t$ and $D_t$ are m
 h(\lambda x + (1-\lambda) y) \geq M_{p}^{\lambda}(f(x), g(y)).</script><p>Then,</p>
 <script type="math/tex; mode=display">
 \| h \|_1 \geq M_{p / (p + 1)}^{\lambda}(\| f \|_1, \| g \|_1).</script><blockquote>
-<p><strong>[Part 1]</strong> Firstly consider the case where $f, g \in L^{\infty} (\mathbb{R})$. In this case, we can assume that $| f |_{\infty} &gt; 0$ and $| g |_{\infty} &gt; 0$.</p>
-<p>Let $F := f / | f |_{\infty}$ and $G := g / | g |_{\infty}$. Then for any $x, y \in \mathbb{R}$, we have</p>
+<p><strong>[Part 1]</strong> Firstly consider the case where $f, g \in L^{\infty} (\mathbb{R})$. In this case, we can assume that $| f |<em>{\infty} &gt; 0$ and $| g |</em>{\infty} &gt; 0$.</p>
+<p>Let $F := f / | f |<em>{\infty}$ and $G := g / | g |</em>{\infty}$. Then for any $x, y \in \mathbb{R}$, we have</p>
 <script type="math/tex; mode=display">
 \begin{align*}
 h(\lambda x + (1-\lambda) y) 
 & \geq M_{p}^{\lambda}(f(x), g(y))
 = M_{p}^{\lambda}  ( \| f \|_{\infty} F(x), \| g \|_{\infty} G(y)  ) \\
 & \geq M_{p}^{\lambda}  ( \| f \|_{\infty}, \| g \|_{\infty}  ) \cdot M_{-\infty}^{\lambda} ( F(x), G(y) ).
-\end{align*}</script><p>In other words, if we let $H := h / M_{p}^{\lambda}  ( | f |_{\infty}, | g |_{\infty}  )$, then</p>
+\end{align*}</script><p>In other words, if we let $H := h / M<em>{p}^{\lambda}  ( | f |</em>{\infty}, | g |_{\infty}  )$, then</p>
 <script type="math/tex; mode=display">
 H(\lambda x + (1-\lambda) y) \geq M_{-\infty}^{\lambda} ( F(x), G(y) ),
 \quad \text{ for all } x, y \in \mathbb{R}.</script><p>Applying Prékopa-Leindler inequality for $p = -\infty$, we can obtain</p>
@@ -445,7 +449,7 @@ h(\lambda \mathbf{x} + (1-\lambda) \mathbf{y}) \geq M_{p}^{\lambda}(f(\mathbf{x}
 <script type="math/tex; mode=display">
 \| h \|_1 \geq M_{p / (np + 1)}^{\lambda}(\| f \|_1, \| g \|_1).</script><blockquote>
 <p>Assume that $n \geq 2$ and the assertion of the theorem has been proved in all dimensions $k = 1, \cdots, n-1$.</p>
-<p>For every $s \in \mathbb{R}$ we define $h_s : \mathbb{R}^{n-1} \to \mathbb{R}_+$ by setting $h_s( \mathbf{w} )= h(\mathbf{w}, s)$, and $f_s, g_s: \mathbb{R}^{n-1} \to \mathbb{R}_+$ in an analogous way.</p>
+<p>For every $s \in \mathbb{R}$ we define $h<em>s : \mathbb{R}^{n-1} \to \mathbb{R}</em>+$ by setting $h<em>s( \mathbf{w} )= h(\mathbf{w}, s)$, and $f_s, g_s: \mathbb{R}^{n-1} \to \mathbb{R}</em>+$ in an analogous way.</p>
 <p>Note that for fixed $s \in \mathbb{R}$, all the functions $f_s, g_s$ and $h_s$ are measurable. Besides, by</p>
 <script type="math/tex; mode=display">
 \| f \|_1 = \int_{\mathbb{R}} \mathrm{d} s \int_{\mathbb{R}^{n-1}} f_s(\mathbf{u}) \mathrm{d} \mathbf{u} = \int_{\mathbb{R}} \| f_s \|_1 \mathrm{d} s < \infty,</script><p>we know that $f_s \in L^{1} (\mathbb{R}^{n-1})$ a.e. for $s \in \mathbb{R}$. Similarly, $g_s \in L^{1} (\mathbb{R}^{n-1})$ a.e. for $s \in \mathbb{R}$.</p>
