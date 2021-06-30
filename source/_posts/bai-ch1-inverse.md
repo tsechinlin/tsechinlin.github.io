@@ -13,37 +13,65 @@ mathjax: true
 
 Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have
 $$
-\left \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \right \|_{\mathrm{op}} \leq \frac{1}{v}.
+\big \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \leq \frac{1}{v}.
 $$
 
 
 > **Proof**: 
 > $$
 > \begin{align*}
-> \left \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \right \|_{\mathrm{op}}^2 
-> & = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \left \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \mathbf{x} \right \|_{2}^2
-> = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \mathbf{x}^* \left ( \mathbf{A} - \bar{z} \mathbf{I}_n \right)^{-1} \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \mathbf{x} \\
-> &= \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} \leq \frac{1}{v^2}.
+> \big \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}}^2 
+> & = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \big \| \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \mathbf{x} \big \|_{2}^2
+> = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \ \mathbf{x}^* \left ( \mathbf{A} - \bar{z} \mathbf{I}_n \right)^{-1} \left ( \mathbf{A} - z \mathbf{I}_n \right)^{-1} \mathbf{x} \\
+> &= \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \ \mathbf{x}^* \big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1} \mathbf{x} \leq \frac{1}{v^2}.
 > \end{align*}
 > $$
 
 ## [IM-2]
 
+Assume that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a nonnegative definite Hermitian matrix, and $m(z)$ is the Stieltjes transform of a p.d.f. Then, for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,
+$$
+\big \|\left( m(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\big\|_{\mathrm{op}} \leq \max \left ( 2, \frac{4}{v} \|\mathbf{A}\|_{\mathrm{op}} \right ).
+$$
+
+> **Proof**:
+>
+> Since $\mathbf{A}$ is Hermitian and nonnegative definite, we can write $\mathbf{A} = \mathbf{U} \operatorname{diag} ( \lambda_1, \cdots, \lambda_n) \mathbf{U}^\*$, where $\mathbf{U} \in \mathbb{C}^{n \times n}$ is unitary and $\lambda_k \geq 0$ for each $k \in [n]$. In this case,
+> $$
+> \left(m(z) \mathbf{A}+\mathbf{I}_n\right)^{-1} = \mathbf{U} \operatorname{diag} \left( (m(z) \lambda_1 + 1)^{-1}, \cdots, ( m(z)\lambda_n + 1)^{-1} \right) \mathbf{U}^*.
+> $$
+> By **[ST-?]**, we know that for any $\lambda \geq 0$, it holds that
+> $$
+> \frac{1}{|m(z) \lambda + 1|} \leq \max \left ( 2, \frac{4}{v} \lambda \right ),
+> $$
+> which implies that
+> $$
+> \begin{align*}
+> \big\| \left(m(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\big\|_{\mathrm{op}}^2 
+> & = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \big \| \left(m(z) \mathbf{A}+\mathbf{I}_n\right)^{-1} \mathbf{x} \big \|_2^2
+> \leq \max_{k \in [n]} \frac{1}{|m(z) \lambda_k + 1|^2} \\
+> & \leq \max_{k \in [n]} \left \{ \max \left ( 4, \frac{16}{v^2} \lambda_k^2 \right ) \right \} 
+> = \max \left ( 4, \frac{16}{v^2} \|\mathbf{A}\|_{\mathrm{op}}^2 \right ).
+> \end{align*}
+> $$
+
+## [IM-3]
+
 Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is a Hermitian matrix. Then for any $\mathbf{x} \in \mathbb{C}^{n}$ and $z = u + \mathrm{i} v \in \mathbb{C}_+$, we have
 $$
-\left | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \right | 
-\leq \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} 
-= \frac{1}{v} \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ].
+\big | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \big | 
+\leq \mathbf{x}^* \big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1} \mathbf{x} 
+= \frac{1}{v} \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ].
 $$
 
 + If $\mathbf{x} \not = \mathbf{0}$, then
     $$
-    \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] > 0.
+    \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] > 0.
     $$
 
 + If $\mathbf{A}$ is nonnegative definite, then
     $$
-    \Im \left [ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] \geq 0.
+    \Im \big [ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] \geq 0.
     $$
 
 > **Proof**: 
@@ -53,11 +81,11 @@ $$
 > **[Part 1]** The first inequality follows from
 > $$
 > \begin{align*}
-> \left | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \right | 
+> \big | \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-2} \mathbf{x} \big | 
 > & = \left | \mathbf{y}^* \operatorname{diag} \left( (\lambda_1 - z)^{-2}, \cdots, (\lambda_n - z)^{-2} \right) \mathbf{y} \right | \\
 > & \leq \sum_{k=1}^n \left | \frac{1}{(\lambda_k - z)^2} \right | | y_k |^2 
 > = \sum_{k=1}^n \frac{1}{(\lambda_k - u)^{2} + v^2} | y_k |^2 \\
-> & = \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x}.
+> & = \mathbf{x}^* \big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1} \mathbf{x}.
 > \end{align*}
 > $$
 > **[Part 2]** As for the equality in the right hand side, note that we have
@@ -71,9 +99,9 @@ $$
 > $$
 > Therefore,
 > $$
-> \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] 
+> \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] 
 > = v \sum_{k=1}^n \frac{1}{(\lambda_k - u)^{2} + v^2} | y_k |^2 
-> = v \cdot \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x}.
+> = v \cdot \mathbf{x}^* \big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1} \mathbf{x}.
 > $$
 > **[Part 3]** The matrix $\big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1}$ is positive definite since its eigenvalues are all positive,
 > $$
@@ -81,7 +109,7 @@ $$
 > $$
 > Therefore, when $\mathbf{x} \not = \mathbf{0}$, by the equality in part 2 we know that
 > $$
-> \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] = v \cdot \mathbf{x}^* \left [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \right ]^{-1} \mathbf{x} > 0.
+> \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] = v \cdot \mathbf{x}^* \big [ \left ( \mathbf{A} - u \mathbf{I}_n \right )^{2} + v^2 \mathbf{I}_n \big ]^{-1} \mathbf{x} > 0.
 > $$
 > **[Part 4]** Note that
 > $$
@@ -94,10 +122,10 @@ $$
 > $$
 > When $\mathbf{A}$ is nonnegative definite, we have $\lambda_k \geq 0$ for each $k \in [n]$, which implies
 > $$
-> \Im \left [ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] =  \sum_{k=1}^n \frac{\lambda_k v}{(\lambda_k - u)^{2} + v^2} | y_k |^2 \geq 0.
+> \Im \big [ z \cdot \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] =  \sum_{k=1}^n \frac{\lambda_k v}{(\lambda_k - u)^{2} + v^2} | y_k |^2 \geq 0.
 > $$
 
-## [IM-3]
+## [IM-4]
 
 Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a matrix taking the form
 $$
@@ -170,7 +198,7 @@ $$
 > = \operatorname{tr} \mathbf{B}^{-1} + \frac{1}{d} \left ( 1 + \mathbf{a}^* \mathbf{B}^{-2} \mathbf{a} \right ).
 > $$
 
-## [IM-4]
+## [IM-5]
 
 Let $\mathbf{A} \in \mathbb{C}^{n \times n}$ be a Hermitian matrix and $\mathbf{A}_{k}$ be the $k$-th principle submatrix of order $(n-1)$, i.e. the submatrix obtained by removing the $k$-th row and column. Then for any $z = u + \mathrm{i} v \in \mathbb{C}_+$,
 $$
@@ -184,15 +212,15 @@ $$
 > $$
 > where $\boldsymbol{\alpha}_k$ denotes the $k$-th column of $\mathbf{A}$ with $a_{kk}$ removed.
 >
-> Note $a_{kk} \in \mathbb{R}$ since $\mathbf{A}$ is Hermitian. Hence, by **[IM-2]**, we have
+> Note $a_{kk} \in \mathbb{R}$ since $\mathbf{A}$ is Hermitian. Hence, by **[IM-3]**, we have
 > $$
 > \Im d 
 > = - v - \Im \left [ \boldsymbol{\alpha}_k^* \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} \boldsymbol{\alpha}_k \right ] 
 > \leq - v < 0.
 > $$
-> which implies $d \not= 0$. Applying **[IM-3]**, we obtain
+> which implies $d \not= 0$. Applying **[IM-4]**, we obtain
 > $$
-> \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} = \frac{1}{d} \left [ 1 + \boldsymbol{\alpha}_k^* \left( \mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \right ].
+> \operatorname{tr} \left(\mathbf{A} - z \mathbf{I}_n \right)^{-1} - \operatorname{tr} \left(\mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-1} = \frac{1}{d} \big [ 1 + \boldsymbol{\alpha}_k^* \left( \mathbf{A}_k - z \mathbf{I}_{n-1} \right)^{-2} \boldsymbol{\alpha}_k \big ].
 > $$
 > Consequently,
 > $$
@@ -203,7 +231,7 @@ $$
 > \end{align*}
 > $$
 
-## [IM-5]
+## [IM-6]
 
 Suppose that $\mathbf{A} \in \mathbb{C}^{n \times n}$ is an invertible matrix. Let $\boldsymbol{\alpha}, \boldsymbol{\beta} \in \mathbb{C}^n$ be vectors with $1 + \boldsymbol{\beta}^{\*} \mathbf{A}^{-1} \boldsymbol{\alpha} \not= 0$. Then the matrix $\mathbf{A} + \boldsymbol{\alpha} \boldsymbol{\beta}^{\*}$ is invertible with
 $$
@@ -237,7 +265,7 @@ $$
 > $$
 > Therefore, the first statement follows.
 
-## [IM-6]
+## [IM-7]
 
 Let $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ be Hermitian matrices and $\mathbf{x} \in \mathbb{C}^n$. For any $z = u + \mathrm{i} v \in \mathbb{C}_+$, define
 $$
@@ -256,17 +284,17 @@ $$
 >
 > We only need to consider the case where $\mathbf{x} \not= \mathbf{0}$.
 >
-> Since $\mathbf{A}$ is Hermitian and $z \in \mathbb{C}_+$, we know that $\mathbf{A} - z \mathbf{I}_{n}$ is invertible. By **[IM-2]**, we have
+> Since $\mathbf{A}$ is Hermitian and $z \in \mathbb{C}_+$, we know that $\mathbf{A} - z \mathbf{I}_{n}$ is invertible. By **[IM-3]**, we have
 > $$
-> \left | 1 + \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right |
-> \geq \Im \left [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \right ] > 0.
+> \big | 1 + \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big |
+> \geq \Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ] > 0.
 > $$
-> Therefore, by **[IM-5]** we have
+> Therefore, by **[IM-6]** we have
 > $$
 > \mathbf{D}
 > = - \frac{\left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \mathbf{x} \mathbf{x}^{*} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1}}{1+\mathbf{x}^{*} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \mathbf{x}}.
 > $$
-> **[Part 1]** Using **[IM-2]**, we can obtain
+> **[Part 1]** Using **[IM-3]**, we can obtain
 > $$
 > \left | \operatorname{tr} \mathbf{D} \right | 
 > = \frac{\big | \mathbf{x}^* \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-2} \mathbf{x} \big |}{\big | 1 + \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big |}
@@ -280,15 +308,15 @@ $$
 > $$
 > Note that
 > $$
-> \left(\mathbf{A} - \bar{z} \mathbf{I}_{n} \right)^{-1} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} = \left [ \left(\mathbf{A} - u \mathbf{I}_{n} \right)^2 + v^2 \mathbf{I}_{n} \right ]^{-1} = \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \left(\mathbf{A} - \bar{z} \mathbf{I}_{n} \right)^{-1}.
+> \left(\mathbf{A} - \bar{z} \mathbf{I}_{n} \right)^{-1} \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} = \big [ \left(\mathbf{A} - u \mathbf{I}_{n} \right)^2 + v^2 \mathbf{I}_{n} \big ]^{-1} = \left(\mathbf{A} - z \mathbf{I}_{n} \right)^{-1} \left(\mathbf{A} - \bar{z} \mathbf{I}_{n} \right)^{-1}.
 > $$
-> Therefore, by using **[IM-2]** again, we have
+> Therefore, by using **[IM-3]** again, we have
 > $$
 > \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
 > \leq \frac{\mathbf{x}^* \big [ \left(\mathbf{A} - u \mathbf{I}_{n} \right)^2 + v^2 \mathbf{I}_{n} \big ]^{-1} \mathbf{x}}{\Im \big [ \mathbf{x}^* \left ( \mathbf{A} - z \mathbf{I}_n \right )^{-1} \mathbf{x} \big ]} \| \mathbf{B} \|_{\mathrm{op}} = \frac{1}{v} \| \mathbf{B} \|_{\mathrm{op}}.
 > $$
 
-## [IM-7]
+## [IM-8]
 
 Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices. Let $z_1, z_2 \in \mathbb{C}_+$ with $\min ( \Im z_1, \Im z_2) \geq v > 0$. Define
 $$
@@ -297,7 +325,7 @@ $$
 Then,
 $$
 \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
-\leq \frac{n |z_1 - z_2|}{v^2} \| \mathbf{B} \|_{\mathrm{op}} .
+\leq \frac{n |z_1 - z_2|}{v^2} \| \mathbf{B} \|_{\mathrm{op}} ,
 $$
 and for any $\mathbf{x} \in \mathbb{C}^n$, it holds that
 $$
@@ -314,38 +342,22 @@ $$
 > & = (z_1 - z_2) \left ( \mathbf{A} - z_1 \mathbf{I}_n \right)^{-1} \left(\mathbf{A} - z_2 \mathbf{I}_{n} \right)^{-1}.
 > \end{align*}
 > $$
-> Therefore, we have
+> Therefore, by **[IM-1]** we have
 > $$
 > \| \mathbf{D} \|_{\mathrm{op}} 
 > = |z_1 - z_2| \big \| \left ( \mathbf{A} - z_1 \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}} \big \| \left ( \mathbf{A} - z_2 \mathbf{I}_n \right)^{-1} \big \|_{\mathrm{op}}
-> \leq \frac{|z_1 - z_2|}{\Im z_1 \Im z_2} \leq \frac{|z_1 - z_2|}{v^2},
+> \leq \frac{|z_1 - z_2|}{\Im z_1 \Im z_2} \leq \frac{|z_1 - z_2|}{v^2}.
 > $$
-> which implies that
-> $$
-> \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
-> \leq \| \mathbf{B} \|_{\mathrm{F}} \| \mathbf{D} \|_{\mathrm{F}}
-> \leq n \| \mathbf{B} \|_{\mathrm{op}} \| \mathbf{D} \|_{\mathrm{op}} 
-> \leq \frac{n |z_1 - z_2|}{v^2} \| \mathbf{B} \|_{\mathrm{op}} .
-> $$
-> In addition, for any $\mathbf{x} \in \mathbb{C}^n$,
-> $$
-> \left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | 
-> \leq \| \mathbf{B} \mathbf{D} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2
-> \leq \| \mathbf{D} \|_{\mathrm{op}} \| \mathbf{B} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2
-> \leq \frac{|z_1 - z_2|}{v^2} \| \mathbf{B} \|_{\mathrm{op}} \| \mathbf{x} \|_2^2.
-> $$
+> The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
+> \leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.
 
-## [IM-8]
+## [IM-9]
 
-Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.'s. Then,
-$$
-\left\|\left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\right\|_{\mathrm{op}} \leq \max \left ( 2, \frac{4}{v} \|\mathbf{A}\|_{\mathrm{op}} \right ).
-$$
-Define
+Assume that $\mathbf{A}, \mathbf{B} \in \mathbb{C}^{n \times n}$ are Hermitian matrices with $\mathbf{A}$ nonnegative definite. For $z = u + \mathrm{i} v \in \mathbb{C}_+$, let $m_1(z), m_2(z)$ be Stieltjes transforms of any two p.d.f.'s. Define
 $$
 \mathbf{D} := \left ( m_{1}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} - \left ( m_{2}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1}.
 $$
-Then
+Then,
 $$
 \left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
 \leq n |m_{1}(z) - m_{2}(z)| \| \mathbf{A} \|_{\mathrm{op}} \| \mathbf{B} \|_{\mathrm{op}} \max \left ( 4, \frac{16}{v^2} \|\mathbf{A}\|_{\mathrm{op}}^2 \right ),
@@ -358,42 +370,7 @@ $$
 
 > **Proof**:
 >
-> **[Part 1]** Since $\mathbf{A}$ is Hermitian and nonnegative definite, we can write $\mathbf{A} = \mathbf{U} \operatorname{diag} ( \lambda_1, \cdots, \lambda_n) \mathbf{U}^\*$, where $\mathbf{U} \in \mathbb{C}^{n \times n}$ is unitary and $\lambda_k \geq 0$ for each $k \in [n]$. In this case,
-> $$
-> \left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1} = \mathbf{U} \operatorname{diag} \left( (m_{1}(z) \lambda_1 + 1)^{-1}, \cdots, ( m_{1}(z)\lambda_n + 1)^{-1} \right) \mathbf{U}^*.
-> $$
-> This implies that
-> $$
-> \left\| \left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\right\|_{\mathrm{op}}^2 
-> = \max_{\mathbf{x} \in \mathbb{S}^{n-1}} \left \| \left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1} \mathbf{x} \right \|_2
-> \leq \max_{k \in [n]} \frac{1}{|m_{1}(z) \lambda_k + 1|^2}.
-> $$
-> By &&&&, for any $\lambda > 0$ we have
-> $$
-> |m_{1}(z) \lambda + 1|^2 
-> = \left | \lambda \Re m_{1}(z) + 1 \right |^2 + \lambda^2 | \Im m_{1}(z) |^2
-> \geq \left | \lambda \Re m_{1}(z) + 1 \right |^2 + \lambda^2 v^2 | \Re m_{1}(z) |^4
-> $$
-> Consider the function $f(y) := (y+1)^2 + (v / \lambda)^2 y^4$ for $y \in \mathbb{R}$.
->
-> Let $y^\star$ be the unique global minimizer for the convex function $f$. 
->
-> + If $y^\star \leq -1/2$, then $f(y^\star) \geq (v / \lambda)^2 (y^\star)^4 \geq (v / \lambda)^2 /16$.
-> + If $y^\star \geq -1/2$, then $f(y^\star) \geq (y^\star + 1)^2 \geq 1/4$.
->
-> Therefore, we can conclude that
-> $$
-> |m_{1}(z) \lambda + 1|^2 \geq f \big ( \lambda \Re m_{1}(z) \big ) \geq \min \left ( \frac{1}{4}, \frac{v^2}{16 \lambda^2} \right ),
-> $$
-> and $1/|m_{1}(z) \lambda + 1|^{2} \leq \max (4, 16 \lambda^2 / v^2)$. The latter inequality still holds when $\lambda = 0$. Therefore,
-> $$
-> \left\| \left(m_{1}(z) \mathbf{A}+\mathbf{I}_n\right)^{-1}\right\|_{\mathrm{op}}^2 
-> \leq \max_{k \in [n]} \left \{ \max \left ( 4, \frac{16}{v^2} \lambda_k^2 \right ) \right \} 
-> = \max \left ( 4, \frac{16}{v^2} \max_{k \in [n]} \lambda_k^2 \right ) 
-> = \max \left ( 4, \frac{16}{v^2} \|\mathbf{A}\|_{\mathrm{op}}^2 \right ).
-> $$
->
-> **[Part 2]** Note that the matrix $\mathbf{D}$ can be written as
+> Note that the matrix $\mathbf{D}$ can be written as
 > $$
 > \begin{align*}
 > \mathbf{D} 
@@ -401,7 +378,7 @@ $$
 > & = (m_{2}(z) - m_{1}(z)) \left ( m_{1}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1} \mathbf{A} \left ( m_{2}(z) \mathbf{A}+\mathbf{I}_n \right)^{-1}.
 > \end{align*}
 > $$
-> Therefore, by part 1 we have
+> Therefore, by **[IM-2]** we have
 > $$
 > \begin{align*}
 > \| \mathbf{D} \|_{\mathrm{op}} 
@@ -410,6 +387,6 @@ $$
 > \end{align*}
 > $$
 > The two statements follow from $\left | \operatorname{tr} (\mathbf{B} \mathbf{D}) \right | 
-> \leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.
+>\leq n \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{D} \rVert_{\mathrm{op}}$ and $\left | \mathbf{x}^* \mathbf{B} \mathbf{D} \mathbf{x} \right | \leq \lVert \mathbf{D} \rVert_{\mathrm{op}} \lVert \mathbf{B} \rVert_{\mathrm{op}} \lVert \mathbf{x} \rVert_2^2$.
 
 
